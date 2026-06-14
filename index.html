@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>METEOR-M2 passes — yannklein.dev</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #080c10;
+      --surface: #0d1117;
+      --card: #111820;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5a0;
+      --accent2: #0088ff;
+      --text: #e8edf2;
+      --muted: #5a6878;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Starfield */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-left h1 {
+      font-family: var(--mono);
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .header-left h1 span { color: var(--accent); }
+
+    .header-left p {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #f59e0b;
+      border: 0.5px solid #f59e0b;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .live-dot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f59e0b;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pass {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .pass-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pass-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+      background: rgba(0,136,255,0.1);
+      border: 0.5px solid rgba(0,136,255,0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .pass-date {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .pass-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: auto;
+      font-family: var(--mono);
+    }
+
+    .pass-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .thumb {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 0.5px solid var(--border);
+      cursor: pointer;
+      background: var(--card);
+      aspect-ratio: 16/9;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .thumb:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .thumb-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 6px 10px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,229,160,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .thumb:hover .thumb-overlay { opacity: 1; }
+
+    .thumb-overlay svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .empty-pass {
+      padding: 1.5rem;
+      border: 0.5px dashed var(--border);
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Failed passes accordion */
+    .failed-accordion {
+      margin-bottom: 3rem;
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .failed-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .failed-accordion summary::-webkit-details-marker { display: none; }
+
+    .failed-accordion summary:hover {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .failed-accordion summary .chevron {
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .failed-accordion[open] summary .chevron {
+      transform: rotate(90deg);
+    }
+
+    .failed-accordion summary .count-badge {
+      font-size: 11px;
+      color: var(--accent2);
+      background: rgba(0,136,255,0.1);
+      border: 0.5px solid rgba(0,136,255,0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .failed-accordion .failed-list {
+      border-top: 0.5px solid var(--border);
+      padding: 0.5rem 1.2rem 1rem;
+    }
+
+    .failed-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .failed-row:last-child { border-bottom: none; }
+
+    .failed-row .pass-date { font-size: 12px; }
+
+    .failed-row .pass-meta {
+      margin-left: 0;
+    }
+
+    .failed-row .pass-meta:last-child {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 0.5px solid var(--border);
+    }
+
+    .lightbox-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .lightbox-meta span { color: var(--accent); }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .lightbox-close:hover { color: var(--text); border-color: var(--text); }
+
+    .lightbox-nav {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .lightbox-nav button {
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .lightbox-nav button:hover { border-color: var(--accent); color: var(--accent); }
+    .lightbox-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      border-top: 0.5px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  .pass-card{background:var(--card);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px}.pass-card-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:4px}.pass-card-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}.pass-card-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:3px}.pass-card-row span:last-child{color:var(--text)}.pass-card-el{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px}.pass-card-el.high{background:rgba(0,229,160,0.15);border:0.5px solid var(--accent);color:var(--accent)}.pass-card-el.med{background:rgba(0,136,255,0.1);border:0.5px solid var(--accent2);color:var(--accent2)}.pass-card-el.low{background:rgba(255,255,255,0.04);border:0.5px solid var(--muted);color:var(--muted)}.countdown{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>METEOR-M2 <span>//</span> satellite passes</h1>
+    <p>137.900 MHz · Barcelona 41.38°N 2.17°E · RTL-SDR V3</p>
+  </div>
+  <div class="live-dot" id="sat-status-badge">not recording</div>
+</header>
+
+<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0"><div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div><div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem"><div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px"><div style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div> fetching pass predictions...</div></div></div>
+<main id="gallery"></main>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">ESC / close</button>
+    <img id="lb-img" src="" alt=""/>
+    <div class="lightbox-meta" id="lb-meta"></div>
+    <div class="lightbox-nav">
+      <button id="lb-prev" onclick="lbNav(-1)">← prev</button>
+      <button id="lb-next" onclick="lbNav(+1)">next →</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  yannklein.dev homelab · images received directly from METEOR-M2-3 (NORAD 57166) · decoded with SatDump v2.0.0-alpha
+</footer>
+
+<script>
+// ─── RENDER ────────────────────────────────────────────────────────────────
+const gallery = document.getElementById('gallery');
+let allImgs = [];
+let lbIdx = 0;
+
+function elClass(el) {
+  if (el >= 60) return 'high';
+  if (el >= 30) return 'med';
+  return 'low';
+}
+
+function elLabel(el) {
+  if (el >= 60) return '★ excellent';
+  if (el >= 30) return '◆ good';
+  return '◇ low';
+}
+
+function renderGallery(passes) {
+  // Sort newest first
+  passes.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+
+  allImgs = [];
+  gallery.innerHTML = '';
+
+  if (passes.length === 0) {
+    gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">No passes recorded yet.</div>';
+    return;
+  }
+
+  const successful = passes.filter(p => (p.imgs || []).length > 0);
+  const failed = passes.filter(p => (p.imgs || []).length === 0);
+
+  successful.forEach((pass, pi) => {
+    const sec = document.createElement('div');
+    sec.className = 'pass';
+    sec.style.animationDelay = (pi * 0.08) + 's';
+
+    const passImgStart = allImgs.length;
+    const imgs = pass.imgs || [];
+
+    let imgsHTML = '';
+    imgs.forEach((imgName, ii) => {
+      const src = `${pass.folder}/MSU-MR/${imgName}`;
+      const label = imgName.replace(/_/g, ' ').replace('.png', '');
+      const globalIdx = passImgStart + ii;
+      allImgs.push({ src, label, pass });
+      imgsHTML += `
+        <div class="thumb" onclick="openLightbox(${globalIdx})">
+          <img src="${src}" alt="${label}" loading="lazy"/>
+          <div class="thumb-label">${label}</div>
+          <div class="thumb-overlay">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>`;
+    });
+    imgsHTML = `<div class="pass-grid">${imgsHTML}</div>`;
+
+    sec.innerHTML = `
+      <div class="pass-header">
+        <span class="pass-number">PASS #${passes.length - passes.indexOf(pass)}</span>
+        <span class="pass-date">${pass.date} · ${pass.time}</span>
+        ${pass.maxEl != null ? `<span class="pass-card-el ${elClass(pass.maxEl)}" style="margin-top:0;font-size:10px">${elLabel(pass.maxEl)}</span>` : ''}
+        <span class="pass-meta">${pass.satellite} · ${imgs.length} image${imgs.length !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
+      </div>
+      ${imgsHTML}`;
+
+    gallery.appendChild(sec);
+  });
+
+  if (failed.length > 0) {
+    const acc = document.createElement('details');
+    acc.className = 'failed-accordion';
+    acc.style.animationDelay = (successful.length * 0.08) + 's';
+
+    let rowsHTML = '';
+    failed.forEach(pass => {
+      const details = [];
+      if (pass.maxEl != null) details.push(`${Math.round(pass.maxEl)}° el`);
+      if (pass.frequency != null) details.push(`${(pass.frequency / 1e6).toFixed(3)} MHz`);
+      if (pass.gain != null) details.push(`${pass.gain}dB gain`);
+      const detailsStr = details.length ? details.join(' · ') : '<span style="opacity:0.5">no metadata (pre-tracking)</span>';
+
+      rowsHTML += `
+        <div class="failed-row">
+          <span class="pass-date">${pass.date} · ${pass.time}</span>
+          <span class="pass-meta">${pass.satellite}</span>
+          <span class="pass-meta">${detailsStr}</span>
+        </div>`;
+    });
+
+    acc.innerHTML = `
+      <summary>
+        <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        <span>${failed.length} pass${failed.length !== 1 ? 'es' : ''} with no signal — signal below threshold</span>
+        <span class="count-badge">${failed.length}</span>
+      </summary>
+      <div class="failed-list">${rowsHTML}</div>`;
+
+    gallery.appendChild(acc);
+  }
+}
+
+// ─── LOAD passes.json ──────────────────────────────────────────────────────
+fetch('passes.json?t=' + Date.now())
+  .then(r => {
+    if (!r.ok) throw new Error('passes.json not found');
+    return r.json();
+  })
+  .then(passes => {
+    renderGallery(passes);
+  })
+  .catch(() => {
+    gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">No passes recorded yet — waiting for first automated pass.</div>';
+  });
+// ─── LIGHTBOX ──────────────────────────────────────────────────────────────
+const lb     = document.getElementById('lightbox');
+const lbImg  = document.getElementById('lb-img');
+const lbMeta = document.getElementById('lb-meta');
+const lbPrev = document.getElementById('lb-prev');
+const lbNext = document.getElementById('lb-next');
+
+function openLightbox(idx) {
+  lbIdx = idx;
+  renderLb();
+  lb.classList.add('open');
+}
+
+function closeLightbox(e) {
+  if (e && e.target !== lb) return;
+  lb.classList.remove('open');
+}
+
+function lbNav(dir) {
+  lbIdx = Math.max(0, Math.min(allImgs.length - 1, lbIdx + dir));
+  renderLb();
+}
+
+function renderLb() {
+  const item = allImgs[lbIdx];
+  lbImg.src = item.src;
+  lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.elevation}`;
+  lbPrev.disabled = lbIdx === 0;
+  lbNext.disabled = lbIdx === allImgs.length - 1;
+}
+
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape')     lb.classList.remove('open');
+  if (e.key === 'ArrowLeft')  lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(+1);
+});
+</script>
+</body>
+</html>
+<script>
+// Injected separately — next passes from n2yo API
+(async function() {
+  const grid = document.getElementById('next-passes-grid');
+  const API = 'https://n8n.yannklein.dev/webhook/next-passes';
+
+  function fmt(utc) {
+    const d = new Date(utc * 1000);
+    return {
+      date: d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/Madrid' }),
+      time: d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' }) + ' CEST',
+    };
+  }
+
+  function countdown(utc) {
+    const diff = utc - Date.now() / 1000;
+    if (diff < 0) return 'passing now';
+    const h = Math.floor(diff / 3600);
+    const m = Math.floor((diff % 3600) / 60);
+    if (h > 0) return `in ${h}h ${m}m`;
+    return `in ${m}m`;
+  }
+
+  try {
+    const res = await fetch(API);
+    const data = await res.json();
+
+    // New format: array of {info, passes} objects, one per satellite
+    // Flatten all passes, tag each with satellite name, sort by startUTC, take first 3
+    const allPasses = [];
+    const satellites = Array.isArray(data) ? data : [data];
+    satellites.forEach(sat => {
+      const satname = sat.info ? sat.info.satname : 'METEOR';
+      (sat.passes || []).forEach(p => {
+        allPasses.push({ ...p, satname });
+      });
+    });
+    allPasses.sort((a, b) => a.startUTC - b.startUTC);
+    const passes = allPasses.slice(0, 3);
+
+    if (passes.length === 0) {
+      grid.innerHTML = '<div class="passes-loading">No passes with elevation ≥40° in next 5 days</div>';
+      return;
+    }
+
+    grid.innerHTML = passes.map(p => {
+      const start = fmt(p.startUTC);
+      const max   = fmt(p.maxUTC);
+      const dur   = Math.round((p.endUTC - p.startUTC) / 60);
+      const ec    = elClass(p.maxEl);
+      return `
+        <div class="pass-card">
+          <div class="pass-card-date">${start.date} · <span style="color:var(--accent2)">${p.satname}</span></div>
+          <div class="pass-card-time">${start.time}</div>
+          <div class="pass-card-row"><span>peak</span><span>${max.time}</span></div>
+          <div class="pass-card-row"><span>duration</span><span>${dur} min</span></div>
+          <div class="pass-card-row"><span>max elevation</span><span>${Math.round(p.maxEl)}°</span></div>
+          <div class="pass-card-el ${ec}">${elLabel(p.maxEl)}</div>
+          <div class="countdown" id="cd-${p.startUTC}">${countdown(p.startUTC)}</div>
+        </div>`;
+    }).join('');
+
+    // Live countdown update
+    setInterval(() => {
+      passes.forEach(p => {
+        const el = document.getElementById('cd-' + p.startUTC);
+        if (el) el.textContent = countdown(p.startUTC);
+      });
+    }, 30000);
+
+  } catch(e) {
+    grid.innerHTML = '<div class="passes-loading">Could not load pass predictions</div>';
+  }
+})();
+</script>
+<script>
+// Satellite recording status
+(async function pollSatStatus() {
+  const badge = document.getElementById('sat-status-badge');
+  try {
+    const res = await fetch('https://n8n.yannklein.dev/webhook/satdump-status');
+    if (res.ok) {
+      const data = await res.json();
+      const lines = data.stdout.trim().split('\n');
+      const state = lines[lines.length - 1].trim();
+      if (state === 'running') {
+        badge.textContent = '⏺ recording now';
+        badge.style.color = '#ff4444';
+        badge.style.borderColor = '#ff4444';
+        badge.style.animation = 'none';
+        badge.querySelector
+        // pulse the dot
+        badge.innerHTML = '⏺ recording now';
+      } else {
+        badge.textContent = 'not recording';
+        badge.style.color = '#f59e0b';
+        badge.style.borderColor = '#f59e0b';
+      }
+    }
+  } catch(e) {}
+  setTimeout(pollSatStatus, 10000);
+})();
+</script>

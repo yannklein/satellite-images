@@ -1,0 +1,296 @@
+[
+  {
+    "date": "2026-06-14",
+    "time": "16:16 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1612",
+    "imgs": [],
+    "maxEl": 89.06,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-14",
+    "time": "15:43 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2245",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-14",
+    "time": "15:39 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2210",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 52.85,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-14",
+    "time": "15:35 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_1119",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 62.53,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-14",
+    "time": "15:31 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_1142",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 81.53,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-14",
+    "time": "15:27 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1135",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-14",
+    "time": "04:54 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_0450",
+    "imgs": [],
+    "maxEl": 55.02,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-13",
+    "time": "23:07 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2303",
+    "imgs": [],
+    "maxEl": 51.27,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-13",
+    "time": "16:37 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1634",
+    "imgs": [],
+    "maxEl": 58.77,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-13",
+    "time": "05:15 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_0512",
+    "imgs": [],
+    "maxEl": 86.2,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-12",
+    "time": "12:08 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_1205",
+    "imgs": [],
+    "maxEl": 50.44,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-11",
+    "time": "15:40 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1537",
+    "imgs": [],
+    "maxEl": 43.88,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-10",
+    "time": "23:56 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2353",
+    "imgs": [],
+    "maxEl": 84.95,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-10",
+    "time": "23:44 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2343",
+    "imgs": [],
+    "maxEl": 84.95,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-10",
+    "time": "16:01 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1559",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-10",
+    "time": "11:15 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1112",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-09",
+    "time": "11:56 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1153",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "22:11 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2207",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "21:04 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2101",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "18:27 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1823",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "17:52 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1749",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "15:53 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1550",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-08",
+    "time": "12:26 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1219",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-07",
+    "time": "23:26 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2300",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-05",
+    "time": "22:47 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2233",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-03",
+    "time": "22:02 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_tonight",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  },
+  {
+    "date": "2026-06-03",
+    "time": "12:41 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_dc",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null
+  }
+]
