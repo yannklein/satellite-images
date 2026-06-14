@@ -1,6 +1,1 @@
-{
-  "satellite": "METEOR M2-3",
-  "maxEl": 81.53,
-  "frequency": 137900000,
-  "gain": 25
-}
+{"satellite": "METEOR M2-3", "maxEl": 81.53, "frequency": 137900000, "gain": 25, "date": "2026-06-13", "time": "11:27 CEST"}

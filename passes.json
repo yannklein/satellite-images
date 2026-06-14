@@ -1,7 +1,32 @@
 [
   {
-    "date": "2026-06-14",
-    "time": "19:27 CEST",
+    "date": "2026-06-13",
+    "time": "22:48 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2245",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-09",
+    "time": "11:20 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_1135",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
+    ],
+    "maxEl": null,
+    "frequency": 137900000,
+    "gain": null
+  },
+  {
+    "date": "2026-06-13",
+    "time": "11:27 CEST",
     "satellite": "METEOR M2-3",
     "folder": "decoded_1142",
     "imgs": [
@@ -15,8 +40,8 @@
     "gain": 25
   },
   {
-    "date": "2026-06-14",
-    "time": "19:27 CEST",
+    "date": "2026-06-11",
+    "time": "21:55 CEST",
     "satellite": "METEOR M2-3",
     "folder": "decoded_2210",
     "imgs": [
@@ -25,38 +50,13 @@
       "MSU-MR-3.png",
       "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
     ],
-    "maxEl": 52.85,
+    "maxEl": null,
     "frequency": 137900000,
     "gain": 25
   },
   {
     "date": "2026-06-14",
-    "time": "19:27 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2245",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-14",
-    "time": "19:27 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1135",
-    "imgs": [
-      "MSU-MR-1.png",
-      "MSU-MR-2.png",
-      "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
-    ],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-14",
-    "time": "19:27 CEST",
+    "time": "11:04 CEST",
     "satellite": "METEOR M2-3",
     "folder": "decoded_1119",
     "imgs": [
@@ -65,7 +65,7 @@
       "MSU-MR-3.png",
       "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
     ],
-    "maxEl": 62.53,
+    "maxEl": null,
     "frequency": 137900000,
     "gain": 25
   },
