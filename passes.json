@@ -1,34 +1,64 @@
 [
   {
+    "date": "2026-06-14",
+    "time": "22:45 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2240",
+    "imgs": [],
+    "maxEl": 83.42,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
     "date": "2026-06-13",
     "time": "22:48 CEST",
     "satellite": "METEOR M2-3",
-    "folder": "decoded_2245",
-    "imgs": [],
+    "folder": "decoded_202606132248",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
     "maxEl": null,
     "frequency": 137900000,
     "gain": 25
   },
   {
-    "date": "2026-06-09",
-    "time": "11:20 CEST",
+    "date": "2026-06-14",
+    "time": "11:04 CEST",
     "satellite": "METEOR M2-3",
-    "folder": "decoded_1135",
+    "folder": "decoded_202606141104",
     "imgs": [
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": null
+    "gain": 25
+  },
+  {
+    "date": "2026-06-11",
+    "time": "21:55 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606112155",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": null,
+    "frequency": 137900000,
+    "gain": 25
   },
   {
     "date": "2026-06-13",
     "time": "11:27 CEST",
     "satellite": "METEOR M2-3",
-    "folder": "decoded_1142",
+    "folder": "decoded_202606131127",
     "imgs": [
       "MSU-MR-1.png",
       "MSU-MR-2.png",
@@ -40,34 +70,19 @@
     "gain": 25
   },
   {
-    "date": "2026-06-11",
-    "time": "21:55 CEST",
+    "date": "2026-06-09",
+    "time": "11:20 CEST",
     "satellite": "METEOR M2-3",
-    "folder": "decoded_2210",
+    "folder": "decoded_202606091120",
     "imgs": [
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-14",
-    "time": "11:04 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_1119",
-    "imgs": [
-      "MSU-MR-1.png",
-      "MSU-MR-2.png",
-      "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png"
-    ],
-    "maxEl": null,
-    "frequency": 137900000,
-    "gain": 25
+    "gain": null
   },
   {
     "date": "2026-06-14",
@@ -264,26 +279,6 @@
     "time": "22:47 CEST",
     "satellite": "Unknown",
     "folder": "decoded_2233",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-03",
-    "time": "22:02 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_tonight",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-03",
-    "time": "12:41 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_dc",
     "imgs": [],
     "maxEl": null,
     "frequency": null,
