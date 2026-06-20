@@ -1,5 +1,264 @@
 [
   {
+    "date": "2026-06-20",
+    "time": "15:56 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606201550",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 48.8,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-19",
+    "time": "22:38 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606192232",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 71.12,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-19",
+    "time": "16:18 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606191612_v122",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 76.18,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-19",
+    "time": "11:16 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606191111",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 44.17,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-19",
+    "time": "04:56 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606190450",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 46.12,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-18",
+    "time": "23:01 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606182255",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 72.37,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-18",
+    "time": "16:40 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606181634",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 69.9,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-18",
+    "time": "11:40 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606181134",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+    ],
+    "maxEl": 72.79,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-18",
+    "time": "05:18 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606180512",
+    "imgs": [],
+    "maxEl": 73.36,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-17",
+    "time": "23:24 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606172318",
+    "imgs": [],
+    "maxEl": 43.99,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-17",
+    "time": "17:01 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606171655",
+    "imgs": [],
+    "maxEl": 44.04,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-17",
+    "time": "12:03 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606171157",
+    "imgs": [],
+    "maxEl": 70.59,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-17",
+    "time": "05:34 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606170534",
+    "imgs": [],
+    "maxEl": 72.46,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-16",
+    "time": "14:05 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606161359",
+    "imgs": [],
+    "maxEl": 62.53,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-16",
+    "time": "13:24 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606161318",
+    "imgs": [],
+    "maxEl": 62.53,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-16",
+    "time": "12:20 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606161220",
+    "imgs": [],
+    "maxEl": 43.57,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-16",
+    "time": "05:55 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606160555",
+    "imgs": [],
+    "maxEl": 46.23,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-15",
+    "time": "23:19 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606152319",
+    "imgs": [],
+    "maxEl": 62.53,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-15",
+    "time": "22:25 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606152225",
+    "imgs": [],
+    "maxEl": 61.34,
+    "frequency": 137900000,
+    "gain": 25
+  },
+  {
+    "date": "2026-06-15",
+    "time": "15:59 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606151559",
+    "imgs": [],
+    "maxEl": 57.79,
+    "frequency": 137100000,
+    "gain": 25
+  },
+  {
     "date": "2026-06-14",
     "time": "22:45 CEST",
     "satellite": "METEOR M2-3",

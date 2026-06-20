@@ -424,6 +424,8 @@
       text-align: center;
     }
   .pass-card{background:var(--card);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px}.pass-card-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:4px}.pass-card-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}.pass-card-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:3px}.pass-card-row span:last-child{color:var(--text)}.pass-card-el{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px}.pass-card-el.high{background:rgba(0,229,160,0.15);border:0.5px solid var(--accent);color:var(--accent)}.pass-card-el.med{background:rgba(0,136,255,0.1);border:0.5px solid var(--accent2);color:var(--accent2)}.pass-card-el.low{background:rgba(255,255,255,0.04);border:0.5px solid var(--muted);color:var(--muted)}.countdown{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px}
+  .pass-card.skipped-night{opacity:0.55}
+  .pass-card-night-badge{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:4px}
   </style>
 </head>
 <body>
@@ -506,7 +508,15 @@ function renderGallery(passes) {
     sortedImgs.forEach((imgName, ii) => {
       const src = `${pass.folder}/MSU-MR/${imgName}`;
       const isMap = imgName === 'msu_mr_false_color_map.png';
-      const label = isMap ? 'False Color + Map Overlay' : imgName.replace(/_/g, ' ').replace('.png', '');
+      const CHANNEL_LABELS = {
+        'MSU-MR-1.png': 'Ch.1 — Visible (0.6µm)',
+        'MSU-MR-2.png': 'Ch.2 — Near-Infrared (0.9µm)',
+        'MSU-MR-3.png': 'Ch.3 — Shortwave IR (1.6µm)',
+        'msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png': 'False Color (Ch.3-2-1)',
+        'msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png': 'False Color Filled (Ch.3-2-1)',
+        'msu_mr_false_color_map.png': 'False Color + Map Overlay',
+      };
+      const label = CHANNEL_LABELS[imgName] || imgName.replace(/_/g, ' ').replace('.png', '');
       const globalIdx = passImgStart + ii;
       allImgs.push({ src, label, pass });
       imgsHTML += `
@@ -604,7 +614,7 @@ function lbNav(dir) {
 function renderLb() {
   const item = allImgs[lbIdx];
   lbImg.src = item.src;
-  lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.elevation}`;
+  lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.maxEl}`;
   lbPrev.disabled = lbIdx === 0;
   lbNext.disabled = lbIdx === allImgs.length - 1;
 }
@@ -668,14 +678,19 @@ document.addEventListener('keydown', e => {
       const max   = fmt(p.maxUTC);
       const dur   = Math.round((p.endUTC - p.startUTC) / 60);
       const ec    = elClass(p.maxEl);
+      const isNight = p.isDaylight === false;
+      const nightBadge = isNight
+        ? `<div class="pass-card-night-badge">🌙 night — would be skipped</div>`
+        : '';
       return `
-        <div class="pass-card">
+        <div class="pass-card${isNight ? ' skipped-night' : ''}">
           <div class="pass-card-date">${start.date} · <span style="color:var(--accent2)">${p.satname}</span></div>
           <div class="pass-card-time">${start.time}</div>
           <div class="pass-card-row"><span>peak</span><span>${max.time}</span></div>
           <div class="pass-card-row"><span>duration</span><span>${dur} min</span></div>
           <div class="pass-card-row"><span>max elevation</span><span>${Math.round(p.maxEl)}°</span></div>
           <div class="pass-card-el ${ec}">${elLabel(p.maxEl)}</div>
+          ${nightBadge}
           <div class="countdown" id="cd-${p.startUTC}">${countdown(p.startUTC)}</div>
         </div>`;
     }).join('');
