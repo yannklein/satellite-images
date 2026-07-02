@@ -88,30 +88,44 @@ def compute_barcelona_pixel(cbor_path):
     best_along  = 1e9
     best_r_ecef = None
     best_v_ecef = None
+    at_values   = []   # along-track at each valid timestamp (for sign-change check)
 
     for i, ts in enumerate(timestamps):
         jd = 2440587.5 + ts / 86400.0
         try:
             e, r_eci, v_eci = sat.sgp4(int(jd), jd - int(jd))
         except Exception:
+            at_values.append(None)
             continue
         if e != 0:
+            at_values.append(None)
             continue
 
         r_ecef = eci_to_ecef(r_eci, ts)
         v_ecef = eci_to_ecef(v_eci, ts)
         along  = norm(v_ecef)
         d_vec  = sub(b_ecef, r_ecef)
-        at     = abs(dot(d_vec, along))
+        at     = dot(d_vec, along)   # signed along-track (km)
+        at_values.append(at)
 
-        if at < best_along:
-            best_along  = at
+        if abs(at) < best_along:
+            best_along  = abs(at)
             best_i      = i
             best_r_ecef = r_ecef
             best_v_ecef = v_ecef
 
     if best_i is None:
         return None
+
+    # Reject if the scan plane never crossed Barcelona during this pass.
+    # Filter out garbage timestamps (physically impossible along-track values;
+    # max realistic is ~2200 km for a 10-min pass window at 820 km altitude).
+    # Then check that the along-track component changes sign at least once,
+    # meaning the scan plane actually passed through Barcelona's position.
+    clean_at = [v for v in at_values if v is not None and abs(v) < 2500]
+    has_crossing = any((a > 0) != (b > 0) for a, b in zip(clean_at, clean_at[1:]))
+    if not has_crossing:
+        return None   # Barcelona's scan-plane crossing is outside this recording
 
     # --- Compute column via ECEF cross-track vector ---
     # ct = along × nadir  (points right-of-velocity in image space for both pass directions)
