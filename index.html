@@ -902,7 +902,7 @@ let tlRunning = false;
 
 function tlInit(passes) {
   tlFrames = passes
-    .filter(p => (p.imgs || []).includes(TL_IMG_NAME))
+    .filter(p => !p.exclude && (p.imgs || []).includes(TL_IMG_NAME))
     .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
     .map(p => ({
       src:        `${p.folder}/MSU-MR/${TL_IMG_NAME}`,
