@@ -1,0 +1,14 @@
+{
+  "satellite": "METEOR M2-3",
+  "maxEl": 60.78,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-06-21",
+  "time": "12:10 CEST",
+  "barcelonaPx": {
+    "row": 0,
+    "col": 1795,
+    "distKm": 399.2
+  },
+  "exclude": true
+}

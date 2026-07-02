@@ -4,5 +4,11 @@
   "frequency": 137900000,
   "gain": 25,
   "date": "2026-06-18",
-  "time": "16:40 CEST"
+  "time": "16:40 CEST",
+  "barcelonaPx": {
+    "row": 808,
+    "col": 1128,
+    "distKm": 271.2,
+    "rotationDeg": -14.5
+  }
 }

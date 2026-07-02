@@ -562,8 +562,8 @@
         <div class="tl-progress-bar" id="tl-prog-bar"></div>
       </div>
       <label class="tl-ctrl-label">
-        speed <input type="range" id="tl-speed" min="1" max="10" value="5" oninput="tlSetSpeed(this.value)">
-        <span id="tl-speed-val">×1</span>
+        speed <input type="range" id="tl-speed" min="1" max="10" value="4" oninput="tlSetSpeed(this.value)">
+        <span id="tl-speed-val">×0.8</span>
       </label>
     </div>
   </div>
@@ -897,7 +897,7 @@ const TL_BASE_MS  = 1000;  // ms at speed ×1
 let tlFrames  = [];
 let tlIdx     = 0;
 let tlTimer   = null;
-let tlSpeedX  = 5;   // 1–10 → divisor; speed ×5 = 200ms/frame
+let tlSpeedX  = 4;   // 1–10 → divisor; speed ×4 = 250ms/frame
 let tlRunning = false;
 
 function tlInit(passes) {
@@ -996,27 +996,37 @@ function tlPositionImg(frame, img, vp, center) {
   const dispW   = imgW * scale;
   const dispH   = imgH * scale;
   const doFlip  = frame.direction === 'NtoS';
+  const rotDeg  = (frame.barcelonaPx && frame.barcelonaPx.rotationDeg != null)
+                    ? frame.barcelonaPx.rotationDeg : 0;
 
   img.style.width  = dispW + 'px';
   img.style.height = dispH + 'px';
-  img.style.transform = doFlip ? 'scale(-1,-1)' : '';
+
+  // Build CSS transform: scale(-1,-1) is applied first (rightmost in CSS), then rotate.
+  // This aligns the satellite's along-track axis (~11° off true north) with the screen vertical.
+  const transforms = [];
+  if (doFlip) transforms.push('scale(-1,-1)');
+  if (rotDeg !== 0) transforms.unshift(`rotate(${rotDeg}deg)`);
+  img.style.transform = transforms.join(' ');
 
   if (center && frame.barcelonaPx) {
     const bx = frame.barcelonaPx.col * scale;   // Barcelona x in display image space
     const by = frame.barcelonaPx.row * scale;   // Barcelona y in display image space
 
-    let left, top;
-    if (doFlip) {
-      // After scale(-1,-1) around image centre, point (bx,by) appears at (dispW-bx, dispH-by)
-      // We want: img.left + (dispW - bx) = vpW/2
-      left = vpW / 2 - dispW + bx;
-      top  = vpH / 2 - dispH + by;
-    } else {
-      left = vpW / 2 - bx;
-      top  = vpH / 2 - by;
-    }
-    img.style.left = left + 'px';
-    img.style.top  = top  + 'px';
+    // Vector from the image's own center to the Barcelona point, in local
+    // (pre-transform) coordinates, then run it through the same transform
+    // chain applied to the image itself (flip, then rotate) to find where
+    // that point actually lands on screen relative to the image's center
+    // (which stays put, since transform-origin defaults to 50% 50%).
+    let cx = bx - dispW / 2;
+    let cy = by - dispH / 2;
+    if (doFlip) { cx = -cx; cy = -cy; }
+    const rad = rotDeg * Math.PI / 180;
+    const rx  = cx * Math.cos(rad) - cy * Math.sin(rad);
+    const ry  = cx * Math.sin(rad) + cy * Math.cos(rad);
+
+    img.style.left = (vpW / 2 - dispW / 2 - rx) + 'px';
+    img.style.top  = (vpH / 2 - dispH / 2 - ry) + 'px';
   } else {
     img.style.left = ((vpW - dispW) / 2) + 'px';
     img.style.top  = ((vpH - dispH) / 2) + 'px';

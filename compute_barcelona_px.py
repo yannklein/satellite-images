@@ -16,12 +16,14 @@ Usage:
 """
 
 import sys, os, json, math, glob
+from datetime import datetime
 import cbor2
 from sgp4.api import Satrec
 
 BARCELONA_LAT = 41.38
 BARCELONA_LON = 2.17
 EARTH_R       = 6371.0
+EARTH_OMEGA   = 7.2921159e-5   # rad/s, Earth's rotation rate (for ECI->ECEF velocity)
 
 def fix_tle(line):
     body = line[:-1]
@@ -46,7 +48,19 @@ def norm(v):
     return tuple(x/m for x in v)
 def sub(a, b):   return tuple(ai-bi for ai, bi in zip(a, b))
 
-def compute_barcelona_pixel(cbor_path):
+def pass_is_ntos(decoded_dir, meta):
+    """Replicates rebuild-passes.sh's direction heuristic (hour-of-day based),
+    since that is what index.html actually uses to decide whether to flip the
+    image -- NOT the satellite's true ascending/descending motion. The rotation
+    formula must branch on the same thing the flip does, or the two disagree."""
+    time_str = meta.get('time')
+    if time_str:
+        hour = int(time_str.split(':')[0])
+    else:
+        hour = int(datetime.fromtimestamp(os.path.getmtime(decoded_dir)).strftime('%H'))
+    return not (5 <= hour < 14)   # StoN if 05:00-13:59, else NtoS
+
+def compute_barcelona_pixel(cbor_path, do_flip):
     with open(cbor_path, 'rb') as f:
         data = cbor2.load(f)
 
@@ -158,7 +172,48 @@ def compute_barcelona_pixel(cbor_path):
             * math.sin(dlon/2)**2)
     dist_km = round(2 * math.asin(math.sqrt(a)) * EARTH_R, 1)
 
-    return {'row': row, 'col': col, 'distKm': dist_km}
+    # Rotation angle to align the satellite's along-track (N-S image axis) with the
+    # screen vertical.  The orbit inclination (98.6°) makes the ground track deviate
+    # ~11° from true north at 41°N.  We project the *true ECEF* velocity into local ENU
+    # to get the exact azimuth, then compute the CSS rotate() correction.
+    #
+    # v_ecef here must be the actual rate of change of the ECEF position, which requires
+    # subtracting the frame-rotation term (omega x r) -- just rotating v_eci by the same
+    # GMST angle as the position (as eci_to_ecef does) leaves out this term and biases
+    # the azimuth by a few degrees.
+    omega_cross_r = (-EARTH_OMEGA * best_r_ecef[1], EARTH_OMEGA * best_r_ecef[0], 0.0)
+    v_ecef_true   = tuple(best_v_ecef[i] - omega_cross_r[i] for i in range(3))
+
+    r_xy       = math.sqrt(best_r_ecef[0]**2 + best_r_ecef[1]**2)
+    r_lat_rad  = math.atan2(best_r_ecef[2], r_xy)
+    r_lon_rad  = math.atan2(best_r_ecef[1], best_r_ecef[0])
+    east_hat   = (-math.sin(r_lon_rad), math.cos(r_lon_rad), 0.0)
+    north_hat  = (-math.sin(r_lat_rad)*math.cos(r_lon_rad),
+                  -math.sin(r_lat_rad)*math.sin(r_lon_rad),
+                   math.cos(r_lat_rad))
+    v_e = dot(v_ecef_true, east_hat)
+    v_n = dot(v_ecef_true, north_hat)
+    az  = math.degrees(math.atan2(v_e, v_n))   # true bearing of "raw image down" direction
+
+    # Raw image "down" (increasing row/time) always starts at screen-bearing 180°
+    # (straight down) before any CSS transform. We want its *real* bearing (az) to end
+    # up displayed at that same screen bearing once rotate() is applied, so the whole
+    # image reads north-up.
+    #
+    #   StoN (no flip): screen-bearing before rotate = 180° -> rotate by (az - 180°)
+    #   NtoS (scale(-1,-1) flip applied first): flip adds 180° to screen-bearing,
+    #     giving 0° (straight up) before rotate -> rotate by (az - 0°) = az
+    #
+    # do_flip must match index.html's needsFlip() (hour-of-day direction label), not
+    # the satellite's true ascending/descending motion -- those disagree for some
+    # passes, and it's the actual applied flip that the rotation must compensate for.
+    if do_flip:       # NtoS label, flip applied
+        rotation_deg = az
+    else:             # StoN label, no flip
+        rotation_deg = az - 180.0
+    rotation_deg = round(((rotation_deg + 180.0) % 360.0) - 180.0, 1)   # normalise
+
+    return {'row': row, 'col': col, 'distKm': dist_km, 'rotationDeg': rotation_deg}
 
 def process_dir(decoded_dir):
     cbor_path = os.path.join(decoded_dir, 'MSU-MR', 'product.cbor')
@@ -167,17 +222,18 @@ def process_dir(decoded_dir):
     if not os.path.exists(cbor_path):
         return False
 
-    result = compute_barcelona_pixel(cbor_path)
-    name   = os.path.basename(decoded_dir)
-
-    if result is None:
-        print(f'  {name}: Barcelona not in frame or no TLE data')
-        return False
-
     meta = {}
     if os.path.exists(meta_path):
         with open(meta_path) as f:
             meta = json.load(f)
+
+    do_flip = pass_is_ntos(decoded_dir, meta)
+    result  = compute_barcelona_pixel(cbor_path, do_flip)
+    name    = os.path.basename(decoded_dir)
+
+    if result is None:
+        print(f'  {name}: Barcelona not in frame or no TLE data')
+        return False
 
     meta['barcelonaPx'] = result
     with open(meta_path, 'w') as f:

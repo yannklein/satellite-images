@@ -1,7 +1,8 @@
 {
     "products": [
-        "MSU-MR"
+        "MSU-MR",
+        "MSU-MR (Filled)"
     ],
-    "satellite": "METEOR-M1",
-    "timestamp": 0.0
+    "satellite": "METEOR-M2-3",
+    "timestamp": 1781428495.468268
 }

@@ -1,0 +1,9 @@
+{
+  "satellite": "METEOR M2-3",
+  "maxEl": 45.17,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-06-29",
+  "time": "12:24 CEST",
+  "direction": "StoN"
+}

@@ -1,6 +1,71 @@
 [
   {
     "date": "2026-07-02",
+    "time": "16:38 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607021631",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 74.1,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 776,
+      "col": 1188,
+      "distKm": 212.1,
+      "rotationDeg": -14.5
+    },
+    "exclude": false
+  },
+  {
+    "date": "2026-06-21",
+    "time": "12:10 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606211204",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 60.78,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 0,
+      "col": 1795,
+      "distKm": 399.2
+    },
+    "exclude": true
+  },
+  {
+    "date": "2026-07-02",
     "time": "12:55 CEST",
     "satellite": "Unknown",
     "folder": "decoded_2300",
@@ -12,7 +77,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -29,7 +95,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -46,7 +113,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -63,7 +131,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -80,7 +149,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -97,7 +167,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -114,7 +185,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -131,7 +203,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -148,7 +221,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -165,7 +239,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -182,7 +257,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -214,7 +290,8 @@
     "barcelonaPx": {
       "row": 504,
       "col": 1137,
-      "distKm": 262.6
+      "distKm": 262.6,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -246,7 +323,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1612,
-      "distKm": 212.7
+      "distKm": 212.7,
+      "rotationDeg": 14.5
     },
     "exclude": false
   },
@@ -278,7 +356,8 @@
     "barcelonaPx": {
       "row": 568,
       "col": 1901,
-      "distKm": 502.4
+      "distKm": 502.4,
+      "rotationDeg": -14.7
     },
     "exclude": false
   },
@@ -323,7 +402,8 @@
     "barcelonaPx": {
       "row": 528,
       "col": 1464,
-      "distKm": 64.7
+      "distKm": 64.7,
+      "rotationDeg": -14.6
     },
     "exclude": false
   },
@@ -355,7 +435,8 @@
     "barcelonaPx": {
       "row": 856,
       "col": 1019,
-      "distKm": 380.7
+      "distKm": 380.7,
+      "rotationDeg": -14.5
     },
     "exclude": false
   },
@@ -387,7 +468,8 @@
     "barcelonaPx": {
       "row": 296,
       "col": 990,
-      "distKm": 410.1
+      "distKm": 410.1,
+      "rotationDeg": 14.3
     },
     "exclude": false
   },
@@ -419,7 +501,8 @@
     "barcelonaPx": {
       "row": 200,
       "col": 1467,
-      "distKm": 67.5
+      "distKm": 67.5,
+      "rotationDeg": 14.5
     },
     "exclude": false
   },
@@ -479,7 +562,8 @@
     "barcelonaPx": {
       "row": 568,
       "col": 850,
-      "distKm": 550.6
+      "distKm": 550.6,
+      "rotationDeg": -14.5
     },
     "exclude": false
   },
@@ -511,7 +595,8 @@
     "barcelonaPx": {
       "row": 880,
       "col": 1737,
-      "distKm": 338.1
+      "distKm": 338.1,
+      "rotationDeg": -14.7
     },
     "exclude": false
   },
@@ -543,7 +628,8 @@
     "barcelonaPx": {
       "row": 864,
       "col": 1297,
-      "distKm": 103.0
+      "distKm": 103.0,
+      "rotationDeg": -14.5
     },
     "exclude": false
   },
@@ -599,7 +685,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -616,7 +703,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -633,7 +721,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -650,7 +739,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -667,7 +757,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -684,7 +775,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -701,7 +793,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -718,7 +811,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -735,7 +829,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -766,7 +861,8 @@
     "barcelonaPx": {
       "row": 832,
       "col": 1572,
-      "distKm": 172.5
+      "distKm": 172.5,
+      "rotationDeg": -14.6
     },
     "exclude": false
   },
@@ -783,7 +879,8 @@
     "barcelonaPx": {
       "row": 72,
       "col": 1027,
-      "distKm": 373.1
+      "distKm": 373.1,
+      "rotationDeg": -165.6
     },
     "exclude": false
   },
@@ -815,39 +912,8 @@
     "barcelonaPx": {
       "row": 360,
       "col": 1321,
-      "distKm": 78.5
-    },
-    "exclude": false
-  },
-  {
-    "date": "2026-06-21",
-    "time": "12:10 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_202606211204",
-    "imgs": [
-      "MSU-MR-1.png",
-      "MSU-MR-2.png",
-      "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
-      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
-      "msu_mr_rgb_AVHRR_221_False_Color.png",
-      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
-      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
-      "msu_mr_rgb_MSA_corrected_map.png",
-      "msu_mr_rgb_MSA_corrected.png",
-      "msu_mr_rgb_MSA_map.png",
-      "msu_mr_rgb_MSA.png",
-      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
-      "rgb_msu_mr_rgb_MSA_projected.png"
-    ],
-    "maxEl": 60.78,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "StoN",
-    "barcelonaPx": {
-      "row": 0,
-      "col": 1795,
-      "distKm": 399.2
+      "distKm": 78.5,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },
@@ -879,7 +945,8 @@
     "barcelonaPx": {
       "row": 488,
       "col": 2007,
-      "distKm": 608.4
+      "distKm": 608.4,
+      "rotationDeg": -14.8
     },
     "exclude": false
   },
@@ -911,7 +978,8 @@
     "barcelonaPx": {
       "row": 840,
       "col": 1639,
-      "distKm": 240.1
+      "distKm": 240.1,
+      "rotationDeg": -14.5
     },
     "exclude": true
   },
@@ -979,7 +1047,8 @@
     "barcelonaPx": {
       "row": 816,
       "col": 1165,
-      "distKm": 234.8
+      "distKm": 234.8,
+      "rotationDeg": -14.4
     },
     "exclude": true
   },
@@ -1011,7 +1080,8 @@
     "barcelonaPx": {
       "row": 808,
       "col": 1128,
-      "distKm": 271.2
+      "distKm": 271.2,
+      "rotationDeg": -14.5
     },
     "exclude": false
   },
@@ -1043,7 +1113,8 @@
     "barcelonaPx": {
       "row": 192,
       "col": 1174,
-      "distKm": 225.5
+      "distKm": 225.5,
+      "rotationDeg": 14.4
     },
     "exclude": false
   },

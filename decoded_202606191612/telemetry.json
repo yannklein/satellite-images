@@ -4,24 +4,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -50,24 +32,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -96,24 +60,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -142,24 +88,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -188,24 +116,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -234,24 +144,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 157,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -280,24 +172,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -326,24 +200,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -372,24 +228,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -418,24 +256,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -464,24 +284,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -510,24 +312,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -556,24 +340,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -602,24 +368,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -648,24 +396,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -694,24 +424,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -740,24 +452,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -786,24 +480,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -832,24 +508,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 141,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -878,24 +536,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 211.64999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -924,24 +564,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -962,24 +584,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 317.65,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },
@@ -1008,24 +612,6 @@
         "msu_mr_set": "backup"
     },
     {
-        "analog_tlm": {
-            "Baseplate Temperature": 205,
-            "Channel 1 Photodetector Bias Voltage": 82,
-            "Channel 2 Photodetector Bias Voltage": 93,
-            "Channel 3 Photodetector Temperature": 180,
-            "Cold Body Temperature 1 (258K)": 263.65,
-            "Cold Body Temperature 2 (258K)": 263.65,
-            "Cold Body Temperature 3 (258K)": 263.15,
-            "Detector Temperature Channel 5": 156,
-            "Detector Temperature Channel 6": 140,
-            "Hot Body Temperature 1 (313K)": 317.65,
-            "Hot Body Temperature 2 (313K)": 318.15,
-            "Hot Body Temperature 3 (313K)": 212.14999999999998,
-            "IR Lenses temperatures": 84,
-            "Lamp Current Channel 1": 145,
-            "Lamp Current Channel 2": 139,
-            "Lamp Current Channel 3": 142
-        },
         "msu_mr_id": 4,
         "msu_mr_set": "backup"
     },

@@ -1,0 +1,14 @@
+{
+  "satellite": "METEOR M2-4",
+  "maxEl": 52.38,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-06-22",
+  "time": "16:56 CEST",
+  "barcelonaPx": {
+    "row": 568,
+    "col": 850,
+    "distKm": 550.6,
+    "rotationDeg": -14.5
+  }
+}

@@ -3,6 +3,11 @@ BASE_DIR="/home/yannklein/satellite-images"
 PASS_FILE="$BASE_DIR/passes.json"
 TMP_FILE=$(mktemp)
 
+# Keep barcelonaPx/rotationDeg (tilt + centering) up to date for every pass,
+# including brand-new ones -- this is the only place new decoded_* dirs get
+# picked up by the ingestion pipeline, so it must run before the loop below.
+python3 "$BASE_DIR/compute_barcelona_px.py" >/dev/null 2>&1
+
 for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
     decoded_name=$(basename "$decoded_dir")
 

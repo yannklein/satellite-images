@@ -1,0 +1,15 @@
+{
+  "satellite": "METEOR M2-4",
+  "maxEl": 74.1,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-07-02",
+  "time": "16:38 CEST",
+  "direction": "NtoS",
+  "barcelonaPx": {
+    "row": 776,
+    "col": 1188,
+    "distKm": 212.1,
+    "rotationDeg": -14.5
+  }
+}

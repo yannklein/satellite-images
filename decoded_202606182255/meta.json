@@ -8,7 +8,8 @@
   "barcelonaPx": {
     "row": 816,
     "col": 1165,
-    "distKm": 234.8
+    "distKm": 234.8,
+    "rotationDeg": -14.4
   },
   "exclude": true
 }

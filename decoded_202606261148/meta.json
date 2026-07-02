@@ -1,0 +1,15 @@
+{
+  "satellite": "METEOR M2-3",
+  "maxEl": 84.28,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-06-26",
+  "time": "11:54 CEST",
+  "direction": "StoN",
+  "barcelonaPx": {
+    "row": 200,
+    "col": 1467,
+    "distKm": 67.5,
+    "rotationDeg": 14.5
+  }
+}
