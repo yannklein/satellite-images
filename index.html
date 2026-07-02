@@ -106,6 +106,10 @@
       50% { opacity: 0.3; }
     }
 
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     main {
       position: relative;
       z-index: 1;
@@ -247,6 +251,20 @@
       z-index: 2;
     }
 
+    /* Direction flip badge */
+    .thumb-flip-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(0,0,0,0.6);
+      color: rgba(255,255,255,0.5);
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
 
     .failed-accordion {
       margin-bottom: 3rem;
@@ -315,17 +333,9 @@
     }
 
     .failed-row:last-child { border-bottom: none; }
-
     .failed-row .pass-date { font-size: 12px; }
-
-    .failed-row .pass-meta {
-      margin-left: 0;
-    }
-
-    .failed-row .pass-meta:last-child {
-      margin-left: auto;
-      text-align: right;
-    }
+    .failed-row .pass-meta { margin-left: 0; }
+    .failed-row .pass-meta:last-child { margin-left: auto; text-align: right; }
 
     /* Lightbox */
     .lightbox {
@@ -364,6 +374,7 @@
       object-fit: contain;
       border-radius: 4px;
       border: 0.5px solid var(--border);
+      transition: transform 0.2s;
     }
 
     .lightbox-meta {
@@ -423,9 +434,74 @@
       color: var(--muted);
       text-align: center;
     }
-  .pass-card{background:var(--card);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px}.pass-card-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:4px}.pass-card-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}.pass-card-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:3px}.pass-card-row span:last-child{color:var(--text)}.pass-card-el{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px}.pass-card-el.high{background:rgba(0,229,160,0.15);border:0.5px solid var(--accent);color:var(--accent)}.pass-card-el.med{background:rgba(0,136,255,0.1);border:0.5px solid var(--accent2);color:var(--accent2)}.pass-card-el.low{background:rgba(255,255,255,0.04);border:0.5px solid var(--muted);color:var(--muted)}.countdown{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px}
-  .pass-card.skipped-night{opacity:0.55}
-  .pass-card-night-badge{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:4px}
+
+    .pass-card{background:var(--card);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px}
+    .pass-card-date{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:4px}
+    .pass-card-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
+    .pass-card-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:3px}
+    .pass-card-row span:last-child{color:var(--text)}
+    .pass-card-el{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px}
+    .pass-card-el.high{background:rgba(0,229,160,0.15);border:0.5px solid var(--accent);color:var(--accent)}
+    .pass-card-el.med{background:rgba(0,136,255,0.1);border:0.5px solid var(--accent2);color:var(--accent2)}
+    .pass-card-el.low{background:rgba(255,255,255,0.04);border:0.5px solid var(--muted);color:var(--muted)}
+    .countdown{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px}
+    .pass-card.skipped-night{opacity:0.55}
+    .pass-card-night-badge{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:4px}
+
+    /* ── Timelapse ─────────────────────────────────────────────────────────── */
+    .tl-modal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.93);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .tl-modal.open { opacity: 1; pointer-events: all; }
+    .tl-panel {
+      display: flex; flex-direction: column;
+      width: 92vw; max-width: 1100px; height: 88vh;
+      background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px;
+      overflow: hidden;
+    }
+    .tl-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 14px; border-bottom: 0.5px solid var(--border); flex-shrink: 0;
+    }
+    .tl-topbar-left { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .tl-topbar-left strong { color: var(--accent); font-weight: 700; }
+    .tl-close-btn {
+      font-family: var(--mono); font-size: 11px; background: none;
+      border: 0.5px solid var(--border); color: var(--muted);
+      padding: 3px 10px; border-radius: 4px; cursor: pointer;
+    }
+    .tl-close-btn:hover { color: var(--text); border-color: var(--text); }
+    .tl-viewport {
+      flex: 1; position: relative; overflow: hidden; background: #000;
+    }
+    .tl-viewport img {
+      position: absolute; display: block;
+    }
+    .tl-controls {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 8px 14px; border-top: 0.5px solid var(--border);
+      background: var(--card); flex-shrink: 0;
+    }
+    .tl-btn {
+      font-family: var(--mono); font-size: 13px; background: none;
+      border: 0.5px solid var(--border); color: var(--text);
+      width: 32px; height: 32px; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tl-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .tl-progress-wrap {
+      flex: 1; height: 4px; background: rgba(255,255,255,0.1);
+      border-radius: 2px; cursor: pointer; position: relative; min-width: 60px;
+    }
+    .tl-progress-bar { height: 100%; background: var(--accent); border-radius: 2px; width: 0%; }
+    .tl-ctrl-label { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 5px; }
+    .tl-ctrl-label input[type=range] { width: 70px; vertical-align: middle; }
+    .tl-ctrl-label input[type=checkbox] { cursor: pointer; }
   </style>
 </head>
 <body>
@@ -434,12 +510,64 @@
   <div class="header-left">
     <h1>METEOR-M2 <span>//</span> satellite passes</h1>
     <p>137.900 MHz · Barcelona 41.38°N 2.17°E · RTL-SDR V3</p>
+    <p style="margin-top:6px">
+      <a href="https://www.n2yo.com/?s=57166&live=1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;color:var(--accent2);text-decoration:none;border-bottom:0.5px solid rgba(0,136,255,0.4)">M2-3 live position ↗</a>
+      <span style="color:var(--muted);margin:0 6px">·</span>
+      <a href="https://www.n2yo.com/?s=59051&live=1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;color:var(--accent2);text-decoration:none;border-bottom:0.5px solid rgba(0,136,255,0.4)">M2-4 live position ↗</a>
+    </p>
   </div>
   <div class="live-dot" id="sat-status-badge">not recording</div>
 </header>
 
-<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0"><div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div><div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem"><div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px"><div style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div> fetching pass predictions...</div></div></div>
+<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0">
+  <div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div>
+  <div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem">
+    <div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px">
+      <div style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div>
+      fetching pass predictions...
+    </div>
+  </div>
+</div>
+
+<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;align-items:center;gap:12px">
+  <button onclick="openTimelapse()" style="font-family:var(--mono);font-size:12px;background:rgba(0,229,160,0.08);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='rgba(0,229,160,0.18)'" onmouseout="this.style.background='rgba(0,229,160,0.08)'">▶ timelapse</button>
+  <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">watch Earth's surface change over time</span>
+</div>
+
 <main id="gallery"></main>
+
+<!-- ── Timelapse Modal ───────────────────────────────────────────────────── -->
+<div class="tl-modal" id="tl-modal">
+  <div class="tl-panel">
+    <div class="tl-topbar">
+      <div class="tl-topbar-left">
+        timelapse &nbsp;·&nbsp; <strong id="tl-ts">—</strong>
+        <span id="tl-counter" style="color:var(--muted);margin-left:8px"></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <label class="tl-ctrl-label">
+          <input type="checkbox" id="tl-center-bcn" checked onchange="tlRenderFrame()"> center BCN
+        </label>
+        <button class="tl-close-btn" onclick="closeTimelapse()">× close</button>
+      </div>
+    </div>
+    <div class="tl-viewport" id="tl-viewport">
+      <img id="tl-img" src="" alt=""/>
+    </div>
+    <div class="tl-controls">
+      <button class="tl-btn" id="tl-pp" onclick="tlToggle()" title="play/pause">⏸</button>
+      <button class="tl-btn" onclick="tlStep(-1)" title="prev">◀</button>
+      <button class="tl-btn" onclick="tlStep(1)"  title="next">▶</button>
+      <div class="tl-progress-wrap" id="tl-prog-wrap" onclick="tlSeek(event)">
+        <div class="tl-progress-bar" id="tl-prog-bar"></div>
+      </div>
+      <label class="tl-ctrl-label">
+        speed <input type="range" id="tl-speed" min="1" max="10" value="5" oninput="tlSetSpeed(this.value)">
+        <span id="tl-speed-val">×1</span>
+      </label>
+    </div>
+  </div>
+</div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lightbox-inner">
@@ -458,11 +586,7 @@
 </footer>
 
 <script>
-// ─── RENDER ────────────────────────────────────────────────────────────────
-const gallery = document.getElementById('gallery');
-let allImgs = [];
-let lbIdx = 0;
-
+// ─── HELPERS ───────────────────────────────────────────────────────────────
 function elClass(el) {
   if (el >= 60) return 'high';
   if (el >= 30) return 'med';
@@ -475,8 +599,41 @@ function elLabel(el) {
   return '◇ low';
 }
 
+function isProjected(imgName) {
+  return imgName.startsWith('rgb_');
+}
+
+function needsFlip(imgName, pass) {
+  return !isProjected(imgName) && pass.direction === 'NtoS';
+}
+
+// ─── RENDER ────────────────────────────────────────────────────────────────
+const gallery = document.getElementById('gallery');
+let allImgs = [];
+let lbIdx = 0;
+
+const CHANNEL_LABELS = {
+  'msu_mr_rgb_AVHRR_221_False_Color_corrected.png': 'False Color AVHRR 221',
+  'msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png': 'False Color AVHRR 3a21',
+  'msu_mr_rgb_MSA_corrected.png': 'MSA',
+  'rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png': 'False Color AVHRR 3a21 — projected',
+  'rgb_msu_mr_rgb_MSA_projected.png': 'MSA — projected',
+};
+
+function shouldShow(imgName) {
+  // Projected composites: always show
+  if (imgName.startsWith('rgb_')) return true;
+  // Corrected composites: show (but not their uncorrected twins or map overlays)
+  if (imgName.includes('_corrected') && !imgName.includes('_map')) return true;
+  // Everything else (raw channels, uncalibrated, non-corrected, map overlays): skip
+  return false;
+}
+
+function getLabel(imgName) {
+  return CHANNEL_LABELS[imgName] || imgName.replace(/_corrected/g, '').replace(/_/g, ' ').replace('.png', '');
+}
+
 function renderGallery(passes) {
-  // Sort newest first
   passes.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
 
   allImgs = [];
@@ -488,57 +645,58 @@ function renderGallery(passes) {
   }
 
   const successful = passes.filter(p => (p.imgs || []).length > 0);
-  const failed = passes.filter(p => (p.imgs || []).length === 0);
+  const failed     = passes.filter(p => (p.imgs || []).length === 0);
 
   successful.forEach((pass, pi) => {
     const sec = document.createElement('div');
     sec.className = 'pass';
     sec.style.animationDelay = (pi * 0.08) + 's';
 
-    const passImgStart = allImgs.length;
     const imgs = pass.imgs || [];
 
-    let imgsHTML = '';
-    // Sort: map overlay first, then others
     const sortedImgs = [...imgs].sort((a, b) => {
       if (a === 'msu_mr_false_color_map.png') return -1;
       if (b === 'msu_mr_false_color_map.png') return 1;
       return a.localeCompare(b);
     });
-    sortedImgs.forEach((imgName, ii) => {
-      const src = `${pass.folder}/MSU-MR/${imgName}`;
-      const isMap = imgName === 'msu_mr_false_color_map.png';
-      const CHANNEL_LABELS = {
-        'MSU-MR-1.png': 'Ch.1 — Visible (0.6µm)',
-        'MSU-MR-2.png': 'Ch.2 — Near-Infrared (0.9µm)',
-        'MSU-MR-3.png': 'Ch.3 — Shortwave IR (1.6µm)',
-        'msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png': 'False Color (Ch.3-2-1)',
-        'msu_mr_AVHRR_3a21_False_Color_(uncalibrated)_2.png': 'False Color Filled (Ch.3-2-1)',
-        'msu_mr_false_color_map.png': 'False Color + Map Overlay',
-      };
-      const label = CHANNEL_LABELS[imgName] || imgName.replace(/_/g, ' ').replace('.png', '');
-      const globalIdx = passImgStart + ii;
-      allImgs.push({ src, label, pass });
+
+    let imgsHTML = '';
+    let visibleCount = 0;
+    sortedImgs.forEach((imgName) => {
+      if (!shouldShow(imgName)) return;
+      visibleCount++;
+
+      const src   = `${pass.folder}/MSU-MR/${imgName}`;
+      const flip  = needsFlip(imgName, pass);
+      const label = getLabel(imgName);
+      const globalIdx = allImgs.length;
+
+      allImgs.push({ src, label, pass, imgName });
+
       imgsHTML += `
-        <div class="thumb${isMap ? ' thumb-map' : ''}" onclick="openLightbox(${globalIdx})">
-          <img src="${src}" alt="${label}" loading="lazy"/>
-          ${isMap ? '<div class="thumb-map-badge">🗺 map</div>' : ''}
+        <div class="thumb" onclick="openLightbox(${globalIdx})">
+          <img src="${src}" alt="${label}" loading="lazy" style="${flip ? 'transform:scale(-1,-1)' : ''}"/>
+          ${flip ? '<div class="thumb-flip-badge">↕ NtoS</div>' : ''}
           <div class="thumb-label">${label}</div>
           <div class="thumb-overlay">
             <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
           </div>
         </div>`;
     });
-    imgsHTML = `<div class="pass-grid">${imgsHTML}</div>`;
+
+    const dirBadge = pass.direction
+      ? `<span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">${pass.direction}</span>`
+      : '';
 
     sec.innerHTML = `
       <div class="pass-header">
         <span class="pass-number">PASS #${passes.length - passes.indexOf(pass)}</span>
         <span class="pass-date">${pass.date} · ${pass.time}</span>
         ${pass.maxEl != null ? `<span class="pass-card-el ${elClass(pass.maxEl)}" style="margin-top:0;font-size:10px">${elLabel(pass.maxEl)}</span>` : ''}
-        <span class="pass-meta">${pass.satellite} · ${imgs.length} image${imgs.length !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
+        ${dirBadge}
+        <span class="pass-meta">${pass.satellite} · ${visibleCount} image${visibleCount !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
       </div>
-      ${imgsHTML}`;
+      <div class="pass-grid">${imgsHTML}</div>`;
 
     gallery.appendChild(sec);
   });
@@ -551,10 +709,12 @@ function renderGallery(passes) {
     let rowsHTML = '';
     failed.forEach(pass => {
       const details = [];
-      if (pass.maxEl != null) details.push(`${Math.round(pass.maxEl)}° el`);
+      if (pass.maxEl != null)     details.push(`${Math.round(pass.maxEl)}° el`);
       if (pass.frequency != null) details.push(`${(pass.frequency / 1e6).toFixed(3)} MHz`);
-      if (pass.gain != null) details.push(`${pass.gain}dB gain`);
-      const detailsStr = details.length ? details.join(' · ') : '<span style="opacity:0.5">no metadata (pre-tracking)</span>';
+      if (pass.gain != null)      details.push(`${pass.gain}dB gain`);
+      const detailsStr = details.length
+        ? details.join(' · ')
+        : '<span style="opacity:0.5">no metadata (pre-tracking)</span>';
 
       rowsHTML += `
         <div class="failed-row">
@@ -582,12 +742,11 @@ fetch('passes.json?t=' + Date.now())
     if (!r.ok) throw new Error('passes.json not found');
     return r.json();
   })
-  .then(passes => {
-    renderGallery(passes);
-  })
+  .then(passes => { renderGallery(passes); tlInit(passes); })
   .catch(() => {
     gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">No passes recorded yet — waiting for first automated pass.</div>';
   });
+
 // ─── LIGHTBOX ──────────────────────────────────────────────────────────────
 const lb     = document.getElementById('lightbox');
 const lbImg  = document.getElementById('lb-img');
@@ -614,7 +773,8 @@ function lbNav(dir) {
 function renderLb() {
   const item = allImgs[lbIdx];
   lbImg.src = item.src;
-  lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.maxEl}`;
+  lbImg.style.transform = needsFlip(item.imgName, item.pass) ? 'scale(-1,-1)' : '';
+  lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.maxEl} · ${item.pass.direction || ''}`;
   lbPrev.disabled = lbIdx === 0;
   lbNext.disabled = lbIdx === allImgs.length - 1;
 }
@@ -626,10 +786,9 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') lbNav(+1);
 });
 </script>
-</body>
-</html>
+
 <script>
-// Injected separately — next passes from n2yo API
+// ─── NEXT PASSES ──────────────────────────────────────────────────────────
 (async function() {
   const grid = document.getElementById('next-passes-grid');
   const API = 'https://n8n.yannklein.dev/webhook/next-passes';
@@ -655,29 +814,25 @@ document.addEventListener('keydown', e => {
     const res = await fetch(API);
     const data = await res.json();
 
-    // New format: array of {info, passes} objects, one per satellite
-    // Flatten all passes, tag each with satellite name, sort by startUTC, take first 3
     const allPasses = [];
     const satellites = Array.isArray(data) ? data : [data];
     satellites.forEach(sat => {
       const satname = sat.info ? sat.info.satname : 'METEOR';
-      (sat.passes || []).forEach(p => {
-        allPasses.push({ ...p, satname });
-      });
+      (sat.passes || []).forEach(p => allPasses.push({ ...p, satname }));
     });
     allPasses.sort((a, b) => a.startUTC - b.startUTC);
     const passes = allPasses.slice(0, 3);
 
     if (passes.length === 0) {
-      grid.innerHTML = '<div class="passes-loading">No passes with elevation ≥40° in next 5 days</div>';
+      grid.innerHTML = '<div style="font-family:var(--mono);font-size:12px;color:var(--muted)">No passes with elevation ≥40° in next 5 days</div>';
       return;
     }
 
     grid.innerHTML = passes.map(p => {
-      const start = fmt(p.startUTC);
-      const max   = fmt(p.maxUTC);
-      const dur   = Math.round((p.endUTC - p.startUTC) / 60);
-      const ec    = elClass(p.maxEl);
+      const start   = fmt(p.startUTC);
+      const max     = fmt(p.maxUTC);
+      const dur     = Math.round((p.endUTC - p.startUTC) / 60);
+      const ec      = elClass(p.maxEl);
       const isNight = p.isDaylight === false;
       const nightBadge = isNight
         ? `<div class="pass-card-night-badge">🌙 night — would be skipped</div>`
@@ -695,7 +850,6 @@ document.addEventListener('keydown', e => {
         </div>`;
     }).join('');
 
-    // Live countdown update
     setInterval(() => {
       passes.forEach(p => {
         const el = document.getElementById('cd-' + p.startUTC);
@@ -704,12 +858,13 @@ document.addEventListener('keydown', e => {
     }, 30000);
 
   } catch(e) {
-    grid.innerHTML = '<div class="passes-loading">Could not load pass predictions</div>';
+    grid.innerHTML = '<div style="font-family:var(--mono);font-size:12px;color:var(--muted)">Could not load pass predictions</div>';
   }
 })();
 </script>
+
 <script>
-// Satellite recording status
+// ─── RECORDING STATUS ─────────────────────────────────────────────────────
 (async function pollSatStatus() {
   const badge = document.getElementById('sat-status-badge');
   try {
@@ -719,13 +874,10 @@ document.addEventListener('keydown', e => {
       const lines = data.stdout.trim().split('\n');
       const state = lines[lines.length - 1].trim();
       if (state === 'running') {
-        badge.textContent = '⏺ recording now';
+        badge.innerHTML = '⏺ recording now';
         badge.style.color = '#ff4444';
         badge.style.borderColor = '#ff4444';
         badge.style.animation = 'none';
-        badge.querySelector
-        // pulse the dot
-        badge.innerHTML = '⏺ recording now';
       } else {
         badge.textContent = 'not recording';
         badge.style.color = '#f59e0b';
@@ -736,3 +888,150 @@ document.addEventListener('keydown', e => {
   setTimeout(pollSatStatus, 10000);
 })();
 </script>
+
+<script>
+// ─── TIMELAPSE ────────────────────────────────────────────────────────────
+const TL_IMG_NAME = 'msu_mr_rgb_AVHRR_221_False_Color_corrected.png';
+const TL_BASE_MS  = 1000;  // ms at speed ×1
+
+let tlFrames  = [];
+let tlIdx     = 0;
+let tlTimer   = null;
+let tlSpeedX  = 5;   // 1–10 → divisor; speed ×5 = 200ms/frame
+let tlRunning = false;
+
+function tlInit(passes) {
+  tlFrames = passes
+    .filter(p => (p.imgs || []).includes(TL_IMG_NAME))
+    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
+    .map(p => ({
+      src:        `${p.folder}/MSU-MR/${TL_IMG_NAME}`,
+      date:       p.date,
+      time:       p.time,
+      direction:  p.direction,
+      barcelonaPx: p.barcelonaPx || null,
+    }));
+}
+
+function openTimelapse() {
+  if (!tlFrames.length) return;
+  document.getElementById('tl-modal').classList.add('open');
+  if (!tlRunning) { tlRunning = true; tlRenderFrame(); tlPlay(); }
+}
+
+function closeTimelapse() {
+  document.getElementById('tl-modal').classList.remove('open');
+  tlPause();
+  tlRunning = false;
+}
+
+function tlPlay() {
+  if (tlTimer) clearInterval(tlTimer);
+  const ms = Math.round(TL_BASE_MS / tlSpeedX);
+  tlTimer = setInterval(() => { tlIdx = (tlIdx + 1) % tlFrames.length; tlRenderFrame(); }, ms);
+  document.getElementById('tl-pp').textContent = '⏸';
+}
+
+function tlPause() {
+  clearInterval(tlTimer);
+  tlTimer = null;
+  document.getElementById('tl-pp').textContent = '▶';
+}
+
+function tlToggle() {
+  if (tlTimer) { tlPause(); } else { tlPlay(); }
+}
+
+function tlStep(dir) {
+  tlPause();
+  tlIdx = Math.max(0, Math.min(tlFrames.length - 1, tlIdx + dir));
+  tlRenderFrame();
+}
+
+function tlSetSpeed(val) {
+  tlSpeedX = parseInt(val);
+  const labels = {1:'×0.2',2:'×0.4',3:'×0.6',4:'×0.8',5:'×1',6:'×1.5',7:'×2',8:'×3',9:'×5',10:'×10'};
+  document.getElementById('tl-speed-val').textContent = labels[tlSpeedX] || ('×' + tlSpeedX);
+  if (tlTimer) { tlPlay(); }
+}
+
+function tlSeek(e) {
+  const wrap = document.getElementById('tl-prog-wrap');
+  const frac = Math.max(0, Math.min(1, e.offsetX / wrap.clientWidth));
+  tlIdx = Math.round(frac * (tlFrames.length - 1));
+  tlRenderFrame();
+}
+
+function tlRenderFrame() {
+  if (!tlFrames.length) return;
+  const frame = tlFrames[tlIdx];
+
+  document.getElementById('tl-ts').textContent      = `${frame.date} · ${frame.time}`;
+  document.getElementById('tl-counter').textContent = `${tlIdx + 1} / ${tlFrames.length}`;
+  const pct = tlFrames.length > 1 ? (tlIdx / (tlFrames.length - 1)) * 100 : 0;
+  document.getElementById('tl-prog-bar').style.width = pct + '%';
+
+  const img  = document.getElementById('tl-img');
+  const vp   = document.getElementById('tl-viewport');
+  const center = document.getElementById('tl-center-bcn').checked;
+
+  img.onload = function () { tlPositionImg(frame, img, vp, center); };
+  img.src = frame.src;
+  if (img.complete && img.naturalWidth > 0) tlPositionImg(frame, img, vp, center);
+
+  // Preload next frame
+  if (tlIdx + 1 < tlFrames.length) {
+    const pre = new Image(); pre.src = tlFrames[tlIdx + 1].src;
+  }
+}
+
+function tlPositionImg(frame, img, vp, center) {
+  const vpW  = vp.clientWidth;
+  const vpH  = vp.clientHeight;
+  const imgW = img.naturalWidth;
+  const imgH = img.naturalHeight;
+  if (!imgW || !imgH) return;
+
+  const scale   = Math.min(vpW / imgW, vpH / imgH);
+  const dispW   = imgW * scale;
+  const dispH   = imgH * scale;
+  const doFlip  = frame.direction === 'NtoS';
+
+  img.style.width  = dispW + 'px';
+  img.style.height = dispH + 'px';
+  img.style.transform = doFlip ? 'scale(-1,-1)' : '';
+
+  if (center && frame.barcelonaPx) {
+    const bx = frame.barcelonaPx.col * scale;   // Barcelona x in display image space
+    const by = frame.barcelonaPx.row * scale;   // Barcelona y in display image space
+
+    let left, top;
+    if (doFlip) {
+      // After scale(-1,-1) around image centre, point (bx,by) appears at (dispW-bx, dispH-by)
+      // We want: img.left + (dispW - bx) = vpW/2
+      left = vpW / 2 - dispW + bx;
+      top  = vpH / 2 - dispH + by;
+    } else {
+      left = vpW / 2 - bx;
+      top  = vpH / 2 - by;
+    }
+    img.style.left = left + 'px';
+    img.style.top  = top  + 'px';
+  } else {
+    img.style.left = ((vpW - dispW) / 2) + 'px';
+    img.style.top  = ((vpH - dispH) / 2) + 'px';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  const modal = document.getElementById('tl-modal');
+  if (!modal.classList.contains('open')) return;
+  if (e.key === 'Escape')      { closeTimelapse(); }
+  else if (e.key === ' ')      { e.preventDefault(); tlToggle(); }
+  else if (e.key === 'ArrowLeft')  tlStep(-1);
+  else if (e.key === 'ArrowRight') tlStep(1);
+});
+</script>
+
+</body>
+</html>

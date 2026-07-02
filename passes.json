@@ -1,5 +1,817 @@
 [
   {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2300",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2233",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2207",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_2101",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1823",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1749",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1559",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1550",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1219",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1153",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-02",
+    "time": "12:55 CEST",
+    "satellite": "Unknown",
+    "folder": "decoded_1112",
+    "imgs": [],
+    "maxEl": null,
+    "frequency": null,
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-07-01",
+    "time": "11:38 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607011132",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 70.08,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 456,
+      "col": 1130,
+      "distKm": 269.8
+    }
+  },
+  {
+    "date": "2026-06-30",
+    "time": "12:01 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606301155",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 73.25,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 120,
+      "col": 1619,
+      "distKm": 219.6
+    }
+  },
+  {
+    "date": "2026-06-29",
+    "time": "16:02 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606291556",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 54.35,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 424,
+      "col": 871,
+      "distKm": 530.2
+    }
+  },
+  {
+    "date": "2026-06-29",
+    "time": "12:24 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606291218",
+    "imgs": [],
+    "maxEl": 45.17,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-28",
+    "time": "16:24 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606281618",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 84.46,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 512,
+      "col": 1332,
+      "distKm": 67.8
+    }
+  },
+  {
+    "date": "2026-06-27",
+    "time": "16:46 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606271639",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 62.39,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 920,
+      "col": 1788,
+      "distKm": 389.6
+    }
+  },
+  {
+    "date": "2026-06-27",
+    "time": "11:31 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606271125",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 60.12,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 288,
+      "col": 996,
+      "distKm": 410.6
+    }
+  },
+  {
+    "date": "2026-06-26",
+    "time": "11:54 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606261148",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 84.28,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 216,
+      "col": 1469,
+      "distKm": 69.4
+    }
+  },
+  {
+    "date": "2026-06-25",
+    "time": "15:48 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606251542",
+    "imgs": [
+      "MSU-MR-1.png"
+    ],
+    "maxEl": 41.37,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-25",
+    "time": "12:17 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606251211",
+    "imgs": [],
+    "maxEl": 52.32,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-22",
+    "time": "16:56 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606221647",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 52.38,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 656,
+      "col": 1962,
+      "distKm": 562.8
+    }
+  },
+  {
+    "date": "2026-06-24",
+    "time": "16:10 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606241604",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 64.48,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 800,
+      "col": 1048,
+      "distKm": 352.0
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "16:32 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606231626",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 82.35,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 880,
+      "col": 1505,
+      "distKm": 105.6
+    }
+  },
+  {
+    "date": "2026-06-16",
+    "time": "12:20 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606161220",
+    "imgs": [],
+    "maxEl": 43.57,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-15",
+    "time": "23:19 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606152319",
+    "imgs": [],
+    "maxEl": 62.53,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-15",
+    "time": "15:59 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606151559",
+    "imgs": [],
+    "maxEl": 57.79,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
+  },
+  {
+    "date": "2026-06-23",
+    "time": "02:43 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2353",
+    "imgs": [],
+    "maxEl": 84.95,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "02:38 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2343",
+    "imgs": [],
+    "maxEl": 84.95,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "02:33 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2303",
+    "imgs": [],
+    "maxEl": 51.27,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "02:22 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_2240",
+    "imgs": [],
+    "maxEl": 83.42,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "01:50 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1634",
+    "imgs": [],
+    "maxEl": 58.77,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "01:45 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1612",
+    "imgs": [],
+    "maxEl": 89.06,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "01:28 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_1537",
+    "imgs": [],
+    "maxEl": 43.88,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "01:17 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_1205",
+    "imgs": [],
+    "maxEl": 50.44,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "01:00 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_0512",
+    "imgs": [],
+    "maxEl": 86.2,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-19",
+    "time": "16:18 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606191612",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 76.18,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 792,
+      "col": 1222,
+      "distKm": 178.3
+    }
+  },
+  {
+    "date": "2026-06-23",
+    "time": "00:54 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_0450",
+    "imgs": [],
+    "maxEl": 55.02,
+    "frequency": 137100000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 8,
+      "col": 1018,
+      "distKm": 381.9
+    }
+  },
+  {
+    "date": "2026-06-22",
+    "time": "11:47 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606221141",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 84.01,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 344,
+      "col": 1319,
+      "distKm": 81.0
+    }
+  },
+  {
+    "date": "2026-06-21",
+    "time": "12:10 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606211204",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 60.78,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 40,
+      "col": 1807,
+      "distKm": 408.4
+    }
+  },
+  {
     "date": "2026-06-20",
     "time": "15:56 CEST",
     "satellite": "METEOR M2-4",
@@ -22,7 +834,13 @@
     ],
     "maxEl": 48.8,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 336,
+      "col": 765,
+      "distKm": 635.6
+    }
   },
   {
     "date": "2026-06-19",
@@ -33,21 +851,7 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
-    ],
-    "maxEl": 71.12,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-19",
-    "time": "16:18 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_202606191612_v122",
-    "imgs": [
-      "MSU-MR-1.png",
-      "MSU-MR-2.png",
-      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
       "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
@@ -59,9 +863,15 @@
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
-    "maxEl": 76.18,
+    "maxEl": 71.12,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 784,
+      "col": 1151,
+      "distKm": 248.6
+    }
   },
   {
     "date": "2026-06-19",
@@ -76,7 +886,9 @@
     ],
     "maxEl": 44.17,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-19",
@@ -91,7 +903,9 @@
     ],
     "maxEl": 46.12,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-18",
@@ -102,11 +916,27 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
     ],
     "maxEl": 72.37,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 856,
+      "col": 1640,
+      "distKm": 240.9
+    }
   },
   {
     "date": "2026-06-18",
@@ -117,11 +947,27 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
     ],
     "maxEl": 69.9,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 856,
+      "col": 1678,
+      "distKm": 279.0
+    }
   },
   {
     "date": "2026-06-18",
@@ -132,11 +978,27 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
     ],
     "maxEl": 72.79,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 152,
+      "col": 1168,
+      "distKm": 231.5
+    }
   },
   {
     "date": "2026-06-18",
@@ -146,7 +1008,9 @@
     "imgs": [],
     "maxEl": 73.36,
     "frequency": 137100000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-17",
@@ -156,7 +1020,9 @@
     "imgs": [],
     "maxEl": 43.99,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-17",
@@ -166,7 +1032,9 @@
     "imgs": [],
     "maxEl": 44.04,
     "frequency": 137100000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-17",
@@ -176,7 +1044,9 @@
     "imgs": [],
     "maxEl": 70.59,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-17",
@@ -186,7 +1056,9 @@
     "imgs": [],
     "maxEl": 72.46,
     "frequency": 137100000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-16",
@@ -196,7 +1068,9 @@
     "imgs": [],
     "maxEl": 62.53,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-16",
@@ -206,17 +1080,9 @@
     "imgs": [],
     "maxEl": 62.53,
     "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-16",
-    "time": "12:20 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_202606161220",
-    "imgs": [],
-    "maxEl": 43.57,
-    "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-16",
@@ -226,47 +1092,9 @@
     "imgs": [],
     "maxEl": 46.23,
     "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-15",
-    "time": "23:19 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_202606152319",
-    "imgs": [],
-    "maxEl": 62.53,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-15",
-    "time": "22:25 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_202606152225",
-    "imgs": [],
-    "maxEl": 61.34,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-15",
-    "time": "15:59 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_202606151559",
-    "imgs": [],
-    "maxEl": 57.79,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-14",
-    "time": "22:45 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2240",
-    "imgs": [],
-    "maxEl": 83.42,
-    "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-13",
@@ -281,7 +1109,9 @@
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-14",
@@ -296,7 +1126,9 @@
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-11",
@@ -311,7 +1143,9 @@
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-13",
@@ -326,7 +1160,9 @@
     ],
     "maxEl": 81.53,
     "frequency": 137900000,
-    "gain": 25
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null
   },
   {
     "date": "2026-06-09",
@@ -341,206 +1177,8 @@
     ],
     "maxEl": null,
     "frequency": 137900000,
-    "gain": null
-  },
-  {
-    "date": "2026-06-14",
-    "time": "16:16 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1612",
-    "imgs": [],
-    "maxEl": 89.06,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-14",
-    "time": "04:54 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_0450",
-    "imgs": [],
-    "maxEl": 55.02,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-13",
-    "time": "23:07 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2303",
-    "imgs": [],
-    "maxEl": 51.27,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-13",
-    "time": "16:37 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1634",
-    "imgs": [],
-    "maxEl": 58.77,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-13",
-    "time": "05:15 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_0512",
-    "imgs": [],
-    "maxEl": 86.2,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-12",
-    "time": "12:08 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_1205",
-    "imgs": [],
-    "maxEl": 50.44,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-11",
-    "time": "15:40 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1537",
-    "imgs": [],
-    "maxEl": 43.88,
-    "frequency": 137100000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-10",
-    "time": "23:56 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2353",
-    "imgs": [],
-    "maxEl": 84.95,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-10",
-    "time": "23:44 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2343",
-    "imgs": [],
-    "maxEl": 84.95,
-    "frequency": 137900000,
-    "gain": 25
-  },
-  {
-    "date": "2026-06-10",
-    "time": "16:01 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1559",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-10",
-    "time": "11:15 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1112",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-09",
-    "time": "11:56 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1153",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "22:11 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2207",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "21:04 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2101",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "18:27 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1823",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "17:52 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1749",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "15:53 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1550",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-08",
-    "time": "12:26 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1219",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-07",
-    "time": "23:26 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2300",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
-  },
-  {
-    "date": "2026-06-05",
-    "time": "22:47 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2233",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null
+    "gain": null,
+    "direction": "StoN",
+    "barcelonaPx": null
   }
 ]
