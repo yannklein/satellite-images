@@ -3,9 +3,10 @@ BASE_DIR="/home/yannklein/satellite-images"
 PASS_FILE="$BASE_DIR/passes.json"
 TMP_FILE=$(mktemp)
 
-# Keep barcelonaPx/rotationDeg (tilt + centering) up to date for every pass,
-# including brand-new ones -- this is the only place new decoded_* dirs get
-# picked up by the ingestion pipeline, so it must run before the loop below.
+# Keep barcelonaPx/rotationDeg (tilt + centering) and citiesPx (city labels)
+# up to date for every pass, including brand-new ones -- this is the only
+# place new decoded_* dirs get picked up by the ingestion pipeline, so it
+# must run before the loop below.
 python3 "$BASE_DIR/compute_barcelona_px.py" >/dev/null 2>&1
 
 for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
@@ -18,6 +19,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
         frequency=$(jq -r '.frequency // null' "$META_FILE")
         gain=$(jq -r '.gain // null' "$META_FILE")
         barcelonaPx=$(jq -c '.barcelonaPx // null' "$META_FILE")
+        citiesPx=$(jq -c '.citiesPx // []' "$META_FILE")
         exclude=$(jq -r '.exclude // false' "$META_FILE")
         meta_date=$(jq -r '.date // null' "$META_FILE")
         meta_time=$(jq -r '.time // null' "$META_FILE")
@@ -29,7 +31,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
             time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
         fi
     else
-        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; exclude="false"
+        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"
         timestamp=$(stat -c %y "$decoded_dir" | cut -d' ' -f1)
         time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
     fi
@@ -55,8 +57,9 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
         --argjson gain "$gain" \
 	--arg direction "$direction" \
 	--argjson barcelonaPx "$barcelonaPx" \
+	--argjson citiesPx "$citiesPx" \
 	--argjson exclude "$exclude" \
-	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, exclude: $exclude}' >> "$TMP_FILE"
+	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude}' >> "$TMP_FILE"
 done
 
 if [ -s "$TMP_FILE" ]; then

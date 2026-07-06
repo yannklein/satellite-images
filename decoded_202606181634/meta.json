@@ -6,9 +6,83 @@
   "date": "2026-06-18",
   "time": "16:40 CEST",
   "barcelonaPx": {
-    "row": 808,
-    "col": 1128,
-    "distKm": 271.2,
+    "row": 776,
+    "col": 1140,
+    "distKm": 266.3,
     "rotationDeg": -14.5
-  }
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 776,
+      "col": 1140,
+      "distKm": 266.4
+    },
+    {
+      "name": "Madrid",
+      "row": 768,
+      "col": 1646,
+      "distKm": 240.5
+    },
+    {
+      "name": "Lisbon",
+      "row": 712,
+      "col": 2153,
+      "distKm": 743.4
+    },
+    {
+      "name": "Rome",
+      "row": 744,
+      "col": 298,
+      "distKm": 1126.1
+    },
+    {
+      "name": "Marseille",
+      "row": 944,
+      "col": 844,
+      "distKm": 567.0
+    },
+    {
+      "name": "Zaragoza",
+      "row": 848,
+      "col": 1381,
+      "distKm": 24.4
+    },
+    {
+      "name": "Valencia",
+      "row": 608,
+      "col": 1399,
+      "distKm": 6.9
+    },
+    {
+      "name": "Seville",
+      "row": 536,
+      "col": 1934,
+      "distKm": 527.8
+    },
+    {
+      "name": "Algiers",
+      "row": 272,
+      "col": 1175,
+      "distKm": 230.8
+    },
+    {
+      "name": "Tunis",
+      "row": 200,
+      "col": 556,
+      "distKm": 858.1
+    },
+    {
+      "name": "Casablanca",
+      "row": 136,
+      "col": 2213,
+      "distKm": 799.6
+    },
+    {
+      "name": "Naples",
+      "row": 624,
+      "col": 165,
+      "distKm": 1263.2
+    }
+  ]
 }

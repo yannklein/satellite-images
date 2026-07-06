@@ -1,5 +1,469 @@
 [
   {
+    "date": "2026-07-06",
+    "time": "16:51 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607061645",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 55.63,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 744,
+      "col": 922,
+      "distKm": 486.6,
+      "rotationDeg": -14.4
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 744,
+        "col": 922,
+        "distKm": 486.6
+      },
+      {
+        "name": "Madrid",
+        "row": 720,
+        "col": 1426,
+        "distKm": 20.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 648,
+        "col": 1930,
+        "distKm": 522.3
+      },
+      {
+        "name": "Rome",
+        "row": 736,
+        "col": 85,
+        "distKm": 1348.3
+      },
+      {
+        "name": "Milan",
+        "row": 1144,
+        "col": 312,
+        "distKm": 1113.7
+      },
+      {
+        "name": "Marseille",
+        "row": 920,
+        "col": 633,
+        "distKm": 782.3
+      },
+      {
+        "name": "Toulouse",
+        "row": 992,
+        "col": 935,
+        "distKm": 474.2
+      },
+      {
+        "name": "Zaragoza",
+        "row": 808,
+        "col": 1164,
+        "distKm": 242.1
+      },
+      {
+        "name": "Valencia",
+        "row": 568,
+        "col": 1175,
+        "distKm": 231.6
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 1707,
+        "distKm": 301.0
+      },
+      {
+        "name": "Algiers",
+        "row": 232,
+        "col": 942,
+        "distKm": 465.5
+      },
+      {
+        "name": "Tunis",
+        "row": 176,
+        "col": 324,
+        "distKm": 1095.5
+      },
+      {
+        "name": "Casablanca",
+        "row": 72,
+        "col": 1971,
+        "distKm": 562.3
+      },
+      {
+        "name": "Geneva",
+        "row": 1232,
+        "col": 533,
+        "distKm": 886.4
+      },
+      {
+        "name": "Naples",
+        "row": 616,
+        "col": 0,
+        "distKm": 1489.1
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-05",
+    "time": "11:45 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607051139",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 81.09,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 304,
+      "col": 1294,
+      "distKm": 110.6,
+      "rotationDeg": 14.4
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 296,
+        "col": 1293,
+        "distKm": 111.4
+      },
+      {
+        "name": "Madrid",
+        "row": 480,
+        "col": 834,
+        "distKm": 574.2
+      },
+      {
+        "name": "Lisbon",
+        "row": 704,
+        "col": 405,
+        "distKm": 1009.4
+      },
+      {
+        "name": "Rome",
+        "row": 40,
+        "col": 2102,
+        "distKm": 696.4
+      },
+      {
+        "name": "Marseille",
+        "row": 48,
+        "col": 1495,
+        "distKm": 91.7
+      },
+      {
+        "name": "Toulouse",
+        "row": 72,
+        "col": 1180,
+        "distKm": 225.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 312,
+        "col": 1039,
+        "distKm": 367.0
+      },
+      {
+        "name": "Valencia",
+        "row": 544,
+        "col": 1131,
+        "distKm": 274.4
+      },
+      {
+        "name": "Seville",
+        "row": 824,
+        "col": 695,
+        "distKm": 714.2
+      },
+      {
+        "name": "Algiers",
+        "row": 776,
+        "col": 1492,
+        "distKm": 88.6
+      },
+      {
+        "name": "Tunis",
+        "row": 624,
+        "col": 2104,
+        "distKm": 697.0
+      },
+      {
+        "name": "Naples",
+        "row": 104,
+        "col": 2285,
+        "distKm": 876.7
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-04",
+    "time": "12:09 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607041202",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 63.15,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 456,
+      "col": 1769,
+      "distKm": 365.6,
+      "rotationDeg": 14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 456,
+        "col": 1768,
+        "distKm": 365.3
+      },
+      {
+        "name": "Madrid",
+        "row": 640,
+        "col": 1319,
+        "distKm": 85.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 888,
+        "col": 903,
+        "distKm": 503.9
+      },
+      {
+        "name": "Rome",
+        "row": 120,
+        "col": 2560,
+        "distKm": 1148.2
+      },
+      {
+        "name": "Marseille",
+        "row": 184,
+        "col": 1952,
+        "distKm": 548.4
+      },
+      {
+        "name": "Toulouse",
+        "row": 216,
+        "col": 1637,
+        "distKm": 234.0
+      },
+      {
+        "name": "Zaragoza",
+        "row": 464,
+        "col": 1513,
+        "distKm": 109.8
+      },
+      {
+        "name": "Valencia",
+        "row": 680,
+        "col": 1620,
+        "distKm": 216.5
+      },
+      {
+        "name": "Seville",
+        "row": 992,
+        "col": 1202,
+        "distKm": 202.5
+      },
+      {
+        "name": "Algiers",
+        "row": 896,
+        "col": 1999,
+        "distKm": 592.9
+      },
+      {
+        "name": "Tunis",
+        "row": 704,
+        "col": 2605,
+        "distKm": 1188.5
+      },
+      {
+        "name": "Naples",
+        "row": 184,
+        "col": 2750,
+        "distKm": 1332.7
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-03",
+    "time": "16:17 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607031610",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 71.86,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 808,
+      "col": 1642,
+      "distKm": 236.8,
+      "rotationDeg": -14.6
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 808,
+        "col": 1642,
+        "distKm": 236.8
+      },
+      {
+        "name": "Madrid",
+        "row": 832,
+        "col": 2150,
+        "distKm": 741.2
+      },
+      {
+        "name": "Lisbon",
+        "row": 808,
+        "col": 2667,
+        "distKm": 1245.3
+      },
+      {
+        "name": "Rome",
+        "row": 712,
+        "col": 796,
+        "distKm": 615.1
+      },
+      {
+        "name": "Milan",
+        "row": 1112,
+        "col": 986,
+        "distKm": 424.2
+      },
+      {
+        "name": "Marseille",
+        "row": 952,
+        "col": 1332,
+        "distKm": 74.1
+      },
+      {
+        "name": "Toulouse",
+        "row": 1056,
+        "col": 1628,
+        "distKm": 223.3
+      },
+      {
+        "name": "Zaragoza",
+        "row": 896,
+        "col": 1878,
+        "distKm": 472.0
+      },
+      {
+        "name": "Valencia",
+        "row": 656,
+        "col": 1914,
+        "distKm": 506.8
+      },
+      {
+        "name": "Seville",
+        "row": 584,
+        "col": 2463,
+        "distKm": 1046.3
+      },
+      {
+        "name": "Algiers",
+        "row": 304,
+        "col": 1713,
+        "distKm": 306.9
+      },
+      {
+        "name": "Tunis",
+        "row": 192,
+        "col": 1094,
+        "distKm": 312.3
+      },
+      {
+        "name": "Casablanca",
+        "row": 232,
+        "col": 2770,
+        "distKm": 1340.1
+      },
+      {
+        "name": "Geneva",
+        "row": 1112,
+        "col": 1203,
+        "distKm": 248.3
+      },
+      {
+        "name": "Naples",
+        "row": 584,
+        "col": 670,
+        "distKm": 742.9
+      }
+    ],
+    "exclude": false
+  },
+  {
     "date": "2026-07-02",
     "time": "16:38 CEST",
     "satellite": "METEOR M2-4",
@@ -25,11 +489,97 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 776,
-      "col": 1188,
-      "distKm": 212.1,
+      "row": 744,
+      "col": 1199,
+      "distKm": 207.0,
       "rotationDeg": -14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 744,
+        "col": 1199,
+        "distKm": 207.0
+      },
+      {
+        "name": "Madrid",
+        "row": 744,
+        "col": 1705,
+        "distKm": 299.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 688,
+        "col": 2214,
+        "distKm": 802.8
+      },
+      {
+        "name": "Rome",
+        "row": 704,
+        "col": 356,
+        "distKm": 1066.0
+      },
+      {
+        "name": "Milan",
+        "row": 1120,
+        "col": 569,
+        "distKm": 848.4
+      },
+      {
+        "name": "Marseille",
+        "row": 912,
+        "col": 901,
+        "distKm": 509.1
+      },
+      {
+        "name": "Toulouse",
+        "row": 992,
+        "col": 1202,
+        "distKm": 204.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 824,
+        "col": 1439,
+        "distKm": 34.1
+      },
+      {
+        "name": "Valencia",
+        "row": 584,
+        "col": 1459,
+        "distKm": 53.7
+      },
+      {
+        "name": "Seville",
+        "row": 472,
+        "col": 1998,
+        "distKm": 589.7
+      },
+      {
+        "name": "Algiers",
+        "row": 240,
+        "col": 1238,
+        "distKm": 167.4
+      },
+      {
+        "name": "Tunis",
+        "row": 160,
+        "col": 619,
+        "distKm": 793.7
+      },
+      {
+        "name": "Casablanca",
+        "row": 112,
+        "col": 2278,
+        "distKm": 863.5
+      },
+      {
+        "name": "Naples",
+        "row": 584,
+        "col": 224,
+        "distKm": 1202.2
+      }
+    ],
     "exclude": false
   },
   {
@@ -62,6 +612,7 @@
       "col": 1795,
       "distKm": 399.2
     },
+    "citiesPx": [],
     "exclude": true
   },
   {
@@ -75,11 +626,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -93,11 +694,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -111,11 +762,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -129,11 +830,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -147,11 +898,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -165,11 +966,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -183,11 +1034,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -201,11 +1102,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -219,11 +1170,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -237,11 +1238,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -255,11 +1306,61 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": 14.4
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -288,11 +1389,85 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 504,
-      "col": 1137,
-      "distKm": 262.6,
+      "row": 520,
+      "col": 1147,
+      "distKm": 258.4,
       "rotationDeg": 14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 520,
+        "col": 1147,
+        "distKm": 258.6
+      },
+      {
+        "name": "Madrid",
+        "row": 680,
+        "col": 684,
+        "distKm": 726.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 912,
+        "col": 253,
+        "distKm": 1165.5
+      },
+      {
+        "name": "Rome",
+        "row": 280,
+        "col": 1960,
+        "distKm": 555.2
+      },
+      {
+        "name": "Marseille",
+        "row": 272,
+        "col": 1354,
+        "distKm": 50.3
+      },
+      {
+        "name": "Toulouse",
+        "row": 296,
+        "col": 1039,
+        "distKm": 367.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 528,
+        "col": 893,
+        "distKm": 515.0
+      },
+      {
+        "name": "Valencia",
+        "row": 768,
+        "col": 980,
+        "distKm": 426.6
+      },
+      {
+        "name": "Seville",
+        "row": 1032,
+        "col": 539,
+        "distKm": 872.7
+      },
+      {
+        "name": "Algiers",
+        "row": 1008,
+        "col": 1336,
+        "distKm": 67.9
+      },
+      {
+        "name": "Tunis",
+        "row": 864,
+        "col": 1950,
+        "distKm": 543.8
+      },
+      {
+        "name": "Naples",
+        "row": 352,
+        "col": 2141,
+        "distKm": 734.5
+      }
+    ],
     "exclude": false
   },
   {
@@ -321,11 +1496,73 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1612,
-      "distKm": 212.7,
+      "row": 96,
+      "col": 1622,
+      "distKm": 218.7,
       "rotationDeg": 14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 96,
+        "col": 1622,
+        "distKm": 218.4
+      },
+      {
+        "name": "Madrid",
+        "row": 296,
+        "col": 1170,
+        "distKm": 235.0
+      },
+      {
+        "name": "Lisbon",
+        "row": 536,
+        "col": 750,
+        "distKm": 658.7
+      },
+      {
+        "name": "Marseille",
+        "row": 0,
+        "col": 1819,
+        "distKm": 450.7
+      },
+      {
+        "name": "Toulouse",
+        "row": 0,
+        "col": 1503,
+        "distKm": 162.3
+      },
+      {
+        "name": "Zaragoza",
+        "row": 120,
+        "col": 1368,
+        "distKm": 36.0
+      },
+      {
+        "name": "Valencia",
+        "row": 336,
+        "col": 1470,
+        "distKm": 66.6
+      },
+      {
+        "name": "Seville",
+        "row": 648,
+        "col": 1046,
+        "distKm": 358.9
+      },
+      {
+        "name": "Algiers",
+        "row": 560,
+        "col": 1844,
+        "distKm": 438.7
+      },
+      {
+        "name": "Tunis",
+        "row": 336,
+        "col": 2449,
+        "distKm": 1037.5
+      }
+    ],
     "exclude": false
   },
   {
@@ -354,11 +1591,79 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 568,
-      "col": 1901,
-      "distKm": 502.4,
+      "row": 544,
+      "col": 1915,
+      "distKm": 509.1,
       "rotationDeg": -14.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 544,
+        "col": 1915,
+        "distKm": 509.0
+      },
+      {
+        "name": "Madrid",
+        "row": 592,
+        "col": 2425,
+        "distKm": 1010.7
+      },
+      {
+        "name": "Rome",
+        "row": 416,
+        "col": 1071,
+        "distKm": 336.9
+      },
+      {
+        "name": "Milan",
+        "row": 840,
+        "col": 1242,
+        "distKm": 164.0
+      },
+      {
+        "name": "Marseille",
+        "row": 672,
+        "col": 1598,
+        "distKm": 193.3
+      },
+      {
+        "name": "Toulouse",
+        "row": 792,
+        "col": 1891,
+        "distKm": 485.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 640,
+        "col": 2149,
+        "distKm": 740.0
+      },
+      {
+        "name": "Valencia",
+        "row": 400,
+        "col": 2195,
+        "distKm": 784.2
+      },
+      {
+        "name": "Seville",
+        "row": 344,
+        "col": 2752,
+        "distKm": 1325.4
+      },
+      {
+        "name": "Algiers",
+        "row": 40,
+        "col": 2007,
+        "distKm": 598.3
+      },
+      {
+        "name": "Naples",
+        "row": 280,
+        "col": 950,
+        "distKm": 459.1
+      }
+    ],
     "exclude": false
   },
   {
@@ -372,6 +1677,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -400,11 +1706,79 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 528,
-      "col": 1464,
-      "distKm": 64.7,
+      "row": 504,
+      "col": 1475,
+      "distKm": 70.1,
       "rotationDeg": -14.6
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 504,
+        "col": 1475,
+        "distKm": 70.0
+      },
+      {
+        "name": "Madrid",
+        "row": 520,
+        "col": 1983,
+        "distKm": 575.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 488,
+        "col": 2496,
+        "distKm": 1079.2
+      },
+      {
+        "name": "Rome",
+        "row": 432,
+        "col": 629,
+        "distKm": 785.1
+      },
+      {
+        "name": "Milan",
+        "row": 848,
+        "col": 828,
+        "distKm": 584.2
+      },
+      {
+        "name": "Marseille",
+        "row": 656,
+        "col": 1169,
+        "distKm": 237.6
+      },
+      {
+        "name": "Toulouse",
+        "row": 752,
+        "col": 1468,
+        "distKm": 62.6
+      },
+      {
+        "name": "Zaragoza",
+        "row": 592,
+        "col": 1713,
+        "distKm": 307.4
+      },
+      {
+        "name": "Valencia",
+        "row": 352,
+        "col": 1742,
+        "distKm": 336.5
+      },
+      {
+        "name": "Seville",
+        "row": 264,
+        "col": 2288,
+        "distKm": 874.9
+      },
+      {
+        "name": "Naples",
+        "row": 304,
+        "col": 501,
+        "distKm": 915.9
+      }
+    ],
     "exclude": false
   },
   {
@@ -433,11 +1807,103 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 856,
-      "col": 1019,
-      "distKm": 380.7,
+      "row": 832,
+      "col": 1031,
+      "distKm": 376.6,
       "rotationDeg": -14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 832,
+        "col": 1031,
+        "distKm": 376.6
+      },
+      {
+        "name": "Madrid",
+        "row": 816,
+        "col": 1536,
+        "distKm": 130.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 752,
+        "col": 2041,
+        "distKm": 632.8
+      },
+      {
+        "name": "Rome",
+        "row": 808,
+        "col": 191,
+        "distKm": 1237.2
+      },
+      {
+        "name": "Milan",
+        "row": 1216,
+        "col": 413,
+        "distKm": 1009.1
+      },
+      {
+        "name": "Marseille",
+        "row": 1008,
+        "col": 738,
+        "distKm": 675.0
+      },
+      {
+        "name": "Toulouse",
+        "row": 1080,
+        "col": 1040,
+        "distKm": 368.1
+      },
+      {
+        "name": "Zaragoza",
+        "row": 904,
+        "col": 1272,
+        "distKm": 133.6
+      },
+      {
+        "name": "Valencia",
+        "row": 664,
+        "col": 1286,
+        "distKm": 119.5
+      },
+      {
+        "name": "Seville",
+        "row": 544,
+        "col": 1821,
+        "distKm": 414.5
+      },
+      {
+        "name": "Algiers",
+        "row": 320,
+        "col": 1059,
+        "distKm": 348.1
+      },
+      {
+        "name": "Tunis",
+        "row": 256,
+        "col": 440,
+        "distKm": 976.8
+      },
+      {
+        "name": "Casablanca",
+        "row": 176,
+        "col": 2092,
+        "distKm": 680.9
+      },
+      {
+        "name": "Geneva",
+        "row": 1320,
+        "col": 632,
+        "distKm": 784.2
+      },
+      {
+        "name": "Naples",
+        "row": 688,
+        "col": 57,
+        "distKm": 1376.2
+      }
+    ],
     "exclude": false
   },
   {
@@ -466,11 +1932,85 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 296,
-      "col": 990,
-      "distKm": 410.1,
+      "row": 312,
+      "col": 1000,
+      "distKm": 406.2,
       "rotationDeg": 14.3
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 312,
+        "col": 1000,
+        "distKm": 406.5
+      },
+      {
+        "name": "Madrid",
+        "row": 472,
+        "col": 535,
+        "distKm": 877.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 680,
+        "col": 101,
+        "distKm": 1322.4
+      },
+      {
+        "name": "Rome",
+        "row": 72,
+        "col": 1816,
+        "distKm": 412.6
+      },
+      {
+        "name": "Marseille",
+        "row": 64,
+        "col": 1212,
+        "distKm": 192.9
+      },
+      {
+        "name": "Toulouse",
+        "row": 72,
+        "col": 896,
+        "distKm": 511.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 312,
+        "col": 746,
+        "distKm": 663.4
+      },
+      {
+        "name": "Valencia",
+        "row": 544,
+        "col": 828,
+        "distKm": 580.1
+      },
+      {
+        "name": "Seville",
+        "row": 720,
+        "col": 379,
+        "distKm": 1041.5
+      },
+      {
+        "name": "Tunis",
+        "row": 672,
+        "col": 1795,
+        "distKm": 389.8
+      },
+      {
+        "name": "Casablanca",
+        "row": 720,
+        "col": 295,
+        "distKm": 1273.8
+      },
+      {
+        "name": "Naples",
+        "row": 72,
+        "col": 1991,
+        "distKm": 593.5
+      }
+    ],
     "exclude": false
   },
   {
@@ -499,11 +2039,67 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 200,
-      "col": 1467,
-      "distKm": 67.5,
-      "rotationDeg": 14.5
+      "row": 224,
+      "col": 1477,
+      "distKm": 73.0,
+      "rotationDeg": 14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 224,
+        "col": 1476,
+        "distKm": 72.8
+      },
+      {
+        "name": "Madrid",
+        "row": 408,
+        "col": 1021,
+        "distKm": 385.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 648,
+        "col": 597,
+        "distKm": 814.0
+      },
+      {
+        "name": "Zaragoza",
+        "row": 240,
+        "col": 1222,
+        "distKm": 182.6
+      },
+      {
+        "name": "Valencia",
+        "row": 464,
+        "col": 1320,
+        "distKm": 84.7
+      },
+      {
+        "name": "Seville",
+        "row": 760,
+        "col": 890,
+        "distKm": 516.4
+      },
+      {
+        "name": "Algiers",
+        "row": 696,
+        "col": 1688,
+        "distKm": 284.0
+      },
+      {
+        "name": "Tunis",
+        "row": 528,
+        "col": 2298,
+        "distKm": 887.8
+      },
+      {
+        "name": "Naples",
+        "row": 8,
+        "col": 2465,
+        "distKm": 1054.0
+      }
+    ],
     "exclude": false
   },
   {
@@ -519,6 +2115,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -532,6 +2129,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -560,11 +2158,73 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 568,
-      "col": 850,
-      "distKm": 550.6,
-      "rotationDeg": -14.5
+      "row": 536,
+      "col": 863,
+      "distKm": 546.5,
+      "rotationDeg": -14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 544,
+        "col": 863,
+        "distKm": 546.9
+      },
+      {
+        "name": "Madrid",
+        "row": 512,
+        "col": 1366,
+        "distKm": 39.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 1868,
+        "distKm": 461.6
+      },
+      {
+        "name": "Rome",
+        "row": 544,
+        "col": 27,
+        "distKm": 1409.0
+      },
+      {
+        "name": "Marseille",
+        "row": 720,
+        "col": 575,
+        "distKm": 841.0
+      },
+      {
+        "name": "Toulouse",
+        "row": 792,
+        "col": 878,
+        "distKm": 532.4
+      },
+      {
+        "name": "Zaragoza",
+        "row": 608,
+        "col": 1105,
+        "distKm": 301.9
+      },
+      {
+        "name": "Valencia",
+        "row": 368,
+        "col": 1113,
+        "distKm": 293.3
+      },
+      {
+        "name": "Seville",
+        "row": 232,
+        "col": 1644,
+        "distKm": 238.6
+      },
+      {
+        "name": "Algiers",
+        "row": 32,
+        "col": 879,
+        "distKm": 529.9
+      }
+    ],
     "exclude": false
   },
   {
@@ -593,11 +2253,97 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 880,
-      "col": 1737,
-      "distKm": 338.1,
-      "rotationDeg": -14.7
+      "row": 856,
+      "col": 1750,
+      "distKm": 344.3,
+      "rotationDeg": -14.6
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 856,
+        "col": 1750,
+        "distKm": 344.2
+      },
+      {
+        "name": "Madrid",
+        "row": 888,
+        "col": 2259,
+        "distKm": 847.8
+      },
+      {
+        "name": "Lisbon",
+        "row": 872,
+        "col": 2778,
+        "distKm": 1351.8
+      },
+      {
+        "name": "Rome",
+        "row": 752,
+        "col": 904,
+        "distKm": 505.6
+      },
+      {
+        "name": "Milan",
+        "row": 1160,
+        "col": 1087,
+        "distKm": 321.6
+      },
+      {
+        "name": "Marseille",
+        "row": 1000,
+        "col": 1436,
+        "distKm": 31.4
+      },
+      {
+        "name": "Toulouse",
+        "row": 1104,
+        "col": 1732,
+        "distKm": 326.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 952,
+        "col": 1985,
+        "distKm": 577.7
+      },
+      {
+        "name": "Valencia",
+        "row": 712,
+        "col": 2024,
+        "distKm": 616.1
+      },
+      {
+        "name": "Seville",
+        "row": 640,
+        "col": 2577,
+        "distKm": 1156.7
+      },
+      {
+        "name": "Algiers",
+        "row": 352,
+        "col": 1829,
+        "distKm": 421.9
+      },
+      {
+        "name": "Tunis",
+        "row": 224,
+        "col": 1211,
+        "distKm": 194.8
+      },
+      {
+        "name": "Casablanca",
+        "row": 328,
+        "col": 2799,
+        "distKm": 1453.7
+      },
+      {
+        "name": "Naples",
+        "row": 616,
+        "col": 780,
+        "distKm": 631.0
+      }
+    ],
     "exclude": false
   },
   {
@@ -626,11 +2372,103 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 864,
-      "col": 1297,
-      "distKm": 103.0,
+      "row": 832,
+      "col": 1308,
+      "distKm": 97.7,
       "rotationDeg": -14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 840,
+        "col": 1308,
+        "distKm": 98.2
+      },
+      {
+        "name": "Madrid",
+        "row": 840,
+        "col": 1814,
+        "distKm": 408.3
+      },
+      {
+        "name": "Lisbon",
+        "row": 792,
+        "col": 2325,
+        "distKm": 912.0
+      },
+      {
+        "name": "Rome",
+        "row": 784,
+        "col": 463,
+        "distKm": 955.5
+      },
+      {
+        "name": "Milan",
+        "row": 1192,
+        "col": 671,
+        "distKm": 744.0
+      },
+      {
+        "name": "Marseille",
+        "row": 1000,
+        "col": 1006,
+        "distKm": 402.3
+      },
+      {
+        "name": "Toulouse",
+        "row": 1080,
+        "col": 1307,
+        "distKm": 99.1
+      },
+      {
+        "name": "Zaragoza",
+        "row": 912,
+        "col": 1547,
+        "distKm": 142.1
+      },
+      {
+        "name": "Valencia",
+        "row": 672,
+        "col": 1571,
+        "distKm": 165.5
+      },
+      {
+        "name": "Seville",
+        "row": 576,
+        "col": 2112,
+        "distKm": 702.2
+      },
+      {
+        "name": "Algiers",
+        "row": 328,
+        "col": 1355,
+        "distKm": 50.6
+      },
+      {
+        "name": "Tunis",
+        "row": 240,
+        "col": 735,
+        "distKm": 675.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 216,
+        "col": 2398,
+        "distKm": 981.0
+      },
+      {
+        "name": "Geneva",
+        "row": 1304,
+        "col": 887,
+        "distKm": 523.8
+      },
+      {
+        "name": "Naples",
+        "row": 656,
+        "col": 333,
+        "distKm": 1089.4
+      }
+    ],
     "exclude": false
   },
   {
@@ -644,6 +2482,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -657,6 +2496,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -670,6 +2510,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -683,11 +2524,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -701,11 +2592,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -719,11 +2660,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -737,11 +2728,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -755,11 +2796,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -773,11 +2864,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -791,11 +2932,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -809,11 +3000,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -827,11 +3068,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -859,11 +3150,103 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 832,
-      "col": 1572,
-      "distKm": 172.5,
+      "row": 800,
+      "col": 1584,
+      "distKm": 178.5,
       "rotationDeg": -14.6
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 800,
+        "col": 1584,
+        "distKm": 178.5
+      },
+      {
+        "name": "Madrid",
+        "row": 824,
+        "col": 2092,
+        "distKm": 683.1
+      },
+      {
+        "name": "Lisbon",
+        "row": 800,
+        "col": 2607,
+        "distKm": 1187.1
+      },
+      {
+        "name": "Rome",
+        "row": 720,
+        "col": 737,
+        "distKm": 674.9
+      },
+      {
+        "name": "Milan",
+        "row": 1136,
+        "col": 929,
+        "distKm": 480.7
+      },
+      {
+        "name": "Marseille",
+        "row": 952,
+        "col": 1274,
+        "distKm": 131.5
+      },
+      {
+        "name": "Toulouse",
+        "row": 1048,
+        "col": 1572,
+        "distKm": 167.2
+      },
+      {
+        "name": "Zaragoza",
+        "row": 888,
+        "col": 1820,
+        "distKm": 414.5
+      },
+      {
+        "name": "Valencia",
+        "row": 656,
+        "col": 1853,
+        "distKm": 446.9
+      },
+      {
+        "name": "Seville",
+        "row": 568,
+        "col": 2402,
+        "distKm": 986.5
+      },
+      {
+        "name": "Algiers",
+        "row": 296,
+        "col": 1650,
+        "distKm": 244.6
+      },
+      {
+        "name": "Tunis",
+        "row": 192,
+        "col": 1031,
+        "distKm": 375.9
+      },
+      {
+        "name": "Casablanca",
+        "row": 224,
+        "col": 2704,
+        "distKm": 1277.2
+      },
+      {
+        "name": "Geneva",
+        "row": 1256,
+        "col": 1142,
+        "distKm": 265.7
+      },
+      {
+        "name": "Naples",
+        "row": 592,
+        "col": 611,
+        "distKm": 803.9
+      }
+    ],
     "exclude": false
   },
   {
@@ -877,11 +3260,61 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 72,
-      "col": 1027,
-      "distKm": 373.1,
-      "rotationDeg": -165.6
+      "row": 88,
+      "col": 1037,
+      "distKm": 369.1,
+      "rotationDeg": -165.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 88,
+        "col": 1037,
+        "distKm": 369.3
+      },
+      {
+        "name": "Madrid",
+        "row": 248,
+        "col": 573,
+        "distKm": 839.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 440,
+        "col": 138,
+        "distKm": 1284.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 96,
+        "col": 783,
+        "distKm": 625.8
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 866,
+        "distKm": 541.3
+      },
+      {
+        "name": "Seville",
+        "row": 440,
+        "col": 416,
+        "distKm": 1013.0
+      },
+      {
+        "name": "Algiers",
+        "row": 440,
+        "col": 1211,
+        "distKm": 237.5
+      },
+      {
+        "name": "Tunis",
+        "row": 440,
+        "col": 1833,
+        "distKm": 428.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -910,11 +3343,85 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 360,
-      "col": 1321,
-      "distKm": 78.5,
+      "row": 376,
+      "col": 1330,
+      "distKm": 73.8,
       "rotationDeg": 14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 376,
+        "col": 1330,
+        "distKm": 74.0
+      },
+      {
+        "name": "Madrid",
+        "row": 560,
+        "col": 872,
+        "distKm": 535.9
+      },
+      {
+        "name": "Lisbon",
+        "row": 784,
+        "col": 444,
+        "distKm": 970.0
+      },
+      {
+        "name": "Rome",
+        "row": 120,
+        "col": 2138,
+        "distKm": 732.3
+      },
+      {
+        "name": "Marseille",
+        "row": 120,
+        "col": 1531,
+        "distKm": 127.4
+      },
+      {
+        "name": "Toulouse",
+        "row": 152,
+        "col": 1216,
+        "distKm": 189.4
+      },
+      {
+        "name": "Zaragoza",
+        "row": 392,
+        "col": 1076,
+        "distKm": 329.6
+      },
+      {
+        "name": "Valencia",
+        "row": 616,
+        "col": 1169,
+        "distKm": 236.3
+      },
+      {
+        "name": "Seville",
+        "row": 912,
+        "col": 735,
+        "distKm": 673.7
+      },
+      {
+        "name": "Algiers",
+        "row": 856,
+        "col": 1532,
+        "distKm": 128.3
+      },
+      {
+        "name": "Tunis",
+        "row": 704,
+        "col": 2144,
+        "distKm": 736.0
+      },
+      {
+        "name": "Naples",
+        "row": 184,
+        "col": 2322,
+        "distKm": 913.0
+      }
+    ],
     "exclude": false
   },
   {
@@ -943,11 +3450,73 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 488,
-      "col": 2007,
-      "distKm": 608.4,
-      "rotationDeg": -14.8
+      "row": 464,
+      "col": 2023,
+      "distKm": 615.4,
+      "rotationDeg": -14.7
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 464,
+        "col": 2023,
+        "distKm": 615.3
+      },
+      {
+        "name": "Madrid",
+        "row": 520,
+        "col": 2533,
+        "distKm": 1115.8
+      },
+      {
+        "name": "Rome",
+        "row": 328,
+        "col": 1178,
+        "distKm": 228.1
+      },
+      {
+        "name": "Milan",
+        "row": 752,
+        "col": 1344,
+        "distKm": 62.0
+      },
+      {
+        "name": "Marseille",
+        "row": 592,
+        "col": 1702,
+        "distKm": 297.5
+      },
+      {
+        "name": "Toulouse",
+        "row": 712,
+        "col": 1994,
+        "distKm": 587.8
+      },
+      {
+        "name": "Zaragoza",
+        "row": 568,
+        "col": 2255,
+        "distKm": 844.3
+      },
+      {
+        "name": "Valencia",
+        "row": 328,
+        "col": 2305,
+        "distKm": 892.3
+      },
+      {
+        "name": "Seville",
+        "row": 280,
+        "col": 2799,
+        "distKm": 1433.9
+      },
+      {
+        "name": "Naples",
+        "row": 192,
+        "col": 1059,
+        "distKm": 348.3
+      }
+    ],
     "exclude": false
   },
   {
@@ -976,11 +3545,97 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 840,
-      "col": 1639,
-      "distKm": 240.1,
+      "row": 816,
+      "col": 1650,
+      "distKm": 246.2,
       "rotationDeg": -14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 816,
+        "col": 1650,
+        "distKm": 246.1
+      },
+      {
+        "name": "Madrid",
+        "row": 848,
+        "col": 2157,
+        "distKm": 750.2
+      },
+      {
+        "name": "Lisbon",
+        "row": 816,
+        "col": 2671,
+        "distKm": 1254.7
+      },
+      {
+        "name": "Rome",
+        "row": 728,
+        "col": 803,
+        "distKm": 606.2
+      },
+      {
+        "name": "Milan",
+        "row": 1144,
+        "col": 992,
+        "distKm": 415.2
+      },
+      {
+        "name": "Marseille",
+        "row": 968,
+        "col": 1339,
+        "distKm": 65.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 1064,
+        "col": 1636,
+        "distKm": 232.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 904,
+        "col": 1886,
+        "distKm": 481.5
+      },
+      {
+        "name": "Valencia",
+        "row": 672,
+        "col": 1921,
+        "distKm": 515.6
+      },
+      {
+        "name": "Seville",
+        "row": 592,
+        "col": 2468,
+        "distKm": 1055.5
+      },
+      {
+        "name": "Algiers",
+        "row": 312,
+        "col": 1720,
+        "distKm": 315.8
+      },
+      {
+        "name": "Tunis",
+        "row": 200,
+        "col": 1101,
+        "distKm": 303.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 240,
+        "col": 2773,
+        "distKm": 1349.0
+      },
+      {
+        "name": "Naples",
+        "row": 592,
+        "col": 677,
+        "distKm": 733.7
+      }
+    ],
     "exclude": true
   },
   {
@@ -999,6 +3654,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1017,6 +3673,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1045,11 +3702,115 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 816,
-      "col": 1165,
-      "distKm": 234.8,
+      "row": 792,
+      "col": 1175,
+      "distKm": 230.0,
       "rotationDeg": -14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 792,
+        "col": 1175,
+        "distKm": 230.0
+      },
+      {
+        "name": "Madrid",
+        "row": 792,
+        "col": 1680,
+        "distKm": 276.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 728,
+        "col": 2188,
+        "distKm": 779.9
+      },
+      {
+        "name": "Paris",
+        "row": 1192,
+        "col": 1015,
+        "distKm": 571.9
+      },
+      {
+        "name": "London",
+        "row": 1192,
+        "col": 1146,
+        "distKm": 781.2
+      },
+      {
+        "name": "Rome",
+        "row": 760,
+        "col": 329,
+        "distKm": 1089.6
+      },
+      {
+        "name": "Milan",
+        "row": 1176,
+        "col": 545,
+        "distKm": 869.7
+      },
+      {
+        "name": "Marseille",
+        "row": 960,
+        "col": 877,
+        "distKm": 531.1
+      },
+      {
+        "name": "Toulouse",
+        "row": 1048,
+        "col": 1179,
+        "distKm": 226.6
+      },
+      {
+        "name": "Zaragoza",
+        "row": 872,
+        "col": 1415,
+        "distKm": 12.4
+      },
+      {
+        "name": "Valencia",
+        "row": 632,
+        "col": 1434,
+        "distKm": 30.1
+      },
+      {
+        "name": "Seville",
+        "row": 520,
+        "col": 1971,
+        "distKm": 565.3
+      },
+      {
+        "name": "Algiers",
+        "row": 288,
+        "col": 1211,
+        "distKm": 193.1
+      },
+      {
+        "name": "Tunis",
+        "row": 216,
+        "col": 590,
+        "distKm": 820.3
+      },
+      {
+        "name": "Casablanca",
+        "row": 160,
+        "col": 2248,
+        "distKm": 837.2
+      },
+      {
+        "name": "Geneva",
+        "row": 1192,
+        "col": 769,
+        "distKm": 647.2
+      },
+      {
+        "name": "Naples",
+        "row": 640,
+        "col": 195,
+        "distKm": 1226.5
+      }
+    ],
     "exclude": true
   },
   {
@@ -1078,11 +3839,85 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": {
-      "row": 808,
-      "col": 1128,
-      "distKm": 271.2,
+      "row": 776,
+      "col": 1140,
+      "distKm": 266.3,
       "rotationDeg": -14.5
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 776,
+        "col": 1140,
+        "distKm": 266.4
+      },
+      {
+        "name": "Madrid",
+        "row": 768,
+        "col": 1646,
+        "distKm": 240.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 712,
+        "col": 2153,
+        "distKm": 743.4
+      },
+      {
+        "name": "Rome",
+        "row": 744,
+        "col": 298,
+        "distKm": 1126.1
+      },
+      {
+        "name": "Marseille",
+        "row": 944,
+        "col": 844,
+        "distKm": 567.0
+      },
+      {
+        "name": "Zaragoza",
+        "row": 848,
+        "col": 1381,
+        "distKm": 24.4
+      },
+      {
+        "name": "Valencia",
+        "row": 608,
+        "col": 1399,
+        "distKm": 6.9
+      },
+      {
+        "name": "Seville",
+        "row": 536,
+        "col": 1934,
+        "distKm": 527.8
+      },
+      {
+        "name": "Algiers",
+        "row": 272,
+        "col": 1175,
+        "distKm": 230.8
+      },
+      {
+        "name": "Tunis",
+        "row": 200,
+        "col": 556,
+        "distKm": 858.1
+      },
+      {
+        "name": "Casablanca",
+        "row": 136,
+        "col": 2213,
+        "distKm": 799.6
+      },
+      {
+        "name": "Naples",
+        "row": 624,
+        "col": 165,
+        "distKm": 1263.2
+      }
+    ],
     "exclude": false
   },
   {
@@ -1111,11 +3946,73 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": {
-      "row": 192,
-      "col": 1174,
-      "distKm": 225.5,
+      "row": 216,
+      "col": 1184,
+      "distKm": 220.7,
       "rotationDeg": 14.4
     },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 208,
+        "col": 1184,
+        "distKm": 221.4
+      },
+      {
+        "name": "Madrid",
+        "row": 336,
+        "col": 720,
+        "distKm": 691.7
+      },
+      {
+        "name": "Lisbon",
+        "row": 496,
+        "col": 287,
+        "distKm": 1137.6
+      },
+      {
+        "name": "Zaragoza",
+        "row": 224,
+        "col": 930,
+        "distKm": 477.3
+      },
+      {
+        "name": "Valencia",
+        "row": 456,
+        "col": 1018,
+        "distKm": 388.2
+      },
+      {
+        "name": "Seville",
+        "row": 808,
+        "col": 583,
+        "distKm": 831.5
+      },
+      {
+        "name": "Algiers",
+        "row": 808,
+        "col": 1382,
+        "distKm": 120.5
+      },
+      {
+        "name": "Tunis",
+        "row": 496,
+        "col": 1986,
+        "distKm": 582.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 832,
+        "col": 487,
+        "distKm": 993.1
+      },
+      {
+        "name": "Naples",
+        "row": 32,
+        "col": 2177,
+        "distKm": 770.4
+      }
+    ],
     "exclude": false
   },
   {
@@ -1129,6 +4026,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1142,6 +4040,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1155,6 +4054,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1168,6 +4068,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1181,6 +4082,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1194,6 +4096,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1207,6 +4110,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1220,6 +4124,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1238,6 +4143,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1256,6 +4162,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1274,6 +4181,7 @@
     "gain": 25,
     "direction": "NtoS",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1292,6 +4200,7 @@
     "gain": 25,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   },
   {
@@ -1310,6 +4219,7 @@
     "gain": null,
     "direction": "StoN",
     "barcelonaPx": null,
+    "citiesPx": [],
     "exclude": false
   }
 ]

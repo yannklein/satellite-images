@@ -6,10 +6,114 @@
   "date": "2026-06-18",
   "time": "23:01 CEST",
   "barcelonaPx": {
-    "row": 816,
-    "col": 1165,
-    "distKm": 234.8,
+    "row": 792,
+    "col": 1175,
+    "distKm": 230.0,
     "rotationDeg": -14.4
   },
-  "exclude": true
+  "exclude": true,
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 792,
+      "col": 1175,
+      "distKm": 230.0
+    },
+    {
+      "name": "Madrid",
+      "row": 792,
+      "col": 1680,
+      "distKm": 276.5
+    },
+    {
+      "name": "Lisbon",
+      "row": 728,
+      "col": 2188,
+      "distKm": 779.9
+    },
+    {
+      "name": "Paris",
+      "row": 1192,
+      "col": 1015,
+      "distKm": 571.9
+    },
+    {
+      "name": "London",
+      "row": 1192,
+      "col": 1146,
+      "distKm": 781.2
+    },
+    {
+      "name": "Rome",
+      "row": 760,
+      "col": 329,
+      "distKm": 1089.6
+    },
+    {
+      "name": "Milan",
+      "row": 1176,
+      "col": 545,
+      "distKm": 869.7
+    },
+    {
+      "name": "Marseille",
+      "row": 960,
+      "col": 877,
+      "distKm": 531.1
+    },
+    {
+      "name": "Toulouse",
+      "row": 1048,
+      "col": 1179,
+      "distKm": 226.6
+    },
+    {
+      "name": "Zaragoza",
+      "row": 872,
+      "col": 1415,
+      "distKm": 12.4
+    },
+    {
+      "name": "Valencia",
+      "row": 632,
+      "col": 1434,
+      "distKm": 30.1
+    },
+    {
+      "name": "Seville",
+      "row": 520,
+      "col": 1971,
+      "distKm": 565.3
+    },
+    {
+      "name": "Algiers",
+      "row": 288,
+      "col": 1211,
+      "distKm": 193.1
+    },
+    {
+      "name": "Tunis",
+      "row": 216,
+      "col": 590,
+      "distKm": 820.3
+    },
+    {
+      "name": "Casablanca",
+      "row": 160,
+      "col": 2248,
+      "distKm": 837.2
+    },
+    {
+      "name": "Geneva",
+      "row": 1192,
+      "col": 769,
+      "distKm": 647.2
+    },
+    {
+      "name": "Naples",
+      "row": 640,
+      "col": 195,
+      "distKm": 1226.5
+    }
+  ]
 }

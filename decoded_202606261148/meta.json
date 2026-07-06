@@ -7,9 +7,65 @@
   "time": "11:54 CEST",
   "direction": "StoN",
   "barcelonaPx": {
-    "row": 200,
-    "col": 1467,
-    "distKm": 67.5,
-    "rotationDeg": 14.5
-  }
+    "row": 224,
+    "col": 1477,
+    "distKm": 73.0,
+    "rotationDeg": 14.4
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 224,
+      "col": 1476,
+      "distKm": 72.8
+    },
+    {
+      "name": "Madrid",
+      "row": 408,
+      "col": 1021,
+      "distKm": 385.5
+    },
+    {
+      "name": "Lisbon",
+      "row": 648,
+      "col": 597,
+      "distKm": 814.0
+    },
+    {
+      "name": "Zaragoza",
+      "row": 240,
+      "col": 1222,
+      "distKm": 182.6
+    },
+    {
+      "name": "Valencia",
+      "row": 464,
+      "col": 1320,
+      "distKm": 84.7
+    },
+    {
+      "name": "Seville",
+      "row": 760,
+      "col": 890,
+      "distKm": 516.4
+    },
+    {
+      "name": "Algiers",
+      "row": 696,
+      "col": 1688,
+      "distKm": 284.0
+    },
+    {
+      "name": "Tunis",
+      "row": 528,
+      "col": 2298,
+      "distKm": 887.8
+    },
+    {
+      "name": "Naples",
+      "row": 8,
+      "col": 2465,
+      "distKm": 1054.0
+    }
+  ]
 }

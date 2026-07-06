@@ -7,9 +7,77 @@
   "time": "16:02 CEST",
   "direction": "NtoS",
   "barcelonaPx": {
-    "row": 568,
-    "col": 1901,
-    "distKm": 502.4,
+    "row": 544,
+    "col": 1915,
+    "distKm": 509.1,
     "rotationDeg": -14.7
-  }
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 544,
+      "col": 1915,
+      "distKm": 509.0
+    },
+    {
+      "name": "Madrid",
+      "row": 592,
+      "col": 2425,
+      "distKm": 1010.7
+    },
+    {
+      "name": "Rome",
+      "row": 416,
+      "col": 1071,
+      "distKm": 336.9
+    },
+    {
+      "name": "Milan",
+      "row": 840,
+      "col": 1242,
+      "distKm": 164.0
+    },
+    {
+      "name": "Marseille",
+      "row": 672,
+      "col": 1598,
+      "distKm": 193.3
+    },
+    {
+      "name": "Toulouse",
+      "row": 792,
+      "col": 1891,
+      "distKm": 485.5
+    },
+    {
+      "name": "Zaragoza",
+      "row": 640,
+      "col": 2149,
+      "distKm": 740.0
+    },
+    {
+      "name": "Valencia",
+      "row": 400,
+      "col": 2195,
+      "distKm": 784.2
+    },
+    {
+      "name": "Seville",
+      "row": 344,
+      "col": 2752,
+      "distKm": 1325.4
+    },
+    {
+      "name": "Algiers",
+      "row": 40,
+      "col": 2007,
+      "distKm": 598.3
+    },
+    {
+      "name": "Naples",
+      "row": 280,
+      "col": 950,
+      "distKm": 459.1
+    }
+  ]
 }

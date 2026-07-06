@@ -482,6 +482,18 @@
     .tl-viewport img {
       position: absolute; display: block;
     }
+    .tl-city {
+      position: absolute; display: flex; align-items: center; gap: 5px;
+      transform: translate(-50%, -50%); pointer-events: none;
+      font-family: var(--mono); font-size: 11px; color: #fff;
+      text-shadow: 0 0 4px #000, 0 0 4px #000, 0 1px 2px #000;
+      white-space: nowrap;
+    }
+    .tl-city::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 4px 1px rgba(0,229,160,0.9);
+      flex-shrink: 0;
+    }
     .tl-controls {
       display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
       padding: 8px 14px; border-top: 0.5px solid var(--border);
@@ -502,6 +514,56 @@
     .tl-ctrl-label { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 5px; }
     .tl-ctrl-label input[type=range] { width: 70px; vertical-align: middle; }
     .tl-ctrl-label input[type=checkbox] { cursor: pointer; }
+
+    /* ── How it works ──────────────────────────────────────────────────────── */
+    .hiw-modal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.93);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .hiw-modal.open { opacity: 1; pointer-events: all; }
+    .hiw-panel {
+      display: flex; flex-direction: column;
+      width: 92vw; max-width: 820px; height: 88vh;
+      background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px;
+      overflow: hidden;
+    }
+    .hiw-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 14px; border-bottom: 0.5px solid var(--border); flex-shrink: 0;
+    }
+    .hiw-topbar-left { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .hiw-topbar-left strong { color: var(--accent2); font-weight: 700; }
+    .hiw-body {
+      flex: 1; overflow-y: auto; padding: 24px 30px;
+      font-family: var(--sans); font-size: 14px; line-height: 1.65; color: var(--text);
+    }
+    .hiw-body h1 { font-family: var(--mono); font-size: 19px; color: var(--accent2); margin: 0 0 14px; }
+    .hiw-body h2 {
+      font-family: var(--mono); font-size: 15px; color: var(--accent2);
+      margin: 26px 0 10px; padding-top: 16px; border-top: 0.5px solid var(--border);
+    }
+    .hiw-body h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+    .hiw-body h3 { font-family: var(--mono); font-size: 13px; color: var(--accent); margin: 16px 0 8px; }
+    .hiw-body p { margin: 0 0 12px; }
+    .hiw-body ul, .hiw-body ol { margin: 0 0 12px 22px; }
+    .hiw-body li { margin-bottom: 5px; }
+    .hiw-body code {
+      font-family: var(--mono); font-size: 12.5px; background: rgba(255,255,255,0.06);
+      padding: 1px 5px; border-radius: 3px; color: var(--accent);
+    }
+    .hiw-body pre {
+      font-family: var(--mono); font-size: 12px; background: var(--card);
+      border: 0.5px solid var(--border); border-radius: 6px; padding: 12px 14px;
+      overflow-x: auto; margin: 0 0 14px; line-height: 1.5;
+    }
+    .hiw-body pre code { background: none; padding: 0; color: var(--text); }
+    .hiw-body strong { color: var(--text); font-weight: 700; }
+    .hiw-body a { color: var(--accent2); }
+    .hiw-loading { font-family: var(--mono); font-size: 12px; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -532,6 +594,7 @@
 <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;align-items:center;gap:12px">
   <button onclick="openTimelapse()" style="font-family:var(--mono);font-size:12px;background:rgba(0,229,160,0.08);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='rgba(0,229,160,0.18)'" onmouseout="this.style.background='rgba(0,229,160,0.08)'">▶ timelapse</button>
   <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">watch Earth's surface change over time</span>
+  <button onclick="openHowItWorks()" style="font-family:var(--mono);font-size:12px;background:rgba(0,136,255,0.08);border:0.5px solid var(--accent2);color:var(--accent2);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s;margin-left:auto" onmouseover="this.style.background='rgba(0,136,255,0.18)'" onmouseout="this.style.background='rgba(0,136,255,0.08)'">ⓘ how it works</button>
 </div>
 
 <main id="gallery"></main>
@@ -548,11 +611,15 @@
         <label class="tl-ctrl-label">
           <input type="checkbox" id="tl-center-bcn" checked onchange="tlRenderFrame()"> center BCN
         </label>
+        <label class="tl-ctrl-label">
+          <input type="checkbox" id="tl-show-cities" checked onchange="tlRenderFrame()"> cities
+        </label>
         <button class="tl-close-btn" onclick="closeTimelapse()">× close</button>
       </div>
     </div>
     <div class="tl-viewport" id="tl-viewport">
       <img id="tl-img" src="" alt=""/>
+      <div id="tl-cities"></div>
     </div>
     <div class="tl-controls">
       <button class="tl-btn" id="tl-pp" onclick="tlToggle()" title="play/pause">⏸</button>
@@ -565,6 +632,19 @@
         speed <input type="range" id="tl-speed" min="1" max="10" value="2" oninput="tlSetSpeed(this.value)">
         <span id="tl-speed-val">×0.4</span>
       </label>
+    </div>
+  </div>
+</div>
+
+<!-- ── How it works Modal ────────────────────────────────────────────────── -->
+<div class="hiw-modal" id="hiw-modal" onclick="if(event.target===this)closeHowItWorks()">
+  <div class="hiw-panel">
+    <div class="hiw-topbar">
+      <div class="hiw-topbar-left"><strong>how it works</strong> &nbsp;·&nbsp; satellite → website signal chain</div>
+      <button class="tl-close-btn" onclick="closeHowItWorks()">× close</button>
+    </div>
+    <div class="hiw-body" id="hiw-body">
+      <div class="hiw-loading">loading...</div>
     </div>
   </div>
 </div>
@@ -914,6 +994,7 @@ function tlInit(passes) {
       time:       p.time,
       direction:  p.direction,
       barcelonaPx: p.barcelonaPx || null,
+      citiesPx:   p.citiesPx || [],
     }));
 }
 
@@ -978,10 +1059,11 @@ function tlRenderFrame() {
   const img  = document.getElementById('tl-img');
   const vp   = document.getElementById('tl-viewport');
   const center = document.getElementById('tl-center-bcn').checked;
+  const showCities = document.getElementById('tl-show-cities').checked;
 
-  img.onload = function () { tlPositionImg(frame, img, vp, center); };
+  img.onload = function () { tlPositionImg(frame, img, vp, center, showCities); };
   img.src = frame.src;
-  if (img.complete && img.naturalWidth > 0) tlPositionImg(frame, img, vp, center);
+  if (img.complete && img.naturalWidth > 0) tlPositionImg(frame, img, vp, center, showCities);
 
   // Preload next frame
   if (tlIdx + 1 < tlFrames.length) {
@@ -991,7 +1073,22 @@ function tlRenderFrame() {
 
 const TL_ZOOM = 1.6; // zoom-in over fit-to-viewport; scales into all downstream math so centering/rotation stay correct
 
-function tlPositionImg(frame, img, vp, center) {
+// Vector from the image's own center to a raw-image point (row, col), in local
+// (pre-transform) coordinates, run through the same transform chain applied to
+// the image itself (flip, then rotate), giving where that point actually lands
+// on screen relative to the image's center (which stays put, since
+// transform-origin defaults to 50% 50%). Shared by Barcelona-centering and city labels.
+function tlProjectOffset(row, col, scale, dispW, dispH, doFlip, rad) {
+  let cx = col * scale - dispW / 2;
+  let cy = row * scale - dispH / 2;
+  if (doFlip) { cx = -cx; cy = -cy; }
+  return {
+    rx: cx * Math.cos(rad) - cy * Math.sin(rad),
+    ry: cx * Math.sin(rad) + cy * Math.cos(rad),
+  };
+}
+
+function tlPositionImg(frame, img, vp, center, showCities) {
   const vpW  = vp.clientWidth;
   const vpH  = vp.clientHeight;
   const imgW = img.naturalWidth;
@@ -1004,6 +1101,7 @@ function tlPositionImg(frame, img, vp, center) {
   const doFlip  = frame.direction === 'NtoS';
   const rotDeg  = (frame.barcelonaPx && frame.barcelonaPx.rotationDeg != null)
                     ? frame.barcelonaPx.rotationDeg : 0;
+  const rad     = rotDeg * Math.PI / 180;
 
   img.style.width  = dispW + 'px';
   img.style.height = dispH + 'px';
@@ -1015,31 +1113,53 @@ function tlPositionImg(frame, img, vp, center) {
   if (rotDeg !== 0) transforms.unshift(`rotate(${rotDeg}deg)`);
   img.style.transform = transforms.join(' ');
 
+  let rxOff = 0, ryOff = 0;
   if (center && frame.barcelonaPx) {
-    const bx = frame.barcelonaPx.col * scale;   // Barcelona x in display image space
-    const by = frame.barcelonaPx.row * scale;   // Barcelona y in display image space
-
-    // Vector from the image's own center to the Barcelona point, in local
-    // (pre-transform) coordinates, then run it through the same transform
-    // chain applied to the image itself (flip, then rotate) to find where
-    // that point actually lands on screen relative to the image's center
-    // (which stays put, since transform-origin defaults to 50% 50%).
-    let cx = bx - dispW / 2;
-    let cy = by - dispH / 2;
-    if (doFlip) { cx = -cx; cy = -cy; }
-    const rad = rotDeg * Math.PI / 180;
-    const rx  = cx * Math.cos(rad) - cy * Math.sin(rad);
-    const ry  = cx * Math.sin(rad) + cy * Math.cos(rad);
-
-    img.style.left = (vpW / 2 - dispW / 2 - rx) + 'px';
-    img.style.top  = (vpH / 2 - dispH / 2 - ry) + 'px';
+    ({ rx: rxOff, ry: ryOff } = tlProjectOffset(
+      frame.barcelonaPx.row, frame.barcelonaPx.col, scale, dispW, dispH, doFlip, rad));
+    img.style.left = (vpW / 2 - dispW / 2 - rxOff) + 'px';
+    img.style.top  = (vpH / 2 - dispH / 2 - ryOff) + 'px';
   } else {
     img.style.left = ((vpW - dispW) / 2) + 'px';
     img.style.top  = ((vpH - dispH) / 2) + 'px';
   }
+
+  tlRenderCities(frame, vpW, vpH, scale, dispW, dispH, doFlip, rad, rxOff, ryOff, showCities);
+}
+
+// Short codes for the mobile layout, where full city names would crowd the view.
+const TL_CITY_ABBREV = {
+  Barcelona: 'BCN', Madrid: 'MAD', Lisbon: 'LIS', Paris: 'PAR', London: 'LON',
+  Rome: 'ROM', Milan: 'MIL', Marseille: 'MRS', Toulouse: 'TLS', Zaragoza: 'ZAR',
+  Valencia: 'VLC', Seville: 'SVQ', Algiers: 'ALG', Tunis: 'TUN', Casablanca: 'CAS',
+  Geneva: 'GVA', Naples: 'NAP',
+};
+const TL_MOBILE_QUERY = '(max-width: 640px)';
+
+function tlRenderCities(frame, vpW, vpH, scale, dispW, dispH, doFlip, rad, rxOff, ryOff, showCities) {
+  const container = document.getElementById('tl-cities');
+  if (!showCities) { container.innerHTML = ''; return; }
+
+  const isMobile = window.matchMedia(TL_MOBILE_QUERY).matches;
+  const margin = 12; // px slack so labels near the edge aren't dropped early
+  const html = [];
+  for (const c of (frame.citiesPx || [])) {
+    const { rx, ry } = tlProjectOffset(c.row, c.col, scale, dispW, dispH, doFlip, rad);
+    const x = vpW / 2 + (rx - rxOff);
+    const y = vpH / 2 + (ry - ryOff);
+    if (x < -margin || x > vpW + margin || y < -margin || y > vpH + margin) continue;
+    const label = isMobile ? (TL_CITY_ABBREV[c.name] || c.name) : c.name;
+    html.push(`<div class="tl-city" style="left:${x}px;top:${y}px">${label}</div>`);
+  }
+  container.innerHTML = html.join('');
 }
 
 document.addEventListener('keydown', e => {
+  const hiwModal = document.getElementById('hiw-modal');
+  if (hiwModal.classList.contains('open')) {
+    if (e.key === 'Escape') closeHowItWorks();
+    return;
+  }
   const modal = document.getElementById('tl-modal');
   if (!modal.classList.contains('open')) return;
   if (e.key === 'Escape')      { closeTimelapse(); }
@@ -1047,6 +1167,96 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowLeft')  tlStep(-1);
   else if (e.key === 'ArrowRight') tlStep(1);
 });
+
+// ─── HOW IT WORKS ────────────────────────────────────────────────────────────
+let hiwLoaded = false;
+
+function mdToHtml(md) {
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const inline = s => esc(s)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+  const lines = md.split('\n');
+  let html = '';
+  let inList = null; // 'ul' | 'ol' | null
+  const closeList = () => { if (inList) { html += `</${inList}>`; inList = null; } };
+
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+
+    if (line.trim().startsWith('```')) {
+      closeList();
+      const code = [];
+      i++;
+      while (i < lines.length && !lines[i].trim().startsWith('```')) { code.push(lines[i]); i++; }
+      i++;
+      html += `<pre><code>${esc(code.join('\n'))}</code></pre>`;
+      continue;
+    }
+
+    let m;
+    if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
+      closeList();
+      const level = m[1].length;
+      html += `<h${level}>${inline(m[2])}</h${level}>`;
+      i++;
+      continue;
+    }
+
+    if ((m = line.match(/^\s*-\s+(.*)$/))) {
+      if (inList !== 'ul') { closeList(); html += '<ul>'; inList = 'ul'; }
+      html += `<li>${inline(m[1])}</li>`;
+      i++;
+      continue;
+    }
+
+    if ((m = line.match(/^\s*(\d+)\.\s+(.*)$/))) {
+      if (inList !== 'ol') { closeList(); html += '<ol>'; inList = 'ol'; }
+      html += `<li value="${m[1]}">${inline(m[2])}</li>`;
+      i++;
+      continue;
+    }
+
+    if (line.trim() === '') { closeList(); i++; continue; }
+
+    closeList();
+    const para = [line];
+    i++;
+    while (i < lines.length && lines[i].trim() !== ''
+           && !lines[i].trim().startsWith('```')
+           && !/^#{1,6}\s/.test(lines[i])
+           && !/^\s*-\s+/.test(lines[i])
+           && !/^\s*\d+\.\s+/.test(lines[i])) {
+      para.push(lines[i]);
+      i++;
+    }
+    html += `<p>${inline(para.join(' '))}</p>`;
+  }
+  closeList();
+  return html;
+}
+
+async function openHowItWorks() {
+  document.getElementById('hiw-modal').classList.add('open');
+  if (hiwLoaded) return;
+  const body = document.getElementById('hiw-body');
+  try {
+    const res = await fetch('docs/SIGNAL-CHAIN.md');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const md = await res.text();
+    body.innerHTML = mdToHtml(md);
+    hiwLoaded = true;
+  } catch (err) {
+    body.innerHTML = `<p style="color:var(--muted)">Couldn't load docs/SIGNAL-CHAIN.md (${err.message}).</p>`;
+  }
+}
+
+function closeHowItWorks() {
+  document.getElementById('hiw-modal').classList.remove('open');
+}
 </script>
 
 </body>

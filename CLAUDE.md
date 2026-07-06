@@ -20,6 +20,12 @@ python3 add_map_overlay.py decoded_YYYYMMDDHHMMSS/MSU-MR/product.cbor \
     decoded_YYYYMMDDHHMMSS/MSU-MR/msu_mr_rgb_MSA_corrected_map.png
 ```
 
+See `docs/SIGNAL-CHAIN.md` for the full pipeline from satellite transmitter to
+this website — pass scheduling/recording (n8n `Tracking` workflow), RF
+capture, QPSK demod, Viterbi/Reed-Solomon decoding, and the geolocation math
+below. That level of detail isn't needed for day-to-day changes here, but is
+useful background not derivable from this repo alone.
+
 ## Architecture
 
 **`passes.json`** is the central data file. It is a flat JSON array consumed by `index.html`. Each entry has: `date`, `time`, `satellite`, `folder` (relative path to decoded dir), `imgs` (PNG filenames inside `folder/MSU-MR/`), `maxEl`, `frequency`, `gain`, `direction` (`StoN` or `NtoS`, inferred from pass time).

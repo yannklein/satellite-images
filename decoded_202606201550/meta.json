@@ -6,9 +6,71 @@
   "date": "2026-06-20",
   "time": "15:56 CEST",
   "barcelonaPx": {
-    "row": 488,
-    "col": 2007,
-    "distKm": 608.4,
-    "rotationDeg": -14.8
-  }
+    "row": 464,
+    "col": 2023,
+    "distKm": 615.4,
+    "rotationDeg": -14.7
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 464,
+      "col": 2023,
+      "distKm": 615.3
+    },
+    {
+      "name": "Madrid",
+      "row": 520,
+      "col": 2533,
+      "distKm": 1115.8
+    },
+    {
+      "name": "Rome",
+      "row": 328,
+      "col": 1178,
+      "distKm": 228.1
+    },
+    {
+      "name": "Milan",
+      "row": 752,
+      "col": 1344,
+      "distKm": 62.0
+    },
+    {
+      "name": "Marseille",
+      "row": 592,
+      "col": 1702,
+      "distKm": 297.5
+    },
+    {
+      "name": "Toulouse",
+      "row": 712,
+      "col": 1994,
+      "distKm": 587.8
+    },
+    {
+      "name": "Zaragoza",
+      "row": 568,
+      "col": 2255,
+      "distKm": 844.3
+    },
+    {
+      "name": "Valencia",
+      "row": 328,
+      "col": 2305,
+      "distKm": 892.3
+    },
+    {
+      "name": "Seville",
+      "row": 280,
+      "col": 2799,
+      "distKm": 1433.9
+    },
+    {
+      "name": "Naples",
+      "row": 192,
+      "col": 1059,
+      "distKm": 348.3
+    }
+  ]
 }

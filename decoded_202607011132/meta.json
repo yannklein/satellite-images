@@ -7,9 +7,83 @@
   "time": "11:38 CEST",
   "direction": "StoN",
   "barcelonaPx": {
-    "row": 504,
-    "col": 1137,
-    "distKm": 262.6,
+    "row": 520,
+    "col": 1147,
+    "distKm": 258.4,
     "rotationDeg": 14.4
-  }
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 520,
+      "col": 1147,
+      "distKm": 258.6
+    },
+    {
+      "name": "Madrid",
+      "row": 680,
+      "col": 684,
+      "distKm": 726.4
+    },
+    {
+      "name": "Lisbon",
+      "row": 912,
+      "col": 253,
+      "distKm": 1165.5
+    },
+    {
+      "name": "Rome",
+      "row": 280,
+      "col": 1960,
+      "distKm": 555.2
+    },
+    {
+      "name": "Marseille",
+      "row": 272,
+      "col": 1354,
+      "distKm": 50.3
+    },
+    {
+      "name": "Toulouse",
+      "row": 296,
+      "col": 1039,
+      "distKm": 367.9
+    },
+    {
+      "name": "Zaragoza",
+      "row": 528,
+      "col": 893,
+      "distKm": 515.0
+    },
+    {
+      "name": "Valencia",
+      "row": 768,
+      "col": 980,
+      "distKm": 426.6
+    },
+    {
+      "name": "Seville",
+      "row": 1032,
+      "col": 539,
+      "distKm": 872.7
+    },
+    {
+      "name": "Algiers",
+      "row": 1008,
+      "col": 1336,
+      "distKm": 67.9
+    },
+    {
+      "name": "Tunis",
+      "row": 864,
+      "col": 1950,
+      "distKm": 543.8
+    },
+    {
+      "name": "Naples",
+      "row": 352,
+      "col": 2141,
+      "distKm": 734.5
+    }
+  ]
 }

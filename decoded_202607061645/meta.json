@@ -1,0 +1,107 @@
+{
+  "satellite": "METEOR M2-4",
+  "maxEl": 55.63,
+  "frequency": 137900000,
+  "gain": 25,
+  "date": "2026-07-06",
+  "time": "16:51 CEST",
+  "direction": "NtoS",
+  "barcelonaPx": {
+    "row": 744,
+    "col": 922,
+    "distKm": 486.6,
+    "rotationDeg": -14.4
+  },
+  "citiesPx": [
+    {
+      "name": "Barcelona",
+      "row": 744,
+      "col": 922,
+      "distKm": 486.6
+    },
+    {
+      "name": "Madrid",
+      "row": 720,
+      "col": 1426,
+      "distKm": 20.6
+    },
+    {
+      "name": "Lisbon",
+      "row": 648,
+      "col": 1930,
+      "distKm": 522.3
+    },
+    {
+      "name": "Rome",
+      "row": 736,
+      "col": 85,
+      "distKm": 1348.3
+    },
+    {
+      "name": "Milan",
+      "row": 1144,
+      "col": 312,
+      "distKm": 1113.7
+    },
+    {
+      "name": "Marseille",
+      "row": 920,
+      "col": 633,
+      "distKm": 782.3
+    },
+    {
+      "name": "Toulouse",
+      "row": 992,
+      "col": 935,
+      "distKm": 474.2
+    },
+    {
+      "name": "Zaragoza",
+      "row": 808,
+      "col": 1164,
+      "distKm": 242.1
+    },
+    {
+      "name": "Valencia",
+      "row": 568,
+      "col": 1175,
+      "distKm": 231.6
+    },
+    {
+      "name": "Seville",
+      "row": 440,
+      "col": 1707,
+      "distKm": 301.0
+    },
+    {
+      "name": "Algiers",
+      "row": 232,
+      "col": 942,
+      "distKm": 465.5
+    },
+    {
+      "name": "Tunis",
+      "row": 176,
+      "col": 324,
+      "distKm": 1095.5
+    },
+    {
+      "name": "Casablanca",
+      "row": 72,
+      "col": 1971,
+      "distKm": 562.3
+    },
+    {
+      "name": "Geneva",
+      "row": 1232,
+      "col": 533,
+      "distKm": 886.4
+    },
+    {
+      "name": "Naples",
+      "row": 616,
+      "col": 0,
+      "distKm": 1489.1
+    }
+  ]
+}
