@@ -166,6 +166,23 @@
       gap: 12px;
     }
 
+    .raw-channels {
+      margin-top: 0.75rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .raw-channels a {
+      color: var(--accent2);
+      margin-left: 6px;
+      text-decoration: none;
+    }
+
+    .raw-channels a:hover {
+      text-decoration: underline;
+    }
+
     .thumb {
       position: relative;
       border-radius: 8px;
@@ -478,10 +495,14 @@
     .tl-close-btn:hover { color: var(--text); border-color: var(--text); }
     .tl-viewport {
       flex: 1; position: relative; overflow: hidden; background: #000;
+      --tl-fade-dur: 0.35s;
     }
     .tl-viewport img {
       position: absolute; display: block;
+      opacity: 0;
+      transition: opacity var(--tl-fade-dur) ease;
     }
+    .tl-viewport img.tl-visible { opacity: 1; }
     .tl-city {
       position: absolute; display: flex; align-items: center; gap: 5px;
       transform: translate(-50%, -50%); pointer-events: none;
@@ -578,7 +599,10 @@
       <a href="https://www.n2yo.com/?s=59051&live=1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;color:var(--accent2);text-decoration:none;border-bottom:0.5px solid rgba(0,136,255,0.4)">M2-4 live position ↗</a>
     </p>
   </div>
-  <div class="live-dot" id="sat-status-badge">not recording</div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="live-dot" id="sat-status-badge">not recording</div>
+    <button id="sat-status-refresh" title="Refresh recording status" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border-radius:50%;border:0.5px solid var(--muted);background:transparent;color:var(--muted);cursor:pointer;font-size:13px;line-height:1">⟳</button>
+  </div>
 </header>
 
 <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0">
@@ -618,7 +642,8 @@
       </div>
     </div>
     <div class="tl-viewport" id="tl-viewport">
-      <img id="tl-img" src="" alt=""/>
+      <img id="tl-img-a" src="" alt=""/>
+      <img id="tl-img-b" src="" alt=""/>
       <div id="tl-cities"></div>
     </div>
     <div class="tl-controls">
@@ -631,6 +656,10 @@
       <label class="tl-ctrl-label">
         speed <input type="range" id="tl-speed" min="1" max="10" value="2" oninput="tlSetSpeed(this.value)">
         <span id="tl-speed-val">×0.4</span>
+      </label>
+      <label class="tl-ctrl-label">
+        fade <input type="range" id="tl-fade" min="0" max="2" step="0.05" value="0.35" oninput="tlSetFade(this.value)">
+        <span id="tl-fade-val">0.35s</span>
       </label>
     </div>
   </div>
@@ -768,6 +797,15 @@ function renderGallery(passes) {
       ? `<span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">${pass.direction}</span>`
       : '';
 
+    const rawChannels = sortedImgs
+      .filter(imgName => /^MSU-MR-\d+\.png$/i.test(imgName))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    const rawChannelsHTML = rawChannels.length
+      ? `<div class="raw-channels">Raw channels:${rawChannels.map(imgName =>
+          `<a href="${pass.folder}/MSU-MR/${imgName}" target="_blank" rel="noopener">${imgName.match(/\d+/)[0]}</a>`
+        ).join('')}</div>`
+      : '';
+
     sec.innerHTML = `
       <div class="pass-header">
         <span class="pass-number">PASS #${passes.length - passes.indexOf(pass)}</span>
@@ -776,7 +814,8 @@ function renderGallery(passes) {
         ${dirBadge}
         <span class="pass-meta">${pass.satellite} · ${visibleCount} image${visibleCount !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
       </div>
-      <div class="pass-grid">${imgsHTML}</div>`;
+      <div class="pass-grid">${imgsHTML}</div>
+      ${rawChannelsHTML}`;
 
     gallery.appendChild(sec);
   });
@@ -949,8 +988,13 @@ document.addEventListener('keydown', e => {
 
 <script>
 // ─── RECORDING STATUS ─────────────────────────────────────────────────────
-(async function pollSatStatus() {
+const SAT_STATUS_POLL_MS = 10 * 60 * 1000; // 10 minutes
+let satStatusTimer = null;
+
+async function fetchSatStatus() {
   const badge = document.getElementById('sat-status-badge');
+  const refreshBtn = document.getElementById('sat-status-refresh');
+  refreshBtn.style.animation = 'spin 0.8s linear infinite';
   try {
     const res = await fetch('https://n8n.yannklein.dev/webhook/satdump-status');
     if (res.ok) {
@@ -969,8 +1013,24 @@ document.addEventListener('keydown', e => {
       }
     }
   } catch(e) {}
-  setTimeout(pollSatStatus, 10000);
-})();
+  refreshBtn.style.animation = 'none';
+}
+
+function scheduleSatStatusPoll() {
+  if (satStatusTimer) clearTimeout(satStatusTimer);
+  satStatusTimer = setTimeout(async () => {
+    await fetchSatStatus();
+    scheduleSatStatusPoll();
+  }, SAT_STATUS_POLL_MS);
+}
+
+document.getElementById('sat-status-refresh').addEventListener('click', async () => {
+  await fetchSatStatus();
+  scheduleSatStatusPoll();
+});
+
+fetchSatStatus();
+scheduleSatStatusPoll();
 </script>
 
 <script>
@@ -1040,12 +1100,20 @@ function tlSetSpeed(val) {
   if (tlTimer) { tlPlay(); }
 }
 
+function tlSetFade(val) {
+  const secs = parseFloat(val);
+  document.getElementById('tl-viewport').style.setProperty('--tl-fade-dur', secs + 's');
+  document.getElementById('tl-fade-val').textContent = secs.toFixed(2) + 's';
+}
+
 function tlSeek(e) {
   const wrap = document.getElementById('tl-prog-wrap');
   const frac = Math.max(0, Math.min(1, e.offsetX / wrap.clientWidth));
   tlIdx = Math.round(frac * (tlFrames.length - 1));
   tlRenderFrame();
 }
+
+let tlActiveLayer = 'a'; // which of tl-img-a / tl-img-b is currently visible
 
 function tlRenderFrame() {
   if (!tlFrames.length) return;
@@ -1056,14 +1124,31 @@ function tlRenderFrame() {
   const pct = tlFrames.length > 1 ? (tlIdx / (tlFrames.length - 1)) * 100 : 0;
   document.getElementById('tl-prog-bar').style.width = pct + '%';
 
-  const img  = document.getElementById('tl-img');
+  // Load the new frame into the currently-hidden layer, then crossfade it in
+  // over the visible one -- avoids the hard cut / decode flash of swapping
+  // a single <img>'s src in place.
+  const nextImg = document.getElementById(tlActiveLayer === 'a' ? 'tl-img-b' : 'tl-img-a');
+  const prevImg = document.getElementById(tlActiveLayer === 'a' ? 'tl-img-a' : 'tl-img-b');
   const vp   = document.getElementById('tl-viewport');
   const center = document.getElementById('tl-center-bcn').checked;
   const showCities = document.getElementById('tl-show-cities').checked;
 
-  img.onload = function () { tlPositionImg(frame, img, vp, center, showCities); };
-  img.src = frame.src;
-  if (img.complete && img.naturalWidth > 0) tlPositionImg(frame, img, vp, center, showCities);
+  const reveal = () => {
+    tlPositionImg(frame, nextImg, vp, center, showCities);
+    // Force a style flush before flipping to visible, so the opacity
+    // transition reliably triggers even when the browser resolved the
+    // (cached) image within the same tick as the previous frame's change.
+    void nextImg.offsetWidth;
+    nextImg.classList.add('tl-visible');
+    prevImg.classList.remove('tl-visible');
+    tlActiveLayer = tlActiveLayer === 'a' ? 'b' : 'a';
+  };
+
+  // frame.src is always a distinct URL per call, so `load` fires exactly
+  // once even when the image is already cached -- no need for (and no
+  // risk of double-firing from) an extra `nextImg.complete` fallback.
+  nextImg.onload = reveal;
+  nextImg.src = frame.src;
 
   // Preload next frame
   if (tlIdx + 1 < tlFrames.length) {
