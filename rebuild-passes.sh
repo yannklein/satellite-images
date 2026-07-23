@@ -7,7 +7,7 @@ TMP_FILE=$(mktemp)
 # up to date for every pass, including brand-new ones -- this is the only
 # place new decoded_* dirs get picked up by the ingestion pipeline, so it
 # must run before the loop below.
-python3 "$BASE_DIR/compute_barcelona_px.py" >/dev/null 2>&1
+(cd "$BASE_DIR" && python3 compute_barcelona_px.py) >/dev/null 2>&1
 
 for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
     decoded_name=$(basename "$decoded_dir")
