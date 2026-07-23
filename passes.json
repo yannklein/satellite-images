@@ -1,5 +1,1843 @@
 [
   {
+    "date": "2026-07-23",
+    "time": "11:27 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607231121",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 55.63,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 376,
+      "col": 926,
+      "distKm": 481.4,
+      "rotationDeg": 14.3
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 376,
+        "col": 926,
+        "distKm": 481.7
+      },
+      {
+        "name": "Madrid",
+        "row": 528,
+        "col": 460,
+        "distKm": 954.8
+      },
+      {
+        "name": "Lisbon",
+        "row": 736,
+        "col": 24,
+        "distKm": 1401.7
+      },
+      {
+        "name": "Rome",
+        "row": 160,
+        "col": 1744,
+        "distKm": 340.5
+      },
+      {
+        "name": "Marseille",
+        "row": 128,
+        "col": 1140,
+        "distKm": 265.4
+      },
+      {
+        "name": "Toulouse",
+        "row": 144,
+        "col": 825,
+        "distKm": 584.1
+      },
+      {
+        "name": "Zaragoza",
+        "row": 376,
+        "col": 672,
+        "distKm": 738.6
+      },
+      {
+        "name": "Valencia",
+        "row": 608,
+        "col": 751,
+        "distKm": 657.7
+      },
+      {
+        "name": "Seville",
+        "row": 872,
+        "col": 305,
+        "distKm": 1111.8
+      },
+      {
+        "name": "Algiers",
+        "row": 856,
+        "col": 1099,
+        "distKm": 305.8
+      },
+      {
+        "name": "Tunis",
+        "row": 736,
+        "col": 1715,
+        "distKm": 310.9
+      },
+      {
+        "name": "Naples",
+        "row": 232,
+        "col": 1922,
+        "distKm": 517.6
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-22",
+    "time": "16:05 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607221559",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 56.95,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 1016,
+      "col": 1868,
+      "distKm": 461.5,
+      "rotationDeg": -14.7
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 1016,
+        "col": 1867,
+        "distKm": 461.4
+      },
+      {
+        "name": "Madrid",
+        "row": 1056,
+        "col": 2377,
+        "distKm": 963.8
+      },
+      {
+        "name": "Lisbon",
+        "row": 1048,
+        "col": 2799,
+        "distKm": 1467.7
+      },
+      {
+        "name": "Paris",
+        "row": 1336,
+        "col": 1611,
+        "distKm": 510.2
+      },
+      {
+        "name": "London",
+        "row": 1336,
+        "col": 1683,
+        "distKm": 851.4
+      },
+      {
+        "name": "Rome",
+        "row": 896,
+        "col": 1022,
+        "distKm": 385.7
+      },
+      {
+        "name": "Milan",
+        "row": 1320,
+        "col": 1197,
+        "distKm": 209.7
+      },
+      {
+        "name": "Marseille",
+        "row": 1152,
+        "col": 1551,
+        "distKm": 146.3
+      },
+      {
+        "name": "Toulouse",
+        "row": 1264,
+        "col": 1845,
+        "distKm": 439.7
+      },
+      {
+        "name": "Zaragoza",
+        "row": 1112,
+        "col": 2101,
+        "distKm": 693.2
+      },
+      {
+        "name": "Valencia",
+        "row": 872,
+        "col": 2145,
+        "distKm": 735.7
+      },
+      {
+        "name": "Seville",
+        "row": 816,
+        "col": 2701,
+        "distKm": 1276.5
+      },
+      {
+        "name": "Algiers",
+        "row": 512,
+        "col": 1955,
+        "distKm": 547.4
+      },
+      {
+        "name": "Tunis",
+        "row": 384,
+        "col": 1338,
+        "distKm": 67.4
+      },
+      {
+        "name": "Geneva",
+        "row": 1336,
+        "col": 1410,
+        "distKm": 109.4
+      },
+      {
+        "name": "Naples",
+        "row": 760,
+        "col": 900,
+        "distKm": 508.9
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-22",
+    "time": "11:51 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607221144",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 89.17,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 488,
+      "col": 1403,
+      "distKm": 2.1,
+      "rotationDeg": 14.4
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 488,
+        "col": 1402,
+        "distKm": 1.8
+      },
+      {
+        "name": "Madrid",
+        "row": 672,
+        "col": 945,
+        "distKm": 461.7
+      },
+      {
+        "name": "Lisbon",
+        "row": 904,
+        "col": 519,
+        "distKm": 893.1
+      },
+      {
+        "name": "Paris",
+        "row": 0,
+        "col": 1232,
+        "distKm": 360.8
+      },
+      {
+        "name": "London",
+        "row": 0,
+        "col": 1018,
+        "distKm": 701.0
+      },
+      {
+        "name": "Rome",
+        "row": 216,
+        "col": 2208,
+        "distKm": 801.1
+      },
+      {
+        "name": "Milan",
+        "row": 0,
+        "col": 1821,
+        "distKm": 424.3
+      },
+      {
+        "name": "Marseille",
+        "row": 232,
+        "col": 1600,
+        "distKm": 197.0
+      },
+      {
+        "name": "Toulouse",
+        "row": 264,
+        "col": 1285,
+        "distKm": 119.3
+      },
+      {
+        "name": "Zaragoza",
+        "row": 504,
+        "col": 1148,
+        "distKm": 257.1
+      },
+      {
+        "name": "Valencia",
+        "row": 728,
+        "col": 1243,
+        "distKm": 161.5
+      },
+      {
+        "name": "Seville",
+        "row": 1024,
+        "col": 811,
+        "distKm": 596.1
+      },
+      {
+        "name": "Algiers",
+        "row": 960,
+        "col": 1609,
+        "distKm": 204.9
+      },
+      {
+        "name": "Tunis",
+        "row": 800,
+        "col": 2220,
+        "distKm": 810.7
+      },
+      {
+        "name": "Geneva",
+        "row": 0,
+        "col": 1571,
+        "distKm": 190.6
+      },
+      {
+        "name": "Naples",
+        "row": 280,
+        "col": 2392,
+        "distKm": 982.4
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-21",
+    "time": "16:27 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607211620",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 88.12,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 960,
+      "col": 1426,
+      "distKm": 21.8,
+      "rotationDeg": -14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 960,
+        "col": 1426,
+        "distKm": 21.6
+      },
+      {
+        "name": "Madrid",
+        "row": 968,
+        "col": 1934,
+        "distKm": 527.1
+      },
+      {
+        "name": "Lisbon",
+        "row": 928,
+        "col": 2447,
+        "distKm": 1031.2
+      },
+      {
+        "name": "Paris",
+        "row": 1408,
+        "col": 1227,
+        "distKm": 391.6
+      },
+      {
+        "name": "London",
+        "row": 1408,
+        "col": 1337,
+        "distKm": 676.7
+      },
+      {
+        "name": "Rome",
+        "row": 888,
+        "col": 581,
+        "distKm": 834.3
+      },
+      {
+        "name": "Milan",
+        "row": 1304,
+        "col": 782,
+        "distKm": 630.4
+      },
+      {
+        "name": "Marseille",
+        "row": 1112,
+        "col": 1122,
+        "distKm": 285.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 1208,
+        "col": 1421,
+        "distKm": 16.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 1040,
+        "col": 1665,
+        "distKm": 259.7
+      },
+      {
+        "name": "Valencia",
+        "row": 800,
+        "col": 1693,
+        "distKm": 287.1
+      },
+      {
+        "name": "Seville",
+        "row": 712,
+        "col": 2237,
+        "distKm": 824.9
+      },
+      {
+        "name": "Algiers",
+        "row": 448,
+        "col": 1482,
+        "distKm": 77.0
+      },
+      {
+        "name": "Tunis",
+        "row": 360,
+        "col": 862,
+        "distKm": 546.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 352,
+        "col": 2530,
+        "distKm": 1109.2
+      },
+      {
+        "name": "Naples",
+        "row": 760,
+        "col": 452,
+        "distKm": 966.0
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-21",
+    "time": "12:13 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607211207",
+    "imgs": [],
+    "maxEl": 56.49,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-20",
+    "time": "16:48 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607201642",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 59.17,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 240,
+      "col": 982,
+      "distKm": 426.0,
+      "rotationDeg": -14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 240,
+        "col": 982,
+        "distKm": 426.0
+      },
+      {
+        "name": "Madrid",
+        "row": 224,
+        "col": 1486,
+        "distKm": 81.0
+      },
+      {
+        "name": "Lisbon",
+        "row": 152,
+        "col": 1991,
+        "distKm": 583.2
+      },
+      {
+        "name": "Rome",
+        "row": 224,
+        "col": 143,
+        "distKm": 1287.1
+      },
+      {
+        "name": "Milan",
+        "row": 632,
+        "col": 368,
+        "distKm": 1056.2
+      },
+      {
+        "name": "Marseille",
+        "row": 416,
+        "col": 691,
+        "distKm": 723.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 488,
+        "col": 993,
+        "distKm": 415.8
+      },
+      {
+        "name": "Zaragoza",
+        "row": 304,
+        "col": 1224,
+        "distKm": 182.1
+      },
+      {
+        "name": "Valencia",
+        "row": 64,
+        "col": 1236,
+        "distKm": 169.5
+      },
+      {
+        "name": "Naples",
+        "row": 104,
+        "col": 9,
+        "distKm": 1427.0
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-18",
+    "time": "11:43 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607181137",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 78.26,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 376,
+      "col": 1257,
+      "distKm": 148.0,
+      "rotationDeg": 14.4
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 376,
+        "col": 1256,
+        "distKm": 148.3
+      },
+      {
+        "name": "Madrid",
+        "row": 552,
+        "col": 796,
+        "distKm": 612.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 776,
+        "col": 367,
+        "distKm": 1048.9
+      },
+      {
+        "name": "Rome",
+        "row": 120,
+        "col": 2066,
+        "distKm": 660.8
+      },
+      {
+        "name": "Marseille",
+        "row": 120,
+        "col": 1459,
+        "distKm": 55.7
+      },
+      {
+        "name": "Toulouse",
+        "row": 144,
+        "col": 1144,
+        "distKm": 261.7
+      },
+      {
+        "name": "Zaragoza",
+        "row": 384,
+        "col": 1002,
+        "distKm": 404.5
+      },
+      {
+        "name": "Valencia",
+        "row": 616,
+        "col": 1092,
+        "distKm": 313.0
+      },
+      {
+        "name": "Seville",
+        "row": 896,
+        "col": 655,
+        "distKm": 754.2
+      },
+      {
+        "name": "Algiers",
+        "row": 848,
+        "col": 1453,
+        "distKm": 49.0
+      },
+      {
+        "name": "Tunis",
+        "row": 704,
+        "col": 2065,
+        "distKm": 658.3
+      },
+      {
+        "name": "Casablanca",
+        "row": 944,
+        "col": 566,
+        "distKm": 941.4
+      },
+      {
+        "name": "Naples",
+        "row": 184,
+        "col": 2248,
+        "distKm": 840.8
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-17",
+    "time": "16:13 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607171607",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 67.62,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 824,
+      "col": 1701,
+      "distKm": 296.0,
+      "rotationDeg": -14.6
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 824,
+        "col": 1701,
+        "distKm": 296.0
+      },
+      {
+        "name": "Madrid",
+        "row": 856,
+        "col": 2210,
+        "distKm": 799.7
+      },
+      {
+        "name": "Lisbon",
+        "row": 832,
+        "col": 2728,
+        "distKm": 1304.1
+      },
+      {
+        "name": "Rome",
+        "row": 728,
+        "col": 855,
+        "distKm": 555.0
+      },
+      {
+        "name": "Milan",
+        "row": 1144,
+        "col": 1040,
+        "distKm": 368.2
+      },
+      {
+        "name": "Marseille",
+        "row": 968,
+        "col": 1389,
+        "distKm": 16.1
+      },
+      {
+        "name": "Toulouse",
+        "row": 1072,
+        "col": 1685,
+        "distKm": 280.4
+      },
+      {
+        "name": "Zaragoza",
+        "row": 920,
+        "col": 1937,
+        "distKm": 530.1
+      },
+      {
+        "name": "Valencia",
+        "row": 680,
+        "col": 1974,
+        "distKm": 566.8
+      },
+      {
+        "name": "Seville",
+        "row": 608,
+        "col": 2526,
+        "distKm": 1106.9
+      },
+      {
+        "name": "Algiers",
+        "row": 320,
+        "col": 1777,
+        "distKm": 370.3
+      },
+      {
+        "name": "Tunis",
+        "row": 208,
+        "col": 1158,
+        "distKm": 248.0
+      },
+      {
+        "name": "Casablanca",
+        "row": 256,
+        "col": 2799,
+        "distKm": 1403.5
+      },
+      {
+        "name": "Geneva",
+        "row": 1264,
+        "col": 1251,
+        "distKm": 155.2
+      },
+      {
+        "name": "Naples",
+        "row": 592,
+        "col": 731,
+        "distKm": 681.3
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-17",
+    "time": "12:06 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607171200",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 65.61,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 152,
+      "col": 1726,
+      "distKm": 333.9,
+      "rotationDeg": 14.6
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 152,
+        "col": 1726,
+        "distKm": 333.4
+      },
+      {
+        "name": "Madrid",
+        "row": 440,
+        "col": 1281,
+        "distKm": 123.5
+      },
+      {
+        "name": "Lisbon",
+        "row": 688,
+        "col": 864,
+        "distKm": 543.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 16,
+        "col": 1602,
+        "distKm": 198.3
+      },
+      {
+        "name": "Zaragoza",
+        "row": 152,
+        "col": 1471,
+        "distKm": 133.3
+      },
+      {
+        "name": "Valencia",
+        "row": 480,
+        "col": 1582,
+        "distKm": 178.3
+      },
+      {
+        "name": "Seville",
+        "row": 792,
+        "col": 1162,
+        "distKm": 242.3
+      },
+      {
+        "name": "Algiers",
+        "row": 704,
+        "col": 1960,
+        "distKm": 554.1
+      },
+      {
+        "name": "Tunis",
+        "row": 512,
+        "col": 2566,
+        "distKm": 1150.6
+      },
+      {
+        "name": "Casablanca",
+        "row": 824,
+        "col": 1090,
+        "distKm": 521.1
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-16",
+    "time": "16:35 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607161628",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 78.58,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 744,
+      "col": 1259,
+      "distKm": 147.0,
+      "rotationDeg": -14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 744,
+        "col": 1259,
+        "distKm": 147.1
+      },
+      {
+        "name": "Madrid",
+        "row": 744,
+        "col": 1765,
+        "distKm": 359.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 696,
+        "col": 2275,
+        "distKm": 862.7
+      },
+      {
+        "name": "Rome",
+        "row": 696,
+        "col": 415,
+        "distKm": 1005.3
+      },
+      {
+        "name": "Milan",
+        "row": 1112,
+        "col": 625,
+        "distKm": 791.2
+      },
+      {
+        "name": "Marseille",
+        "row": 912,
+        "col": 959,
+        "distKm": 450.5
+      },
+      {
+        "name": "Toulouse",
+        "row": 992,
+        "col": 1259,
+        "distKm": 146.7
+      },
+      {
+        "name": "Zaragoza",
+        "row": 824,
+        "col": 1498,
+        "distKm": 93.3
+      },
+      {
+        "name": "Valencia",
+        "row": 584,
+        "col": 1520,
+        "distKm": 115.0
+      },
+      {
+        "name": "Seville",
+        "row": 480,
+        "col": 2061,
+        "distKm": 651.4
+      },
+      {
+        "name": "Algiers",
+        "row": 240,
+        "col": 1302,
+        "distKm": 103.4
+      },
+      {
+        "name": "Tunis",
+        "row": 160,
+        "col": 682,
+        "distKm": 729.1
+      },
+      {
+        "name": "Casablanca",
+        "row": 120,
+        "col": 2344,
+        "distKm": 928.0
+      },
+      {
+        "name": "Geneva",
+        "row": 1216,
+        "col": 842,
+        "distKm": 569.8
+      },
+      {
+        "name": "Naples",
+        "row": 576,
+        "col": 283,
+        "distKm": 1140.4
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-14",
+    "time": "11:36 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607141130",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 67.44,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 504,
+      "col": 1110,
+      "distKm": 295.7,
+      "rotationDeg": 14.3
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 504,
+        "col": 1110,
+        "distKm": 295.9
+      },
+      {
+        "name": "Madrid",
+        "row": 672,
+        "col": 647,
+        "distKm": 764.1
+      },
+      {
+        "name": "Lisbon",
+        "row": 880,
+        "col": 214,
+        "distKm": 1205.8
+      },
+      {
+        "name": "Rome",
+        "row": 272,
+        "col": 1924,
+        "distKm": 519.5
+      },
+      {
+        "name": "Marseille",
+        "row": 256,
+        "col": 1318,
+        "distKm": 86.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 272,
+        "col": 1002,
+        "distKm": 404.5
+      },
+      {
+        "name": "Zaragoza",
+        "row": 512,
+        "col": 856,
+        "distKm": 552.4
+      },
+      {
+        "name": "Valencia",
+        "row": 736,
+        "col": 941,
+        "distKm": 466.0
+      },
+      {
+        "name": "Tunis",
+        "row": 848,
+        "col": 1910,
+        "distKm": 504.7
+      },
+      {
+        "name": "Naples",
+        "row": 336,
+        "col": 2104,
+        "distKm": 698.1
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-13",
+    "time": "15:59 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607131553",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 51.07,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 680,
+      "col": 1974,
+      "distKm": 567.6,
+      "rotationDeg": -14.7
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 688,
+        "col": 1974,
+        "distKm": 567.1
+      },
+      {
+        "name": "Madrid",
+        "row": 736,
+        "col": 2484,
+        "distKm": 1068.3
+      },
+      {
+        "name": "Rome",
+        "row": 624,
+        "col": 1126,
+        "distKm": 290.9
+      },
+      {
+        "name": "Milan",
+        "row": 976,
+        "col": 1298,
+        "distKm": 108.1
+      },
+      {
+        "name": "Marseille",
+        "row": 816,
+        "col": 1655,
+        "distKm": 250.2
+      },
+      {
+        "name": "Toulouse",
+        "row": 936,
+        "col": 1947,
+        "distKm": 541.4
+      },
+      {
+        "name": "Zaragoza",
+        "row": 784,
+        "col": 2207,
+        "distKm": 797.3
+      },
+      {
+        "name": "Valencia",
+        "row": 624,
+        "col": 2250,
+        "distKm": 843.1
+      },
+      {
+        "name": "Seville",
+        "row": 624,
+        "col": 2799,
+        "distKm": 1384.5
+      },
+      {
+        "name": "Algiers",
+        "row": 120,
+        "col": 2073,
+        "distKm": 667.0
+      },
+      {
+        "name": "Tunis",
+        "row": 48,
+        "col": 1453,
+        "distKm": 48.4
+      },
+      {
+        "name": "Geneva",
+        "row": 1104,
+        "col": 1504,
+        "distKm": 99.2
+      },
+      {
+        "name": "Naples",
+        "row": 624,
+        "col": 1000,
+        "distKm": 461.8
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-13",
+    "time": "11:59 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607131153",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 76,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 184,
+      "col": 1585,
+      "distKm": 181.9,
+      "rotationDeg": 14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 184,
+        "col": 1585,
+        "distKm": 181.6
+      },
+      {
+        "name": "Madrid",
+        "row": 392,
+        "col": 1133,
+        "distKm": 272.8
+      },
+      {
+        "name": "Lisbon",
+        "row": 616,
+        "col": 711,
+        "distKm": 698.3
+      },
+      {
+        "name": "Zaragoza",
+        "row": 208,
+        "col": 1331,
+        "distKm": 73.0
+      },
+      {
+        "name": "Valencia",
+        "row": 432,
+        "col": 1432,
+        "distKm": 28.5
+      },
+      {
+        "name": "Seville",
+        "row": 728,
+        "col": 1007,
+        "distKm": 399.0
+      },
+      {
+        "name": "Algiers",
+        "row": 648,
+        "col": 1804,
+        "distKm": 399.5
+      },
+      {
+        "name": "Tunis",
+        "row": 480,
+        "col": 2413,
+        "distKm": 1000.7
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-12",
+    "time": "16:21 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607121615",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 79.84,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 632,
+      "col": 1535,
+      "distKm": 129.5,
+      "rotationDeg": -14.6
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 640,
+        "col": 1534,
+        "distKm": 129.1
+      },
+      {
+        "name": "Madrid",
+        "row": 656,
+        "col": 2042,
+        "distKm": 634.2
+      },
+      {
+        "name": "Lisbon",
+        "row": 624,
+        "col": 2557,
+        "distKm": 1138.4
+      },
+      {
+        "name": "Rome",
+        "row": 560,
+        "col": 688,
+        "distKm": 725.0
+      },
+      {
+        "name": "Milan",
+        "row": 976,
+        "col": 883,
+        "distKm": 527.7
+      },
+      {
+        "name": "Marseille",
+        "row": 784,
+        "col": 1227,
+        "distKm": 179.4
+      },
+      {
+        "name": "Toulouse",
+        "row": 880,
+        "col": 1525,
+        "distKm": 119.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 720,
+        "col": 1772,
+        "distKm": 366.1
+      },
+      {
+        "name": "Valencia",
+        "row": 488,
+        "col": 1803,
+        "distKm": 396.8
+      },
+      {
+        "name": "Seville",
+        "row": 400,
+        "col": 2350,
+        "distKm": 935.9
+      },
+      {
+        "name": "Algiers",
+        "row": 128,
+        "col": 1598,
+        "distKm": 192.2
+      },
+      {
+        "name": "Tunis",
+        "row": 32,
+        "col": 978,
+        "distKm": 429.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 48,
+        "col": 2650,
+        "distKm": 1224.8
+      },
+      {
+        "name": "Naples",
+        "row": 432,
+        "col": 561,
+        "distKm": 854.8
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-11",
+    "time": "16:43 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607111637",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 66.31,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 800,
+      "col": 1091,
+      "distKm": 316.6,
+      "rotationDeg": -14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 800,
+        "col": 1091,
+        "distKm": 316.6
+      },
+      {
+        "name": "Madrid",
+        "row": 792,
+        "col": 1595,
+        "distKm": 190.2
+      },
+      {
+        "name": "Lisbon",
+        "row": 728,
+        "col": 2102,
+        "distKm": 693.0
+      },
+      {
+        "name": "Rome",
+        "row": 776,
+        "col": 249,
+        "distKm": 1177.0
+      },
+      {
+        "name": "Milan",
+        "row": 1176,
+        "col": 468,
+        "distKm": 952.0
+      },
+      {
+        "name": "Marseille",
+        "row": 968,
+        "col": 796,
+        "distKm": 616.0
+      },
+      {
+        "name": "Toulouse",
+        "row": 1048,
+        "col": 1097,
+        "distKm": 310.2
+      },
+      {
+        "name": "Zaragoza",
+        "row": 872,
+        "col": 1331,
+        "distKm": 74.1
+      },
+      {
+        "name": "Valencia",
+        "row": 632,
+        "col": 1347,
+        "distKm": 58.0
+      },
+      {
+        "name": "Seville",
+        "row": 520,
+        "col": 1884,
+        "distKm": 476.4
+      },
+      {
+        "name": "Algiers",
+        "row": 288,
+        "col": 1122,
+        "distKm": 284.0
+      },
+      {
+        "name": "Tunis",
+        "row": 224,
+        "col": 503,
+        "distKm": 912.2
+      },
+      {
+        "name": "Casablanca",
+        "row": 152,
+        "col": 2158,
+        "distKm": 745.6
+      },
+      {
+        "name": "Geneva",
+        "row": 1296,
+        "col": 686,
+        "distKm": 729.0
+      },
+      {
+        "name": "Naples",
+        "row": 648,
+        "col": 116,
+        "distKm": 1314.6
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-10",
+    "time": "11:33 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607101123",
+    "imgs": [],
+    "maxEl": 57.83,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-08",
+    "time": "16:08 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607081601",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 60.62,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 224,
+      "col": 1808,
+      "distKm": 402.7,
+      "rotationDeg": -14.7
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 224,
+        "col": 1808,
+        "distKm": 402.6
+      },
+      {
+        "name": "Madrid",
+        "row": 264,
+        "col": 2317,
+        "distKm": 905.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 248,
+        "col": 2799,
+        "distKm": 1409.6
+      },
+      {
+        "name": "Rome",
+        "row": 152,
+        "col": 961,
+        "distKm": 450.0
+      },
+      {
+        "name": "Marseille",
+        "row": 360,
+        "col": 1494,
+        "distKm": 88.8
+      },
+      {
+        "name": "Toulouse",
+        "row": 472,
+        "col": 1788,
+        "distKm": 383.1
+      },
+      {
+        "name": "Zaragoza",
+        "row": 320,
+        "col": 2043,
+        "distKm": 635.3
+      },
+      {
+        "name": "Valencia",
+        "row": 48,
+        "col": 2086,
+        "distKm": 678.2
+      },
+      {
+        "name": "Seville",
+        "row": 16,
+        "col": 2639,
+        "distKm": 1216.4
+      }
+    ],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-08",
+    "time": "12:15 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607081209",
+    "imgs": [],
+    "maxEl": 54.36,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-07",
+    "time": "16:29 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607071623",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 87.01,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 864,
+      "col": 1367,
+      "distKm": 38.4,
+      "rotationDeg": -14.5
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 864,
+        "col": 1367,
+        "distKm": 38.4
+      },
+      {
+        "name": "Madrid",
+        "row": 872,
+        "col": 1874,
+        "distKm": 467.6
+      },
+      {
+        "name": "Lisbon",
+        "row": 832,
+        "col": 2386,
+        "distKm": 971.2
+      },
+      {
+        "name": "Rome",
+        "row": 808,
+        "col": 522,
+        "distKm": 895.3
+      },
+      {
+        "name": "Milan",
+        "row": 1224,
+        "col": 726,
+        "distKm": 687.9
+      },
+      {
+        "name": "Marseille",
+        "row": 1024,
+        "col": 1064,
+        "distKm": 344.0
+      },
+      {
+        "name": "Toulouse",
+        "row": 1112,
+        "col": 1363,
+        "distKm": 41.9
+      },
+      {
+        "name": "Zaragoza",
+        "row": 944,
+        "col": 1606,
+        "distKm": 200.7
+      },
+      {
+        "name": "Valencia",
+        "row": 712,
+        "col": 1631,
+        "distKm": 225.7
+      },
+      {
+        "name": "Seville",
+        "row": 616,
+        "col": 2174,
+        "distKm": 763.2
+      },
+      {
+        "name": "Algiers",
+        "row": 360,
+        "col": 1418,
+        "distKm": 12.8
+      },
+      {
+        "name": "Tunis",
+        "row": 272,
+        "col": 798,
+        "distKm": 611.4
+      },
+      {
+        "name": "Casablanca",
+        "row": 256,
+        "col": 2464,
+        "distKm": 1044.7
+      },
+      {
+        "name": "Naples",
+        "row": 680,
+        "col": 392,
+        "distKm": 1028.2
+      }
+    ],
+    "exclude": false
+  },
+  {
     "date": "2026-07-06",
     "time": "16:51 CEST",
     "satellite": "METEOR M2-4",
