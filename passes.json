@@ -1,5 +1,33 @@
 [
   {
+    "date": "2026-07-25",
+    "time": "16:46 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607251639",
+    "imgs": [],
+    "maxEl": 70.5,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false
+  },
+  {
+    "date": "2026-07-25",
+    "time": "16:41 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607251634",
+    "imgs": [],
+    "maxEl": 70.5,
+    "frequency": 137900000,
+    "gain": 25,
+    "direction": "NtoS",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false
+  },
+  {
     "date": "2026-07-23",
     "time": "11:27 CEST",
     "satellite": "METEOR M2-3",
