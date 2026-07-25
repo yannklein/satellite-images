@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Passages METEOR-M2 — Théding</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%A0%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&family=Cinzel:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080a1a;
+      --surface: #0b0e20;
+      --card: #10142a;
+      --border: rgba(180, 200, 255, 0.09);
+      --accent: #f2b544;
+      --accent2: #7aa7f0;
+      --text: #f2ecda;
+      --muted: #6b7593;
+      --mono: 'Space Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--sans);
+      background:
+        radial-gradient(ellipse 60% 40% at 15% -10%, rgba(122, 167, 240, 0.12), transparent 60%),
+        radial-gradient(ellipse 50% 35% at 88% 105%, rgba(242, 181, 68, 0.08), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Starfield */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 60%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 80%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 20%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 55%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 90% 10%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 85%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 40%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+        radial-gradient(1px 1px at 5% 45%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 75%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 33% 8%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 62% 92%, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+      animation: twinkle 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.7;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.78;
+      }
+    }
+
+    /* ── Hero: cinematic title card ───────────────────────────────────────── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(24px, 4vw, 56px);
+      flex-wrap: wrap;
+      padding: clamp(36px, 6vw, 64px) 0;
+      overflow: hidden;
+    }
+
+    /* Soft glow pooling behind the poster, distinct from the fixed starfield behind it */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(ellipse 40% 55% at 30% 45%, rgba(122, 167, 240, 0.10), transparent 70%),
+        radial-gradient(ellipse 35% 45% at 75% 60%, rgba(242, 181, 68, 0.08), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-art {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      width: min(360px, 80vw);
+      aspect-ratio: 1055 / 1491;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(122, 167, 240, 0.22), 0 0 44px rgba(242, 181, 68, 0.12);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.88) contrast(1.14) brightness(0.86) hue-rotate(-3deg);
+      animation: heroDrift 26s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroDrift {
+      0% {
+        transform: scale(1.0);
+      }
+
+      100% {
+        transform: scale(1.035);
+      }
+    }
+
+    .hero-duotone {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(150deg, rgba(50, 65, 140, 0.28), rgba(10, 8, 24, 0.05) 45%, rgba(90, 45, 10, 0.1));
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 5, 13, 0.28) 0%, transparent 20%, transparent 76%, rgba(4, 5, 13, 0.4) 100%);
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 90px 18px rgba(2, 3, 10, 0.55);
+      pointer-events: none;
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .hero-scanlines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.4;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0px, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 3px);
+    }
+
+    .hero-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: #04050d;
+      z-index: 3;
+    }
+
+    .hero-bar-top {
+      top: 0;
+    }
+
+    .hero-bar-bottom {
+      bottom: 0;
+    }
+
+    .hero-bracket {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: rgba(122, 167, 240, 0.6);
+      z-index: 3;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-bracket.tl {
+      top: 14px;
+      left: 14px;
+      border-top: 1.5px solid;
+      border-left: 1.5px solid;
+    }
+
+    .hero-bracket.tr {
+      top: 14px;
+      right: 14px;
+      border-top: 1.5px solid;
+      border-right: 1.5px solid;
+    }
+
+    .hero-bracket.bl {
+      bottom: 14px;
+      left: 14px;
+      border-bottom: 1.5px solid;
+      border-left: 1.5px solid;
+    }
+
+    .hero-bracket.br {
+      bottom: 14px;
+      right: 14px;
+      border-bottom: 1.5px solid;
+      border-right: 1.5px solid;
+    }
+
+    .shooting-star {
+      position: absolute;
+      top: 8%;
+      left: 2%;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.9);
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+      animation: shoot 11s linear infinite;
+    }
+
+    .shooting-star::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 90px;
+      height: 1px;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+      transform: translateY(-50%);
+    }
+
+    @keyframes shoot {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0);
+      }
+
+      3% {
+        opacity: 1;
+      }
+
+      16% {
+        opacity: 0;
+        transform: translate(280px, 130px);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(280px, 130px);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 380px;
+    }
+
+    .hero-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .hero-kicker::before,
+    .hero-kicker::after {
+      content: '—';
+      margin: 0 10px;
+      opacity: 0.5;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(42px, 7vw, 72px);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      color: #f6ecd6;
+      text-shadow: 0 0 30px rgba(242, 181, 68, 0.3), 0 2px 26px rgba(0, 0, 0, 0.6);
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      color: rgba(242, 236, 218, 0.75);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-sub b {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .hero-sub .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .hero-links {
+      margin-top: 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .hero-links a {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 0.5px solid rgba(122, 167, 240, 0.4);
+    }
+
+    .hero-links-sep {
+      color: var(--muted);
+      margin: 0 8px;
+    }
+
+    .hero-status {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-next {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      width: min(260px, 85vw);
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: clamp(24px, 4vw, 56px);
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #f59e0b;
+      border: 0.5px solid #f59e0b;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .live-dot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f59e0b;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 0;
+    }
+
+    .pass {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .pass-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pass-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+      background: rgba(122, 167, 240, 0.1);
+      border: 0.5px solid rgba(122, 167, 240, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .pass-date {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .pass-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: auto;
+      font-family: var(--mono);
+    }
+
+    .pass-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .raw-channels {
+      margin-top: 0.75rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .raw-channels a {
+      color: var(--accent2);
+      margin-left: 6px;
+      text-decoration: none;
+    }
+
+    .raw-channels a:hover {
+      text-decoration: underline;
+    }
+
+    .thumb {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 0.5px solid var(--border);
+      cursor: pointer;
+      background: var(--card);
+      aspect-ratio: 16/9;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .thumb:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .thumb-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 6px 10px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(242, 181, 68, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .thumb:hover .thumb-overlay {
+      opacity: 1;
+    }
+
+    .thumb-overlay svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .empty-pass {
+      padding: 1.5rem;
+      border: 0.5px dashed var(--border);
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Map overlay badge */
+    .thumb-map {
+      border: 0.5px solid var(--accent2);
+    }
+
+    .thumb-map-badge {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      background: rgba(122, 167, 240, 0.85);
+      color: #0b0e20;
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Direction flip badge */
+    .thumb-flip-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(0, 0, 0, 0.6);
+      color: rgba(255, 255, 255, 0.5);
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .failed-accordion {
+      margin-bottom: 3rem;
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .failed-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .failed-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .failed-accordion summary:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .failed-accordion summary .chevron {
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .failed-accordion[open] summary .chevron {
+      transform: rotate(90deg);
+    }
+
+    .failed-accordion summary .count-badge {
+      font-size: 11px;
+      color: var(--accent2);
+      background: rgba(122, 167, 240, 0.1);
+      border: 0.5px solid rgba(122, 167, 240, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .failed-accordion .failed-list {
+      border-top: 0.5px solid var(--border);
+      padding: 0.5rem 1.2rem 1rem;
+    }
+
+    .failed-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .failed-row:last-child {
+      border-bottom: none;
+    }
+
+    .failed-row .pass-date {
+      font-size: 12px;
+    }
+
+    .failed-row .pass-meta {
+      margin-left: 0;
+    }
+
+    .failed-row .pass-meta:last-child {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lightbox img {
+      height: 80vh;
+      width: auto;
+      max-width: 90vw;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 0.5px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .lightbox-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .lightbox-meta span {
+      color: var(--accent);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    .lightbox-nav {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .lightbox-nav button {
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .lightbox-nav button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .lightbox-nav button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 0;
+      border-top: 0.5px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .pass-card {
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px
+    }
+
+    .pass-card-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px
+    }
+
+    .pass-card-date {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .pass-card-time {
+      font-family: var(--mono);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px
+    }
+
+    .pass-card-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-bottom: 6px
+    }
+
+    .pass-card-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 1px
+    }
+
+    .pass-card-stat-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .pass-card-stat-value {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--text)
+    }
+
+    .pass-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px
+    }
+
+    .pass-card-el {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px
+    }
+
+    .pass-card-el.high {
+      background: rgba(242, 181, 68, 0.15);
+      border: 0.5px solid var(--accent);
+      color: var(--accent)
+    }
+
+    .pass-card-el.med {
+      background: rgba(122, 167, 240, 0.1);
+      border: 0.5px solid var(--accent2);
+      color: var(--accent2)
+    }
+
+    .pass-card-el.low {
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid var(--muted);
+      color: var(--muted)
+    }
+
+    .countdown {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .pass-card.skipped-night {
+      opacity: 0.55
+    }
+
+    .pass-card-night-badge {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap
+    }
+
+    /* ── Timelapse ─────────────────────────────────────────────────────────── */
+    .tl-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.93);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+    }
+
+    .tl-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .tl-panel {
+      display: flex;
+      flex-direction: column;
+      width: 92vw;
+      max-width: 1100px;
+      height: 88vh;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .tl-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .tl-topbar-left {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tl-topbar-left strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .tl-close-btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: none;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+      padding: 3px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .tl-close-btn:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    .tl-viewport {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+      --tl-fade-dur: 0.35s;
+    }
+
+    .tl-viewport img {
+      position: absolute;
+      display: block;
+      opacity: 0;
+      transition: opacity var(--tl-fade-dur) ease;
+    }
+
+    .tl-viewport img.tl-visible {
+      opacity: 1;
+    }
+
+    .tl-city {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #fff;
+      text-shadow: 0 0 4px #000, 0 0 4px #000, 0 1px 2px #000;
+      white-space: nowrap;
+    }
+
+    .tl-city::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 4px 1px rgba(242, 181, 68, 0.9);
+      flex-shrink: 0;
+    }
+
+    .tl-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 8px 14px;
+      border-top: 0.5px solid var(--border);
+      background: var(--card);
+      flex-shrink: 0;
+    }
+
+    .tl-btn {
+      font-family: var(--mono);
+      font-size: 13px;
+      background: none;
+      border: 0.5px solid var(--border);
+      color: var(--text);
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tl-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .tl-progress-wrap {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      min-width: 60px;
+    }
+
+    .tl-progress-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0%;
+    }
+
+    .tl-ctrl-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .tl-ctrl-label input[type=range] {
+      width: 70px;
+      vertical-align: middle;
+    }
+
+    .tl-ctrl-label input[type=checkbox] {
+      cursor: pointer;
+    }
+
+    /* ── How it works ──────────────────────────────────────────────────────── */
+    .hiw-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.93);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+    }
+
+    .hiw-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .hiw-panel {
+      display: flex;
+      flex-direction: column;
+      width: 92vw;
+      max-width: 820px;
+      height: 88vh;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .hiw-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .hiw-topbar-left {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hiw-topbar-left strong {
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    .hiw-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 30px;
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .hiw-body h1 {
+      font-family: var(--mono);
+      font-size: 19px;
+      color: var(--accent2);
+      margin: 0 0 14px;
+    }
+
+    .hiw-body h2 {
+      font-family: var(--mono);
+      font-size: 15px;
+      color: var(--accent2);
+      margin: 26px 0 10px;
+      padding-top: 16px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .hiw-body h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .hiw-body h3 {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      margin: 16px 0 8px;
+    }
+
+    .hiw-body p {
+      margin: 0 0 12px;
+    }
+
+    .hiw-body ul,
+    .hiw-body ol {
+      margin: 0 0 12px 22px;
+    }
+
+    .hiw-body li {
+      margin-bottom: 5px;
+    }
+
+    .hiw-body code {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    .hiw-body pre {
+      font-family: var(--mono);
+      font-size: 12px;
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      margin: 0 0 14px;
+      line-height: 1.5;
+    }
+
+    .hiw-body pre code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+
+    .hiw-body strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .hiw-body a {
+      color: var(--accent2);
+    }
+
+    .hiw-loading {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+  <div class="hero">
+    <div class="shooting-star" aria-hidden="true"></div>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div class="hero-art">
+        <img class="hero-img" src="theding.png"
+          alt="Église de Théding sous un ciel étoilé, un satellite METEOR-M2 en orbite" />
+        <div class="hero-duotone" aria-hidden="true"></div>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-scanlines" aria-hidden="true"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="hero-bracket tl" aria-hidden="true"></div>
+        <div class="hero-bracket tr" aria-hidden="true"></div>
+        <div class="hero-bracket bl" aria-hidden="true"></div>
+        <div class="hero-bracket br" aria-hidden="true"></div>
+        <div class="hero-bar hero-bar-top" aria-hidden="true"></div>
+        <div class="hero-bar hero-bar-bottom" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-kicker">station de réception</div>
+        <h1 class="hero-title">Théding</h1>
+        <div class="hero-sub">MÉTÉOR-M2 <span class="dot"></span> <b>137.900</b> MHz <span class="dot"></span> 49.11°N
+          6.98°E <span class="dot"></span> RTL-SDR V3</div>
+      </div>
+    </div>
+    <div class="hero-next">
+      <div
+        style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">
+        ⟳ 3 prochains passages</div>
+      <div id="next-passes-grid" style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px">
+          <div
+            style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite">
+          </div>
+          récupération des prédictions de passage...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:32px;justify-content: space-between;padding: clamp(36px, 6vw, 64px) 0;">
+    <div class="hero-links">
+      <a href="https://www.n2yo.com/?s=57166&live=1" target="_blank" rel="noopener">Position en direct M2-3 ↗</a>
+      <span class="hero-links-sep">·</span>
+      <a href="https://www.n2yo.com/?s=59051&live=1" target="_blank" rel="noopener">Position en direct M2-4 ↗</a>
+    </div>
+    <div class="hero-status">
+      <div class="live-dot" id="sat-status-badge">hors enregistrement</div>
+      <button id="sat-status-refresh" title="Actualiser l'état d'enregistrement"
+        style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border-radius:50%;border:0.5px solid var(--muted);background:transparent;color:var(--muted);cursor:pointer;font-size:13px;line-height:1">⟳</button>
+    </div>
+  </div>
+
+  <div
+    style="position:relative;z-index:1;padding:0 0 1.5rem;display:flex;align-items:center;gap:12px">
+    <button onclick="openTimelapse()"
+      style="font-family:var(--mono);font-size:12px;background:rgba(242,181,68,0.1);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s"
+      onmouseover="this.style.background='rgba(242,181,68,0.2)'"
+      onmouseout="this.style.background='rgba(242,181,68,0.1)'">▶ timelapse</button>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">observez l'évolution de la surface
+      terrestre</span>
+    <button onclick="openHowItWorks()"
+      style="font-family:var(--mono);font-size:12px;background:rgba(122,167,240,0.1);border:0.5px solid var(--accent2);color:var(--accent2);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s;margin-left:auto"
+      onmouseover="this.style.background='rgba(122,167,240,0.2)'"
+      onmouseout="this.style.background='rgba(122,167,240,0.1)'">ⓘ comment ça marche</button>
+  </div>
+
+  <main id="gallery"></main>
+
+  <footer>
+    yannklein.dev homelab · station de réception Théding, France · images reçues directement depuis METEOR-M2-3 (NORAD
+    57166) · décodées avec SatDump v2.0.0-alpha
+  </footer>
+
+  </div>
+
+  <!-- ── Timelapse Modal ───────────────────────────────────────────────────── -->
+  <div class="tl-modal" id="tl-modal">
+    <div class="tl-panel">
+      <div class="tl-topbar">
+        <div class="tl-topbar-left">
+          timelapse &nbsp;·&nbsp; <strong id="tl-ts">—</strong>
+          <span id="tl-counter" style="color:var(--muted);margin-left:8px"></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <label class="tl-ctrl-label">
+            <input type="checkbox" id="tl-center-bcn" checked onchange="tlRenderFrame()"> centrer la station
+          </label>
+          <label class="tl-ctrl-label">
+            <input type="checkbox" id="tl-show-cities" checked onchange="tlRenderFrame()"> villes
+          </label>
+          <button class="tl-close-btn" onclick="closeTimelapse()">× fermer</button>
+        </div>
+      </div>
+      <div class="tl-viewport" id="tl-viewport">
+        <img id="tl-img-a" src="" alt="" />
+        <img id="tl-img-b" src="" alt="" />
+        <div id="tl-cities"></div>
+      </div>
+      <div class="tl-controls">
+        <button class="tl-btn" id="tl-pp" onclick="tlToggle()" title="play/pause">⏸</button>
+        <button class="tl-btn" onclick="tlStep(-1)" title="prev">◀</button>
+        <button class="tl-btn" onclick="tlStep(1)" title="next">▶</button>
+        <div class="tl-progress-wrap" id="tl-prog-wrap" onclick="tlSeek(event)">
+          <div class="tl-progress-bar" id="tl-prog-bar"></div>
+        </div>
+        <label class="tl-ctrl-label">
+          vitesse <input type="range" id="tl-speed" min="1" max="10" value="2" oninput="tlSetSpeed(this.value)">
+          <span id="tl-speed-val">×0.4</span>
+        </label>
+        <label class="tl-ctrl-label">
+          fondu <input type="range" id="tl-fade" min="0" max="2" step="0.05" value="0.35"
+            oninput="tlSetFade(this.value)">
+          <span id="tl-fade-val">0.35s</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── How it works Modal ────────────────────────────────────────────────── -->
+  <div class="hiw-modal" id="hiw-modal" onclick="if(event.target===this)closeHowItWorks()">
+    <div class="hiw-panel">
+      <div class="hiw-topbar">
+        <div class="hiw-topbar-left"><strong>comment ça marche</strong> &nbsp;·&nbsp; chaîne du signal satellite → site
+          web</div>
+        <button class="tl-close-btn" onclick="closeHowItWorks()">× fermer</button>
+      </div>
+      <div class="hiw-body" id="hiw-body">
+        <div class="hiw-loading">chargement...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox()">ESC / fermer</button>
+      <img id="lb-img" src="" alt="" />
+      <div class="lightbox-meta" id="lb-meta"></div>
+      <div class="lightbox-nav">
+        <button id="lb-prev" onclick="lbNav(-1)">← précédent</button>
+        <button id="lb-next" onclick="lbNav(+1)">suivant →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ─── HELPERS ───────────────────────────────────────────────────────────────
+    function elClass(el) {
+      if (el >= 60) return 'high';
+      if (el >= 30) return 'med';
+      return 'low';
+    }
+
+    function elLabel(el) {
+      if (el >= 60) return '★ excellent';
+      if (el >= 30) return '◆ bon';
+      return '◇ faible';
+    }
+
+    function isProjected(imgName) {
+      return imgName.startsWith('rgb_');
+    }
+
+    function needsFlip(imgName, pass) {
+      return !isProjected(imgName) && pass.direction === 'NtoS';
+    }
+
+    // ─── RENDER ────────────────────────────────────────────────────────────────
+    const gallery = document.getElementById('gallery');
+    let allImgs = [];
+    let lbIdx = 0;
+
+    const CHANNEL_LABELS = {
+      'msu_mr_rgb_AVHRR_221_False_Color_corrected.png': 'Fausses couleurs AVHRR 221',
+      'msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png': 'Fausses couleurs AVHRR 3a21',
+      'msu_mr_rgb_MSA_corrected.png': 'MSA',
+      'rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png': 'Fausses couleurs AVHRR 3a21 — projetée',
+      'rgb_msu_mr_rgb_MSA_projected.png': 'MSA — projetée',
+    };
+
+    function shouldShow(imgName) {
+      // Projected composites: always show
+      if (imgName.startsWith('rgb_')) return true;
+      // Corrected composites: show (but not their uncorrected twins or map overlays)
+      if (imgName.includes('_corrected') && !imgName.includes('_map')) return true;
+      // Everything else (raw channels, uncalibrated, non-corrected, map overlays): skip
+      return false;
+    }
+
+    function getLabel(imgName) {
+      return CHANNEL_LABELS[imgName] || imgName.replace(/_corrected/g, '').replace(/_/g, ' ').replace('.png', '');
+    }
+
+    function renderGallery(passes) {
+      passes.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+
+      allImgs = [];
+      gallery.innerHTML = '';
+
+      if (passes.length === 0) {
+        gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">Aucun passage enregistré pour le moment.</div>';
+        return;
+      }
+
+      const successful = passes.filter(p => (p.imgs || []).length > 0);
+      const failed = passes.filter(p => (p.imgs || []).length === 0);
+
+      successful.forEach((pass, pi) => {
+        const sec = document.createElement('div');
+        sec.className = 'pass';
+        sec.style.animationDelay = (pi * 0.08) + 's';
+
+        const imgs = pass.imgs || [];
+
+        const sortedImgs = [...imgs].sort((a, b) => {
+          if (a === 'msu_mr_false_color_map.png') return -1;
+          if (b === 'msu_mr_false_color_map.png') return 1;
+          return a.localeCompare(b);
+        });
+
+        let imgsHTML = '';
+        let visibleCount = 0;
+        sortedImgs.forEach((imgName) => {
+          if (!shouldShow(imgName)) return;
+          visibleCount++;
+
+          const src = `${pass.folder}/MSU-MR/${imgName}`;
+          const flip = needsFlip(imgName, pass);
+          const label = getLabel(imgName);
+          const globalIdx = allImgs.length;
+
+          allImgs.push({ src, label, pass, imgName });
+
+          imgsHTML += `
+        <div class="thumb" onclick="openLightbox(${globalIdx})">
+          <img src="${src}" alt="${label}" loading="lazy" style="${flip ? 'transform:scale(-1,-1)' : ''}"/>
+          ${flip ? '<div class="thumb-flip-badge">↕ NtoS</div>' : ''}
+          <div class="thumb-label">${label}</div>
+          <div class="thumb-overlay">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>`;
+        });
+
+        const dirBadge = pass.direction
+          ? `<span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">${pass.direction}</span>`
+          : '';
+
+        const rawChannels = sortedImgs
+          .filter(imgName => /^MSU-MR-\d+\.png$/i.test(imgName))
+          .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+        const rawChannelsHTML = rawChannels.length
+          ? `<div class="raw-channels">Canaux bruts :${rawChannels.map(imgName =>
+            `<a href="${pass.folder}/MSU-MR/${imgName}" target="_blank" rel="noopener">${imgName.match(/\d+/)[0]}</a>`
+          ).join('')}</div>`
+          : '';
+
+        sec.innerHTML = `
+      <div class="pass-header">
+        <span class="pass-number">PASSAGE #${passes.length - passes.indexOf(pass)}</span>
+        <span class="pass-date">${pass.date} · ${pass.time}</span>
+        ${pass.maxEl != null ? `<span class="pass-card-el ${elClass(pass.maxEl)}" style="margin-top:0;font-size:10px">${elLabel(pass.maxEl)}</span>` : ''}
+        ${dirBadge}
+        <span class="pass-meta">${pass.satellite} · ${visibleCount} image${visibleCount !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° élév.` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain} dB de gain` : ''}</span>
+      </div>
+      <div class="pass-grid">${imgsHTML}</div>
+      ${rawChannelsHTML}`;
+
+        gallery.appendChild(sec);
+      });
+
+      if (failed.length > 0) {
+        const acc = document.createElement('details');
+        acc.className = 'failed-accordion';
+        acc.style.animationDelay = (successful.length * 0.08) + 's';
+
+        let rowsHTML = '';
+        failed.forEach(pass => {
+          const details = [];
+          if (pass.maxEl != null) details.push(`${Math.round(pass.maxEl)}° élév.`);
+          if (pass.frequency != null) details.push(`${(pass.frequency / 1e6).toFixed(3)} MHz`);
+          if (pass.gain != null) details.push(`${pass.gain} dB de gain`);
+          const detailsStr = details.length
+            ? details.join(' · ')
+            : '<span style="opacity:0.5">aucune métadonnée (avant suivi)</span>';
+
+          rowsHTML += `
+        <div class="failed-row">
+          <span class="pass-date">${pass.date} · ${pass.time}</span>
+          <span class="pass-meta">${pass.satellite}</span>
+          <span class="pass-meta">${detailsStr}</span>
+        </div>`;
+        });
+
+        acc.innerHTML = `
+      <summary>
+        <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        <span>${failed.length} passage${failed.length !== 1 ? 's' : ''} sans signal — signal sous le seuil</span>
+        <span class="count-badge">${failed.length}</span>
+      </summary>
+      <div class="failed-list">${rowsHTML}</div>`;
+
+        gallery.appendChild(acc);
+      }
+    }
+
+    // ─── LOAD passes.json ──────────────────────────────────────────────────────
+    fetch('passes.json?t=' + Date.now())
+      .then(r => {
+        if (!r.ok) throw new Error('passes.json not found');
+        return r.json();
+      })
+      .then(passes => {
+        const thedingPasses = passes.filter(p => p.location === 'theding');
+        renderGallery(thedingPasses);
+        tlInit(thedingPasses);
+        if (new URLSearchParams(window.location.search).has('timelapse')) openTimelapse();
+      })
+      .catch(() => {
+        gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">Aucun passage enregistré pour le moment — en attente du premier passage automatisé.</div>';
+      });
+
+    // ─── LIGHTBOX ──────────────────────────────────────────────────────────────
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbMeta = document.getElementById('lb-meta');
+    const lbPrev = document.getElementById('lb-prev');
+    const lbNext = document.getElementById('lb-next');
+
+    function openLightbox(idx) {
+      lbIdx = idx;
+      renderLb();
+      lb.classList.add('open');
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== lb) return;
+      lb.classList.remove('open');
+    }
+
+    function lbNav(dir) {
+      lbIdx = Math.max(0, Math.min(allImgs.length - 1, lbIdx + dir));
+      renderLb();
+    }
+
+    function renderLb() {
+      const item = allImgs[lbIdx];
+      lbImg.src = item.src;
+      lbImg.style.transform = needsFlip(item.imgName, item.pass) ? 'scale(-1,-1)' : '';
+      lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · Élév. ${item.pass.maxEl} · ${item.pass.direction || ''}`;
+      lbPrev.disabled = lbIdx === 0;
+      lbNext.disabled = lbIdx === allImgs.length - 1;
+    }
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') lb.classList.remove('open');
+      if (e.key === 'ArrowLeft') lbNav(-1);
+      if (e.key === 'ArrowRight') lbNav(+1);
+    });
+  </script>
+
+  <script>
+    // ─── NEXT PASSES ──────────────────────────────────────────────────────────
+    (async function () {
+      const grid = document.getElementById('next-passes-grid');
+      const API = 'https://n8n.yannklein.dev/webhook/next-passes?location=theding';
+
+      function fmt(utc) {
+        const d = new Date(utc * 1000);
+        return {
+          date: d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/Paris' }),
+          time: d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Paris' }) + ' CEST',
+        };
+      }
+
+      function countdown(utc) {
+        const diff = utc - Date.now() / 1000;
+        if (diff < 0) return 'en cours';
+        const h = Math.floor(diff / 3600);
+        const m = Math.floor((diff % 3600) / 60);
+        if (h > 0) return `dans ${h}h ${m}m`;
+        return `dans ${m}m`;
+      }
+
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+
+        const allPasses = [];
+        const satellites = Array.isArray(data) ? data : [data];
+        satellites.forEach(sat => {
+          const satname = sat.info ? sat.info.satname : 'METEOR';
+          (sat.passes || []).forEach(p => allPasses.push({ ...p, satname }));
+        });
+        allPasses.sort((a, b) => a.startUTC - b.startUTC);
+        const passes = allPasses.slice(0, 3);
+
+        if (passes.length === 0) {
+          grid.innerHTML = '<div style="font-family:var(--mono);font-size:12px;color:var(--muted)">Aucun passage avec une élévation ≥40° dans les 5 prochains jours</div>';
+          return;
+        }
+
+        grid.innerHTML = passes.map(p => {
+          const start = fmt(p.startUTC);
+          const max = fmt(p.maxUTC);
+          const dur = Math.round((p.endUTC - p.startUTC) / 60);
+          const ec = elClass(p.maxEl);
+          const isNight = p.isDaylight === false;
+          const nightBadge = isNight
+            ? `<span class="pass-card-night-badge">🌙 nuit — ignoré</span>`
+            : '';
+          return `
+        <div class="pass-card${isNight ? ' skipped-night' : ''}">
+          <div class="pass-card-top">
+            <div class="pass-card-date">${start.date} · <span style="color:var(--accent2)">${p.satname}</span></div>
+            <div class="countdown" id="cd-${p.startUTC}">${countdown(p.startUTC)}</div>
+          </div>
+          <div class="pass-card-time">${start.time}</div>
+          <div class="pass-card-stats">
+            <div class="pass-card-stat"><span class="pass-card-stat-label">pic</span><span class="pass-card-stat-value">${max.time}</span></div>
+            <div class="pass-card-stat"><span class="pass-card-stat-label">durée</span><span class="pass-card-stat-value">${dur} min</span></div>
+            <div class="pass-card-stat"><span class="pass-card-stat-label">élév. max</span><span class="pass-card-stat-value">${Math.round(p.maxEl)}°</span></div>
+          </div>
+          <div class="pass-card-foot">
+            <div class="pass-card-el ${ec}">${elLabel(p.maxEl)}</div>
+            ${nightBadge}
+          </div>
+        </div>`;
+        }).join('');
+
+        setInterval(() => {
+          passes.forEach(p => {
+            const el = document.getElementById('cd-' + p.startUTC);
+            if (el) el.textContent = countdown(p.startUTC);
+          });
+        }, 30000);
+
+      } catch (e) {
+        grid.innerHTML = '<div style="font-family:var(--mono);font-size:12px;color:var(--muted)">Impossible de charger les prédictions de passage</div>';
+      }
+    })();
+  </script>
+
+  <script>
+    // ─── RECORDING STATUS ─────────────────────────────────────────────────────
+    const SAT_STATUS_POLL_MS = 10 * 60 * 1000; // 10 minutes
+    let satStatusTimer = null;
+
+    async function fetchSatStatus() {
+      const badge = document.getElementById('sat-status-badge');
+      const refreshBtn = document.getElementById('sat-status-refresh');
+      refreshBtn.style.animation = 'spin 0.8s linear infinite';
+      try {
+        const res = await fetch('https://n8n.yannklein.dev/webhook/satdump-status');
+        if (res.ok) {
+          const data = await res.json();
+          const lines = data.stdout.trim().split('\n');
+          const state = lines[lines.length - 1].trim();
+          if (state === 'running') {
+            badge.innerHTML = '⏺ enregistrement en cours';
+            badge.style.color = '#ff4444';
+            badge.style.borderColor = '#ff4444';
+            badge.style.animation = 'none';
+          } else {
+            badge.textContent = 'hors enregistrement';
+            badge.style.color = '#f59e0b';
+            badge.style.borderColor = '#f59e0b';
+          }
+        }
+      } catch (e) { }
+      refreshBtn.style.animation = 'none';
+    }
+
+    function scheduleSatStatusPoll() {
+      if (satStatusTimer) clearTimeout(satStatusTimer);
+      satStatusTimer = setTimeout(async () => {
+        await fetchSatStatus();
+        scheduleSatStatusPoll();
+      }, SAT_STATUS_POLL_MS);
+    }
+
+    document.getElementById('sat-status-refresh').addEventListener('click', async () => {
+      await fetchSatStatus();
+      scheduleSatStatusPoll();
+    });
+
+    fetchSatStatus();
+    scheduleSatStatusPoll();
+  </script>
+
+  <script>
+    // ─── TIMELAPSE ────────────────────────────────────────────────────────────
+    const TL_IMG_NAME = 'msu_mr_rgb_AVHRR_221_False_Color_corrected.png';
+    const TL_BASE_MS = 1000;  // ms at speed ×1
+
+    let tlFrames = [];
+    let tlIdx = 0;
+    let tlTimer = null;
+    let tlSpeedX = 2;   // 1–10 → divisor; speed ×2 = 500ms/frame (×0.4 label)
+    let tlRunning = false;
+
+    function tlInit(passes) {
+      tlFrames = passes
+        .filter(p => !p.exclude && (p.imgs || []).includes(TL_IMG_NAME))
+        .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
+        .map(p => ({
+          src: `${p.folder}/MSU-MR/${TL_IMG_NAME}`,
+          date: p.date,
+          time: p.time,
+          direction: p.direction,
+          barcelonaPx: p.barcelonaPx || null,
+          citiesPx: p.citiesPx || [],
+        }));
+    }
+
+    function openTimelapse() {
+      if (!tlFrames.length) return;
+      document.getElementById('tl-modal').classList.add('open');
+      if (!tlRunning) { tlRunning = true; tlRenderFrame(); tlPlay(); }
+    }
+
+    function closeTimelapse() {
+      document.getElementById('tl-modal').classList.remove('open');
+      tlPause();
+      tlRunning = false;
+    }
+
+    function tlPlay() {
+      if (tlTimer) clearInterval(tlTimer);
+      const ms = Math.round(TL_BASE_MS / tlSpeedX);
+      tlTimer = setInterval(() => { tlIdx = (tlIdx + 1) % tlFrames.length; tlRenderFrame(); }, ms);
+      document.getElementById('tl-pp').textContent = '⏸';
+    }
+
+    function tlPause() {
+      clearInterval(tlTimer);
+      tlTimer = null;
+      document.getElementById('tl-pp').textContent = '▶';
+    }
+
+    function tlToggle() {
+      if (tlTimer) { tlPause(); } else { tlPlay(); }
+    }
+
+    function tlStep(dir) {
+      tlPause();
+      tlIdx = Math.max(0, Math.min(tlFrames.length - 1, tlIdx + dir));
+      tlRenderFrame();
+    }
+
+    function tlSetSpeed(val) {
+      tlSpeedX = parseInt(val);
+      const labels = { 1: '×0.2', 2: '×0.4', 3: '×0.6', 4: '×0.8', 5: '×1', 6: '×1.5', 7: '×2', 8: '×3', 9: '×5', 10: '×10' };
+      document.getElementById('tl-speed-val').textContent = labels[tlSpeedX] || ('×' + tlSpeedX);
+      if (tlTimer) { tlPlay(); }
+    }
+
+    function tlSetFade(val) {
+      const secs = parseFloat(val);
+      document.getElementById('tl-viewport').style.setProperty('--tl-fade-dur', secs + 's');
+      document.getElementById('tl-fade-val').textContent = secs.toFixed(2) + 's';
+    }
+
+    function tlSeek(e) {
+      const wrap = document.getElementById('tl-prog-wrap');
+      const frac = Math.max(0, Math.min(1, e.offsetX / wrap.clientWidth));
+      tlIdx = Math.round(frac * (tlFrames.length - 1));
+      tlRenderFrame();
+    }
+
+    let tlActiveLayer = 'a'; // which of tl-img-a / tl-img-b is currently visible
+
+    function tlRenderFrame() {
+      if (!tlFrames.length) return;
+      const frame = tlFrames[tlIdx];
+
+      document.getElementById('tl-ts').textContent = `${frame.date} · ${frame.time}`;
+      document.getElementById('tl-counter').textContent = `${tlIdx + 1} / ${tlFrames.length}`;
+      const pct = tlFrames.length > 1 ? (tlIdx / (tlFrames.length - 1)) * 100 : 0;
+      document.getElementById('tl-prog-bar').style.width = pct + '%';
+
+      // Load the new frame into the currently-hidden layer, then crossfade it in
+      // over the visible one -- avoids the hard cut / decode flash of swapping
+      // a single <img>'s src in place.
+      const nextImg = document.getElementById(tlActiveLayer === 'a' ? 'tl-img-b' : 'tl-img-a');
+      const prevImg = document.getElementById(tlActiveLayer === 'a' ? 'tl-img-a' : 'tl-img-b');
+      const vp = document.getElementById('tl-viewport');
+      const center = document.getElementById('tl-center-bcn').checked;
+      const showCities = document.getElementById('tl-show-cities').checked;
+
+      const reveal = () => {
+        tlPositionImg(frame, nextImg, vp, center, showCities);
+        // Force a style flush before flipping to visible, so the opacity
+        // transition reliably triggers even when the browser resolved the
+        // (cached) image within the same tick as the previous frame's change.
+        void nextImg.offsetWidth;
+        nextImg.classList.add('tl-visible');
+        prevImg.classList.remove('tl-visible');
+        tlActiveLayer = tlActiveLayer === 'a' ? 'b' : 'a';
+      };
+
+      // frame.src is always a distinct URL per call, so `load` fires exactly
+      // once even when the image is already cached -- no need for (and no
+      // risk of double-firing from) an extra `nextImg.complete` fallback.
+      nextImg.onload = reveal;
+      nextImg.src = frame.src;
+
+      // Preload next frame
+      if (tlIdx + 1 < tlFrames.length) {
+        const pre = new Image(); pre.src = tlFrames[tlIdx + 1].src;
+      }
+    }
+
+    const TL_ZOOM = 1.6; // zoom-in over fit-to-viewport; scales into all downstream math so centering/rotation stay correct
+
+    // Vector from the image's own center to a raw-image point (row, col), in local
+    // (pre-transform) coordinates, run through the same transform chain applied to
+    // the image itself (flip, then rotate), giving where that point actually lands
+    // on screen relative to the image's center (which stays put, since
+    // transform-origin defaults to 50% 50%). Shared by station-centering and city labels.
+    function tlProjectOffset(row, col, scale, dispW, dispH, doFlip, rad) {
+      let cx = col * scale - dispW / 2;
+      let cy = row * scale - dispH / 2;
+      if (doFlip) { cx = -cx; cy = -cy; }
+      return {
+        rx: cx * Math.cos(rad) - cy * Math.sin(rad),
+        ry: cx * Math.sin(rad) + cy * Math.cos(rad),
+      };
+    }
+
+    function tlPositionImg(frame, img, vp, center, showCities) {
+      const vpW = vp.clientWidth;
+      const vpH = vp.clientHeight;
+      const imgW = img.naturalWidth;
+      const imgH = img.naturalHeight;
+      if (!imgW || !imgH) return;
+
+      const scale = Math.min(vpW / imgW, vpH / imgH) * TL_ZOOM;
+      const dispW = imgW * scale;
+      const dispH = imgH * scale;
+      const doFlip = frame.direction === 'NtoS';
+      const rotDeg = (frame.barcelonaPx && frame.barcelonaPx.rotationDeg != null)
+        ? frame.barcelonaPx.rotationDeg : 0;
+      const rad = rotDeg * Math.PI / 180;
+
+      img.style.width = dispW + 'px';
+      img.style.height = dispH + 'px';
+
+      // Build CSS transform: scale(-1,-1) is applied first (rightmost in CSS), then rotate.
+      // This aligns the satellite's along-track axis (~11° off true north) with the screen vertical.
+      const transforms = [];
+      if (doFlip) transforms.push('scale(-1,-1)');
+      if (rotDeg !== 0) transforms.unshift(`rotate(${rotDeg}deg)`);
+      img.style.transform = transforms.join(' ');
+
+      let rxOff = 0, ryOff = 0;
+      if (center && frame.barcelonaPx) {
+        ({ rx: rxOff, ry: ryOff } = tlProjectOffset(
+          frame.barcelonaPx.row, frame.barcelonaPx.col, scale, dispW, dispH, doFlip, rad));
+        img.style.left = (vpW / 2 - dispW / 2 - rxOff) + 'px';
+        img.style.top = (vpH / 2 - dispH / 2 - ryOff) + 'px';
+      } else {
+        img.style.left = ((vpW - dispW) / 2) + 'px';
+        img.style.top = ((vpH - dispH) / 2) + 'px';
+      }
+
+      tlRenderCities(frame, vpW, vpH, scale, dispW, dispH, doFlip, rad, rxOff, ryOff, showCities);
+    }
+
+    // Short codes for the mobile layout, where full city names would crowd the view.
+    const TL_CITY_ABBREV = {
+      Barcelona: 'BCN', Madrid: 'MAD', Lisbon: 'LIS', Paris: 'PAR', London: 'LON',
+      Rome: 'ROM', Milan: 'MIL', Marseille: 'MRS', Toulouse: 'TLS', Zaragoza: 'ZAR',
+      Valencia: 'VLC', Seville: 'SVQ', Algiers: 'ALG', Tunis: 'TUN', Casablanca: 'CAS',
+      Geneva: 'GVA', Naples: 'NAP',
+    };
+    const TL_MOBILE_QUERY = '(max-width: 640px)';
+
+    function tlRenderCities(frame, vpW, vpH, scale, dispW, dispH, doFlip, rad, rxOff, ryOff, showCities) {
+      const container = document.getElementById('tl-cities');
+      if (!showCities) { container.innerHTML = ''; return; }
+
+      const isMobile = window.matchMedia(TL_MOBILE_QUERY).matches;
+      const margin = 12; // px slack so labels near the edge aren't dropped early
+      const html = [];
+      for (const c of (frame.citiesPx || [])) {
+        const { rx, ry } = tlProjectOffset(c.row, c.col, scale, dispW, dispH, doFlip, rad);
+        const x = vpW / 2 + (rx - rxOff);
+        const y = vpH / 2 + (ry - ryOff);
+        if (x < -margin || x > vpW + margin || y < -margin || y > vpH + margin) continue;
+        const label = isMobile ? (TL_CITY_ABBREV[c.name] || c.name) : c.name;
+        html.push(`<div class="tl-city" style="left:${x}px;top:${y}px">${label}</div>`);
+      }
+      container.innerHTML = html.join('');
+    }
+
+    document.addEventListener('keydown', e => {
+      const hiwModal = document.getElementById('hiw-modal');
+      if (hiwModal.classList.contains('open')) {
+        if (e.key === 'Escape') closeHowItWorks();
+        return;
+      }
+      const modal = document.getElementById('tl-modal');
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') { closeTimelapse(); }
+      else if (e.key === ' ') { e.preventDefault(); tlToggle(); }
+      else if (e.key === 'ArrowLeft') tlStep(-1);
+      else if (e.key === 'ArrowRight') tlStep(1);
+    });
+
+    // ─── HOW IT WORKS ────────────────────────────────────────────────────────────
+    let hiwLoaded = false;
+
+    function mdToHtml(md) {
+      const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const inline = s => esc(s)
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+      const lines = md.split('\n');
+      let html = '';
+      let inList = null; // 'ul' | 'ol' | null
+      const closeList = () => { if (inList) { html += `</${inList}>`; inList = null; } };
+
+      let i = 0;
+      while (i < lines.length) {
+        const line = lines[i];
+
+        if (line.trim().startsWith('```')) {
+          closeList();
+          const code = [];
+          i++;
+          while (i < lines.length && !lines[i].trim().startsWith('```')) { code.push(lines[i]); i++; }
+          i++;
+          html += `<pre><code>${esc(code.join('\n'))}</code></pre>`;
+          continue;
+        }
+
+        let m;
+        if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
+          closeList();
+          const level = m[1].length;
+          html += `<h${level}>${inline(m[2])}</h${level}>`;
+          i++;
+          continue;
+        }
+
+        if ((m = line.match(/^\s*-\s+(.*)$/))) {
+          if (inList !== 'ul') { closeList(); html += '<ul>'; inList = 'ul'; }
+          html += `<li>${inline(m[1])}</li>`;
+          i++;
+          continue;
+        }
+
+        if ((m = line.match(/^\s*(\d+)\.\s+(.*)$/))) {
+          if (inList !== 'ol') { closeList(); html += '<ol>'; inList = 'ol'; }
+          html += `<li value="${m[1]}">${inline(m[2])}</li>`;
+          i++;
+          continue;
+        }
+
+        if (line.trim() === '') { closeList(); i++; continue; }
+
+        closeList();
+        const para = [line];
+        i++;
+        while (i < lines.length && lines[i].trim() !== ''
+          && !lines[i].trim().startsWith('```')
+          && !/^#{1,6}\s/.test(lines[i])
+          && !/^\s*-\s+/.test(lines[i])
+          && !/^\s*\d+\.\s+/.test(lines[i])) {
+          para.push(lines[i]);
+          i++;
+        }
+        html += `<p>${inline(para.join(' '))}</p>`;
+      }
+      closeList();
+      return html;
+    }
+
+    async function openHowItWorks() {
+      document.getElementById('hiw-modal').classList.add('open');
+      if (hiwLoaded) return;
+      const body = document.getElementById('hiw-body');
+      try {
+        const res = await fetch('docs/SIGNAL-CHAIN.md');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+        body.innerHTML = mdToHtml(md);
+        hiwLoaded = true;
+      } catch (err) {
+        body.innerHTML = `<p style="color:var(--muted)">Couldn't load docs/SIGNAL-CHAIN.md (${err.message}).</p>`;
+      }
+    }
+
+    function closeHowItWorks() {
+      document.getElementById('hiw-modal').classList.remove('open');
+    }
+  </script>
+
+</body>
+
+</html>
