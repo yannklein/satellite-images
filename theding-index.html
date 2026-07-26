@@ -370,7 +370,7 @@
       position: relative;
       z-index: 1;
       flex-shrink: 0;
-      width: min(260px, 85vw);
+      width: min(360px, 85vw);
       align-self: stretch;
       display: flex;
       flex-direction: column;
@@ -422,6 +422,14 @@
       margin: 0 auto;
     }
 
+    .hero-main {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     main {
       position: relative;
       z-index: 1;
@@ -448,7 +456,8 @@
     .pass-header {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem 1rem;
+      flex-wrap: wrap;
       margin-bottom: 1rem;
       padding-bottom: 0.75rem;
       border-bottom: 0.5px solid var(--border);
@@ -1237,6 +1246,55 @@
       font-size: 12px;
       color: var(--muted);
     }
+
+    /* ── Responsive ────────────────────────────────────────────────────────── */
+    /* Below the .page max-width, the page is full-viewport-width, so it needs
+       its own gutter; above it, .page is already inset by its auto margins. */
+    @media (max-width: 1200px) {
+      .page {
+        padding: 0 24px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .hero-next {
+        padding-left: 0;
+        width: 100%;
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 0 16px;
+      }
+
+      .pass-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pass-meta {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .lightbox-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .tl-topbar,
+      .hiw-topbar {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .hiw-panel,
+      .tl-panel {
+        width: 96vw;
+        height: 92vh;
+      }
+    }
   </style>
 </head>
 
@@ -1246,7 +1304,7 @@
 
   <div class="hero">
     <div class="shooting-star" aria-hidden="true"></div>
-    <div style="display:flex;align-items:center;gap:32px;">
+    <div class="hero-main">
       <div class="hero-art">
         <img class="hero-img" src="theding.png"
           alt="Église de Théding sous un ciel étoilé, un satellite METEOR-M2 en orbite" />
@@ -1284,7 +1342,7 @@
     </div>
   </div>
 
-  <div style="display:flex;align-items:center;gap:32px;justify-content: space-between;padding: clamp(36px, 6vw, 64px) 0;">
+  <div class="hero-links-row" style="display:flex;align-items:center;gap:16px 32px;justify-content: space-between;flex-wrap:wrap;padding-bottom: 16px">
     <div class="hero-links">
       <a href="https://www.n2yo.com/?s=57166&live=1" target="_blank" rel="noopener">Position en direct M2-3 ↗</a>
       <span class="hero-links-sep">·</span>
@@ -1298,7 +1356,7 @@
   </div>
 
   <div
-    style="position:relative;z-index:1;padding:0 0 1.5rem;display:flex;align-items:center;gap:12px">
+    style="position:relative;z-index:1;padding:0 0 1.5rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <button onclick="openTimelapse()"
       style="font-family:var(--mono);font-size:12px;background:rgba(242,181,68,0.1);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s"
       onmouseover="this.style.background='rgba(242,181,68,0.2)'"
