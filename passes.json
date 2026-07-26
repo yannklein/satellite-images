@@ -1,5 +1,218 @@
 [
   {
+    "date": "2026-07-26",
+    "time": "23:38 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607262322",
+    "imgs": [],
+    "maxEl": 82.35,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "NtoS",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "theding"
+  },
+  {
+    "date": "2026-07-26",
+    "time": "16:19 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202607261612",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 75.28,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "NtoS",
+    "barcelonaPx": {
+      "row": 800,
+      "col": 1594,
+      "distKm": 189.2,
+      "rotationDeg": -14.6
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 800,
+        "col": 1594,
+        "distKm": 189.1
+      },
+      {
+        "name": "Madrid",
+        "row": 824,
+        "col": 2102,
+        "distKm": 693.7
+      },
+      {
+        "name": "Lisbon",
+        "row": 800,
+        "col": 2618,
+        "distKm": 1197.7
+      },
+      {
+        "name": "Rome",
+        "row": 720,
+        "col": 748,
+        "distKm": 664.2
+      },
+      {
+        "name": "Marseille",
+        "row": 952,
+        "col": 1285,
+        "distKm": 121.1
+      },
+      {
+        "name": "Toulouse",
+        "row": 1048,
+        "col": 1582,
+        "distKm": 177.4
+      },
+      {
+        "name": "Zaragoza",
+        "row": 888,
+        "col": 1831,
+        "distKm": 425.0
+      },
+      {
+        "name": "Valencia",
+        "row": 656,
+        "col": 1864,
+        "distKm": 457.7
+      },
+      {
+        "name": "Seville",
+        "row": 576,
+        "col": 2413,
+        "distKm": 997.1
+      },
+      {
+        "name": "Algiers",
+        "row": 296,
+        "col": 1662,
+        "distKm": 255.9
+      },
+      {
+        "name": "Tunis",
+        "row": 192,
+        "col": 1042,
+        "distKm": 364.3
+      },
+      {
+        "name": "Casablanca",
+        "row": 224,
+        "col": 2717,
+        "distKm": 1288.7
+      },
+      {
+        "name": "Naples",
+        "row": 584,
+        "col": 622,
+        "distKm": 792.5
+      }
+    ],
+    "exclude": false,
+    "location": "barcelona"
+  },
+  {
+    "date": "2026-07-26",
+    "time": "11:58 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202607261151",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MSA_projected.png"
+    ],
+    "maxEl": 78.78,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "StoN",
+    "barcelonaPx": {
+      "row": 208,
+      "col": 1548,
+      "distKm": 144.8,
+      "rotationDeg": 14.4
+    },
+    "citiesPx": [
+      {
+        "name": "Barcelona",
+        "row": 208,
+        "col": 1548,
+        "distKm": 144.5
+      },
+      {
+        "name": "Madrid",
+        "row": 400,
+        "col": 1094,
+        "distKm": 311.4
+      },
+      {
+        "name": "Lisbon",
+        "row": 664,
+        "col": 673,
+        "distKm": 736.6
+      },
+      {
+        "name": "Zaragoza",
+        "row": 232,
+        "col": 1294,
+        "distKm": 110.2
+      },
+      {
+        "name": "Valencia",
+        "row": 456,
+        "col": 1394,
+        "distKm": 10.1
+      },
+      {
+        "name": "Seville",
+        "row": 752,
+        "col": 967,
+        "distKm": 438.9
+      },
+      {
+        "name": "Algiers",
+        "row": 680,
+        "col": 1765,
+        "distKm": 360.4
+      },
+      {
+        "name": "Tunis",
+        "row": 512,
+        "col": 2374,
+        "distKm": 962.5
+      }
+    ],
+    "exclude": false,
+    "location": "barcelona"
+  },
+  {
     "date": "2026-07-25",
     "time": "16:46 CEST",
     "satellite": "METEOR M2-4",
@@ -11,7 +224,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-25",
@@ -25,7 +239,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-23",
@@ -132,7 +347,8 @@
         "distKm": 517.6
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-22",
@@ -263,7 +479,8 @@
         "distKm": 508.9
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-22",
@@ -394,7 +611,8 @@
         "distKm": 982.4
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-21",
@@ -525,7 +743,8 @@
         "distKm": 966.0
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-21",
@@ -539,7 +758,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-20",
@@ -634,7 +854,8 @@
         "distKm": 1427.0
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-18",
@@ -747,7 +968,8 @@
         "distKm": 840.8
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-17",
@@ -872,7 +1094,8 @@
         "distKm": 681.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-17",
@@ -967,7 +1190,8 @@
         "distKm": 521.1
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-16",
@@ -1092,7 +1316,8 @@
         "distKm": 1140.4
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-14",
@@ -1187,7 +1412,8 @@
         "distKm": 698.1
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-13",
@@ -1300,7 +1526,8 @@
         "distKm": 461.8
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-13",
@@ -1383,7 +1610,8 @@
         "distKm": 1000.7
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-12",
@@ -1502,7 +1730,8 @@
         "distKm": 854.8
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-11",
@@ -1627,7 +1856,8 @@
         "distKm": 1314.6
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-10",
@@ -1641,7 +1871,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-08",
@@ -1730,7 +1961,8 @@
         "distKm": 1216.4
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-08",
@@ -1744,7 +1976,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-07",
@@ -1863,7 +2096,8 @@
         "distKm": 1028.2
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-06",
@@ -1988,7 +2222,8 @@
         "distKm": 1489.1
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-05",
@@ -2095,7 +2330,8 @@
         "distKm": 876.7
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-04",
@@ -2202,7 +2438,8 @@
         "distKm": 1332.7
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-03",
@@ -2327,7 +2564,8 @@
         "distKm": 742.9
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2446,7 +2684,8 @@
         "distKm": 1202.2
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-21",
@@ -2479,7 +2718,8 @@
       "distKm": 399.2
     },
     "citiesPx": [],
-    "exclude": true
+    "exclude": true,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2547,7 +2787,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2615,7 +2856,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2683,7 +2925,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2751,7 +2994,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2819,7 +3063,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2887,7 +3132,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -2955,7 +3201,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -3023,7 +3270,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -3091,7 +3339,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -3159,7 +3408,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-02",
@@ -3227,7 +3477,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-07-01",
@@ -3334,7 +3585,8 @@
         "distKm": 734.5
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-30",
@@ -3429,7 +3681,8 @@
         "distKm": 1037.5
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-29",
@@ -3530,7 +3783,8 @@
         "distKm": 459.1
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-29",
@@ -3544,7 +3798,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-28",
@@ -3645,7 +3900,8 @@
         "distKm": 915.9
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-27",
@@ -3770,7 +4026,8 @@
         "distKm": 1376.2
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-27",
@@ -3877,7 +4134,8 @@
         "distKm": 593.5
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-26",
@@ -3966,7 +4224,8 @@
         "distKm": 1054.0
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-25",
@@ -3982,7 +4241,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-25",
@@ -3996,7 +4256,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-22",
@@ -4091,7 +4352,8 @@
         "distKm": 529.9
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-24",
@@ -4210,7 +4472,8 @@
         "distKm": 631.0
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4335,7 +4598,8 @@
         "distKm": 1089.4
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-16",
@@ -4349,7 +4613,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-15",
@@ -4363,7 +4628,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-15",
@@ -4377,7 +4643,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4445,7 +4712,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4513,7 +4781,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4581,7 +4850,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4649,7 +4919,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4717,7 +4988,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4785,7 +5057,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4853,7 +5126,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4921,7 +5195,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -4989,7 +5264,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-19",
@@ -5113,7 +5389,8 @@
         "distKm": 803.9
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-23",
@@ -5181,7 +5458,8 @@
         "distKm": 428.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-22",
@@ -5288,7 +5566,8 @@
         "distKm": 913.0
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-20",
@@ -5383,7 +5662,8 @@
         "distKm": 348.3
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-19",
@@ -5502,7 +5782,8 @@
         "distKm": 733.7
       }
     ],
-    "exclude": true
+    "exclude": true,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-19",
@@ -5521,7 +5802,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-19",
@@ -5540,7 +5822,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-18",
@@ -5677,7 +5960,8 @@
         "distKm": 1226.5
       }
     ],
-    "exclude": true
+    "exclude": true,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-18",
@@ -5784,7 +6068,8 @@
         "distKm": 1263.2
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-18",
@@ -5879,7 +6164,8 @@
         "distKm": 770.4
       }
     ],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-18",
@@ -5893,7 +6179,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-17",
@@ -5907,7 +6194,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-17",
@@ -5921,7 +6209,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-17",
@@ -5935,7 +6224,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-17",
@@ -5949,7 +6239,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-16",
@@ -5963,7 +6254,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-16",
@@ -5977,7 +6269,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-16",
@@ -5991,7 +6284,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-13",
@@ -6010,7 +6304,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-14",
@@ -6029,7 +6324,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-11",
@@ -6048,7 +6344,8 @@
     "direction": "NtoS",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-13",
@@ -6067,7 +6364,8 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   },
   {
     "date": "2026-06-09",
@@ -6086,6 +6384,7 @@
     "direction": "StoN",
     "barcelonaPx": null,
     "citiesPx": [],
-    "exclude": false
+    "exclude": false,
+    "location": "barcelona"
   }
 ]
