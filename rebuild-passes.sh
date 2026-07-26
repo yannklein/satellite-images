@@ -21,6 +21,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
         barcelonaPx=$(jq -c '.barcelonaPx // null' "$META_FILE")
         citiesPx=$(jq -c '.citiesPx // []' "$META_FILE")
         exclude=$(jq -r '.exclude // false' "$META_FILE")
+        location=$(jq -r '.location // "barcelona"' "$META_FILE")
         meta_date=$(jq -r '.date // null' "$META_FILE")
         meta_time=$(jq -r '.time // null' "$META_FILE")
         if [ "$meta_date" != "null" ] && [ -n "$meta_date" ]; then
@@ -31,7 +32,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
             time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
         fi
     else
-        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"
+        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"; location="barcelona"
         timestamp=$(stat -c %y "$decoded_dir" | cut -d' ' -f1)
         time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
     fi
@@ -59,7 +60,8 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
 	--argjson barcelonaPx "$barcelonaPx" \
 	--argjson citiesPx "$citiesPx" \
 	--argjson exclude "$exclude" \
-	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude}' >> "$TMP_FILE"
+	--arg location "$location" \
+	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location}' >> "$TMP_FILE"
 done
 
 if [ -s "$TMP_FILE" ]; then
