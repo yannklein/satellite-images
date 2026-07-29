@@ -716,6 +716,19 @@ function needsFlip(imgName, pass) {
   return !isProjected(imgName) && pass.direction === 'NtoS';
 }
 
+function passIdParam(pass) {
+  return pass.folder.replace(/^decoded_/, '');
+}
+
+function imgToColorParam(imgName) {
+  return imgName
+    .replace(/\.png$/, '')
+    .replace(/^rgb_msu_mr_rgb_/, '')
+    .replace(/^msu_mr_rgb_/, '')
+    .replace(/^msu_mr_/, '')
+    .replace(/_corrected$/, '');
+}
+
 // ─── RENDER ────────────────────────────────────────────────────────────────
 const gallery = document.getElementById('gallery');
 let allImgs = [];
@@ -865,6 +878,15 @@ fetch('passes.json?t=' + Date.now())
     renderGallery(passes);
     tlInit(passes);
     if (new URLSearchParams(location.search).has('timelapse')) openTimelapse();
+
+    const params = new URLSearchParams(location.search);
+    const passParam = params.get('pass');
+    const colorParam = params.get('color');
+    if (passParam && colorParam) {
+      const idx = allImgs.findIndex(item =>
+        passIdParam(item.pass) === passParam && imgToColorParam(item.imgName) === colorParam);
+      if (idx !== -1) openLightbox(idx);
+    }
   })
   .catch(() => {
     gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">No passes recorded yet — waiting for first automated pass.</div>';
@@ -886,6 +908,11 @@ function openLightbox(idx) {
 function closeLightbox(e) {
   if (e && e.target !== lb) return;
   lb.classList.remove('open');
+  const params = new URLSearchParams(location.search);
+  params.delete('pass');
+  params.delete('color');
+  const qs = params.toString();
+  history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));
 }
 
 function lbNav(dir) {
@@ -900,11 +927,16 @@ function renderLb() {
   lbMeta.innerHTML = `<span>${item.label}</span> · ${item.pass.date} ${item.pass.time} · El. ${item.pass.maxEl} · ${item.pass.direction || ''}`;
   lbPrev.disabled = lbIdx === 0;
   lbNext.disabled = lbIdx === allImgs.length - 1;
+
+  const params = new URLSearchParams(location.search);
+  params.set('pass', passIdParam(item.pass));
+  params.set('color', imgToColorParam(item.imgName));
+  history.replaceState(null, '', `${location.pathname}?${params.toString()}`);
 }
 
 document.addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape')     lb.classList.remove('open');
+  if (e.key === 'Escape')     closeLightbox();
   if (e.key === 'ArrowLeft')  lbNav(-1);
   if (e.key === 'ArrowRight') lbNav(+1);
 });
