@@ -1,0 +1,102 @@
+{
+  "_comment": "SANITIZED EXPORT — 'Tracking' workflow. Receives a scheduled pass on the /schedule-pass webhook, checks a shared token, waits until 5 min before AOS, then routes by location. BARCELONA branch: SSH into the homelab, record baseband with rtl_sdr (2.4 MS/s), decode with the alpha SatDump, write meta.json, then re-decode/project with SatDump 1.2.2. THEDING branch: SSH into the remote netbook (host alias 'theding', tunnel underneath), record at 250 kS/s, rsync the raw file back to the homelab, decode there. BEFORE USE: set PASS_SECRET env var; adjust host paths (/home/USER/...); set up your own SSH host aliases + SatDump build paths; the SSH nodes use n8n SSH credentials you must recreate. Internal host IPs and the exact remote alias have been genericized.",
+  "name": "Tracking",
+  "nodes": [
+    {
+      "parameters": { "resume": "specificTime", "dateTime": "={{ DateTime.fromSeconds(parseInt($json.query.startUTC)).minus({ minutes: 5 }).setZone('Europe/Madrid').toISO() }}" },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "name": "Wait for satellite coming"
+    },
+    {
+      "parameters": { "path": "schedule-pass", "responseMode": "responseNode", "options": {} },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "name": "/schedule-pass webhook"
+    },
+    {
+      "parameters": {
+        "conditions": { "conditions": [ { "leftValue": "={{ $json.query.token }}", "rightValue": "={{ $env.PASS_SECRET }}", "operator": { "type": "string", "operation": "equals" } } ], "combinator": "and" },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "name": "n8n secret pass check",
+      "onError": "continueRegularOutput"
+    },
+    { "parameters": { "respondWith": "text", "responseBody": "OK", "options": { "responseCode": 200 } }, "type": "n8n-nodes-base.respondToWebhook", "typeVersion": 1.5, "name": "200 OK" },
+    { "parameters": { "respondWith": "text", "responseBody": "forbidden", "options": { "responseCode": 403 } }, "type": "n8n-nodes-base.respondToWebhook", "typeVersion": 1.5, "name": "403 error" },
+    {
+      "parameters": {
+        "rules": { "values": [
+          { "conditions": { "conditions": [ { "leftValue": "={{ $json.query.location }}", "rightValue": "barcelona", "operator": { "type": "string", "operation": "equals" } } ], "combinator": "and" }, "renameOutput": true, "outputKey": "barcelona" },
+          { "conditions": { "conditions": [ { "leftValue": "={{ $json.query.location }}", "rightValue": "", "operator": { "type": "string", "operation": "notExists", "singleValue": true } } ], "combinator": "and" }, "renameOutput": true, "outputKey": "no location" },
+          { "conditions": { "conditions": [ { "leftValue": "={{ $json.query.location }}", "rightValue": "=theding", "operator": { "type": "string", "operation": "equals" } } ], "combinator": "and" }, "renameOutput": true, "outputKey": "theding" }
+        ] },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "name": "Route tracking locations"
+    },
+    {
+      "parameters": {
+        "command": "=pkill dump1090 || true; pkill AIS-catcher || true; pkill rtl_sdr || true; sleep 1\nrtl_biast -b 1\ncd /home/USER/SatDump/build\nrtl_sdr -f {{ $json.query.satFrequency }} -s 2400000 -g 20 /home/USER/satellite-images/meteor_$(date +%Y%m%d%H%M).raw &\nRTL_PID=$!\nnohup bash -c \"sleep {{ Number($json.query.endUTC) - Number($json.query.startUTC) + 20 * 60 }} && kill $RTL_PID 2>/dev/null\" &>/dev/null &\nsleep {{ Number($json.query.endUTC) - Number($json.query.startUTC) + 10 * 60 }}\nkill $RTL_PID 2>/dev/null\nsleep 2\n\nRAW=$(ls -t /home/USER/satellite-images/*.raw 2>/dev/null | head -1)\nif [ -z \"$RAW\" ]; then echo \"No raw file found, skipping decode\"; exit 0; fi\n\nDECODED_DIR=\"/home/USER/satellite-images/decoded_$(date +%Y%m%d%H%M)\"\nmkdir -p \"$DECODED_DIR\"\n\ntimeout 600 /home/USER/SatDump/build/satdump pipeline meteor_m2-x_lrpt baseband \"$RAW\" \"$DECODED_DIR\" \\\n  --samplerate=2400000 \\\n  --baseband_format=cu8 \\\n  --fill_missing\n\nFILLED_DIR=\"$DECODED_DIR/MSU-MR (Filled)\"\nif [ -d \"$FILLED_DIR\" ]; then\n    cp \"$FILLED_DIR/\"*.png \"$DECODED_DIR/MSU-MR/\" 2>/dev/null || true\nfi\n\nSTART_AZ={{ $json.query.startAz }}\nif (( $(echo \"$START_AZ > 90 && $START_AZ < 270\" | bc -l) )); then\n  DIRECTION=\"NtoS\"\nelse\n  DIRECTION=\"StoN\"\nfi\n\njq -n \\\n    --arg satellite \"{{ $json.query.satName }}\" \\\n    --argjson maxEl \"{{ $json.query.maxEl }}\" \\\n    --argjson frequency \"{{ $json.query.satFrequency }}\" \\\n    --argjson gain 20 \\\n    --argjson samplerate 2400000 \\\n    --arg location \"barcelona\" \\\n    --arg date \"$(date '+%Y-%m-%d')\" \\\n    --arg time \"$(date '+%H:%M') CEST\" \\\n    --arg direction \"$DIRECTION\" \\\n    '{satellite: $satellite, maxEl: $maxEl, frequency: $frequency, gain: $gain, samplerate: $samplerate, location: $location, date: $date, time: $time, direction: $direction}' > \"$DECODED_DIR/meta.json\"\n\nbash /home/USER/satellite-images/rebuild-passes.sh\necho \"RAW_PATH=$RAW\"\necho \"DECODED_DIR_PATH=$DECODED_DIR\""
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "name": "Start/stop tracking"
+    },
+    {
+      "parameters": {
+        "command": "=DURATION=$(( {{ Number($json.query.endUTC) - Number($json.query.startUTC) }} + 60 ))\nFREQ={{ $json.query.satFrequency }}\nSTART_AZ={{ $json.query.startAz }}\nSATNAME=\"{{ $json.query.satName }}\"\nMAXEL={{ $json.query.maxEl }}\n\nssh theding \"DURATION='$DURATION' FREQ='$FREQ' START_AZ='$START_AZ' SATNAME='$SATNAME' MAXEL='$MAXEL' bash -s\" <<'ENDOFSCRIPT'\n\nFREQ=\"${FREQ//$'\\r'/}\"; FREQ=\"${FREQ:-0}\"\nMAXEL=\"${MAXEL//$'\\r'/}\"; MAXEL=\"${MAXEL:-0}\"\nSTART_AZ=\"${START_AZ//$'\\r'/}\"\nDURATION=\"${DURATION//$'\\r'/}\"\nSATNAME=\"${SATNAME//$'\\r'/}\"\n\npkill rtl_sdr || true; sleep 1\nrtl_biast -b 1 2>/dev/null || true\n\nTS=$(date +%Y%m%d%H%M)\nRAW=\"/home/USER/satellite-images/meteor_${TS}.raw\"\nmkdir -p /home/USER/satellite-images\n\nrtl_sdr -f \"$FREQ\" -s 250000 -g 20 \"$RAW\" &\nRTL_PID=$!\nnohup bash -c \"sleep $((DURATION + 120)) && kill $RTL_PID 2>/dev/null\" &>/dev/null &\nsleep \"$DURATION\"\nkill $RTL_PID 2>/dev/null\nsleep 2\n\nrtl_biast -b 0 2>/dev/null || true\n\nif [ ! -s \"$RAW\" ]; then echo \"No raw file captured\"; exit 0; fi\n\nif (( $(echo \"$START_AZ > 90 && $START_AZ < 270\" | bc -l) )); then\n  DIRECTION=\"NtoS\"\nelse\n  DIRECTION=\"StoN\"\nfi\n\njq -n \\\n    --arg satellite \"$SATNAME\" \\\n    --argjson maxEl \"$MAXEL\" \\\n    --argjson frequency \"$FREQ\" \\\n    --argjson gain 20 \\\n    --argjson samplerate 250000 \\\n    --arg location \"theding\" \\\n    --arg date \"$(date '+%Y-%m-%d')\" \\\n    --arg time \"$(date '+%H:%M') CEST\" \\\n    --arg direction \"$DIRECTION\" \\\n    '{satellite: $satellite, maxEl: $maxEl, frequency: $frequency, gain: $gain, samplerate: $samplerate, location: $location, date: $date, time: $time, direction: $direction}' > \"${RAW}.meta.json\"\n\necho \"RAW_PATH=$RAW\"\necho \"META_PATH=${RAW}.meta.json\"\nENDOFSCRIPT"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "name": "Théding reception"
+    },
+    {
+      "parameters": {
+        "command": "=STDOUT_BLOB='{{ $('Théding reception').item.json.stdout }}'\nREMOTE_RAW=$(echo \"$STDOUT_BLOB\" | grep \"RAW_PATH=\" | cut -d'=' -f2-)\nREMOTE_META=$(echo \"$STDOUT_BLOB\" | grep \"META_PATH=\" | cut -d'=' -f2-)\n\nif [ -z \"$REMOTE_RAW\" ]; then echo \"No remote raw path, skipping\"; exit 0; fi\n\nLOCAL_RAW=\"/home/USER/satellite-images/$(basename \"$REMOTE_RAW\")\"\nrsync -e ssh theding:\"$REMOTE_RAW\"  \"$LOCAL_RAW\"\nrsync -e ssh theding:\"$REMOTE_META\" \"${LOCAL_RAW}.meta.json\"\n\nif [ ! -s \"$LOCAL_RAW\" ]; then echo \"Transfer failed\"; exit 1; fi\n\nDECODED_DIR=\"/home/USER/satellite-images/decoded_$(basename \"$REMOTE_RAW\" .raw | sed 's/meteor_//')\"\nmkdir -p \"$DECODED_DIR\"\n\ncd /home/USER/SatDump/build\ntimeout 600 ./satdump pipeline meteor_m2-x_lrpt baseband \"$LOCAL_RAW\" \"$DECODED_DIR\" \\\n  --samplerate=250000 \\\n  --baseband_format=cu8 \\\n  --fill_missing\n\nFILLED_DIR=\"$DECODED_DIR/MSU-MR (Filled)\"\nif [ -d \"$FILLED_DIR\" ]; then\n    cp \"$FILLED_DIR/\"*.png \"$DECODED_DIR/MSU-MR/\" 2>/dev/null || true\nfi\n\ncp \"${LOCAL_RAW}.meta.json\" \"$DECODED_DIR/meta.json\"\n\nbash /home/USER/satellite-images/rebuild-passes.sh\necho \"RAW_PATH=$LOCAL_RAW\"\necho \"DECODED_DIR_PATH=$DECODED_DIR\""
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "name": "Homelab decoding"
+    },
+    {
+      "parameters": { "assignments": { "assignments": [ { "name": "stdout", "value": "={{ $json.stdout }}", "type": "string" } ] }, "options": {} },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "name": "Consolidate image processing outputs"
+    },
+    {
+      "parameters": {
+        "command": "=STDOUT_BLOB='{{ $('Consolidate image processing outputs').item.json.stdout }}'\nRAW=$(echo \"$STDOUT_BLOB\" | grep \"RAW_PATH=\" | cut -d'=' -f2-)\nDECODED_DIR=$(echo \"$STDOUT_BLOB\" | grep \"DECODED_DIR_PATH=\" | cut -d'=' -f2-)\n\nif [ -z \"$RAW\" ] || [ -z \"$DECODED_DIR\" ]; then\n  echo \"Could not parse RAW/DECODED_DIR from previous node, skipping\"\n  exit 0\nfi\n\ncd /home/USER/SatDump-1.2.2/build\nSR=$(jq -r '.samplerate // 2400000' \"$DECODED_DIR/meta.json\")\ntimeout 600 ./satdump meteor_m2-x_lrpt baseband \"$RAW\" \"$DECODED_DIR\" \\\n  --samplerate \"$SR\" --baseband_format cu8 --fill_missing\n\n# Flip NtoS channel images 180 degrees if needed\nDIRECTION=$(jq -r '.direction // \"\"' \"$DECODED_DIR/meta.json\")\nif [ \"$DIRECTION\" = \"NtoS\" ]; then\n  for f in \"$DECODED_DIR/MSU-MR/MSU-MR-\"{1,2,3}.png; do\n    [ -f \"$f\" ] && convert \"$f\" -rotate 180 \"$f\"\n  done\nfi\n\nbash /home/USER/satellite-images/rebuild-passes.sh"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "name": "Image processing (map + projection)"
+    },
+    {
+      "parameters": {
+        "dataTableId": "REPLACE_WITH_YOUR_OUTPUT_LOG_TABLE_ID",
+        "columns": { "mappingMode": "defineBelow", "value": { "output": "={{ $json.stdout }}", "error": "={{ $json.stderr }}" } },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "name": "Insert row"
+    }
+  ],
+  "connections": {
+    "Wait for satellite coming": { "main": [ [ { "node": "Route tracking locations", "type": "main", "index": 0 } ] ] },
+    "/schedule-pass webhook": { "main": [ [ { "node": "n8n secret pass check", "type": "main", "index": 0 } ] ] },
+    "n8n secret pass check": { "main": [ [ { "node": "200 OK", "type": "main", "index": 0 }, { "node": "Wait for satellite coming", "type": "main", "index": 0 } ], [ { "node": "403 error", "type": "main", "index": 0 } ] ] },
+    "Route tracking locations": { "main": [ [ { "node": "Start/stop tracking", "type": "main", "index": 0 } ], [ { "node": "Start/stop tracking", "type": "main", "index": 0 } ], [ { "node": "Théding reception", "type": "main", "index": 0 } ] ] },
+    "Théding reception": { "main": [ [ { "node": "Homelab decoding", "type": "main", "index": 0 } ] ] },
+    "Homelab decoding": { "main": [ [ { "node": "Consolidate image processing outputs", "type": "main", "index": 0 } ] ] },
+    "Start/stop tracking": { "main": [ [ { "node": "Consolidate image processing outputs", "type": "main", "index": 0 } ] ] },
+    "Consolidate image processing outputs": { "main": [ [ { "node": "Insert row", "type": "main", "index": 0 } ] ] },
+    "Insert row": { "main": [ [ { "node": "Image processing (map + projection)", "type": "main", "index": 0 } ] ] }
+  }
+}

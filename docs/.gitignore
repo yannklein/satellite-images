@@ -1,0 +1,5 @@
+# Raw captures and decoded output — big, regenerable, not for git
+*.raw
+decoded_*/
+# Local env
+.env

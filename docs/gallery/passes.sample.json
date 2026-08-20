@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-06-28",
+    "time": "16:24 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202606281618",
+    "imgs": [
+      "MSU-MR-1.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
+    ],
+    "maxEl": 84.46,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "NtoS",
+    "barcelonaPx": { "row": 528, "col": 1464, "distKm": 64.7 },
+    "exclude": false
+  },
+  {
+    "date": "2026-06-27",
+    "time": "11:31 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202606271125",
+    "imgs": [],
+    "maxEl": 60.12,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "exclude": false
+  }
+]

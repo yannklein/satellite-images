@@ -1,0 +1,56 @@
+{
+  "_comment": "SANITIZED EXPORT — 'Status' workflow. Two GET webhooks used by the gallery frontend: /satdump-status (SSHes to the homelab and reports whether rtl_sdr is currently running) and /next-passes (returns the next N2YO radio passes for the tracked satellites/location, annotated with an isDaylight flag from sunrise-sunset.org). BEFORE USE: replace YOUR_N2YO_API_KEY; recreate the 'Tracked Satellites' and 'Tracked locations' Data Tables and re-point dataTableId; recreate SSH credentials.",
+  "name": "Status",
+  "nodes": [
+    { "parameters": { "path": "satdump-status", "responseMode": "lastNode", "options": {} }, "type": "n8n-nodes-base.webhook", "typeVersion": 2.1, "name": "/status webhook" },
+    { "parameters": { "path": "next-passes", "responseMode": "lastNode", "responseData": "allEntries", "options": {} }, "type": "n8n-nodes-base.webhook", "typeVersion": 2.1, "name": "/next-passes webhook" },
+    { "parameters": { "command": "pgrep -x rtl_sdr && echo \"running\" || echo \"stopped\"" }, "type": "n8n-nodes-base.ssh", "typeVersion": 1, "name": "status satdump" },
+    {
+      "parameters": {
+        "url": "=https://api.n2yo.com/rest/v1/satellite/radiopasses/{{ $json.NORAD_ID }}/{{ $('Get tracked locations').item.json.latitude || 41.38879 }}/{{ $('Get tracked locations').item.json.longitude || 2.15879 }}/0/5/50/&apiKey=YOUR_N2YO_API_KEY",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "name": "Get next passes on n2yo"
+    },
+    { "parameters": { "operation": "get", "dataTableId": "REPLACE_WITH_YOUR_TRACKED_SATELLITES_TABLE_ID", "returnAll": true }, "type": "n8n-nodes-base.dataTable", "typeVersion": 1.1, "name": "Get tracked satellites" },
+    {
+      "parameters": {
+        "jsCode": "const sunData = $('Sunset/sunrise in Bcn').first().json.results;\nconst sunriseDate = new Date(sunData.sunrise);\nconst sunsetDate = new Date(sunData.sunset);\n\n// Reuse today's sunrise/sunset *time of day* across the 5-day window —\n// shifts by only ~1-2 min/day in June, negligible for display purposes.\nconst sunriseHourUTC = sunriseDate.getUTCHours() + sunriseDate.getUTCMinutes() / 60;\nconst sunsetHourUTC = sunsetDate.getUTCHours() + sunsetDate.getUTCMinutes() / 60;\n\nreturn items.map(item => {\n  const data = item.json;\n  if (!data.passes) return item;\n\n  const passes = data.passes.map(p => {\n    const d = new Date(p.startUTC * 1000);\n    const passHourUTC = d.getUTCHours() + d.getUTCMinutes() / 60;\n    const isDaylight = passHourUTC >= sunriseHourUTC && passHourUTC <= sunsetHourUTC;\n    return { ...p, isDaylight };\n  });\n\n  return { json: { ...data, passes } };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.sunrise-sunset.org/json?lat={{ $json.latitude || 41.38879 }}&lng={{ $json.longitude || 2.15879 }}&date=today&formatted=0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "name": "Sunset/sunrise in Bcn"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": "REPLACE_WITH_YOUR_TRACKED_LOCATIONS_TABLE_ID",
+        "filters": { "conditions": [ { "keyName": "name", "keyValue": "={{ $json.query.location }}" } ] },
+        "limit": 1
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "name": "Get tracked locations",
+      "alwaysOutputData": true
+    }
+  ],
+  "connections": {
+    "/status webhook": { "main": [ [ { "node": "status satdump", "type": "main", "index": 0 } ] ] },
+    "/next-passes webhook": { "main": [ [ { "node": "Get tracked locations", "type": "main", "index": 0 } ] ] },
+    "Get tracked locations": { "main": [ [ { "node": "Sunset/sunrise in Bcn", "type": "main", "index": 0 } ] ] },
+    "Sunset/sunrise in Bcn": { "main": [ [ { "node": "Get tracked satellites", "type": "main", "index": 0 } ] ] },
+    "Get tracked satellites": { "main": [ [ { "node": "Get next passes on n2yo", "type": "main", "index": 0 } ] ] },
+    "Get next passes on n2yo": { "main": [ [ { "node": "Code in JavaScript", "type": "main", "index": 0 } ] ] }
+  }
+}

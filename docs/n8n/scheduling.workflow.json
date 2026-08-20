@@ -1,0 +1,98 @@
+{
+  "_comment": "SANITIZED EXPORT — 'Scheduling' workflow. Runs at 02:00 daily, pulls the tracked-satellites and tracked-locations tables, asks N2YO for upcoming radio passes, optionally filters to daylight-only (sunrise-sunset.org), and POSTs each qualifying pass to the /schedule-pass webhook (the 'Tracking' workflow). BEFORE USE: replace YOUR_N2YO_API_KEY with your own n2yo.com key; set the PASS_SECRET env var in n8n; recreate the two n8n Data Tables ('Tracked Satellites' with NORAD_ID/name/frequency, 'Tracked locations' with name/latitude/longitude) and re-point the dataTableId references.",
+  "name": "Scheduling",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=https://api.n2yo.com/rest/v1/satellite/radiopasses/{{ $('Get tracked satellites').item.json.NORAD_ID }}/{{ $json.latitude }}/{{ $json.longitude }}/0/1/50/&apiKey=YOUR_N2YO_API_KEY",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": { "fieldToSplitOut": "passes", "options": {} },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "name": "Split Out"
+    },
+    {
+      "parameters": { "rule": { "interval": [ { "triggerAtHour": 2 } ] } },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "name": "Start at 2am"
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.YOUR_DOMAIN/webhook/schedule-pass",
+        "sendQuery": true,
+        "specifyQuery": "json",
+        "jsonQuery": "={\n  \"location\": \"{{ $('Get tracked locations').item.json.name }}\",\n  \"startUTC\": {{ $('Split Out').item.json.startUTC }},\n  \"endUTC\": {{ $('Split Out').item.json.endUTC }},\n  \"maxEl\": {{ $('Split Out').item.json.maxEl }},\n  \"startAz\": {{ $('Split Out').item.json.startAz }},\n  \"maxAz\": {{ $('Split Out').item.json.maxAz }},\n  \"endAz\": {{ $('Split Out').item.json.endAz }},\n  \"satName\": \"{{ $('Get tracked satellites').item.json.name }}\",\n  \"satID\": \"{{ $('Get tracked satellites').item.json.NORAD_ID }}\",\n  \"satFrequency\": {{ $('Get tracked satellites').item.json.frequency }},\n  \"token\": \"{{ $env.PASS_SECRET }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "name": "Send schedule pass"
+    },
+    {
+      "parameters": {
+        "url": "https://api.sunrise-sunset.org/json?lat=41.38879&lng=2.15879&date=today&formatted=0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "name": "Sunset/sunrise in Bcn"
+    },
+    {
+      "parameters": {
+        "assignments": { "assignments": [ { "name": "avoid_night", "value": true, "type": "boolean" } ] },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "name": "avoid_night value"
+    },
+    {
+      "parameters": {
+        "conditions": { "conditions": [ { "leftValue": "={{ $('avoid_night value').item.json.avoid_night }}", "rightValue": true, "operator": { "type": "boolean", "operation": "equals" } } ], "combinator": "and" },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "name": "Avoid night?"
+    },
+    {
+      "parameters": {
+        "conditions": { "conditions": [ { "leftValue": "={{ $('Split Out').item.json.startUTC }}", "rightValue": "={{ DateTime.fromISO($('Sunset/sunrise in Bcn').item.json.results.sunrise).toSeconds() }}", "operator": { "type": "number", "operation": "gte" } }, { "leftValue": "={{ $('Split Out').item.json.startUTC }}", "rightValue": "={{ DateTime.fromISO($('Sunset/sunrise in Bcn').item.json.results.sunset).toSeconds() }}", "operator": { "type": "number", "operation": "lte" } } ], "combinator": "and" },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "name": "Is during day time?"
+    },
+    {
+      "parameters": { "operation": "get", "dataTableId": "REPLACE_WITH_YOUR_TRACKED_SATELLITES_TABLE_ID" },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "name": "Get tracked satellites"
+    },
+    {
+      "parameters": { "operation": "get", "dataTableId": "REPLACE_WITH_YOUR_TRACKED_LOCATIONS_TABLE_ID" },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "name": "Get tracked locations"
+    }
+  ],
+  "connections": {
+    "HTTP Request": { "main": [ [ { "node": "Split Out", "type": "main", "index": 0 } ] ] },
+    "Split Out": { "main": [ [ { "node": "Avoid night?", "type": "main", "index": 0 } ] ] },
+    "Start at 2am": { "main": [ [ { "node": "avoid_night value", "type": "main", "index": 0 } ] ] },
+    "Sunset/sunrise in Bcn": { "main": [ [ { "node": "Is during day time?", "type": "main", "index": 0 } ] ] },
+    "avoid_night value": { "main": [ [ { "node": "Get tracked satellites", "type": "main", "index": 0 } ] ] },
+    "Avoid night?": { "main": [ [ { "node": "Sunset/sunrise in Bcn", "type": "main", "index": 0 } ], [ { "node": "Send schedule pass", "type": "main", "index": 0 } ] ] },
+    "Is during day time?": { "main": [ [ { "node": "Send schedule pass", "type": "main", "index": 0 } ] ] },
+    "Get tracked satellites": { "main": [ [ { "node": "Get tracked locations", "type": "main", "index": 0 } ] ] },
+    "Get tracked locations": { "main": [ [ { "node": "HTTP Request", "type": "main", "index": 0 } ] ] }
+  }
+}
