@@ -22,6 +22,8 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
         citiesPx=$(jq -c '.citiesPx // []' "$META_FILE")
         exclude=$(jq -r '.exclude // false' "$META_FILE")
         location=$(jq -r '.location // "barcelona"' "$META_FILE")
+        quality=$(jq -r '.quality // "unrated"' "$META_FILE")
+        blackRatio=$(jq -r '.blackRatio // null' "$META_FILE")
         meta_date=$(jq -r '.date // null' "$META_FILE")
         meta_time=$(jq -r '.time // null' "$META_FILE")
         if [ "$meta_date" != "null" ] && [ -n "$meta_date" ]; then
@@ -32,7 +34,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
             time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
         fi
     else
-        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"; location="barcelona"
+        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"; location="barcelona"; quality="unrated"; blackRatio="null"
         timestamp=$(stat -c %y "$decoded_dir" | cut -d' ' -f1)
         time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
     fi
@@ -61,7 +63,9 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
 	--argjson citiesPx "$citiesPx" \
 	--argjson exclude "$exclude" \
 	--arg location "$location" \
-	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location}' >> "$TMP_FILE"
+	--arg quality "$quality" \
+	--argjson blackRatio "$blackRatio" \
+	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location, quality: $quality, blackRatio: $blackRatio}' >> "$TMP_FILE"
 done
 
 if [ -s "$TMP_FILE" ]; then

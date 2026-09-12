@@ -72,5 +72,7 @@
       "col": 2177,
       "distKm": 770.4
     }
-  ]
+  ],
+  "blackRatio": 1.0,
+  "quality": "poor"
 }

@@ -26,7 +26,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2679
   },
   {
     "date": "2026-09-11",
@@ -54,7 +56,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 1.0
   },
   {
     "date": "2026-09-05",
@@ -168,7 +172,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0772
   },
   {
     "date": "2026-09-04",
@@ -183,7 +189,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-04",
@@ -198,7 +206,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-04",
@@ -213,7 +223,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-03",
@@ -228,7 +240,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-03",
@@ -243,7 +257,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-03",
@@ -258,7 +274,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-02",
@@ -273,7 +291,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-02",
@@ -288,7 +308,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-02",
@@ -303,7 +325,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-09-01",
@@ -417,7 +441,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2946
   },
   {
     "date": "2026-09-01",
@@ -432,7 +458,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-31",
@@ -540,7 +568,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.3148
   },
   {
     "date": "2026-08-31",
@@ -555,7 +585,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-30",
@@ -633,7 +665,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0514
   },
   {
     "date": "2026-08-30",
@@ -648,7 +682,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-23",
@@ -762,7 +798,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.281
   },
   {
     "date": "2026-08-23",
@@ -777,7 +815,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-22",
@@ -879,7 +919,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.057
   },
   {
     "date": "2026-08-22",
@@ -909,7 +951,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 1.0
   },
   {
     "date": "2026-08-22",
@@ -924,7 +968,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-21",
@@ -1020,7 +1066,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 1.0
   },
   {
     "date": "2026-08-21",
@@ -1110,7 +1158,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.3933
   },
   {
     "date": "2026-08-21",
@@ -1125,7 +1175,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-20",
@@ -1140,7 +1192,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-20",
@@ -1155,7 +1209,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-20",
@@ -1170,7 +1226,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-19",
@@ -1185,7 +1243,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-19",
@@ -1200,7 +1260,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-18",
@@ -1328,7 +1390,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2552
   },
   {
     "date": "2026-08-18",
@@ -1343,7 +1407,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-18",
@@ -1451,7 +1517,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.4495
   },
   {
     "date": "2026-08-18",
@@ -1466,7 +1534,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-17",
@@ -1486,7 +1556,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-17",
@@ -1618,7 +1690,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1376
   },
   {
     "date": "2026-08-17",
@@ -1633,7 +1707,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-16",
@@ -1648,7 +1724,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-16",
@@ -1780,7 +1858,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0891
   },
   {
     "date": "2026-08-16",
@@ -1795,7 +1875,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-15",
@@ -1810,7 +1892,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-14",
@@ -1825,7 +1909,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-14",
@@ -1840,7 +1926,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-14",
@@ -1855,7 +1943,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-13",
@@ -1963,7 +2053,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0126
   },
   {
     "date": "2026-08-13",
@@ -1978,7 +2070,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-13",
@@ -2050,7 +2144,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0254
   },
   {
     "date": "2026-08-13",
@@ -2065,7 +2161,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-12",
@@ -2175,7 +2273,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0932
   },
   {
     "date": "2026-08-12",
@@ -2259,7 +2359,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2121
   },
   {
     "date": "2026-08-12",
@@ -2274,7 +2376,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-11",
@@ -2289,7 +2393,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-10",
@@ -2304,7 +2410,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-09",
@@ -2417,7 +2525,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0547
   },
   {
     "date": "2026-08-09",
@@ -2432,7 +2542,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-09",
@@ -2552,7 +2664,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0323
   },
   {
     "date": "2026-08-09",
@@ -2567,7 +2681,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-08",
@@ -2690,7 +2806,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0477
   },
   {
     "date": "2026-08-08",
@@ -2798,7 +2916,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0339
   },
   {
     "date": "2026-08-08",
@@ -2813,7 +2933,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-07",
@@ -2828,7 +2950,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-06",
@@ -2843,7 +2967,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-05",
@@ -2939,7 +3065,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0397
   },
   {
     "date": "2026-08-05",
@@ -2954,7 +3082,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-05",
@@ -3068,7 +3198,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.25
   },
   {
     "date": "2026-08-05",
@@ -3083,7 +3215,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-04",
@@ -3185,7 +3319,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0291
   },
   {
     "date": "2026-08-04",
@@ -3200,7 +3336,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-04",
@@ -3308,7 +3446,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0831
   },
   {
     "date": "2026-08-04",
@@ -3323,7 +3463,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-03",
@@ -3443,7 +3585,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0325
   },
   {
     "date": "2026-08-03",
@@ -3458,7 +3602,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-03",
@@ -3473,7 +3619,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-02",
@@ -3488,7 +3636,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-01",
@@ -3503,7 +3653,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-08-01",
@@ -3518,7 +3670,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-31",
@@ -3643,7 +3797,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0625
   },
   {
     "date": "2026-07-31",
@@ -3658,7 +3814,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-31",
@@ -3766,7 +3924,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1727
   },
   {
     "date": "2026-07-31",
@@ -3781,7 +3941,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-30",
@@ -3894,7 +4056,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.085
   },
   {
     "date": "2026-07-30",
@@ -3909,7 +4073,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-30",
@@ -3924,7 +4090,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-29",
@@ -4038,7 +4206,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0222
   },
   {
     "date": "2026-07-28",
@@ -4053,7 +4223,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-27",
@@ -4068,7 +4240,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-27",
@@ -4164,7 +4338,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0344
   },
   {
     "date": "2026-07-27",
@@ -4179,7 +4355,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-26",
@@ -4194,7 +4372,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "theding"
+    "location": "theding",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-26",
@@ -4308,7 +4488,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0387
   },
   {
     "date": "2026-07-26",
@@ -4392,7 +4574,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0709
   },
   {
     "date": "2026-07-25",
@@ -4407,7 +4591,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-25",
@@ -4422,7 +4608,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-23",
@@ -4530,7 +4718,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1709
   },
   {
     "date": "2026-07-22",
@@ -4662,7 +4852,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0465
   },
   {
     "date": "2026-07-22",
@@ -4794,7 +4986,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0949
   },
   {
     "date": "2026-07-21",
@@ -4926,7 +5120,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.039
   },
   {
     "date": "2026-07-21",
@@ -4941,7 +5137,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-20",
@@ -5037,7 +5235,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0485
   },
   {
     "date": "2026-07-18",
@@ -5151,7 +5351,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0949
   },
   {
     "date": "2026-07-17",
@@ -5277,7 +5479,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0583
   },
   {
     "date": "2026-07-17",
@@ -5373,7 +5577,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.3365
   },
   {
     "date": "2026-07-16",
@@ -5499,7 +5705,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0167
   },
   {
     "date": "2026-07-14",
@@ -5595,7 +5803,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1085
   },
   {
     "date": "2026-07-13",
@@ -5709,7 +5919,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.493
   },
   {
     "date": "2026-07-13",
@@ -5793,7 +6005,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1364
   },
   {
     "date": "2026-07-12",
@@ -5913,7 +6127,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0278
   },
   {
     "date": "2026-07-11",
@@ -6039,7 +6255,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1085
   },
   {
     "date": "2026-07-10",
@@ -6054,7 +6272,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-08",
@@ -6144,7 +6364,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2258
   },
   {
     "date": "2026-07-08",
@@ -6159,7 +6381,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-07",
@@ -6279,7 +6503,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0454
   },
   {
     "date": "2026-07-06",
@@ -6405,7 +6631,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1052
   },
   {
     "date": "2026-07-05",
@@ -6513,7 +6741,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.109
   },
   {
     "date": "2026-07-04",
@@ -6621,7 +6851,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2734
   },
   {
     "date": "2026-07-03",
@@ -6747,7 +6979,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0251
   },
   {
     "date": "2026-07-02",
@@ -6867,7 +7101,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0344
   },
   {
     "date": "2026-06-21",
@@ -6901,7 +7137,9 @@
     },
     "citiesPx": [],
     "exclude": true,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.25
   },
   {
     "date": "2026-07-02",
@@ -6970,7 +7208,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7039,7 +7279,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7108,7 +7350,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7177,7 +7421,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7246,7 +7492,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7315,7 +7563,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7384,7 +7634,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7453,7 +7705,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7522,7 +7776,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7591,7 +7847,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-02",
@@ -7660,7 +7918,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-07-01",
@@ -7768,7 +8028,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1212
   },
   {
     "date": "2026-06-30",
@@ -7864,7 +8126,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.3393
   },
   {
     "date": "2026-06-29",
@@ -7966,7 +8230,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1271
   },
   {
     "date": "2026-06-29",
@@ -7981,7 +8247,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-28",
@@ -8083,7 +8351,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0122
   },
   {
     "date": "2026-06-27",
@@ -8209,7 +8479,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0277
   },
   {
     "date": "2026-06-27",
@@ -8317,7 +8589,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.3261
   },
   {
     "date": "2026-06-26",
@@ -8407,7 +8681,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.059
   },
   {
     "date": "2026-06-25",
@@ -8424,7 +8700,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-25",
@@ -8439,7 +8717,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-22",
@@ -8535,7 +8815,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0259
   },
   {
     "date": "2026-06-24",
@@ -8655,7 +8937,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2436
   },
   {
     "date": "2026-06-23",
@@ -8781,7 +9065,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0532
   },
   {
     "date": "2026-06-16",
@@ -8796,7 +9082,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-15",
@@ -8811,7 +9099,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-15",
@@ -8826,7 +9116,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -8895,7 +9187,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -8964,7 +9258,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9033,7 +9329,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9102,7 +9400,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9171,7 +9471,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9240,7 +9542,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9309,7 +9613,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9378,7 +9684,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-23",
@@ -9447,7 +9755,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-19",
@@ -9572,7 +9882,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0378
   },
   {
     "date": "2026-06-23",
@@ -9641,7 +9953,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-22",
@@ -9749,7 +10063,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0364
   },
   {
     "date": "2026-06-20",
@@ -9845,7 +10161,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0484
   },
   {
     "date": "2026-06-19",
@@ -9965,7 +10283,9 @@
       }
     ],
     "exclude": true,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0081
   },
   {
     "date": "2026-06-19",
@@ -9985,7 +10305,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-19",
@@ -10005,7 +10327,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-18",
@@ -10143,7 +10467,9 @@
       }
     ],
     "exclude": true,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.1722
   },
   {
     "date": "2026-06-18",
@@ -10251,7 +10577,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.312
   },
   {
     "date": "2026-06-18",
@@ -10347,7 +10675,9 @@
       }
     ],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 1.0
   },
   {
     "date": "2026-06-18",
@@ -10362,7 +10692,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-17",
@@ -10377,7 +10709,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-17",
@@ -10392,7 +10726,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-17",
@@ -10407,7 +10743,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-17",
@@ -10422,7 +10760,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-16",
@@ -10437,7 +10777,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-16",
@@ -10452,7 +10794,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-16",
@@ -10467,7 +10811,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-11",
@@ -10487,7 +10833,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-13",
@@ -10507,7 +10855,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-13",
@@ -10527,7 +10877,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-14",
@@ -10547,7 +10899,9 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   },
   {
     "date": "2026-06-09",
@@ -10567,6 +10921,8 @@
     "barcelonaPx": null,
     "citiesPx": [],
     "exclude": false,
-    "location": "barcelona"
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null
   }
 ]

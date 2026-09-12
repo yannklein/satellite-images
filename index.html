@@ -283,6 +283,39 @@
       z-index: 2;
     }
 
+    .poor-pass summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .poor-pass summary::-webkit-details-marker { display: none; }
+
+    .poor-pass:not([open]) summary { opacity: 0.75; }
+
+    .poor-pass summary .chevron {
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .poor-pass[open] summary .chevron {
+      transform: rotate(90deg);
+    }
+
+    .quality-badge-poor {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid var(--muted);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
     .failed-accordion {
       margin-bottom: 3rem;
       border: 0.5px solid var(--border);
@@ -742,6 +775,14 @@ const CHANNEL_LABELS = {
   'rgb_msu_mr_rgb_MSA_projected.png': 'MSA — projected',
 };
 
+function hydratePoorPassImages(detailsEl) {
+  if (!detailsEl.open) return;
+  detailsEl.querySelectorAll('img[data-src]').forEach(img => {
+    img.src = img.dataset.src;
+    img.removeAttribute('data-src');
+  });
+}
+
 function shouldShow(imgName) {
   // Projected composites: always show
   if (imgName.startsWith('rgb_')) return true;
@@ -770,9 +811,12 @@ function renderGallery(passes) {
   const failed     = passes.filter(p => (p.imgs || []).length === 0);
 
   successful.forEach((pass, pi) => {
-    const sec = document.createElement('div');
-    sec.className = 'pass';
+    const isPoor = pass.quality === 'poor';
+
+    const sec = document.createElement(isPoor ? 'details' : 'div');
+    sec.className = isPoor ? 'pass poor-pass' : 'pass';
     sec.style.animationDelay = (pi * 0.08) + 's';
+    if (isPoor) sec.addEventListener('toggle', () => hydratePoorPassImages(sec));
 
     const imgs = pass.imgs || [];
 
@@ -795,9 +839,11 @@ function renderGallery(passes) {
 
       allImgs.push({ src, label, pass, imgName });
 
+      const srcAttr = isPoor ? `data-src="${src}"` : `src="${src}"`;
+
       imgsHTML += `
         <div class="thumb" onclick="openLightbox(${globalIdx})">
-          <img src="${src}" alt="${label}" loading="lazy" style="${flip ? 'transform:scale(-1,-1)' : ''}"/>
+          <img ${srcAttr} alt="${label}" loading="lazy" style="${flip ? 'transform:scale(-1,-1)' : ''}"/>
           ${flip ? '<div class="thumb-flip-badge">↕ NtoS</div>' : ''}
           <div class="thumb-label">${label}</div>
           <div class="thumb-overlay">
@@ -819,14 +865,24 @@ function renderGallery(passes) {
         ).join('')}</div>`
       : '';
 
+    const headerTag = isPoor ? 'summary' : 'div';
+    const chevronSvg = isPoor
+      ? `<svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>`
+      : '';
+    const qualityBadge = isPoor
+      ? `<span class="quality-badge-poor">⚠ poor quality — click to expand</span>`
+      : '';
+
     sec.innerHTML = `
-      <div class="pass-header">
+      <${headerTag} class="pass-header">
+        ${chevronSvg}
         <span class="pass-number">PASS #${passes.length - passes.indexOf(pass)}</span>
         <span class="pass-date">${pass.date} · ${pass.time}</span>
         ${pass.maxEl != null ? `<span class="pass-card-el ${elClass(pass.maxEl)}" style="margin-top:0;font-size:10px">${elLabel(pass.maxEl)}</span>` : ''}
+        ${qualityBadge}
         ${dirBadge}
         <span class="pass-meta">${pass.satellite} · ${visibleCount} image${visibleCount !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
-      </div>
+      </${headerTag}>
       <div class="pass-grid">${imgsHTML}</div>
       ${rawChannelsHTML}`;
 
