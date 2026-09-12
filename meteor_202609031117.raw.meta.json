@@ -1,0 +1,11 @@
+{
+  "satellite": "METEOR M2-3",
+  "maxEl": 78.09,
+  "frequency": 137900000,
+  "gain": 20,
+  "samplerate": 250000,
+  "location": "theding",
+  "date": "2026-09-03",
+  "time": "11:33 CEST",
+  "direction": "StoN"
+}

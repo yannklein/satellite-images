@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(node -e \"console.log\\('node ok'\\)\")",
+      "mcp__claude_ai_n8n__search_workflows",
+      "mcp__claude_ai_n8n__get_workflow_details",
+      "mcp__claude_ai_n8n__get_execution",
+      "Bash(jq *)",
+      "Bash(echo \"=== Wait for satellite coming ===\")",
+      "Bash(echo \"=== Start/stop tracking ===\")",
+      "Bash(echo \"=== Image processing ===\")",
+      "Bash(echo \"=== Start/stop tracking output ===\")",
+      "Bash(echo \"=== Start/stop tracking exitCode ===\")",
+      "Bash(echo \"=== Image processing stdout \\(last part\\) ===\")",
+      "Bash(echo \"=== Image processing stderr tail ===\")",
+      "mcp__claude_ai_n8n__search_executions"
+    ]
+  }
+}

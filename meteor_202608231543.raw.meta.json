@@ -1,0 +1,11 @@
+{
+  "satellite": "METEOR M2-4",
+  "maxEl": 69.26,
+  "frequency": 137900000,
+  "gain": 20,
+  "samplerate": 250000,
+  "location": "theding",
+  "date": "2026-08-23",
+  "time": "15:59 CEST",
+  "direction": "NtoS"
+}
