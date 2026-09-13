@@ -619,6 +619,105 @@
     .hiw-body a { color: var(--accent2); }
     .hiw-loading { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
+    /* ── Satellite tracker ─────────────────────────────────────────────────── */
+    .next-passes-flex { display: block; }
+    .sat-tracker-desktop-slot { display: none; }
+    .sat-tracker-trigger { display: none; }
+
+    @media (min-width: 881px) {
+      .next-passes-flex { display: flex; gap: 24px; align-items: flex-start; }
+      .next-passes-col { flex: 1; min-width: 0; }
+      .sat-tracker-desktop-slot { display: block; flex: 0 0 320px; }
+    }
+
+    @media (max-width: 880px) {
+      .sat-tracker-trigger { display: inline-flex; align-items: center; gap: 6px; }
+    }
+
+    .sat-tracker-panel {
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: var(--mono);
+    }
+
+    .sat-tracker-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .sat-tracker-clock { color: var(--text); margin-left: 8px; }
+
+    .sat-tracker-status {
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 99px;
+      border: 0.5px solid var(--border);
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .sat-tracker-status.live { color: var(--accent); border-color: var(--accent); }
+    .sat-tracker-status.wait { color: #f59e0b; border-color: #f59e0b; }
+    .sat-tracker-status.warn { color: #ff4444; border-color: #ff4444; }
+
+    .sat-tracker-canvas-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #05070d;
+      touch-action: none;
+    }
+
+    .sat-tracker-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+
+    .sat-tracker-rows { list-style: none; margin: 0; padding: 2px 0; }
+
+    .sat-tracker-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding: 6px 12px;
+      font-size: 11px;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .sat-tracker-row:first-child { border-top: none; }
+
+    .sat-tracker-row .name {
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .sat-tracker-row .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 5px currentColor;
+    }
+
+    .sat-tracker-row .tel { color: var(--muted); text-align: right; white-space: nowrap; }
+    .sat-tracker-row .tel b { color: var(--text); font-weight: 400; }
+
+    .sat-tracker-modal .tl-panel {
+      width: 92vw;
+      max-width: 420px;
+      height: auto;
+      max-height: 88vh;
+    }
+
     /* ── Mobile ────────────────────────────────────────────────────────────── */
     @media (max-width: 640px) {
       header { padding: 1.5rem 1rem 1.25rem; }
@@ -676,17 +775,23 @@
 </header>
 
 <div class="page-section" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0">
-  <div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div>
-  <div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem">
-    <div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px">
-      <div style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div>
-      fetching pass predictions...
+  <div class="next-passes-flex">
+    <div class="next-passes-col">
+      <div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div>
+      <div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem">
+        <div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px">
+          <div style="width:12px;height:12px;border:1.5px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div>
+          fetching pass predictions...
+        </div>
+      </div>
     </div>
+    <div class="sat-tracker-desktop-slot" id="sat-tracker-desktop-slot"></div>
   </div>
 </div>
 
 <div class="page-section toolbar-row" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:12px">
   <button onclick="openTimelapse()" style="font-family:var(--mono);font-size:12px;background:rgba(0,229,160,0.08);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='rgba(0,229,160,0.18)'" onmouseout="this.style.background='rgba(0,229,160,0.08)'">▶ timelapse</button>
+  <button class="sat-tracker-trigger" onclick="openSatTracker()" style="font-family:var(--mono);font-size:12px;background:rgba(76,201,240,0.08);border:0.5px solid #4cc9f0;color:#4cc9f0;padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='rgba(76,201,240,0.18)'" onmouseout="this.style.background='rgba(76,201,240,0.08)'">🛰 satellite position</button>
   <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">watch Earth's surface change over time</span>
   <button onclick="openHowItWorks()" style="font-family:var(--mono);font-size:12px;background:rgba(0,136,255,0.08);border:0.5px solid var(--accent2);color:var(--accent2);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s;margin-left:auto" onmouseover="this.style.background='rgba(0,136,255,0.18)'" onmouseout="this.style.background='rgba(0,136,255,0.08)'">ⓘ how it works</button>
 </div>
@@ -732,6 +837,17 @@
         <span id="tl-fade-val">0.35s</span>
       </label>
     </div>
+  </div>
+</div>
+
+<!-- ── Satellite tracker Modal (mobile) ─────────────────────────────────── -->
+<div class="tl-modal sat-tracker-modal" id="sat-tracker-modal" onclick="if(event.target===this)closeSatTracker()">
+  <div class="tl-panel">
+    <div class="tl-topbar">
+      <div class="tl-topbar-left">🛰 <strong>live position</strong> &nbsp;·&nbsp; METEOR-M2 fleet</div>
+      <button class="tl-close-btn" onclick="closeSatTracker()">× close</button>
+    </div>
+    <div id="sat-tracker-mobile-slot" style="padding:14px;overflow-y:auto"></div>
   </div>
 </div>
 
@@ -1370,6 +1486,11 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeHowItWorks();
     return;
   }
+  const satModal = document.getElementById('sat-tracker-modal');
+  if (satModal.classList.contains('open')) {
+    if (e.key === 'Escape') closeSatTracker();
+    return;
+  }
   const modal = document.getElementById('tl-modal');
   if (!modal.classList.contains('open')) return;
   if (e.key === 'Escape')      { closeTimelapse(); }
@@ -1467,6 +1588,353 @@ async function openHowItWorks() {
 function closeHowItWorks() {
   document.getElementById('hiw-modal').classList.remove('open');
 }
+</script>
+
+<script>
+// Fallback stubs so the toolbar button and Escape key never throw before the
+// module below (three.js / satellite.js, loaded from CDN) has finished — or
+// if it fails to load at all, e.g. offline or CDN blocked.
+window.openSatTracker = window.openSatTracker || function() {
+  document.getElementById('sat-tracker-modal').classList.add('open');
+};
+window.closeSatTracker = window.closeSatTracker || function() {
+  document.getElementById('sat-tracker-modal').classList.remove('open');
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+}}
+</script>
+<script type="module">
+// ─── SATELLITE TRACKER ───────────────────────────────────────────────────────
+// Live 3D ground-track view of the two METEOR-M2 satellites this station
+// receives (NORAD 57166 / 59051 — same ones linked in the header). Built
+// lazily: on desktop it mounts inline next to the next-passes grid on load;
+// on mobile it's only constructed the first time the "satellite position"
+// button opens the popup, so phones never pay for a WebGL context + CelesTrak
+// fetch they didn't ask for.
+import * as THREE from "three";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js";
+
+const EARTH_KM = 6371;
+const R = 1;
+const DEG = Math.PI / 180;
+const REDUCED = matchMedia('(prefers-reduced-motion:reduce)').matches;
+const IMG = 'https://cdn.jsdelivr.net/npm/three-globe/example/img/';
+const BARCELONA = { lat: 41.38, lng: 2.17 };
+
+const SATS = [
+  { id: 57166, name: 'METEOR-M2 3', color: 0x4cc9f0 },
+  { id: 59051, name: 'METEOR-M2 4', color: 0x63e6ff },
+];
+
+function latLngToVec(lat, lng, radius) {
+  const phi = (90 - lat) * DEG;
+  const theta = (lng + 180) * DEG;
+  return new THREE.Vector3(
+    -radius * Math.sin(phi) * Math.cos(theta),
+     radius * Math.cos(phi),
+     radius * Math.sin(phi) * Math.sin(theta)
+  );
+}
+
+function subsolar(date) {
+  const start = Date.UTC(date.getUTCFullYear(), 0, 0);
+  const doy = Math.floor((date - start) / 86400000);
+  const decl = -23.44 * Math.cos((360 / 365) * (doy + 10) * DEG);
+  const utch = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
+  let lng = -15 * (utch - 12);
+  while (lng < -180) lng += 360;
+  while (lng > 180) lng -= 360;
+  return { lat: decl, lng };
+}
+
+function dotTexture() {
+  const c = document.createElement('canvas'); c.width = c.height = 64;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  grd.addColorStop(0, 'rgba(255,255,255,1)');
+  grd.addColorStop(0.35, 'rgba(255,255,255,0.9)');
+  grd.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = grd; g.beginPath(); g.arc(32, 32, 32, 0, Math.PI * 2); g.fill();
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; return tex;
+}
+
+function fmtLatLng(lat, lng) {
+  const la = Math.abs(lat).toFixed(1) + (lat >= 0 ? 'N' : 'S');
+  const lo = Math.abs(lng).toFixed(1) + (lng >= 0 ? 'E' : 'W');
+  return la + ' ' + lo;
+}
+
+async function fetchTLE(id) {
+  const url = `https://celestrak.org/NORAD/elements/gp.php?CATNR=${id}&FORMAT=tle`;
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  const text = (await res.text()).trim();
+  if (!text || /no gp data/i.test(text)) throw new Error('no data');
+  const lines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  if (lines.length < 3) throw new Error('short');
+  return [lines[1], lines[2]];
+}
+
+function buildTracker() {
+  const panel = document.createElement('div');
+  panel.className = 'sat-tracker-panel';
+  panel.innerHTML = `
+    <div class="sat-tracker-head">
+      <span>🛰 live position<span class="sat-tracker-clock" id="sat-tracker-clock">--:--:-- UTC</span></span>
+      <span class="sat-tracker-status wait" id="sat-tracker-status">acquiring</span>
+    </div>
+    <div class="sat-tracker-canvas-wrap" id="sat-tracker-canvas-wrap">
+      <canvas id="sat-tracker-canvas"></canvas>
+    </div>
+    <ul class="sat-tracker-rows" id="sat-tracker-rows"></ul>`;
+
+  const wrap     = panel.querySelector('#sat-tracker-canvas-wrap');
+  const canvas   = panel.querySelector('#sat-tracker-canvas');
+  const statusEl = panel.querySelector('#sat-tracker-status');
+  const clockEl  = panel.querySelector('#sat-tracker-clock');
+  const rowsEl   = panel.querySelector('#sat-tracker-rows');
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x05070d);
+  const camera = new THREE.PerspectiveCamera(42, 4 / 3, 0.01, 200);
+  camera.position.set(2.4, 1.3, 3.4);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.rotateSpeed = 0.5;
+  controls.minDistance = 1.3;
+  controls.maxDistance = 8;
+  controls.enablePan = false;
+  controls.autoRotate = !REDUCED;
+  controls.autoRotateSpeed = 0.25;
+  renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
+
+  (function makeStars() {
+    const COUNT = 500;
+    const pos = new Float32Array(COUNT * 3);
+    for (let i = 0; i < COUNT; i++) {
+      const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = 40;
+      const s = Math.sqrt(1 - u * u);
+      pos[i * 3]     = r * s * Math.cos(a);
+      pos[i * 3 + 1] = r * u;
+      pos[i * 3 + 2] = r * s * Math.sin(a);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const m = new THREE.PointsMaterial({ size: 1.1, sizeAttenuation: false, color: 0xaab4c4, transparent: true, opacity: 0.55, depthWrite: false });
+    scene.add(new THREE.Points(g, m));
+  })();
+
+  const loader = new THREE.TextureLoader();
+  loader.setCrossOrigin('anonymous');
+  const dayTex   = loader.load(IMG + 'earth-day.jpg');
+  const nightTex = loader.load(IMG + 'earth-night.jpg');
+  [dayTex, nightTex].forEach(t => { t.colorSpace = THREE.SRGBColorSpace; });
+
+  const earthMat = new THREE.ShaderMaterial({
+    uniforms: {
+      dayTexture: { value: dayTex },
+      nightTexture: { value: nightTex },
+      sunDirection: { value: new THREE.Vector3(1, 0, 0) },
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      varying vec3 vN;
+      void main(){
+        vUv = uv;
+        vN = normalize(mat3(modelMatrix) * normal);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+      }`,
+    fragmentShader: `
+      uniform sampler2D dayTexture;
+      uniform sampler2D nightTexture;
+      uniform vec3 sunDirection;
+      varying vec2 vUv;
+      varying vec3 vN;
+      void main(){
+        float s = dot(normalize(vN), normalize(sunDirection));
+        vec3 day   = texture2D(dayTexture, vUv).rgb;
+        vec3 night = texture2D(nightTexture, vUv).rgb * 1.35;
+        float t = smoothstep(-0.12, 0.15, s);
+        vec3 col = mix(night, day, t);
+        gl_FragColor = vec4(col, 1.0);
+      }`,
+  });
+  const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 64, 64), earthMat);
+  scene.add(earth);
+
+  const atmo = new THREE.Mesh(
+    new THREE.SphereGeometry(R * 1.02, 48, 48),
+    new THREE.ShaderMaterial({
+      transparent: true, side: THREE.BackSide, depthWrite: false,
+      uniforms: { c: { value: new THREE.Color(0x4cc9f0) } },
+      vertexShader: `varying vec3 vN; void main(){ vN=normalize(mat3(modelMatrix)*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);} `,
+      fragmentShader: `varying vec3 vN; uniform vec3 c; void main(){ float i=pow(0.72-dot(vN,vec3(0.,0.,1.)),3.0); gl_FragColor=vec4(c, clamp(i,0.,1.)*0.5);} `,
+    })
+  );
+  scene.add(atmo);
+
+  const DOT = dotTexture();
+
+  // Barcelona ground station
+  const bcnMarker = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: 0x00e5a0, transparent: true }));
+  bcnMarker.scale.setScalar(0.07);
+  bcnMarker.position.copy(latLngToVec(BARCELONA.lat, BARCELONA.lng, R * 1.005));
+  scene.add(bcnMarker);
+
+  const sats = SATS.map(cfg => {
+    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: cfg.color, transparent: true }));
+    sprite.scale.setScalar(0.065);
+    sprite.visible = false;
+    scene.add(sprite);
+    const path = new THREE.Line(
+      new THREE.BufferGeometry(),
+      new THREE.LineBasicMaterial({ color: cfg.color, transparent: true, opacity: 0.35 })
+    );
+    scene.add(path);
+    const li = document.createElement('li');
+    li.className = 'sat-tracker-row';
+    const hex = '#' + cfg.color.toString(16).padStart(6, '0');
+    li.innerHTML = `<span class="name"><span class="dot" style="color:${hex};background:${hex}"></span>${cfg.name}</span><span class="tel">--</span>`;
+    rowsEl.appendChild(li);
+    return { cfg, sprite, path, satrec: null, telEl: li.querySelector('.tel'), lat: undefined, lng: undefined, alt: undefined };
+  });
+
+  function propagate(satrec, when) {
+    const pv = satellite.propagate(satrec, when);
+    if (!pv.position) return null;
+    const gmst = satellite.gstime(when);
+    const g = satellite.eciToGeodetic(pv.position, gmst);
+    return { lat: satellite.degreesLat(g.latitude), lng: satellite.degreesLong(g.longitude), alt: g.height };
+  }
+
+  function buildPath(rec) {
+    if (!rec.satrec) return;
+    const periodMin = (2 * Math.PI) / rec.satrec.no;
+    const pts = [];
+    const now = Date.now();
+    for (let i = 0; i <= 120; i++) {
+      const when = new Date(now + (i / 120) * periodMin * 60000);
+      const p = propagate(rec.satrec, when);
+      if (p) pts.push(latLngToVec(p.lat, p.lng, R + p.alt / EARTH_KM));
+    }
+    rec.path.geometry.setFromPoints(pts);
+  }
+
+  async function loadData() {
+    let ok = 0;
+    await Promise.all(sats.map(async rec => {
+      try {
+        const [l1, l2] = await fetchTLE(rec.cfg.id);
+        rec.satrec = satellite.twoline2satrec(l1, l2);
+        buildPath(rec);
+        ok++;
+      } catch (e) { /* leave this satellite hidden */ }
+    }));
+    if (ok === sats.length) { statusEl.textContent = 'live'; statusEl.className = 'sat-tracker-status live'; }
+    else if (ok > 0) { statusEl.textContent = `live · ${ok}/${sats.length}`; statusEl.className = 'sat-tracker-status wait'; }
+    else { statusEl.textContent = 'no data'; statusEl.className = 'sat-tracker-status warn'; }
+  }
+
+  function resize() {
+    const w = wrap.clientWidth, h = wrap.clientHeight;
+    if (!w || !h) return;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+  }
+  new ResizeObserver(resize).observe(wrap);
+
+  let lastTel = 0, lastPath = 0, running = false, rafId = null, dataStarted = false;
+
+  function tick() {
+    if (!running) return;
+    rafId = requestAnimationFrame(tick);
+    if (document.hidden) return;
+    const now = new Date();
+    sats.forEach(rec => {
+      if (!rec.satrec) return;
+      const p = propagate(rec.satrec, now);
+      if (!p) return;
+      rec.lat = p.lat; rec.lng = p.lng; rec.alt = p.alt;
+      rec.sprite.position.copy(latLngToVec(p.lat, p.lng, R + p.alt / EARTH_KM));
+      rec.sprite.visible = true;
+    });
+    const ss = subsolar(now);
+    earthMat.uniforms.sunDirection.value.copy(latLngToVec(ss.lat, ss.lng, 1).normalize());
+    clockEl.textContent = now.toISOString().slice(11, 19) + ' UTC';
+
+    if (now - lastTel > 500) {
+      lastTel = +now;
+      sats.forEach(rec => {
+        if (rec.lat === undefined) return;
+        rec.telEl.innerHTML = `<b>${fmtLatLng(rec.lat, rec.lng)}</b> · ${Math.round(rec.alt)} km`;
+      });
+    }
+    if (now - lastPath > 90000) { lastPath = +now; sats.forEach(buildPath); }
+
+    controls.update();
+    renderer.render(scene, camera);
+  }
+
+  function start() {
+    if (!running) { running = true; resize(); tick(); }
+    if (!dataStarted) { dataStarted = true; loadData(); }
+  }
+
+  function stop() {
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+  }
+
+  return { panel, start, stop };
+}
+
+let tracker = null;
+function ensureTracker() {
+  if (!tracker) tracker = buildTracker();
+  return tracker;
+}
+
+const desktopMQ = matchMedia('(min-width: 881px)');
+
+function placeForViewport() {
+  if (!tracker && !desktopMQ.matches) return; // nothing built yet, nothing to move
+  const t = ensureTracker();
+  const desktopSlot = document.getElementById('sat-tracker-desktop-slot');
+  const mobileModal = document.getElementById('sat-tracker-modal');
+  if (desktopMQ.matches) {
+    desktopSlot.appendChild(t.panel);
+    t.start();
+  } else if (!mobileModal.contains(t.panel)) {
+    document.getElementById('sat-tracker-mobile-slot').appendChild(t.panel);
+    if (!mobileModal.classList.contains('open')) t.stop();
+  }
+}
+
+desktopMQ.addEventListener('change', placeForViewport);
+if (desktopMQ.matches) placeForViewport();
+
+window.openSatTracker = function() {
+  const t = ensureTracker();
+  document.getElementById('sat-tracker-mobile-slot').appendChild(t.panel);
+  document.getElementById('sat-tracker-modal').classList.add('open');
+  t.start();
+};
+
+window.closeSatTracker = function() {
+  document.getElementById('sat-tracker-modal').classList.remove('open');
+  if (tracker && !desktopMQ.matches) tracker.stop();
+};
 </script>
 
 </body>
