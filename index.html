@@ -618,6 +618,43 @@
     .hiw-body strong { color: var(--text); font-weight: 700; }
     .hiw-body a { color: var(--accent2); }
     .hiw-loading { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+    /* ── Mobile ────────────────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      header { padding: 1.5rem 1rem 1.25rem; }
+      main { padding: 1.25rem 1rem; }
+      .page-section { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+      .pass-header {
+        flex-wrap: wrap;
+        row-gap: 6px;
+        gap: 0.5rem;
+      }
+
+      .pass-meta {
+        margin-left: 0;
+        flex-basis: 100%;
+        white-space: normal;
+      }
+
+      .failed-row {
+        flex-wrap: wrap;
+        row-gap: 4px;
+      }
+
+      .failed-row .pass-meta,
+      .failed-row .pass-meta:last-child {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      .failed-accordion summary {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .toolbar-row button { margin-left: 0 !important; }
+    }
   </style>
 </head>
 <body>
@@ -638,7 +675,7 @@
   </div>
 </header>
 
-<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0">
+<div class="page-section" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0">
   <div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">⟳ next 3 passes over Barcelona</div>
   <div id="next-passes-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:2rem">
     <div style="font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px">
@@ -648,7 +685,7 @@
   </div>
 </div>
 
-<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;align-items:center;gap:12px">
+<div class="page-section toolbar-row" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:12px">
   <button onclick="openTimelapse()" style="font-family:var(--mono);font-size:12px;background:rgba(0,229,160,0.08);border:0.5px solid var(--accent);color:var(--accent);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='rgba(0,229,160,0.18)'" onmouseout="this.style.background='rgba(0,229,160,0.08)'">▶ timelapse</button>
   <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">watch Earth's surface change over time</span>
   <button onclick="openHowItWorks()" style="font-family:var(--mono);font-size:12px;background:rgba(0,136,255,0.08);border:0.5px solid var(--accent2);color:var(--accent2);padding:7px 16px;border-radius:4px;cursor:pointer;transition:background 0.15s;margin-left:auto" onmouseover="this.style.background='rgba(0,136,255,0.18)'" onmouseout="this.style.background='rgba(0,136,255,0.08)'">ⓘ how it works</button>
