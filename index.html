@@ -939,6 +939,11 @@ function hydratePoorPassImages(detailsEl) {
 function shouldShow(imgName) {
   // Uncalibrated composites: always skip, even if SatDump ships a "_corrected" variant
   if (imgName.includes('Uncalibrated')) return false;
+  // Generic "MSU-MR_<channels>_False_Color" fallback composites: SatDump emits these
+  // when it substitutes an uncalibrated channel (e.g. 4 in place of 3) and can't map
+  // the result to a named, calibrated combo like AVHRR_221 or MSA. They carry the same
+  // uncalibrated gap-fill artifacts (solid color bands) without saying "Uncalibrated".
+  if (/MSU-MR_\d+_False_Color/i.test(imgName)) return false;
   // Projected composites: always show
   if (imgName.startsWith('rgb_')) return true;
   // Corrected composites: show (but not their uncorrected twins or map overlays)
