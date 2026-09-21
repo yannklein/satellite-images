@@ -937,6 +937,8 @@ function hydratePoorPassImages(detailsEl) {
 }
 
 function shouldShow(imgName) {
+  // Uncalibrated composites: always skip, even if SatDump ships a "_corrected" variant
+  if (imgName.includes('Uncalibrated')) return false;
   // Projected composites: always show
   if (imgName.startsWith('rgb_')) return true;
   // Corrected composites: show (but not their uncorrected twins or map overlays)
