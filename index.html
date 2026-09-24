@@ -495,8 +495,8 @@
     .pass-card-el.med{background:rgba(0,136,255,0.1);border:0.5px solid var(--accent2);color:var(--accent2)}
     .pass-card-el.low{background:rgba(255,255,255,0.04);border:0.5px solid var(--muted);color:var(--muted)}
     .countdown{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px}
-    .pass-card.skipped-night{opacity:0.55}
-    .pass-card-night-badge{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:4px}
+    .pass-card.night-pass{border-left:3px solid var(--accent2)}
+    .pass-card-night-badge{font-family:var(--mono);font-size:10px;color:var(--accent2);margin-top:6px;display:flex;align-items:center;gap:4px}
 
     /* ── Timelapse ─────────────────────────────────────────────────────────── */
     .tl-modal {
@@ -898,26 +898,8 @@ function isProjected(imgName) {
   return imgName.startsWith('rgb_');
 }
 
-function isMapFallback(imgName) {
-  return imgName.endsWith('_corrected_map.png');
-}
-
 function needsFlip(imgName, pass) {
-  return !isProjected(imgName) && !isMapFallback(imgName) && pass.direction === 'NtoS';
-}
-
-// When a pass has no geo-projected world map (e.g. SatDump's projection step
-// didn't run for it), fall back to a single geo-referenced coastline overlay
-// from add_map_overlay.py so there's still "a map with the pass on it".
-const MAP_FALLBACK_PRIORITY = ['MSA', 'MCIR', 'AVHRR_221'];
-
-function pickMapFallback(imgs) {
-  for (const key of MAP_FALLBACK_PRIORITY) {
-    const re = new RegExp(key + '.*_corrected_map\\.png$', 'i');
-    const match = imgs.find(n => re.test(n));
-    if (match) return match;
-  }
-  return null;
+  return !isProjected(imgName) && pass.direction === 'NtoS';
 }
 
 function passIdParam(pass) {
@@ -938,15 +920,19 @@ const gallery = document.getElementById('gallery');
 let allImgs = [];
 let lbIdx = 0;
 
-const CHANNEL_LABELS = {
-  'msu_mr_rgb_AVHRR_221_False_Color_corrected.png': 'False Color AVHRR 221',
-  'msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png': 'False Color AVHRR 3a21',
-  'msu_mr_rgb_MSA_corrected.png': 'MSA',
-  'rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png': 'False Color AVHRR 3a21 — projected',
-  'rgb_msu_mr_rgb_MSA_projected.png': 'MSA — projected',
-  'msu_mr_rgb_MSA_corrected_map.png': 'MSA — map (no projection available)',
-  'msu_mr_rgb_MCIR_corrected_map.png': 'MCIR — map (no projection available)',
-};
+// Curated, fixed-order allowlist: only these composites ever show as gallery
+// thumbnails, in this exact order, and only when the file actually exists for
+// that pass. MSA/MCIR (basemap-underlay composites) are intentionally left
+// out -- they only carry one real channel each and have a known cosmetic
+// basemap/data registration drift, so they're not worth surfacing here.
+const WANTED_IMAGES = [
+  { name: 'msu_mr_rgb_AVHRR_221_False_Color_corrected.png', label: 'False Color AVHRR 221' },
+  { name: 'msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png', label: 'False Color AVHRR 3a21' },
+  { name: 'msu_mr_rgb_MSU-MR_124_False_Color_corrected.png', label: 'False Color 124 (ch 1/2/4)' },
+  { name: 'msu_mr_Visible_Ch1_corrected.png', label: 'Visible (ch 1)' },
+  { name: 'msu_mr_Thermal_Ch4_corrected.png', label: 'Thermal (ch 4)' },
+  { name: 'rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png', label: 'False Color AVHRR 221 — projected' },
+];
 
 function hydratePoorPassImages(detailsEl) {
   if (!detailsEl.open) return;
@@ -954,28 +940,6 @@ function hydratePoorPassImages(detailsEl) {
     img.src = img.dataset.src;
     img.removeAttribute('data-src');
   });
-}
-
-function shouldShow(imgName, mapFallbackName) {
-  // Uncalibrated composites: always skip, even if SatDump ships a "_corrected" variant
-  if (imgName.includes('Uncalibrated')) return false;
-  // Generic "MSU-MR_<channels>_False_Color" fallback composites: SatDump emits these
-  // when it substitutes an uncalibrated channel (e.g. 4 in place of 3) and can't map
-  // the result to a named, calibrated combo like AVHRR_221 or MSA. They carry the same
-  // uncalibrated gap-fill artifacts (solid color bands) without saying "Uncalibrated".
-  if (/MSU-MR_\d+_False_Color/i.test(imgName)) return false;
-  // Projected composites: always show
-  if (imgName.startsWith('rgb_')) return true;
-  // Corrected composites: show (but not their uncorrected twins or map overlays)
-  if (imgName.includes('_corrected') && !imgName.includes('_map')) return true;
-  // No projected world map for this pass: show one geo-referenced map overlay instead
-  if (mapFallbackName && imgName === mapFallbackName) return true;
-  // Everything else (raw channels, uncalibrated, non-corrected, map overlays): skip
-  return false;
-}
-
-function getLabel(imgName) {
-  return CHANNEL_LABELS[imgName] || imgName.replace(/_corrected/g, '').replace(/_/g, ' ').replace('.png', '');
 }
 
 function renderGallery(passes) {
@@ -1002,24 +966,14 @@ function renderGallery(passes) {
 
     const imgs = pass.imgs || [];
 
-    const sortedImgs = [...imgs].sort((a, b) => {
-      if (a === 'msu_mr_false_color_map.png') return -1;
-      if (b === 'msu_mr_false_color_map.png') return 1;
-      return a.localeCompare(b);
-    });
-
-    const hasProjected = imgs.some(n => n.startsWith('rgb_'));
-    const mapFallbackName = hasProjected ? null : pickMapFallback(imgs);
-
     let imgsHTML = '';
     let visibleCount = 0;
-    sortedImgs.forEach((imgName) => {
-      if (!shouldShow(imgName, mapFallbackName)) return;
+    WANTED_IMAGES.forEach(({ name: imgName, label }) => {
+      if (!imgs.includes(imgName)) return;
       visibleCount++;
 
       const src   = `${pass.folder}/MSU-MR/${imgName}`;
       const flip  = needsFlip(imgName, pass);
-      const label = getLabel(imgName);
       const globalIdx = allImgs.length;
 
       allImgs.push({ src, label, pass, imgName });
@@ -1041,7 +995,11 @@ function renderGallery(passes) {
       ? `<span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">${pass.direction}</span>`
       : '';
 
-    const rawChannels = sortedImgs
+    const nightBadge = pass.isDaylight === false
+      ? `<span style="font-family:var(--mono);font-size:10px;color:var(--accent2);margin-left:4px">🌙 night IR</span>`
+      : '';
+
+    const rawChannels = imgs
       .filter(imgName => /^MSU-MR-\d+\.png$/i.test(imgName))
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
     const rawChannelsHTML = rawChannels.length
@@ -1066,6 +1024,7 @@ function renderGallery(passes) {
         ${pass.maxEl != null ? `<span class="pass-card-el ${elClass(pass.maxEl)}" style="margin-top:0;font-size:10px">${elLabel(pass.maxEl)}</span>` : ''}
         ${qualityBadge}
         ${dirBadge}
+        ${nightBadge}
         <span class="pass-meta">${pass.satellite} · ${visibleCount} image${visibleCount !== 1 ? 's' : ''}${pass.maxEl != null ? ` · ${Math.round(pass.maxEl)}° el` : ''}${pass.frequency != null ? ` · ${(pass.frequency / 1e6).toFixed(3)} MHz` : ''}${pass.gain != null ? ` · ${pass.gain}dB gain` : ''}</span>
       </${headerTag}>
       <div class="pass-grid">${imgsHTML}</div>
@@ -1231,10 +1190,10 @@ document.addEventListener('keydown', e => {
       const ec      = elClass(p.maxEl);
       const isNight = p.isDaylight === false;
       const nightBadge = isNight
-        ? `<div class="pass-card-night-badge">🌙 night — would be skipped</div>`
+        ? `<div class="pass-card-night-badge">🌙 Night pass — IR-only imagery</div>`
         : '';
       return `
-        <div class="pass-card${isNight ? ' skipped-night' : ''}">
+        <div class="pass-card${isNight ? ' night-pass' : ''}">
           <div class="pass-card-date">${start.date} · <span style="color:var(--accent2)">${p.satname}</span></div>
           <div class="pass-card-time">${start.time}</div>
           <div class="pass-card-row"><span>peak</span><span>${max.time}</span></div>

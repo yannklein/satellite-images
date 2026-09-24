@@ -24,6 +24,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
         location=$(jq -r '.location // "barcelona"' "$META_FILE")
         quality=$(jq -r '.quality // "unrated"' "$META_FILE")
         blackRatio=$(jq -r '.blackRatio // null' "$META_FILE")
+        isDaylight=$(jq -r 'if .isDaylight == false then false else true end' "$META_FILE")
         meta_date=$(jq -r '.date // null' "$META_FILE")
         meta_time=$(jq -r '.time // null' "$META_FILE")
         if [ "$meta_date" != "null" ] && [ -n "$meta_date" ]; then
@@ -34,13 +35,28 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
             time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
         fi
     else
-        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"; location="barcelona"; quality="unrated"; blackRatio="null"
+        satellite="Unknown"; maxEl="null"; frequency="null"; gain="null"; barcelonaPx="null"; citiesPx="[]"; exclude="false"; location="barcelona"; quality="unrated"; blackRatio="null"; isDaylight="true"
         timestamp=$(stat -c %y "$decoded_dir" | cut -d' ' -f1)
         time="$(stat -c %y "$decoded_dir" | cut -d' ' -f2 | cut -d':' -f1-2) CEST"
     fi
 
     png_files=$(find "$decoded_dir/MSU-MR" -maxdepth 1 -name "*.png" -size +0c 2>/dev/null | sort | xargs -I{} basename {} | jq -R . | jq -s .)
     if [ -z "$png_files" ]; then png_files="[]"; fi
+
+    # Any emissive/thermal MSU-MR channel (4, 5, or 6) works without sunlight --
+    # not hardcoded to channel 4, so a future pass that also/instead receives
+    # 5 or 6 is recognized automatically.
+    hasThermalChannel="false"
+    if echo "$png_files" | jq -e 'any(.[]; test("^MSU-MR-[456]\\.png$"; "i"))' >/dev/null 2>&1; then
+        hasThermalChannel="true"
+    fi
+
+    # Night passes only carry usable data on a thermal channel (channels 1-3
+    # are pure reflectance and are blank in the dark); skip the pass entirely
+    # if it's night and no thermal channel came through.
+    if [ "$isDaylight" = "false" ] && [ "$hasThermalChannel" = "false" ]; then
+        continue
+    fi
 
     hour=$(echo "$time" | cut -d':' -f1)
     if [ "$((10#$hour))" -ge 5 ] && [ "$((10#$hour))" -lt 14 ]; then
@@ -65,7 +81,8 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
 	--arg location "$location" \
 	--arg quality "$quality" \
 	--argjson blackRatio "$blackRatio" \
-	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location, quality: $quality, blackRatio: $blackRatio}' >> "$TMP_FILE"
+	--argjson isDaylight "$isDaylight" \
+	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location, quality: $quality, blackRatio: $blackRatio, isDaylight: $isDaylight}' >> "$TMP_FILE"
 done
 
 OUT_FILE=$(mktemp)

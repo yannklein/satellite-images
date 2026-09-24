@@ -14,7 +14,34 @@
       "Bash(echo \"=== Start/stop tracking exitCode ===\")",
       "Bash(echo \"=== Image processing stdout \\(last part\\) ===\")",
       "Bash(echo \"=== Image processing stderr tail ===\")",
-      "mcp__claude_ai_n8n__search_executions"
+      "mcp__claude_ai_n8n__search_executions",
+      "Bash(mkdir -p /tmp/test_decoded/decoded_299901010000/MSU-MR)",
+      "Bash(echo '{\"satellite\":\"TEST\",\"isDaylight\":false}')",
+      "Bash(printf 'x')",
+      "Bash(mkdir -p /tmp/test_decoded/decoded_299901010001/MSU-MR)",
+      "Bash(echo '{\"satellite\":\"TEST2\",\"isDaylight\":false}')",
+      "Bash(rm -f /tmp/passes.json.bak)",
+      "Bash(cp /home/yannklein/SatDump-1.2.2/satdump_cfg.json /tmp/satdump_cfg.json.bak *)",
+      "mcp__claude_ai_n8n__update_workflow",
+      "mcp__claude_ai_n8n__publish_workflow",
+      "Bash(identify decoded_202606181634/MSU-MR/msu_mr_rgb_MSA_corrected_map.png)",
+      "Bash(convert decoded_202606181634/MSU-MR/msu_mr_rgb_MSA_corrected_map.png -crop 500x500+0+0 +repage /tmp/old_msa_crop1.png)",
+      "Bash(identify /tmp/old_msa_crop1.png)",
+      "Bash(convert decoded_202609211126/MSU-MR/msu_mr_rgb_MSA_corrected_map.png -crop 700x350+1300+0 +repage -resize 1400x700 /tmp/zoom_top.png)",
+      "Bash(identify /tmp/zoom_top.png)",
+      "Bash(convert decoded_202609211126/MSU-MR/msu_mr_rgb_MSA_corrected_map.png -crop 700x300+750+0 +repage -resize 1400x600 /tmp/zoom_top2.png)",
+      "Bash(convert decoded_202609211126/MSU-MR/msu_mr_rgb_MSA_corrected_map.png -crop 500x300+0+0 +repage -resize 1000x600 /tmp/zoom_left.png)",
+      "Bash(convert decoded_202609211126/MSU-MR/msu_mr_rgb_MSA_corrected_map.png -crop 500x300+2300+0 +repage -resize 1000x600 /tmp/zoom_right.png)",
+      "Bash(find / -maxdepth 6 -iname \"map_aweeri*\" -o -maxdepth 6 -iname \"nasa_hd.jpg\")",
+      "Bash(convert /home/yannklein/SatDump-1.2.2/resources/maps/nasa_hd.jpg -crop 1200x600+5800+1200 +repage -resize 800x400 /tmp/basemap_sample.png)",
+      "Read(//opt/satdump-pinned/share/satdump/**)",
+      "Bash(echo \"diff exit: $?\")",
+      "Bash(sudo -n true)",
+      "Bash(bash rebuild-passes.sh)"
+    ],
+    "additionalDirectories": [
+      "/tmp",
+      "/home/yannklein/SatDump-1.2.2"
     ]
   }
 }
