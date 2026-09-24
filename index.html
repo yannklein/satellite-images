@@ -898,8 +898,26 @@ function isProjected(imgName) {
   return imgName.startsWith('rgb_');
 }
 
+function isMapFallback(imgName) {
+  return imgName.endsWith('_corrected_map.png');
+}
+
 function needsFlip(imgName, pass) {
-  return !isProjected(imgName) && pass.direction === 'NtoS';
+  return !isProjected(imgName) && !isMapFallback(imgName) && pass.direction === 'NtoS';
+}
+
+// When a pass has no geo-projected world map (e.g. SatDump's projection step
+// didn't run for it), fall back to a single geo-referenced coastline overlay
+// from add_map_overlay.py so there's still "a map with the pass on it".
+const MAP_FALLBACK_PRIORITY = ['MSA', 'MCIR', 'AVHRR_221'];
+
+function pickMapFallback(imgs) {
+  for (const key of MAP_FALLBACK_PRIORITY) {
+    const re = new RegExp(key + '.*_corrected_map\\.png$', 'i');
+    const match = imgs.find(n => re.test(n));
+    if (match) return match;
+  }
+  return null;
 }
 
 function passIdParam(pass) {
@@ -926,6 +944,8 @@ const CHANNEL_LABELS = {
   'msu_mr_rgb_MSA_corrected.png': 'MSA',
   'rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png': 'False Color AVHRR 3a21 — projected',
   'rgb_msu_mr_rgb_MSA_projected.png': 'MSA — projected',
+  'msu_mr_rgb_MSA_corrected_map.png': 'MSA — map (no projection available)',
+  'msu_mr_rgb_MCIR_corrected_map.png': 'MCIR — map (no projection available)',
 };
 
 function hydratePoorPassImages(detailsEl) {
@@ -936,7 +956,7 @@ function hydratePoorPassImages(detailsEl) {
   });
 }
 
-function shouldShow(imgName) {
+function shouldShow(imgName, mapFallbackName) {
   // Uncalibrated composites: always skip, even if SatDump ships a "_corrected" variant
   if (imgName.includes('Uncalibrated')) return false;
   // Generic "MSU-MR_<channels>_False_Color" fallback composites: SatDump emits these
@@ -948,6 +968,8 @@ function shouldShow(imgName) {
   if (imgName.startsWith('rgb_')) return true;
   // Corrected composites: show (but not their uncorrected twins or map overlays)
   if (imgName.includes('_corrected') && !imgName.includes('_map')) return true;
+  // No projected world map for this pass: show one geo-referenced map overlay instead
+  if (mapFallbackName && imgName === mapFallbackName) return true;
   // Everything else (raw channels, uncalibrated, non-corrected, map overlays): skip
   return false;
 }
@@ -986,10 +1008,13 @@ function renderGallery(passes) {
       return a.localeCompare(b);
     });
 
+    const hasProjected = imgs.some(n => n.startsWith('rgb_'));
+    const mapFallbackName = hasProjected ? null : pickMapFallback(imgs);
+
     let imgsHTML = '';
     let visibleCount = 0;
     sortedImgs.forEach((imgName) => {
-      if (!shouldShow(imgName)) return;
+      if (!shouldShow(imgName, mapFallbackName)) return;
       visibleCount++;
 
       const src   = `${pass.folder}/MSU-MR/${imgName}`;

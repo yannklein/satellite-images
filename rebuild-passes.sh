@@ -68,10 +68,19 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
 	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location, quality: $quality, blackRatio: $blackRatio}' >> "$TMP_FILE"
 done
 
+OUT_FILE=$(mktemp)
 if [ -s "$TMP_FILE" ]; then
-    jq -s '.' "$TMP_FILE" > "$PASS_FILE"
+    jq -s '.' "$TMP_FILE" > "$OUT_FILE"
 else
-    echo "[]" > "$PASS_FILE"
+    echo "[]" > "$OUT_FILE"
+fi
+
+if [ -s "$OUT_FILE" ] && jq -e . "$OUT_FILE" >/dev/null 2>&1; then
+    chmod 644 "$OUT_FILE"
+    mv "$OUT_FILE" "$PASS_FILE"
+else
+    echo "ERROR: failed to build valid passes.json, leaving existing file untouched" >&2
+    rm -f "$OUT_FILE"
 fi
 
 rm -f "$TMP_FILE"
