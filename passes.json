@@ -1,5 +1,185 @@
 [
   {
+    "date": "2026-09-26",
+    "time": "05:50 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202609260549",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated).png",
+      "MSU-MR-4.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_MCIR_corrected_map.png",
+      "msu_mr_rgb_MCIR_corrected.png",
+      "msu_mr_rgb_MCIR_map.png",
+      "msu_mr_rgb_MCIR.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
+    ],
+    "maxEl": 53.88,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "barcelona",
+    "quality": "poor",
+    "blackRatio": 0.2493,
+    "isDaylight": false
+  },
+  {
+    "date": "2026-09-25",
+    "time": "22:56 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202609252254",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated).png",
+      "MSU-MR-4.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_MCIR_corrected_map.png",
+      "msu_mr_rgb_MCIR_corrected.png",
+      "msu_mr_rgb_MCIR_map.png",
+      "msu_mr_rgb_MCIR.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
+    ],
+    "maxEl": 70.03,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "NtoS",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "barcelona",
+    "quality": "good",
+    "blackRatio": 0.0506,
+    "isDaylight": false
+  },
+  {
+    "date": "2026-09-25",
+    "time": "11:35 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202609251133",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated).png",
+      "MSU-MR-4.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_MCIR_corrected_map.png",
+      "msu_mr_rgb_MCIR_corrected.png",
+      "msu_mr_rgb_MCIR_map.png",
+      "msu_mr_rgb_MCIR.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
+    ],
+    "maxEl": 75.36,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null,
+    "isDaylight": true
+  },
+  {
+    "date": "2026-09-24",
+    "time": "16:16 CEST",
+    "satellite": "METEOR M2-4",
+    "folder": "decoded_202609241614",
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_corrected.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated)_map.png",
+      "msu_mr_3.9_um_Shortwave_IR_(Uncalibrated).png",
+      "MSU-MR-4.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_MCIR_corrected_map.png",
+      "msu_mr_rgb_MCIR_corrected.png",
+      "msu_mr_rgb_MCIR_map.png",
+      "msu_mr_rgb_MCIR.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
+    ],
+    "maxEl": 77.7,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "NtoS",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null,
+    "isDaylight": true
+  },
+  {
     "date": "2026-09-24",
     "time": "11:56 CEST",
     "satellite": "METEOR M2-3",
@@ -68,7 +248,14 @@
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
       "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
-      "msu_mr_rgb_MSU-MR_124_False_Color.png"
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
     ],
     "maxEl": 64.88,
     "frequency": 137900000,
@@ -106,7 +293,14 @@
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
       "msu_mr_rgb_MSU-MR_124_False_Color_corrected.png",
-      "msu_mr_rgb_MSU-MR_124_False_Color.png"
+      "msu_mr_rgb_MSU-MR_124_False_Color.png",
+      "msu_mr_Thermal_Ch4_corrected.png",
+      "msu_mr_Thermal_Ch4.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_MCIR_projected.png",
+      "rgb_msu_mr_rgb_MSU-MR_124_False_Color_projected.png"
     ],
     "maxEl": 59.03,
     "frequency": 137900000,
@@ -138,6 +332,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 78.95,
@@ -170,6 +367,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 89.25,
@@ -202,6 +402,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 57.5,
@@ -234,6 +437,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 55.63,
@@ -266,6 +472,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 89.63,
@@ -298,6 +507,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 69.95,
@@ -330,6 +542,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 56.67,
@@ -362,6 +577,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 76.26,
@@ -394,6 +612,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -493,6 +714,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -604,6 +828,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -727,6 +954,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -856,6 +1086,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -967,6 +1200,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1078,6 +1314,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1207,6 +1446,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1306,6 +1548,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1417,6 +1662,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1557,6 +1805,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1686,6 +1937,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1809,6 +2063,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1908,6 +2165,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -1945,6 +2205,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2056,6 +2319,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2155,6 +2421,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2284,6 +2553,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2407,6 +2679,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2500,6 +2775,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2611,6 +2889,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2740,6 +3021,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2845,6 +3129,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -2935,1233 +3222,25 @@
   {
     "date": "2026-09-12",
     "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2101",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2207",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2233",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2240",
-    "imgs": [],
-    "maxEl": 83.42,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_2300",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2303",
-    "imgs": [],
-    "maxEl": 51.27,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2343",
-    "imgs": [],
-    "maxEl": 84.95,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_2353",
-    "imgs": [],
-    "maxEl": 84.95,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-3",
-    "folder": "decoded_1205",
-    "imgs": [],
-    "maxEl": 50.44,
-    "frequency": 137900000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1219",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1537",
-    "imgs": [],
-    "maxEl": 43.88,
-    "frequency": 137100000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1550",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1559",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1612",
-    "imgs": [],
-    "maxEl": 89.06,
-    "frequency": 137100000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_1634",
-    "imgs": [],
-    "maxEl": 58.77,
-    "frequency": 137100000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1749",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1823",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
     "satellite": "METEOR M2-4",
     "folder": "decoded_0450",
-    "imgs": [],
+    "imgs": [
+      "MSU-MR-1.png",
+      "MSU-MR-2.png",
+      "MSU-MR-3.png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
+    ],
     "maxEl": 55.02,
     "frequency": 137100000,
     "gain": 25,
@@ -4171,222 +3250,6 @@
       "col": 1037,
       "distKm": 369.1,
       "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "METEOR M2-4",
-    "folder": "decoded_0512",
-    "imgs": [],
-    "maxEl": 86.2,
-    "frequency": 137100000,
-    "gain": 25,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": -165.7
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1112",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
-    },
-    "citiesPx": [
-      {
-        "name": "Barcelona",
-        "row": 88,
-        "col": 1037,
-        "distKm": 369.3
-      },
-      {
-        "name": "Madrid",
-        "row": 248,
-        "col": 573,
-        "distKm": 839.6
-      },
-      {
-        "name": "Lisbon",
-        "row": 440,
-        "col": 138,
-        "distKm": 1284.5
-      },
-      {
-        "name": "Zaragoza",
-        "row": 96,
-        "col": 783,
-        "distKm": 625.8
-      },
-      {
-        "name": "Valencia",
-        "row": 328,
-        "col": 866,
-        "distKm": 541.3
-      },
-      {
-        "name": "Seville",
-        "row": 440,
-        "col": 416,
-        "distKm": 1013.0
-      },
-      {
-        "name": "Algiers",
-        "row": 440,
-        "col": 1211,
-        "distKm": 237.5
-      },
-      {
-        "name": "Tunis",
-        "row": 440,
-        "col": 1833,
-        "distKm": 428.3
-      }
-    ],
-    "exclude": false,
-    "location": "barcelona",
-    "quality": "unrated",
-    "blackRatio": null,
-    "isDaylight": true
-  },
-  {
-    "date": "2026-09-12",
-    "time": "15:23 CEST",
-    "satellite": "Unknown",
-    "folder": "decoded_1153",
-    "imgs": [],
-    "maxEl": null,
-    "frequency": null,
-    "gain": null,
-    "direction": "NtoS",
-    "barcelonaPx": {
-      "row": 88,
-      "col": 1037,
-      "distKm": 369.1,
-      "rotationDeg": 14.3
     },
     "citiesPx": [
       {
@@ -4509,7 +3372,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 44.17,
     "frequency": 137900000,
@@ -4532,7 +3407,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 46.12,
     "frequency": 137900000,
@@ -4739,6 +3626,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 78.19,
@@ -4770,6 +3660,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 52.95,
@@ -4825,6 +3718,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5104,6 +4000,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5239,6 +4138,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5368,6 +4270,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5467,6 +4372,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5602,6 +4510,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5707,6 +4618,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5758,6 +4672,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -5857,6 +4774,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -6053,8 +4973,13 @@
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
       "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 78.85,
@@ -6207,6 +5132,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -6327,7 +5255,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 67.21,
     "frequency": 137900000,
@@ -6359,6 +5299,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -6530,6 +5473,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -6750,6 +5696,13 @@
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 88.02,
@@ -6884,6 +5837,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -6973,7 +5929,13 @@
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
       "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 56.3,
@@ -7090,6 +6052,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -7225,7 +6190,15 @@
       "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
-      "msu_mr_rgb_AVHRR_3a21_False_Color.png"
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 70.89,
     "frequency": 137900000,
@@ -7365,6 +6338,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -7502,8 +6478,13 @@
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
       "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 74.97,
@@ -7632,6 +6613,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -7792,6 +6776,13 @@
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 53.54,
@@ -7914,6 +6905,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -8049,6 +7043,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -8172,6 +7169,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -8301,6 +7301,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -8508,7 +7511,15 @@
       "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
       "msu_mr_rgb_AVHRR_221_False_Color.png",
       "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
-      "msu_mr_rgb_AVHRR_3a21_False_Color.png"
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 63.58,
     "frequency": 137900000,
@@ -8660,6 +7671,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -8789,6 +7803,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 83.22,
@@ -8941,6 +7958,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9094,6 +8114,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9229,6 +8252,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9346,6 +8372,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9469,6 +8498,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9580,6 +8612,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9715,6 +8750,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -9850,6 +8888,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10003,6 +9044,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10102,6 +9146,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10219,6 +9266,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10348,6 +9398,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10447,6 +9500,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10576,6 +9632,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10675,6 +9734,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10792,6 +9854,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -10879,6 +9944,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -11002,6 +10070,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -11149,6 +10220,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -11260,6 +10334,9 @@
       "msu_mr_rgb_MSA_corrected.png",
       "msu_mr_rgb_MSA_map.png",
       "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
       "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png",
       "rgb_msu_mr_rgb_MSA_projected.png"
     ],
@@ -11428,7 +10505,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": null,
     "frequency": 137900000,
@@ -11451,7 +10540,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": 81.53,
     "frequency": 137900000,
@@ -11497,7 +10598,19 @@
       "MSU-MR-1.png",
       "MSU-MR-2.png",
       "MSU-MR-3.png",
-      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png"
+      "msu_mr_AVHRR_3a21_False_Color_(uncalibrated).png",
+      "msu_mr_rgb_AVHRR_221_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_221_False_Color.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png",
+      "msu_mr_rgb_AVHRR_3a21_False_Color.png",
+      "msu_mr_rgb_MSA_corrected_map.png",
+      "msu_mr_rgb_MSA_corrected.png",
+      "msu_mr_rgb_MSA_map.png",
+      "msu_mr_rgb_MSA.png",
+      "msu_mr_Visible_Ch1_corrected.png",
+      "msu_mr_Visible_Ch1.png",
+      "rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png",
+      "rgb_msu_mr_rgb_AVHRR_3a21_False_Color_projected.png"
     ],
     "maxEl": null,
     "frequency": 137900000,

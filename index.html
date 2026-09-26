@@ -934,6 +934,10 @@ const WANTED_IMAGES = [
   { name: 'rgb_msu_mr_rgb_AVHRR_221_False_Color_projected.png', label: 'False Color AVHRR 221 — projected' },
 ];
 
+// Night passes: reflective channels (1-3) are blank/noise, so every composite
+// except the pure-emissive thermal one is garbage.
+const NIGHT_WANTED = new Set(['msu_mr_Thermal_Ch4_corrected.png']);
+
 function hydratePoorPassImages(detailsEl) {
   if (!detailsEl.open) return;
   detailsEl.querySelectorAll('img[data-src]').forEach(img => {
@@ -970,6 +974,7 @@ function renderGallery(passes) {
     let visibleCount = 0;
     WANTED_IMAGES.forEach(({ name: imgName, label }) => {
       if (!imgs.includes(imgName)) return;
+      if (pass.isDaylight === false && !NIGHT_WANTED.has(imgName)) return;
       visibleCount++;
 
       const src   = `${pass.folder}/MSU-MR/${imgName}`;
