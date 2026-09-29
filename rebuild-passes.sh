@@ -85,7 +85,7 @@ for decoded_dir in $(ls -td "$BASE_DIR"/decoded_* 2>/dev/null); do
 	'{date: $date, time: $time, satellite: $satellite, folder: $folder, imgs: $imgs, maxEl: $maxEl, frequency: $frequency, gain: $gain, direction: $direction, barcelonaPx: $barcelonaPx, citiesPx: $citiesPx, exclude: $exclude, location: $location, quality: $quality, blackRatio: $blackRatio, isDaylight: $isDaylight}' >> "$TMP_FILE"
 done
 
-OUT_FILE=$(mktemp)
+OUT_FILE=$(mktemp "$BASE_DIR/.passes.json.XXXXXX")  # same filesystem as PASS_FILE so mv is an atomic rename
 if [ -s "$TMP_FILE" ]; then
     jq -s '.' "$TMP_FILE" > "$OUT_FILE"
 else
