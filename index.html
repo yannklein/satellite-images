@@ -1749,11 +1749,11 @@ const SATS = [
   { id: 44903, name: 'ELEKTRO-L3',  color: 0xffb347, geo: true },
 ];
 
-// True GEO altitude (~35 786 km) is 6.6 Earth radii out — far outside this
-// panel's camera framing. Geostationary satellites are drawn on a compressed
-// ring at GEO_R instead (position/longitude exact, altitude not to scale);
-// the telemetry row still shows the real altitude.
-const GEO_R = 1.55;
+// Everything is to scale (1 unit = Earth radius): GEO sits ~6.6 radii from the
+// centre, so the default camera stands back far enough to frame that ring and
+// sprites are scaled up with camera distance to stay visible; zoom in for the
+// low-orbit METEOR tracks.
+const CAM_DIST = 15.5;
 
 function latLngToVec(lat, lng, radius) {
   const phi = (90 - lat) * DEG;
@@ -1826,7 +1826,7 @@ function buildTracker() {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05070d);
   const camera = new THREE.PerspectiveCamera(42, 4 / 3, 0.01, 200);
-  camera.position.set(2.4, 1.3, 3.4);
+  camera.position.set(2.4, 1.3, 3.4).setLength(CAM_DIST);
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -1836,7 +1836,7 @@ function buildTracker() {
   controls.dampingFactor = 0.08;
   controls.rotateSpeed = 0.5;
   controls.minDistance = 1.3;
-  controls.maxDistance = 8;
+  controls.maxDistance = 30;
   controls.enablePan = false;
   controls.autoRotate = !REDUCED;
   controls.autoRotateSpeed = 0.25;
@@ -1950,8 +1950,8 @@ function buildTracker() {
     return { lat: satellite.degreesLat(g.latitude), lng: satellite.degreesLong(g.longitude), alt: g.height };
   }
 
-  function satRadius(rec, alt) {
-    return rec.cfg.geo ? GEO_R : R + alt / EARTH_KM;
+  function satRadius(alt) {
+    return R + alt / EARTH_KM;
   }
 
   function buildPath(rec) {
@@ -1959,16 +1959,16 @@ function buildTracker() {
     if (rec.cfg.geo) {
       // A GEO satellite's ground track is ~a point; show the geostationary
       // belt (equatorial ring) it sits on instead.
-      const pts = [];
-      for (let i = 0; i <= 180; i++) pts.push(latLngToVec(0, -180 + i * 2, GEO_R));
-      rec.path.geometry.setFromPoints(pts);
-      // Line from the sub-satellite point up to the (compressed) sprite. Only
+      // Line from the sub-satellite point up to the satellite. Only
       // refreshed here, not per frame: a GEO satellite barely moves.
       const p = propagate(rec.satrec, new Date());
-      if (p) {
-        rec.tether.geometry.setFromPoints([latLngToVec(p.lat, p.lng, R * 1.005), latLngToVec(p.lat, p.lng, GEO_R)]);
-        rec.tether.visible = true;
-      }
+      if (!p) return;
+      const r = satRadius(p.alt);
+      const pts = [];
+      for (let i = 0; i <= 180; i++) pts.push(latLngToVec(0, -180 + i * 2, r));
+      rec.path.geometry.setFromPoints(pts);
+      rec.tether.geometry.setFromPoints([latLngToVec(p.lat, p.lng, R * 1.005), latLngToVec(p.lat, p.lng, r)]);
+      rec.tether.visible = true;
       return;
     }
     const periodMin = (2 * Math.PI) / rec.satrec.no;
@@ -1977,7 +1977,7 @@ function buildTracker() {
     for (let i = 0; i <= 120; i++) {
       const when = new Date(now + (i / 120) * periodMin * 60000);
       const p = propagate(rec.satrec, when);
-      if (p) pts.push(latLngToVec(p.lat, p.lng, satRadius(rec, p.alt)));
+      if (p) pts.push(latLngToVec(p.lat, p.lng, satRadius(p.alt)));
     }
     rec.path.geometry.setFromPoints(pts);
   }
@@ -2018,9 +2018,14 @@ function buildTracker() {
       const p = propagate(rec.satrec, now);
       if (!p) return;
       rec.lat = p.lat; rec.lng = p.lng; rec.alt = p.alt;
-      rec.sprite.position.copy(latLngToVec(p.lat, p.lng, satRadius(rec, p.alt)));
+      rec.sprite.position.copy(latLngToVec(p.lat, p.lng, satRadius(p.alt)));
       rec.sprite.visible = true;
     });
+    // Markers are sized in world units: grow them as the camera backs off so
+    // they stay readable when the whole GEO ring is in view.
+    const k = Math.max(1, camera.position.length() / 4.4);
+    sats.forEach(rec => rec.sprite.scale.setScalar(0.065 * k));
+    bcnMarker.scale.setScalar(0.07 * k);
     const ss = subsolar(now);
     earthMat.uniforms.sunDirection.value.copy(latLngToVec(ss.lat, ss.lng, 1).normalize());
     clockEl.textContent = now.toISOString().slice(11, 19) + ' UTC';
