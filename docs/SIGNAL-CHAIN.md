@@ -1,11 +1,12 @@
-# Signal chain: from METEOR-M2's camera to this gallery
+# Signal chain: from the satellites' cameras to this gallery
 
 *This document was drafted with AI assistance.*
 
 This documents the full pipeline behind this project, from the satellite
 taking an image to a pixel on this website, in the order it actually
 happens: satellite side first (sections 1–2), then the ground side
-(sections 3–9). Most of it is not derivable from this repo alone — the pass
+(sections 3–9). Sections 1–9 follow METEOR-M2 (polar orbit, 137.9 MHz);
+section 10 covers how the geostationary ELEKTRO-L3 full-disk images differ. Most of it is not derivable from this repo alone — the pass
 scheduling/recording step lives in an n8n workflow (`Tracking`,
 `https://n8n.yannklein.dev/workflow/36SkBVTjTIGDQ8iu`), and the demodulation/
 FEC decoding happens inside SatDump's own DSP pipeline, invoked as a single
@@ -367,3 +368,50 @@ Covered in depth by comments in `add_map_overlay.py` and
   renders, applying `shouldShow()` (which composites to display) and
   `needsFlip()` (CSS `scale(-1,-1)` for non-projected images from `NtoS`
   passes).
+
+## 10. ELEKTRO-L3: the geostationary side
+
+ELEKTRO-L3 is a Russian weather satellite in **geostationary orbit** at
+**14.5°W**, ~35,786 km above the equator. It turns with the Earth, so from
+Barcelona it never moves in the sky: there are no passes to predict, no
+antenna tracking, and nothing for the n8n `Tracking` workflow to schedule.
+Its MSU-GS imager scans the whole visible hemisphere ("full disk") at once;
+the LRIT broadcast received here carries a new full disk every 3 hours
+(observed at 12:30, 15:30 and 18:30 UTC), each made of several channels —
+visible 1–3 and infrared 4 (3.8 µm) and 9 (10.7 µm) so far.
+
+**Reception.** The downlink is at **1691 MHz** — L-band, more than ten times
+higher than METEOR's 137.9 MHz — captured with the same RTL-SDR V3 at
+2.4 MS/s, gain 30, bias-tee on. SatDump decodes it live while recording
+(`satdump legacy live elektro_lrit`), currently started by hand rather than
+by n8n.
+
+**Decoding** (SatDump `elektro_lrit` pipeline) follows the same stages as
+sections 5–8, with different parameters:
+
+- **BPSK** demodulation at 294 ksymbols/s (RRC α = 0.5) instead of QPSK —
+  one bit per symbol instead of two;
+- the same CCSDS concatenated code: Viterbi, derandomization, then
+  Reed-Solomon (223) with interleave depth 4 on 8192-bit CADU frames;
+- the payload is xRIT files: each image arrives as many compressed segments
+  that SatDump reassembles into one 2784×2784 PNG per channel.
+
+A lost segment leaves a band of missing or garbage scan lines across the
+whole disk — the stripes sometimes visible on the raw channels.
+
+**Processing → website** (`rebuild-elektro.sh`, runs the scripts below and
+writes `elektro.json`):
+
+- **`elektro_natcolor.py`** builds a natural-color image from channels
+  1–3 (red = ch2, blue = ch1, green = blend of ch1 and the near-IR ch3, which
+  makes vegetation green). Rows lost in one channel are detected because
+  they stop correlating with the other two, and rebuilt from them.
+- **`elektro_ir_enhanced.py`** colors an IR channel: inverted greyscale
+  (warm surface dark, cloud white), and the coldest cloud tops — the tallest
+  storms — on a red / yellow-green / blue-cyan scale. Lost strips are
+  detected by comparing channels 4 and 9 row by row and rebuilt from the
+  other IR channel.
+- **`elektro_borders.py`** draws coastlines and borders. No orbit
+  propagation is needed: a geostationary satellite always sees the Earth
+  from the same point, so the standard CGMS geostationary projection,
+  fitted once to this disk, maps every lat/lon to a fixed pixel.

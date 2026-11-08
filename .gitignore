@@ -1,2 +1,4 @@
 *.raw
 decoded_*/
+elektro/
+.venv/
