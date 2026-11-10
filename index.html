@@ -1132,11 +1132,21 @@ function elektroRawLinks(slot) {
   return chans.length ? `<div class="raw-channels">Raw channels:${chans.join('')}</div>` : '';
 }
 
+// allImgs index where the ELEKTRO entries start (they're appended after
+// METEOR), so a live refresh can drop and rebuild just its own part.
+let elektroImgStart = null;
+
 function renderElektro(slots) {
+  if (elektroImgStart === null) elektroImgStart = allImgs.length;
+  allImgs.length = elektroImgStart;
+  elektroGallery.innerHTML = '';
+  // A slot only shows up once at least one featured composite is processed;
+  // until then it's raw channels still landing from SatDump.
+  slots = slots.filter(s => ELEKTRO_WANTED.some(w => s.imgs.includes(w.name)));
   if (!slots.length) return;
   slots.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
 
-  elektroGallery.innerHTML = `<div class="section-title">🌍 ELEKTRO-L3 · geostationary full disk · 14.5°W · 1691 MHz LRIT<span class="wip">first images · manual capture, automation in progress</span></div>`;
+  elektroGallery.innerHTML = `<div class="section-title">🌍 ELEKTRO-L3 · geostationary full disk · 14.5°W · 1691 MHz LRIT<span class="wip">manual capture · auto-processed</span></div>`;
 
   slots.forEach((slot, si) => {
     const isPoor = slot.quality === 'poor';
@@ -1193,6 +1203,20 @@ function fetchJSON(url) {
   });
 }
 
+// n8n reprocesses new ELEKTRO slots every few minutes; pick them up without a
+// reload. Only re-render when elektro.json actually changed, and not while the
+// lightbox is open (re-rendering renumbers the ELEKTRO lightbox entries).
+let lastElektroJSON = null;
+function refreshElektro() {
+  if (document.hidden || lb.classList.contains('open')) return;
+  fetchJSON('elektro.json').then(slots => {
+    const txt = JSON.stringify(slots);
+    if (txt === lastElektroJSON) return;
+    lastElektroJSON = txt;
+    renderElektro(slots);
+  }).catch(() => {});
+}
+
 Promise.allSettled([fetchJSON('passes.json'), fetchJSON('elektro.json')])
   .then(([passesRes, elektroRes]) => {
     // METEOR first: renderGallery() resets allImgs, ELEKTRO appends after.
@@ -1203,7 +1227,11 @@ Promise.allSettled([fetchJSON('passes.json'), fetchJSON('elektro.json')])
     } else {
       gallery.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:13px;color:var(--muted)">No passes recorded yet — waiting for first automated pass.</div>';
     }
-    if (elektroRes.status === 'fulfilled') renderElektro(elektroRes.value);
+    if (elektroRes.status === 'fulfilled') {
+      renderElektro(elektroRes.value);
+      lastElektroJSON = JSON.stringify(elektroRes.value);
+    }
+    setInterval(refreshElektro, 2 * 60 * 1000);
 
     const params = new URLSearchParams(location.search);
     const passParam = params.get('pass');

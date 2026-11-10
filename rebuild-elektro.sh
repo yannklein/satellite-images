@@ -25,14 +25,26 @@ OUT_FILE="$BASE_DIR/elektro.json"
 PY="$BASE_DIR/.venv/bin/python"     # numpy, pillow, scipy
 NE_DIR="$BASE_DIR/naturalearth"     # ne_50m_coastline + admin_0_boundary_lines_land geojson
 
+# Run by the n8n "ELEKTRO processing" workflow every few minutes: never let two
+# runs overlap (a slot's first processing can take longer than the interval).
+exec 9>/tmp/rebuild-elektro.lock
+flock -n 9 || { echo "rebuild-elektro already running, skipping"; exit 0; }
+
 if [ -n "$1" ]; then
     SRC="$1/IMAGES"
     [ -d "$SRC" ] || { echo "no IMAGES/ under $1" >&2; exit 1; }
     mkdir -p "$ELEKTRO_DIR"
     # Copy, never move: the source is usually a capture SatDump is still
-    # writing into. -u keeps re-runs cheap and picks up channels that land
-    # after the composite (SatDump writes a slot's files over several minutes).
-    cp -ru "$SRC"/. "$ELEKTRO_DIR"/
+    # writing into. Only files untouched for 2+ minutes are taken, so a PNG
+    # caught mid-write is never copied (cp -u would then never fix it, the
+    # copy being newer than the source). -u keeps re-runs cheap and picks up
+    # channels that land after the composite (SatDump writes a slot's files
+    # over several minutes), and a source rewritten later is copied again.
+    (cd "$SRC" && find . -type f -mmin +2 -print0) | while IFS= read -r -d '' f; do
+        f=${f#./}
+        mkdir -p "$ELEKTRO_DIR/$(dirname "$f")"
+        cp -u "$SRC/$f" "$ELEKTRO_DIR/$f"
+    done
 fi
 
 entries=()
@@ -96,9 +108,11 @@ for slot_dir in $(ls -d "$ELEKTRO_DIR"/*/*/ 2>/dev/null | sort -r); do
         '{id: $id, satellite: $satellite, folder: $folder, date: $date, time: $time, quality: $quality, rev: $rev, imgs: $imgs}')")
 done
 
+# Write-then-rename: the page polls elektro.json, never serve it half-written.
 if [ ${#entries[@]} -eq 0 ]; then
-    echo '[]' > "$OUT_FILE"
+    echo '[]' > "$OUT_FILE.tmp"
 else
-    printf '%s\n' "${entries[@]}" | jq -s . > "$OUT_FILE"
+    printf '%s\n' "${entries[@]}" | jq -s . > "$OUT_FILE.tmp"
 fi
+mv "$OUT_FILE.tmp" "$OUT_FILE"
 echo "elektro.json: ${#entries[@]} slot(s)"
