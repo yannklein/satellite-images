@@ -1776,6 +1776,29 @@ function subsolar(date) {
   return { lat: decl, lng };
 }
 
+// Low-precision lunar ephemeris (Astronomical Almanac, ~0.3° / ~0.2% distance —
+// plenty at this scale). Returns the sub-lunar point and geocentric distance in
+// Earth radii, so the Moon sits in the same Earth-fixed frame as the satellites.
+function sublunar(date) {
+  const T = (date / 86400000 + 2440587.5 - 2451545) / 36525;
+  const s = d => Math.sin(d * DEG), c = d => Math.cos(d * DEG);
+  const lam = 218.32 + 481267.881 * T
+    + 6.29 * s(135.0 + 477198.87 * T) - 1.27 * s(259.3 - 413335.36 * T)
+    + 0.66 * s(235.7 + 890534.22 * T) + 0.21 * s(269.9 + 954397.74 * T)
+    - 0.19 * s(357.5 + 35999.05 * T) - 0.11 * s(186.5 + 966404.03 * T);
+  const bet = 5.13 * s(93.3 + 483202.02 * T) + 0.28 * s(228.2 + 960400.89 * T)
+    - 0.28 * s(318.3 + 6003.15 * T) - 0.17 * s(217.6 - 407332.21 * T);
+  const par = 0.9508 + 0.0518 * c(135.0 + 477198.87 * T) + 0.0095 * c(259.3 - 413335.36 * T)
+    + 0.0078 * c(235.7 + 890534.22 * T) + 0.0028 * c(269.9 + 954397.74 * T);
+  const l = c(bet) * c(lam);
+  const m = 0.9175 * c(bet) * s(lam) - 0.3978 * s(bet);
+  const n = 0.3978 * c(bet) * s(lam) + 0.9175 * s(bet);
+  const ra = Math.atan2(m, l) / DEG;
+  let lng = ra - satellite.gstime(date) / DEG;
+  lng = ((lng + 540) % 360) - 180;
+  return { lat: Math.asin(n) / DEG, lng, dist: 1 / Math.sin(par * DEG) };
+}
+
 function dotTexture() {
   const c = document.createElement('canvas'); c.width = c.height = 64;
   const g = c.getContext('2d');
@@ -1846,7 +1869,8 @@ function buildTracker() {
     const COUNT = 500;
     const pos = new Float32Array(COUNT * 3);
     for (let i = 0; i < COUNT; i++) {
-      const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = 40;
+      // Beyond the Moon's orbit (~60 R) so stars never draw in front of it.
+      const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = 150;
       const s = Math.sqrt(1 - u * u);
       pos[i * 3]     = r * s * Math.cos(a);
       pos[i * 3 + 1] = r * u;
@@ -1907,6 +1931,39 @@ function buildTracker() {
   );
   scene.add(atmo);
 
+  // Moon at its true distance and (when zoomed in enough) true size, 1737 km
+  // radius. Shaded from the same sun direction as the Earth, so it shows its real
+  // phase; the grey floor stands in for earthshine so a new Moon isn't black.
+  const moonMat = new THREE.ShaderMaterial({
+    uniforms: { sunDirection: earthMat.uniforms.sunDirection },
+    vertexShader: `varying vec3 vN; void main(){ vN=normalize(mat3(modelMatrix)*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);} `,
+    fragmentShader: `uniform vec3 sunDirection; varying vec3 vN; void main(){ float d=max(dot(normalize(vN),normalize(sunDirection)),0.); gl_FragColor=vec4(vec3(0.16,0.17,0.19)+vec3(0.80,0.79,0.76)*d,1.0);} `,
+  });
+  const moon = new THREE.Mesh(new THREE.SphereGeometry(1737 / EARTH_KM, 32, 32), moonMat);
+  scene.add(moon);
+
+  // Sun: a glow sprite along the real sun direction. Its true distance
+  // (~23,500 R) is far past the camera's far plane, so it sits at SUN_DIST,
+  // between the Moon and the star sphere. Earth and Moon can still eclipse it.
+  const SUN_DIST = 140;
+  const sun = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: (() => {
+      const c = document.createElement('canvas'); c.width = c.height = 128;
+      const g = c.getContext('2d');
+      const grd = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+      grd.addColorStop(0,    'rgba(255,255,250,1)');
+      grd.addColorStop(0.12, 'rgba(255,250,225,1)');
+      grd.addColorStop(0.2,  'rgba(255,214,120,0.55)');
+      grd.addColorStop(0.45, 'rgba(255,170,60,0.14)');
+      grd.addColorStop(1,    'rgba(255,140,40,0)');
+      g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
+      const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; return tex;
+    })(),
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  }));
+  sun.scale.setScalar(9);
+  scene.add(sun);
+
   const DOT = dotTexture();
 
   // Barcelona ground station
@@ -1941,6 +1998,12 @@ function buildTracker() {
     rowsEl.appendChild(li);
     return { cfg, sprite, path, tether, satrec: null, telEl: li.querySelector('.tel'), lat: undefined, lng: undefined, alt: undefined };
   });
+
+  const moonLi = document.createElement('li');
+  moonLi.className = 'sat-tracker-row';
+  moonLi.innerHTML = `<span class="name"><span class="dot" style="color:#dcd9d1;background:#dcd9d1"></span>Moon</span><span class="tel">--</span>`;
+  rowsEl.appendChild(moonLi);
+  const moonTelEl = moonLi.querySelector('.tel');
 
   function propagate(satrec, when) {
     const pv = satellite.propagate(satrec, when);
@@ -2028,6 +2091,14 @@ function buildTracker() {
     bcnMarker.scale.setScalar(0.07 * k);
     const ss = subsolar(now);
     earthMat.uniforms.sunDirection.value.copy(latLngToVec(ss.lat, ss.lng, 1).normalize());
+    sun.position.copy(earthMat.uniforms.sunDirection.value).multiplyScalar(SUN_DIST);
+    const ml = sublunar(now);
+    moon.position.copy(latLngToVec(ml.lat, ml.lng, ml.dist));
+    // Never smaller than MOON_MIN_PX radius on screen (true size is ~2 px at the
+    // default zoom), so it stays findable without moving the camera framing.
+    const MOON_MIN_PX = 5;
+    const pxPerUnit = renderer.domElement.height / (2 * Math.tan(camera.fov * DEG / 2) * camera.position.distanceTo(moon.position));
+    moon.scale.setScalar(Math.max(1, MOON_MIN_PX / (pxPerUnit * 1737 / EARTH_KM)));
     clockEl.textContent = now.toISOString().slice(11, 19) + ' UTC';
 
     if (now - lastTel > 500) {
@@ -2036,6 +2107,9 @@ function buildTracker() {
         if (rec.lat === undefined) return;
         rec.telEl.innerHTML = `<b>${fmtLatLng(rec.lat, rec.lng)}</b> · ${Math.round(rec.alt)} km${rec.cfg.geo ? ' · GEO' : ''}`;
       });
+      // Illuminated fraction from the Sun–Earth–Moon elongation.
+      const illum = (1 - moon.position.clone().normalize().dot(earthMat.uniforms.sunDirection.value)) / 2;
+      moonTelEl.innerHTML = `<b>${fmtLatLng(ml.lat, ml.lng)}</b> · ${Math.round(illum * 100)}% lit`;
     }
     if (now - lastPath > 90000) { lastPath = +now; sats.forEach(buildPath); }
 
