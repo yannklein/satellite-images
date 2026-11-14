@@ -1,0 +1,1263 @@
+{
+  "ELEKTRO-L3_2026-11-14_09-30-00": {
+    "id": "ELEKTRO-L3_2026-11-14_09-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-14T09:30:00Z",
+    "date": "2026-11-14",
+    "time": "09:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:29Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/L3_2_20261114T093000Z.png?v=1794653909",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/L3_3_20261114T093000Z.png?v=1794653909",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/L3_4_20261114T093000Z.png?v=1794653909",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/ir_ch4_enhanced_borders.png?v=1794653909"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/L3_9_20261114T093000Z.png?v=1794653909",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_09-30-00/ir_ch9_enhanced_borders.png?v=1794653909"
+    }
+  },
+  "ELEKTRO-L3_2026-11-14_06-30-00": {
+    "id": "ELEKTRO-L3_2026-11-14_06-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-14T06:30:00Z",
+    "date": "2026-11-14",
+    "time": "06:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:30Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/L3_1_20261114T063000Z.png?v=1794653910",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/L3_2_20261114T063000Z.png?v=1794653910",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/L3_3_20261114T063000Z.png?v=1794653910",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/L3_4_20261114T063000Z.png?v=1794653910",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/ir_ch4_enhanced_borders.png?v=1794653910"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/L3_9_20261114T063000Z.png?v=1794653910",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/ir_ch9_enhanced_borders.png?v=1794653910"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/natural_color.png?v=1794653910",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/natural_color_borders.png?v=1794653910"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_06-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653910"
+  },
+  "ELEKTRO-L3_2026-11-14_03-30-00": {
+    "id": "ELEKTRO-L3_2026-11-14_03-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-14T03:30:00Z",
+    "date": "2026-11-14",
+    "time": "03:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:31Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/L3_1_20261114T033000Z.png?v=1794653911",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/L3_2_20261114T033000Z.png?v=1794653911",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/L3_3_20261114T033000Z.png?v=1794653911",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/L3_4_20261114T033000Z.png?v=1794653911",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/ir_ch4_enhanced_borders.png?v=1794653911"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/L3_9_20261114T033000Z.png?v=1794653911",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/ir_ch9_enhanced_borders.png?v=1794653911"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/natural_color.png?v=1794653911",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/natural_color_borders.png?v=1794653911"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_03-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653911"
+  },
+  "ELEKTRO-L3_2026-11-14_00-30-00": {
+    "id": "ELEKTRO-L3_2026-11-14_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-14T00:30:00Z",
+    "date": "2026-11-14",
+    "time": "00:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:32Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/L3_1_20261114T003000Z.png?v=1794653912",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/L3_2_20261114T003000Z.png?v=1794653912",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/L3_3_20261114T003000Z.png?v=1794653912",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/L3_4_20261114T003000Z.png?v=1794653912",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/ir_ch4_enhanced_borders.png?v=1794653912"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/L3_9_20261114T003000Z.png?v=1794653912",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/ir_ch9_enhanced_borders.png?v=1794653912"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/natural_color.png?v=1794653912",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/natural_color_borders.png?v=1794653912"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-14_00-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653912"
+  },
+  "ELEKTRO-L3_2026-11-13_21-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T21:30:00Z",
+    "date": "2026-11-13",
+    "time": "21:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:33Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/L3_1_20261113T213000Z.png?v=1794653913",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/L3_2_20261113T213000Z.png?v=1794653913",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/L3_3_20261113T213000Z.png?v=1794653913",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/L3_4_20261113T213000Z.png?v=1794653913",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/ir_ch4_enhanced_borders.png?v=1794653913"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/L3_9_20261113T213000Z.png?v=1794653913",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/ir_ch9_enhanced_borders.png?v=1794653913"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/natural_color.png?v=1794653913",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/natural_color_borders.png?v=1794653913"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_21-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653913"
+  },
+  "ELEKTRO-L3_2026-11-13_18-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T18:30:00Z",
+    "date": "2026-11-13",
+    "time": "18:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:33Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/L3_1_20261113T183000Z.png?v=1794653913",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/L3_4_20261113T183000Z.png?v=1794653913",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/ir_ch4_enhanced_borders.png?v=1794653913"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/L3_9_20261113T183000Z.png?v=1794653913",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_18-30-00/ir_ch9_enhanced_borders.png?v=1794653913"
+    }
+  },
+  "ELEKTRO-L3_2026-11-13_15-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_15-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T15:30:00Z",
+    "date": "2026-11-13",
+    "time": "15:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:34Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/L3_1_20261113T153000Z.png?v=1794653914",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/L3_2_20261113T153000Z.png?v=1794653914",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/L3_3_20261113T153000Z.png?v=1794653914",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/L3_4_20261113T153000Z.png?v=1794653914",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/ir_ch4_enhanced_borders.png?v=1794653914"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/L3_9_20261113T153000Z.png?v=1794653914",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/ir_ch9_enhanced_borders.png?v=1794653914"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/natural_color.png?v=1794653914",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/natural_color_borders.png?v=1794653914"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_15-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653914"
+  },
+  "ELEKTRO-L3_2026-11-13_12-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_12-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T12:30:00Z",
+    "date": "2026-11-13",
+    "time": "12:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:35Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/L3_1_20261113T123000Z.png?v=1794653915",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/L3_2_20261113T123000Z.png?v=1794653915",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/L3_3_20261113T123000Z.png?v=1794653915",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/L3_4_20261113T123000Z.png?v=1794653915",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/ir_ch4_enhanced_borders.png?v=1794653915"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/L3_9_20261113T123000Z.png?v=1794653915",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/ir_ch9_enhanced_borders.png?v=1794653915"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/natural_color.png?v=1794653915",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/natural_color_borders.png?v=1794653915"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_12-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653915"
+  },
+  "ELEKTRO-L3_2026-11-13_09-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_09-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T09:30:00Z",
+    "date": "2026-11-13",
+    "time": "09:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:36Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/L3_1_20261113T093000Z.png?v=1794653916",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/L3_2_20261113T093000Z.png?v=1794653916",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/L3_3_20261113T093000Z.png?v=1794653916",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/L3_4_20261113T093000Z.png?v=1794653916",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/ir_ch4_enhanced_borders.png?v=1794653916"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/L3_9_20261113T093000Z.png?v=1794653916",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/ir_ch9_enhanced_borders.png?v=1794653916"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/natural_color.png?v=1794653916",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/natural_color_borders.png?v=1794653916"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_09-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653916"
+  },
+  "ELEKTRO-L3_2026-11-13_06-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_06-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T06:30:00Z",
+    "date": "2026-11-13",
+    "time": "06:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:37Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/L3_1_20261113T063000Z.png?v=1794653917",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/L3_2_20261113T063000Z.png?v=1794653917",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/L3_3_20261113T063000Z.png?v=1794653917",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/L3_4_20261113T063000Z.png?v=1794653917",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/ir_ch4_enhanced_borders.png?v=1794653917"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/L3_9_20261113T063000Z.png?v=1794653917",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/ir_ch9_enhanced_borders.png?v=1794653917"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/natural_color.png?v=1794653917",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_06-30-00/natural_color_borders.png?v=1794653917"
+    }
+  },
+  "ELEKTRO-L3_2026-11-13_03-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_03-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T03:30:00Z",
+    "date": "2026-11-13",
+    "time": "03:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:38Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/L3_1_20261113T033000Z.png?v=1794653918",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/L3_2_20261113T033000Z.png?v=1794653918",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/L3_3_20261113T033000Z.png?v=1794653918",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/L3_4_20261113T033000Z.png?v=1794653918",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/ir_ch4_enhanced_borders.png?v=1794653918"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/L3_9_20261113T033000Z.png?v=1794653918",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/ir_ch9_enhanced_borders.png?v=1794653918"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/natural_color.png?v=1794653918",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/natural_color_borders.png?v=1794653918"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_03-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653918"
+  },
+  "ELEKTRO-L3_2026-11-13_00-30-00": {
+    "id": "ELEKTRO-L3_2026-11-13_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-13T00:30:00Z",
+    "date": "2026-11-13",
+    "time": "00:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:39Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/L3_1_20261113T003000Z.png?v=1794653919",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/L3_2_20261113T003000Z.png?v=1794653919",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/L3_3_20261113T003000Z.png?v=1794653919",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/L3_4_20261113T003000Z.png?v=1794653919",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/ir_ch4_enhanced_borders.png?v=1794653919"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/L3_9_20261113T003000Z.png?v=1794653919",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/ir_ch9_enhanced_borders.png?v=1794653919"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/natural_color.png?v=1794653919",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/natural_color_borders.png?v=1794653919"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-13_00-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653919"
+  },
+  "ELEKTRO-L3_2026-11-12_21-30-00": {
+    "id": "ELEKTRO-L3_2026-11-12_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-12T21:30:00Z",
+    "date": "2026-11-12",
+    "time": "21:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:40Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/L3_1_20261112T213000Z.png?v=1794653920",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/L3_2_20261112T213000Z.png?v=1794653920",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/L3_3_20261112T213000Z.png?v=1794653920",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/L3_4_20261112T213000Z.png?v=1794653920",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/ir_ch4_enhanced_borders.png?v=1794653920"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/L3_9_20261112T213000Z.png?v=1794653920",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/ir_ch9_enhanced_borders.png?v=1794653920"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/natural_color.png?v=1794653920",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/natural_color_borders.png?v=1794653920"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_21-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653920"
+  },
+  "ELEKTRO-L3_2026-11-12_18-30-00": {
+    "id": "ELEKTRO-L3_2026-11-12_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-12T18:30:00Z",
+    "date": "2026-11-12",
+    "time": "18:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:41Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/L3_1_20261112T183000Z.png?v=1794653921",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/L3_2_20261112T183000Z.png?v=1794653921",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/L3_3_20261112T183000Z.png?v=1794653921",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/L3_4_20261112T183000Z.png?v=1794653921",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/ir_ch4_enhanced_borders.png?v=1794653921"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/L3_9_20261112T183000Z.png?v=1794653921",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/ir_ch9_enhanced_borders.png?v=1794653921"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/natural_color.png?v=1794653921",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/natural_color_borders.png?v=1794653921"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-12_18-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653921"
+  },
+  "ELEKTRO-L3_2026-11-11_21-30-00": {
+    "id": "ELEKTRO-L3_2026-11-11_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-11T21:30:00Z",
+    "date": "2026-11-11",
+    "time": "21:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:41Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/L3_1_20261111T213000Z.png?v=1794653921",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/L3_2_20261111T213000Z.png?v=1794653921",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/L3_3_20261111T213000Z.png?v=1794653921",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/L3_4_20261111T213000Z.png?v=1794653921",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/ir_ch4_enhanced_borders.png?v=1794653921"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/L3_9_20261111T213000Z.png?v=1794653921",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/ir_ch9_enhanced_borders.png?v=1794653921"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/natural_color.png?v=1794653921",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/natural_color_borders.png?v=1794653921"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_21-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653921"
+  },
+  "ELEKTRO-L3_2026-11-11_18-30-00": {
+    "id": "ELEKTRO-L3_2026-11-11_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-11T18:30:00Z",
+    "date": "2026-11-11",
+    "time": "18:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:42Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/L3_1_20261111T183000Z.png?v=1794653922",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/L3_2_20261111T183000Z.png?v=1794653922",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/L3_3_20261111T183000Z.png?v=1794653922",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/L3_4_20261111T183000Z.png?v=1794653922",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/ir_ch4_enhanced_borders.png?v=1794653922"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/L3_9_20261111T183000Z.png?v=1794653922",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/ir_ch9_enhanced_borders.png?v=1794653922"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/natural_color.png?v=1794653922",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/natural_color_borders.png?v=1794653922"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_18-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653922"
+  },
+  "ELEKTRO-L3_2026-11-11_00-30-00": {
+    "id": "ELEKTRO-L3_2026-11-11_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-11T00:30:00Z",
+    "date": "2026-11-11",
+    "time": "00:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      4
+    ],
+    "channel_info": {
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:43Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_00-30-00/",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_00-30-00/L3_4_20261111T003000Z.png?v=1794653923",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-11_00-30-00/ir_ch4_enhanced_borders.png?v=1794653923"
+    }
+  },
+  "ELEKTRO-L3_2026-11-08_18-30-00": {
+    "id": "ELEKTRO-L3_2026-11-08_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-08T18:30:00Z",
+    "date": "2026-11-08",
+    "time": "18:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:43Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/L3_1_20261108T183000Z.png?v=1794653923",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/L3_2_20261108T183000Z.png?v=1794653923",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/L3_3_20261108T183000Z.png?v=1794653923",
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/natural_color.png?v=1794653923",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/natural_color_borders.png?v=1794653923"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_18-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653923"
+  },
+  "ELEKTRO-L3_2026-11-08_15-30-00": {
+    "id": "ELEKTRO-L3_2026-11-08_15-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-08T15:30:00Z",
+    "date": "2026-11-08",
+    "time": "15:30",
+    "quality": "unrated",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:44Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/L3_1_20261108T153000Z.png?v=1794653924",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/L3_2_20261108T153000Z.png?v=1794653924",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/L3_3_20261108T153000Z.png?v=1794653924",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/L3_4_20261108T153000Z.png?v=1794653924",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/ir_ch4_enhanced_borders.png?v=1794653924"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/L3_9_20261108T153000Z.png?v=1794653924",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/ir_ch9_enhanced_borders.png?v=1794653924"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/natural_color.png?v=1794653924",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/natural_color_borders.png?v=1794653924"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_15-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653924"
+  },
+  "ELEKTRO-L3_2026-11-08_12-30-00": {
+    "id": "ELEKTRO-L3_2026-11-08_12-30-00",
+    "satellite": "ELEKTRO-L3",
+    "datetime": "2026-11-08T12:30:00Z",
+    "date": "2026-11-08",
+    "time": "12:30",
+    "quality": "poor",
+    "orbit": "geostationary",
+    "sub_satellite_longitude": -14.5,
+    "downlink": {
+      "mode": "LRIT",
+      "frequency_mhz": 1691
+    },
+    "receiver": {
+      "location": "Barcelona",
+      "sdr": "RTL-SDR V3"
+    },
+    "instrument": "MSU-GS",
+    "resolution_px": 2784,
+    "channels_received": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
+    "channel_info": {
+      "ch1": {
+        "band": "visible",
+        "wavelength_um": "0.5-0.65"
+      },
+      "ch2": {
+        "band": "visible",
+        "wavelength_um": "0.65-0.8"
+      },
+      "ch3": {
+        "band": "near-infrared",
+        "wavelength_um": "0.8-0.9"
+      },
+      "ch4": {
+        "band": "infrared",
+        "wavelength_um": "3.5-4.0"
+      },
+      "ch9": {
+        "band": "infrared",
+        "wavelength_um": "10.2-11.2"
+      }
+    },
+    "updated_at": "2026-11-14T10:58:45Z",
+    "folder": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/",
+    "ch1": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/L3_1_20261108T123000Z.png?v=1794653925",
+    "ch2": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/L3_2_20261108T123000Z.png?v=1794653925",
+    "ch3": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/L3_3_20261108T123000Z.png?v=1794653925",
+    "ch4": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/L3_4_20261108T123000Z.png?v=1794653925",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/ir_ch4_enhanced_borders.png?v=1794653925"
+    },
+    "ch9": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/L3_9_20261108T123000Z.png?v=1794653925",
+      "enhanced": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/ir_ch9_enhanced_borders.png?v=1794653925"
+    },
+    "natural_color": {
+      "raw": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/natural_color.png?v=1794653925",
+      "border": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/natural_color_borders.png?v=1794653925"
+    },
+    "false_color_321": "https://satellite.yannklein.dev/elektro/ELEKTRO-L3/2026-11-08_12-30-00/msu_gs_MSU-GS_321_False_Color.png?v=1794653925"
+  }
+}

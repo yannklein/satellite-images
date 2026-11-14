@@ -125,3 +125,71 @@ else
 fi
 mv "$OUT_FILE.tmp" "$OUT_FILE"
 echo "elektro.json: ${#entries[@]} slot(s)"
+
+# Public API: GET $API_BASE/api/elektro.json -- an object with one key per pass
+# (slot id, newest first). Each pass has one key per channel: a plain URL when
+# only the raw image exists, else an object with whichever of
+#   raw       -- unprocessed image (natural_color: the composite without borders)
+#   enhanced  -- color-enhanced IR (ch4/ch9; coastlines/borders already drawn on)
+#   border    -- coastlines/borders overlay (natural_color)
+# exist, plus quality and the other per-pass info. Full-resolution PNG URLs,
+# with ?v=<rev> so Cloudflare's 4h cache never serves a stale render.
+API_BASE="${ELEKTRO_API_BASE:-https://satellite.yannklein.dev}"
+API_FILE="$BASE_DIR/api/elektro.json"
+mkdir -p "$(dirname "$API_FILE")"
+jq --arg base "$API_BASE" '
+  def url($s; $f): "\($base)/\($s.folder)/\($f)?v=\($s.rev)";
+  def has($s; $f): $s.imgs | index($f) != null;
+  # Drop missing variants; a lone raw image collapses to its plain URL.
+  def variants: with_entries(select(.value != null))
+                | if length == 0 then null elif keys == ["raw"] then .raw else . end;
+  def channel_meta: {
+    "1": {band: "visible",      wavelength_um: "0.5-0.65"},
+    "2": {band: "visible",      wavelength_um: "0.65-0.8"},
+    "3": {band: "near-infrared", wavelength_um: "0.8-0.9"},
+    "4": {band: "infrared",     wavelength_um: "3.5-4.0"},
+    "5": {band: "water vapour", wavelength_um: "5.7-7.0"},
+    "6": {band: "water vapour", wavelength_um: "7.5-8.5"},
+    "7": {band: "infrared",     wavelength_um: "8.2-9.2"},
+    "8": {band: "infrared",     wavelength_um: "9.2-10.2"},
+    "9": {band: "infrared",     wavelength_um: "10.2-11.2"},
+    "10": {band: "infrared",    wavelength_um: "11.2-12.5"}
+  };
+  map(. as $s
+    | ($s.folder | split("/") | last) as $slot          # 2026-11-14_06-30-00
+    | [ $s.imgs[] | capture("^L3_(?<n>[0-9]+)_") | .n ] | unique_by(tonumber) | sort_by(tonumber) as $chs
+    | ( [ $chs[] as $n | {
+            key: "ch\($n)",
+            value: ({
+              raw: url($s; $s.imgs | map(select(startswith("L3_\($n)_"))) | first),
+              enhanced: (if has($s; "ir_ch\($n)_enhanced_borders.png")
+                         then url($s; "ir_ch\($n)_enhanced_borders.png") else null end)
+            } | variants)
+          } ]
+        + [ {key: "natural_color", value: ({
+              raw:    (if has($s; "natural_color.png") then url($s; "natural_color.png") else null end),
+              border: (if has($s; "natural_color_borders.png") then url($s; "natural_color_borders.png") else null end)
+            } | variants)} ]
+        + [ {key: "false_color_321", value: (
+              ($s.imgs | map(select(test("False_Color"))) | first) as $fc
+              | if $fc then url($s; $fc) else null end)} ]
+        | map(select(.value != null)) | from_entries ) as $channels
+    | {key: $s.id, value: ({
+        id: $s.id,
+        satellite: $s.satellite,
+        datetime: "\($slot[0:10])T\($slot[11:13]):\($slot[14:16]):\($slot[17:19])Z",
+        date: $s.date,
+        time: $s.time,
+        quality: $s.quality,
+        orbit: "geostationary",
+        sub_satellite_longitude: -14.5,
+        downlink: {mode: "LRIT", frequency_mhz: 1691},
+        receiver: {location: "Barcelona", sdr: "RTL-SDR V3"},
+        instrument: "MSU-GS",
+        resolution_px: 2784,
+        channels_received: ($chs | map(tonumber)),
+        channel_info: (channel_meta | with_entries(select(.key as $k | $chs | index($k))) | with_entries(.key = "ch\(.key)")),
+        updated_at: ($s.rev | todate),
+        folder: "\($base)/\($s.folder)/"
+      } + $channels)})
+  | from_entries' "$OUT_FILE" > "$API_FILE.tmp" && mv "$API_FILE.tmp" "$API_FILE"
