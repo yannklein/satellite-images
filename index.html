@@ -711,6 +711,45 @@
 
     .sat-tracker-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
 
+    .sat-tracker-fs-btn {
+      position: absolute; top: 6px; right: 6px; z-index: 2;
+      font-family: var(--mono); font-size: 14px; line-height: 1;
+      width: 26px; height: 26px; padding: 0; cursor: pointer;
+      background: rgba(5,7,13,0.6); color: #4cc9f0;
+      border: 0.5px solid #4cc9f0; border-radius: 4px;
+      opacity: 0.7; transition: opacity 0.15s, background 0.15s;
+    }
+    .sat-tracker-fs-btn:hover { opacity: 1; background: rgba(76,201,240,0.18); }
+    .sat-tracker-view-btn {
+      position: absolute; top: 6px; left: 6px; z-index: 2;
+      font-family: var(--mono); font-size: 11px; line-height: 1;
+      height: 26px; padding: 0 9px; cursor: pointer;
+      background: rgba(5,7,13,0.6); color: #4cc9f0;
+      border: 0.5px solid #4cc9f0; border-radius: 4px;
+      opacity: 0.7; transition: opacity 0.15s, background 0.15s;
+    }
+    .sat-tracker-view-btn:hover { opacity: 1; background: rgba(76,201,240,0.18); }
+    .sat-tracker-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+    .sat-tracker-label {
+      position: absolute; transform: translate(8px, -50%);
+      font-family: var(--mono); font-size: 10px; white-space: nowrap;
+      text-shadow: 0 0 3px #000, 0 0 2px #000;
+    }
+    .sat-tracker-hint {
+      position: absolute; left: 8px; bottom: 6px; z-index: 1; pointer-events: none;
+      font-family: var(--mono); font-size: 10px; color: rgba(220,226,235,0.55);
+      text-shadow: 0 0 3px #000;
+    }
+    .sat-tracker-canvas-wrap.sky canvas { cursor: grab; }
+    .sat-tracker-canvas-wrap.sky canvas:active { cursor: grabbing; }
+    .sat-tracker-canvas-wrap:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; }
+    .sat-tracker-canvas-wrap:-webkit-full-screen { aspect-ratio: auto; width: 100vw; height: 100vh; }
+    /* Fallback where the Fullscreen API isn't available (iPhone Safari). */
+    .sat-tracker-canvas-wrap.pseudo-fs {
+      position: fixed; inset: 0; z-index: 10000;
+      aspect-ratio: auto; width: 100vw; height: 100dvh;
+    }
+
     .sat-tracker-rows { list-style: none; margin: 0; padding: 2px 0; }
 
     .sat-tracker-row {
@@ -1904,6 +1943,10 @@ function buildTracker() {
     </div>
     <div class="sat-tracker-canvas-wrap" id="sat-tracker-canvas-wrap">
       <canvas id="sat-tracker-canvas"></canvas>
+      <div class="sat-tracker-labels" id="sat-tracker-labels" hidden></div>
+      <div class="sat-tracker-hint" id="sat-tracker-hint" hidden>drag to look around · scroll / pinch to zoom</div>
+      <button class="sat-tracker-view-btn" id="sat-tracker-view-btn" title="Show the sky as seen from Barcelona">🔭 sky from BCN</button>
+      <button class="sat-tracker-fs-btn" id="sat-tracker-fs-btn" title="Full screen" aria-label="Full screen">⛶</button>
     </div>
     <ul class="sat-tracker-rows" id="sat-tracker-rows"></ul>`;
 
@@ -1915,7 +1958,24 @@ function buildTracker() {
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05070d);
-  const camera = new THREE.PerspectiveCamera(42, 4 / 3, 0.01, 200);
+  // Everything Earth-fixed (Earth, satellites, Moon, Sun — all positioned from
+  // lat/lng) lives in `world`, which tick() rotates by GMST then tilts by the
+  // obliquity, so the scene's horizontal plane is the ecliptic of date: the
+  // Sun stays on the horizon plane, Earth's axis leans 23.4° and the globe
+  // turns once a sidereal day. Stars stay in `scene` (inertial).
+  const world = new THREE.Group();
+  scene.add(world);
+  const OBLIQUITY = 23.44 * DEG;
+  const AX_X = new THREE.Vector3(1, 0, 0), AX_Y = new THREE.Vector3(0, 1, 0);
+  const qSpin = new THREE.Quaternion();
+  function alignToEcliptic(date) {
+    // latLngToVec: +lng is a +rotation about scene Y, so ECEF→ECI is
+    // rotateY(GMST); equatorial→ecliptic is rotateX(-ε) about the equinox (X).
+    qSpin.setFromAxisAngle(AX_Y, satellite.gstime(date));
+    world.quaternion.setFromAxisAngle(AX_X, -OBLIQUITY).multiply(qSpin);
+    world.updateMatrixWorld(true);
+  }
+  const camera = new THREE.PerspectiveCamera(42, 4 / 3, 0.05, 6000);
   camera.position.set(2.4, 1.3, 3.4).setLength(CAM_DIST);
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
@@ -1926,18 +1986,21 @@ function buildTracker() {
   controls.dampingFactor = 0.08;
   controls.rotateSpeed = 0.5;
   controls.minDistance = 1.3;
-  controls.maxDistance = 30;
+  controls.maxDistance = 220; // far enough to see the whole lunar orbit (~60 R) from outside
   controls.enablePan = false;
   controls.autoRotate = !REDUCED;
   controls.autoRotateSpeed = 0.25;
   renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
 
+  // Placeholder random star field; replaced by the real catalogue (loadSkyData)
+  // the first time the sky view is opened.
+  let randomStars = null;
   (function makeStars() {
     const COUNT = 500;
     const pos = new Float32Array(COUNT * 3);
     for (let i = 0; i < COUNT; i++) {
-      // Beyond the Moon's orbit (~60 R) so stars never draw in front of it.
-      const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = 150;
+      // Far beyond the Sun sprite and max zoom-out, so stars stay a backdrop.
+      const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = 4000;
       const s = Math.sqrt(1 - u * u);
       pos[i * 3]     = r * s * Math.cos(a);
       pos[i * 3 + 1] = r * u;
@@ -1946,7 +2009,8 @@ function buildTracker() {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     const m = new THREE.PointsMaterial({ size: 1.1, sizeAttenuation: false, color: 0xaab4c4, transparent: true, opacity: 0.55, depthWrite: false });
-    scene.add(new THREE.Points(g, m));
+    randomStars = new THREE.Points(g, m);
+    scene.add(randomStars);
   })();
 
   const loader = new THREE.TextureLoader();
@@ -1985,7 +2049,7 @@ function buildTracker() {
       }`,
   });
   const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 64, 64), earthMat);
-  scene.add(earth);
+  world.add(earth);
 
   const atmo = new THREE.Mesh(
     new THREE.SphereGeometry(R * 1.02, 48, 48),
@@ -1996,23 +2060,51 @@ function buildTracker() {
       fragmentShader: `varying vec3 vN; uniform vec3 c; void main(){ float i=pow(0.72-dot(vN,vec3(0.,0.,1.)),3.0); gl_FragColor=vec4(c, clamp(i,0.,1.)*0.5);} `,
     })
   );
-  scene.add(atmo);
+  world.add(atmo);
 
   // Moon at its true distance and (when zoomed in enough) true size, 1737 km
   // radius. Shaded from the same sun direction as the Earth, so it shows its real
   // phase; the grey floor stands in for earthshine so a new Moon isn't black.
   const moonMat = new THREE.ShaderMaterial({
-    uniforms: { sunDirection: earthMat.uniforms.sunDirection },
+    // `unlit`: earthshine floor; in the sky view's daylight it becomes the sky
+    // colour, so the Moon's dark side vanishes into the blue like the real one.
+    uniforms: { sunDirection: earthMat.uniforms.sunDirection, unlit: { value: new THREE.Color(0.16, 0.17, 0.19) } },
     vertexShader: `varying vec3 vN; void main(){ vN=normalize(mat3(modelMatrix)*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);} `,
-    fragmentShader: `uniform vec3 sunDirection; varying vec3 vN; void main(){ float d=max(dot(normalize(vN),normalize(sunDirection)),0.); gl_FragColor=vec4(vec3(0.16,0.17,0.19)+vec3(0.80,0.79,0.76)*d,1.0);} `,
+    fragmentShader: `uniform vec3 sunDirection; uniform vec3 unlit; varying vec3 vN; void main(){ float d=max(dot(normalize(vN),normalize(sunDirection)),0.); gl_FragColor=vec4(unlit+vec3(0.80,0.79,0.76)*d,1.0);} `,
   });
   const moon = new THREE.Mesh(new THREE.SphereGeometry(1737 / EARTH_KM, 32, 32), moonMat);
-  scene.add(moon);
+  world.add(moon);
+
+  // Moon trajectory: one sidereal month centred on now, in the inertial
+  // (ecliptic) frame — in the Earth-fixed `world` frame it would be a spiral.
+  // Each sample's Earth-fixed position is rotated by that instant's GMST, then
+  // tilted by the obliquity, i.e. the same transform alignToEcliptic() applies.
+  const MOON_PATH_N = 360, SIDEREAL_MONTH_MS = 27.321661 * 86400000;
+  const moonPath = new THREE.Line(
+    new THREE.BufferGeometry(),
+    new THREE.LineBasicMaterial({ color: 0xc8ccd4, transparent: true, opacity: 0.3, depthWrite: false })
+  );
+  scene.add(moonPath);
+  function buildMoonPath(now) {
+    const pos = new Float32Array((MOON_PATH_N + 1) * 3);
+    for (let i = 0; i <= MOON_PATH_N; i++) {
+      const t = new Date(+now + (i / MOON_PATH_N - 0.5) * SIDEREAL_MONTH_MS);
+      const ml = sublunar(t);
+      const v = latLngToVec(ml.lat, ml.lng, ml.dist)
+        .applyAxisAngle(AX_Y, satellite.gstime(t))
+        .applyAxisAngle(AX_X, -OBLIQUITY);
+      pos.set([v.x, v.y, v.z], i * 3);
+    }
+    moonPath.geometry.dispose();
+    moonPath.geometry = new THREE.BufferGeometry();
+    moonPath.geometry.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  }
 
   // Sun: a glow sprite along the real sun direction. Its true distance
-  // (~23,500 R) is far past the camera's far plane, so it sits at SUN_DIST,
-  // between the Moon and the star sphere. Earth and Moon can still eclipse it.
-  const SUN_DIST = 140;
+  // (~23,500 R) is far past the camera's far plane, so it sits at SUN_DIST —
+  // well beyond max zoom-out (220 R), inside the star sphere — with the glow
+  // scaled to keep its on-screen size. Earth and Moon can still eclipse it.
+  const SUN_DIST = 3000;
   const sun = new THREE.Sprite(new THREE.SpriteMaterial({
     map: (() => {
       const c = document.createElement('canvas'); c.width = c.height = 128;
@@ -2028,8 +2120,8 @@ function buildTracker() {
     })(),
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
   }));
-  sun.scale.setScalar(9);
-  scene.add(sun);
+  sun.scale.setScalar(9 * SUN_DIST / 140); // same apparent size as the original 9-wide glow at 140 R
+  world.add(sun);
 
   const DOT = dotTexture();
 
@@ -2037,18 +2129,140 @@ function buildTracker() {
   const bcnMarker = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: 0x00e5a0, transparent: true }));
   bcnMarker.scale.setScalar(0.07);
   bcnMarker.position.copy(latLngToVec(BARCELONA.lat, BARCELONA.lng, R * 1.005));
-  scene.add(bcnMarker);
+  world.add(bcnMarker);
+
+  // ── Sky view: an observer standing in Barcelona ─────────────────────────────
+  // Local horizon frame at BCN in world (Earth-fixed) coordinates. East is
+  // Y × up because +longitude is a +rotation about Y (see latLngToVec).
+  const bcnUp    = latLngToVec(BARCELONA.lat, BARCELONA.lng, 1).normalize();
+  const bcnEast  = new THREE.Vector3(0, 1, 0).cross(bcnUp).normalize();
+  const bcnNorth = new THREE.Vector3().crossVectors(bcnUp, bcnEast);
+  const bcnEye   = bcnUp.clone().multiplyScalar(R * 1.0003); // ~2 km up
+
+  // Horizon group: local axes x = East, y = Up, z = South. Lives in `world`,
+  // so it turns with the Earth. Drawn on a big camera-centred dome.
+  const SKY_R = 1000;
+  const horizon = new THREE.Group();
+  horizon.position.copy(bcnEye);
+  horizon.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(bcnEast, bcnUp, bcnNorth.clone().negate()));
+  horizon.visible = false;
+  world.add(horizon);
+  // Opaque ground: drawn last with no depth test so it hides everything below
+  // the horizon (satellites, Moon, Sun, stars) whatever their distance.
+  const groundMat = new THREE.MeshBasicMaterial({ color: 0x0b0f0c, side: THREE.DoubleSide, depthTest: false, depthWrite: false, transparent: true, opacity: 1 });
+  const ground = new THREE.Mesh(new THREE.SphereGeometry(SKY_R, 48, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), groundMat);
+  ground.renderOrder = 998;
+  horizon.add(ground);
+  // Alt/az grid: horizon line, 30°/60° altitude circles, azimuth spokes every 45°.
+  const horizDir = (az, el) => new THREE.Vector3(
+    Math.cos(el * DEG) * Math.sin(az * DEG), Math.sin(el * DEG), -Math.cos(el * DEG) * Math.cos(az * DEG)
+  ).multiplyScalar(SKY_R);
+  (function makeGrid() {
+    const ring = (el, opacity) => {
+      const pts = []; for (let a = 0; a <= 360; a += 2) pts.push(horizDir(a, el));
+      const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
+        new THREE.LineBasicMaterial({ color: 0x8fb4d8, transparent: true, opacity, depthWrite: false, depthTest: false }));
+      l.renderOrder = 999; horizon.add(l);
+    };
+    ring(0, 0.6); ring(30, 0.12); ring(60, 0.12);
+    for (let a = 0; a < 360; a += 45) {
+      const pts = []; for (let e = 0; e <= 90; e += 3) pts.push(horizDir(a, e));
+      const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),
+        new THREE.LineBasicMaterial({ color: 0x8fb4d8, transparent: true, opacity: 0.1, depthWrite: false }));
+      horizon.add(l);
+    }
+  })();
+  // Compass labels just above the horizon.
+  function textSprite(text, color, px) {
+    const c = document.createElement('canvas'); c.width = 128; c.height = 64;
+    const g = c.getContext('2d');
+    g.font = `bold ${px}px ui-monospace, Menlo, monospace`; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillStyle = color; g.fillText(text, 64, 32);
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
+    sp.renderOrder = 1000;
+    return sp;
+  }
+  ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'].forEach((t, i) => {
+    const sp = textSprite(t, i % 2 ? '#7f93a8' : (t === 'N' ? '#ff6b6b' : '#d6e2ee'), i % 2 ? 26 : 36);
+    sp.position.copy(horizDir(i * 45, 2.2));
+    sp.scale.set(SKY_R * 0.09, SKY_R * 0.045, 1);
+    horizon.add(sp);
+  });
+
+  // Real stars (+ constellation lines) for the sky view, from the d3-celestial
+  // catalogue (HYG-derived, mag ≤ 6). Placed on the inertial star sphere:
+  // RA/Dec → equatorial → tilted by the obliquity into the ecliptic scene.
+  const CELESTIAL = 'https://cdn.jsdelivr.net/npm/d3-celestial@0.7.35/data/';
+  const STAR_R = 4000;
+  const raDecToScene = (ra, dec, r) => latLngToVec(dec, ra, r).applyAxisAngle(AX_X, -OBLIQUITY);
+  let skyData = null, constLines = null, realStars = [];
+  function bvColor(bv) {
+    // Rough B–V → RGB: blue-white hot stars to orange cool ones.
+    const t = Math.min(1, Math.max(0, (bv + 0.3) / 1.9));
+    return new THREE.Color().setRGB(0.72 + 0.28 * Math.min(1, t * 1.6), 0.8 + 0.12 * Math.sin(t * Math.PI) - 0.1 * t, 1 - 0.45 * t);
+  }
+  function loadSkyData() {
+    if (skyData) return skyData;
+    skyData = Promise.all([
+      fetch(CELESTIAL + 'stars.6.json').then(r => r.json()),
+      fetch(CELESTIAL + 'constellations.lines.json').then(r => r.json()),
+    ]).then(([stars, lines]) => {
+      // Magnitude bands so bright stars draw bigger (PointsMaterial has one size).
+      [[-2, 1.5, 6.5], [1.5, 3, 4.5], [3, 4.5, 3], [4.5, 9, 2]].forEach(([lo, hi, size]) => {
+        const pos = [], col = [];
+        stars.features.forEach(f => {
+          const mag = f.properties.mag;
+          if (mag < lo || mag >= hi) return;
+          const [ra, dec] = f.geometry.coordinates;
+          const v = raDecToScene(ra, dec, STAR_R);
+          pos.push(v.x, v.y, v.z);
+          const c = bvColor(parseFloat(f.properties.bv) || 0.6).multiplyScalar(Math.min(1, Math.max(0.4, 1.25 - mag * 0.13)));
+          col.push(c.r, c.g, c.b);
+        });
+        const g = new THREE.BufferGeometry();
+        g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({
+          size, sizeAttenuation: false, vertexColors: true, map: DOT, transparent: true, depthWrite: false,
+        }));
+        realStars.push(pts); scene.add(pts);
+      });
+      const seg = [];
+      lines.features.forEach(f => f.geometry.coordinates.forEach(line => {
+        for (let i = 1; i < line.length; i++) {
+          const a = raDecToScene(line[i - 1][0], line[i - 1][1], STAR_R), b = raDecToScene(line[i][0], line[i][1], STAR_R);
+          seg.push(a.x, a.y, a.z, b.x, b.y, b.z);
+        }
+      }));
+      const lg = new THREE.BufferGeometry();
+      lg.setAttribute('position', new THREE.Float32BufferAttribute(seg, 3));
+      constLines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x5a7aa8, transparent: true, opacity: 0.3, depthWrite: false }));
+      constLines.visible = viewMode === 'sky';
+      scene.add(constLines);
+      // The real sky replaces the placeholder field in both views.
+      scene.remove(randomStars);
+    }).catch(() => { skyData = null; }); // keep the random field; retry next time
+    return skyData;
+  }
+
+  // View state. Sky view look direction: azimuth (from N, clockwise) + altitude.
+  let viewMode = 'orbit';
+  let skyAz = 200, skyEl = 28, skyFov = 80; // default: facing SSW, towards ELEKTRO-L3
+  const orbitCam = { pos: new THREE.Vector3(), fov: 42 };
+  const SKY_BG = { night: new THREE.Color(0x05070d), twilight: new THREE.Color(0x1b2747), day: new THREE.Color(0x3d72ad) };
+  const ORBIT_BG = new THREE.Color(0x05070d);
 
   const sats = SATS.map(cfg => {
     const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: cfg.color, transparent: true }));
     sprite.scale.setScalar(0.065);
     sprite.visible = false;
-    scene.add(sprite);
+    world.add(sprite);
     const path = new THREE.Line(
       new THREE.BufferGeometry(),
       new THREE.LineBasicMaterial({ color: cfg.color, transparent: true, opacity: 0.35 })
     );
-    scene.add(path);
+    world.add(path);
     let tether = null;
     if (cfg.geo) {
       tether = new THREE.Line(
@@ -2056,14 +2270,16 @@ function buildTracker() {
         new THREE.LineBasicMaterial({ color: cfg.color, transparent: true, opacity: 0.5 })
       );
       tether.visible = false;
-      scene.add(tether);
+      world.add(tether);
     }
     const li = document.createElement('li');
     li.className = 'sat-tracker-row';
     const hex = '#' + cfg.color.toString(16).padStart(6, '0');
     li.innerHTML = `<span class="name"><span class="dot" style="color:${hex};background:${hex}"></span>${cfg.name}</span><span class="tel">--</span>`;
     rowsEl.appendChild(li);
-    return { cfg, sprite, path, tether, satrec: null, telEl: li.querySelector('.tel'), lat: undefined, lng: undefined, alt: undefined };
+    const label = document.createElement('div');
+    label.className = 'sat-tracker-label'; label.style.color = hex; label.textContent = cfg.name;
+    return { cfg, sprite, path, tether, label, satrec: null, telEl: li.querySelector('.tel'), lat: undefined, lng: undefined, alt: undefined };
   });
 
   const moonLi = document.createElement('li');
@@ -2098,7 +2314,8 @@ function buildTracker() {
       for (let i = 0; i <= 180; i++) pts.push(latLngToVec(0, -180 + i * 2, r));
       rec.path.geometry.setFromPoints(pts);
       rec.tether.geometry.setFromPoints([latLngToVec(p.lat, p.lng, R * 1.005), latLngToVec(p.lat, p.lng, r)]);
-      rec.tether.visible = true;
+      rec.tether.userData.ready = true;
+      rec.tether.visible = viewMode === 'orbit';
       return;
     }
     const periodMin = (2 * Math.PI) / rec.satrec.no;
@@ -2136,7 +2353,142 @@ function buildTracker() {
   }
   new ResizeObserver(resize).observe(wrap);
 
-  let lastTel = 0, lastPath = 0, running = false, rafId = null, dataStarted = false;
+  // Full-screen toggle: real Fullscreen API where available, otherwise a
+  // fixed-position overlay (iPhone Safari only allows fullscreen on <video>).
+  const fsBtn = panel.querySelector('#sat-tracker-fs-btn');
+  const fsElement = () => document.fullscreenElement || document.webkitFullscreenElement;
+  const isFs = () => fsElement() === wrap || wrap.classList.contains('pseudo-fs');
+  function syncFsBtn() {
+    const on = isFs();
+    fsBtn.textContent = on ? '✕' : '⛶';
+    const label = on ? 'Exit full screen' : 'Full screen';
+    fsBtn.title = label; fsBtn.setAttribute('aria-label', label);
+  }
+  function toggleFs() {
+    if (wrap.classList.contains('pseudo-fs')) {
+      wrap.classList.remove('pseudo-fs');
+      document.body.style.overflow = '';
+    } else if (fsElement()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      const req = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+      const fallback = () => { wrap.classList.add('pseudo-fs'); document.body.style.overflow = 'hidden'; syncFsBtn(); };
+      if (req) Promise.resolve(req.call(wrap)).catch(fallback); else fallback();
+    }
+    syncFsBtn();
+  }
+  fsBtn.addEventListener('click', toggleFs);
+  document.addEventListener('fullscreenchange', syncFsBtn);
+  document.addEventListener('webkitfullscreenchange', syncFsBtn);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && wrap.classList.contains('pseudo-fs')) { e.stopImmediatePropagation(); toggleFs(); }
+  }, true);
+
+  // ── View toggle + sky-view input ──────────────────────────────────────────
+  const viewBtn = panel.querySelector('#sat-tracker-view-btn');
+  const labelsEl = panel.querySelector('#sat-tracker-labels');
+  const hintEl = panel.querySelector('#sat-tracker-hint');
+  sats.forEach(rec => labelsEl.appendChild(rec.label));
+  const moonLabel = Object.assign(document.createElement('div'), { className: 'sat-tracker-label', textContent: 'Moon' });
+  moonLabel.style.color = '#dcd9d1';
+  const sunLabel = Object.assign(document.createElement('div'), { className: 'sat-tracker-label', textContent: 'Sun' });
+  sunLabel.style.color = '#ffd27a';
+  labelsEl.append(moonLabel, sunLabel);
+
+  function setViewMode(mode) {
+    if (mode === viewMode) return;
+    viewMode = mode;
+    const sky = mode === 'sky';
+    if (sky) {
+      orbitCam.pos.copy(camera.position); orbitCam.fov = camera.fov;
+      controls.enabled = false;
+      camera.near = 0.002; camera.fov = skyFov;
+      loadSkyData();
+    } else {
+      controls.enabled = true;
+      camera.up.set(0, 1, 0);
+      camera.position.copy(orbitCam.pos); camera.fov = orbitCam.fov; camera.near = 0.05;
+      camera.lookAt(0, 0, 0);
+      scene.background = ORBIT_BG;
+    }
+    camera.updateProjectionMatrix();
+    earth.visible = atmo.visible = bcnMarker.visible = !sky;
+    horizon.visible = sky;
+    if (constLines) constLines.visible = sky;
+    sats.forEach(rec => { if (rec.tether) rec.tether.visible = !sky && !!rec.tether.userData.ready; });
+    labelsEl.hidden = hintEl.hidden = !sky;
+    wrap.classList.toggle('sky', sky);
+    viewBtn.textContent = sky ? '🌍 orbit view' : '🔭 sky from BCN';
+    viewBtn.title = sky ? 'Back to the 3D orbit view' : 'Show the sky as seen from Barcelona';
+    lastTel = 0; // refresh the telemetry rows in the new format right away
+  }
+  viewBtn.addEventListener('click', () => setViewMode(viewMode === 'sky' ? 'orbit' : 'sky'));
+
+  // Drag to look around (grab-the-sky feel), wheel / pinch to change the FOV.
+  const pointers = new Map();
+  let pinchDist = 0;
+  const el = renderer.domElement;
+  el.addEventListener('pointerdown', e => {
+    if (viewMode !== 'sky') return;
+    el.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinchDist = Math.hypot(a.x - b.x, a.y - b.y); }
+  });
+  el.addEventListener('pointermove', e => {
+    if (viewMode !== 'sky' || !pointers.has(e.pointerId)) return;
+    const prev = pointers.get(e.pointerId);
+    const dx = e.clientX - prev.x, dy = e.clientY - prev.y;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 1) {
+      const degPerPx = skyFov / el.clientHeight;
+      skyAz = ((skyAz - dx * degPerPx) % 360 + 360) % 360;
+      skyEl = Math.min(90, Math.max(-10, skyEl + dy * degPerPx));
+    } else if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinchDist) setSkyFov(skyFov * pinchDist / d);
+      pinchDist = d;
+    }
+  });
+  const endPointer = e => { pointers.delete(e.pointerId); pinchDist = 0; };
+  el.addEventListener('pointerup', endPointer);
+  el.addEventListener('pointercancel', endPointer);
+  el.addEventListener('wheel', e => {
+    if (viewMode !== 'sky') return;
+    e.preventDefault();
+    setSkyFov(skyFov * Math.exp(e.deltaY * 0.001));
+  }, { passive: false });
+  function setSkyFov(f) {
+    skyFov = Math.min(110, Math.max(8, f));
+    camera.fov = skyFov; camera.updateProjectionMatrix();
+  }
+
+  // Topocentric azimuth/elevation (degrees) of a point given in world-group
+  // (Earth-fixed) coordinates, as seen from the BCN observer.
+  const _d = new THREE.Vector3();
+  function azEl(pLocal) {
+    _d.copy(pLocal).sub(bcnEye).normalize();
+    const elv = Math.asin(_d.dot(bcnUp)) / DEG;
+    const az = (Math.atan2(_d.dot(bcnEast), _d.dot(bcnNorth)) / DEG + 360) % 360;
+    return { az, el: elv };
+  }
+  const fmtAzEl = ({ az, el }) => el < 0
+    ? `az ${Math.round(az)}° · <span style="opacity:.6">below horizon</span>`
+    : `<b>az ${Math.round(az)}° · el ${el.toFixed(1)}°</b>`;
+
+  const _w = new THREE.Vector3(), _p = new THREE.Vector3();
+  function placeLabel(div, obj, aboveHorizon) {
+    obj.getWorldPosition(_w);
+    _p.copy(_w).project(camera);
+    const show = aboveHorizon && _p.z < 1 && Math.abs(_p.x) < 1.05 && Math.abs(_p.y) < 1.05;
+    div.style.display = show ? '' : 'none';
+    if (show) {
+      div.style.left = ((_p.x + 1) / 2 * el.clientWidth) + 'px';
+      div.style.top = ((1 - _p.y) / 2 * el.clientHeight) + 'px';
+    }
+  }
+
+  let lastTel = 0, lastPath = 0, lastMoonPath = 0, running = false, rafId = null, dataStarted = false;
 
   function tick() {
     if (!running) return;
@@ -2151,36 +2503,83 @@ function buildTracker() {
       rec.sprite.position.copy(latLngToVec(p.lat, p.lng, satRadius(p.alt)));
       rec.sprite.visible = true;
     });
-    // Markers are sized in world units: grow them as the camera backs off so
-    // they stay readable when the whole GEO ring is in view.
-    const k = Math.max(1, camera.position.length() / 4.4);
-    sats.forEach(rec => rec.sprite.scale.setScalar(0.065 * k));
-    bcnMarker.scale.setScalar(0.07 * k);
+    alignToEcliptic(now);
+    const sky = viewMode === 'sky';
+    if (sky) {
+      // Observer camera at BCN: look direction from az/el in the local frame.
+      const ca = Math.cos(skyAz * DEG), sa = Math.sin(skyAz * DEG), ce = Math.cos(skyEl * DEG), se = Math.sin(skyEl * DEG);
+      const dir = new THREE.Vector3()
+        .addScaledVector(bcnNorth, ce * ca).addScaledVector(bcnEast, ce * sa).addScaledVector(bcnUp, se)
+        .applyQuaternion(world.quaternion);
+      world.localToWorld(camera.position.copy(bcnEye));
+      camera.up.copy(bcnUp).applyQuaternion(world.quaternion);
+      camera.lookAt(_w.copy(camera.position).add(dir));
+      // Constant angular marker size (they're 0.13–6 R away from the observer).
+      const ang = 0.018 * skyFov / 80;
+      sats.forEach(rec => rec.sprite.scale.setScalar(ang * rec.sprite.getWorldPosition(_p).distanceTo(camera.position)));
+    } else {
+      // Markers are sized in world units: grow them as the camera backs off so
+      // they stay readable when the whole GEO ring is in view.
+      const k = Math.max(1, camera.position.length() / 4.4);
+      sats.forEach(rec => rec.sprite.scale.setScalar(0.065 * k));
+      bcnMarker.scale.setScalar(0.07 * k);
+    }
     const ss = subsolar(now);
-    earthMat.uniforms.sunDirection.value.copy(latLngToVec(ss.lat, ss.lng, 1).normalize());
-    sun.position.copy(earthMat.uniforms.sunDirection.value).multiplyScalar(SUN_DIST);
+    const sunLocal = latLngToVec(ss.lat, ss.lng, 1).normalize();
+    sun.position.copy(sunLocal).multiplyScalar(SUN_DIST);
+    // Shaders compare against world-space normals, so rotate into world space.
+    earthMat.uniforms.sunDirection.value.copy(sunLocal).applyQuaternion(world.quaternion);
     const ml = sublunar(now);
     moon.position.copy(latLngToVec(ml.lat, ml.lng, ml.dist));
     // Never smaller than MOON_MIN_PX radius on screen (true size is ~2 px at the
     // default zoom), so it stays findable without moving the camera framing.
     const MOON_MIN_PX = 5;
-    const pxPerUnit = renderer.domElement.height / (2 * Math.tan(camera.fov * DEG / 2) * camera.position.distanceTo(moon.position));
+    const moonWorld = new THREE.Vector3();
+    const pxPerUnit = renderer.domElement.height / (2 * Math.tan(camera.fov * DEG / 2) * camera.position.distanceTo(moon.getWorldPosition(moonWorld)));
     moon.scale.setScalar(Math.max(1, MOON_MIN_PX / (pxPerUnit * 1737 / EARTH_KM)));
     clockEl.textContent = now.toISOString().slice(11, 19) + ' UTC';
+
+    const sunAE = azEl(sun.position), moonAE = azEl(moon.position);
+    if (sky) {
+      // Sky colour and star visibility follow the Sun's altitude at BCN.
+      const e = sunAE.el;
+      const bg = e < -12 ? SKY_BG.night
+        : e < 0 ? SKY_BG.night.clone().lerp(SKY_BG.twilight, (e + 12) / 12)
+        : SKY_BG.twilight.clone().lerp(SKY_BG.day, Math.min(1, e / 8));
+      scene.background = bg;
+      const starVis = Math.min(1, Math.max(0, (-e - 2) / 10));
+      realStars.forEach(p => { p.material.opacity = starVis; });
+      if (constLines) constLines.material.opacity = 0.03 + 0.27 * starVis;
+      // The shader writes raw (display) values, so match the sky in sRGB.
+      const bgS = bg.clone().convertLinearToSRGB();
+      moonMat.uniforms.unlit.value.setRGB(Math.max(0.16, bgS.r), Math.max(0.17, bgS.g), Math.max(0.19, bgS.b));
+      groundMat.color.setHex(e > 0 ? 0x1a2419 : 0x0b0f0c);
+      sats.forEach(rec => { if (rec.lat !== undefined) placeLabel(rec.label, rec.sprite, azEl(rec.sprite.position).el > 0); });
+      placeLabel(moonLabel, moon, moonAE.el > 0);
+      placeLabel(sunLabel, sun, sunAE.el > 0);
+    } else {
+      realStars.forEach(p => { p.material.opacity = 0.6; }); // a backdrop here, not the subject
+      moonMat.uniforms.unlit.value.setRGB(0.16, 0.17, 0.19);
+    }
 
     if (now - lastTel > 500) {
       lastTel = +now;
       sats.forEach(rec => {
         if (rec.lat === undefined) return;
-        rec.telEl.innerHTML = `<b>${fmtLatLng(rec.lat, rec.lng)}</b> · ${Math.round(rec.alt)} km${rec.cfg.geo ? ' · GEO' : ''}`;
+        rec.telEl.innerHTML = sky
+          ? fmtAzEl(azEl(rec.sprite.position))
+          : `<b>${fmtLatLng(rec.lat, rec.lng)}</b> · ${Math.round(rec.alt)} km${rec.cfg.geo ? ' · GEO' : ''}`;
       });
       // Illuminated fraction from the Sun–Earth–Moon elongation.
-      const illum = (1 - moon.position.clone().normalize().dot(earthMat.uniforms.sunDirection.value)) / 2;
-      moonTelEl.innerHTML = `<b>${fmtLatLng(ml.lat, ml.lng)}</b> · ${Math.round(illum * 100)}% lit`;
+      const illum = (1 - moon.position.clone().normalize().dot(sunLocal)) / 2;
+      moonTelEl.innerHTML = sky
+        ? `${fmtAzEl(moonAE)} · ${Math.round(illum * 100)}% lit`
+        : `<b>${fmtLatLng(ml.lat, ml.lng)}</b> · ${Math.round(illum * 100)}% lit`;
     }
     if (now - lastPath > 90000) { lastPath = +now; sats.forEach(buildPath); }
+    if (now - lastMoonPath > 600000) { lastMoonPath = +now; buildMoonPath(now); }
 
-    controls.update();
+    if (!sky) controls.update();
     renderer.render(scene, camera);
   }
 
