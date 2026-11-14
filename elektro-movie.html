@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ELEKTRO-L3 full-disk movie — yannklein.dev</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8D%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <!--
+    Standalone ELEKTRO-L3 movie. Also shown inside index.html's popup as an
+    iframe with ?embed=1 (adds the "open as page" link + close button, which
+    calls back into the parent). URL params: ch=<channel key>, borders=0|1.
+  -->
+  <style>
+    :root {
+      --bg: #080c10; --surface: #0d1117; --card: #111820;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5a0; --accent2: #0088ff;
+      --text: #e8edf2; --muted: #5a6878;
+      --mono: 'Space Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: var(--mono); background: var(--surface); color: var(--text);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 10px 14px; border-bottom: 0.5px solid var(--border); flex-shrink: 0;
+      font-size: 12px; color: var(--muted);
+    }
+    .topbar strong { color: var(--accent); font-weight: 700; }
+    .topbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    select {
+      font-family: var(--mono); font-size: 11px; background: var(--card); color: var(--text);
+      border: 0.5px solid var(--border); border-radius: 4px; padding: 3px 6px; cursor: pointer;
+    }
+    select:hover { border-color: var(--accent); }
+    .lbl { font-size: 11px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 5px; }
+    .lbl.disabled { opacity: 0.4; }
+    .lbl input[type=range] { width: 70px; }
+    .lbl input[type=checkbox] { cursor: pointer; }
+    .link-btn, .close-btn {
+      font-family: var(--mono); font-size: 11px; background: none; text-decoration: none;
+      border: 0.5px solid var(--border); color: var(--muted);
+      padding: 3px 10px; border-radius: 4px; cursor: pointer;
+    }
+    .link-btn { color: var(--accent2); border-color: rgba(0,136,255,0.4); }
+    .link-btn:hover { background: rgba(0,136,255,0.12); }
+    .close-btn:hover { color: var(--text); border-color: var(--text); }
+    body:not(.embed) .embed-only { display: none; }
+    .viewport { flex: 1; position: relative; overflow: hidden; background: #000; --fade-dur: 0.35s; }
+    .viewport img {
+      position: absolute; display: block; opacity: 0;
+      transition: opacity var(--fade-dur) ease;
+    }
+    .viewport img.visible { opacity: 1; }
+    .empty {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--muted);
+    }
+    .controls {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 8px 14px; border-top: 0.5px solid var(--border);
+      background: var(--card); flex-shrink: 0;
+    }
+    .btn {
+      font-family: var(--mono); font-size: 13px; background: none;
+      border: 0.5px solid var(--border); color: var(--text);
+      width: 32px; height: 32px; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .prog-wrap {
+      flex: 1; height: 4px; background: rgba(255,255,255,0.1);
+      border-radius: 2px; cursor: pointer; min-width: 60px;
+    }
+    .prog-bar { height: 100%; background: var(--accent); border-radius: 2px; width: 0%; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      ELEKTRO-L3 movie &nbsp;·&nbsp; <strong id="ts">—</strong>
+      <span id="counter" style="margin-left:8px"></span>
+    </div>
+    <div class="topbar-right">
+      <label class="lbl">channel <select id="channel" onchange="setChannel(this.value)"></select></label>
+      <label class="lbl" id="borders-lbl">
+        <input type="checkbox" id="borders" checked onchange="onBordersChange()"> borders
+      </label>
+      <a class="link-btn embed-only" id="page-link" href="elektro-movie.html" target="_blank" rel="noopener">↗ open as page</a>
+      <button class="close-btn embed-only" onclick="closeEmbed()">× close</button>
+    </div>
+  </div>
+  <div class="viewport" id="viewport">
+    <img id="img-a" src="" alt=""/>
+    <img id="img-b" src="" alt=""/>
+    <div class="empty" id="empty" style="display:none">no frames for this channel</div>
+  </div>
+  <div class="controls">
+    <button class="btn" id="pp" onclick="toggle()" title="play/pause (space)">⏸</button>
+    <button class="btn" onclick="step(-1)" title="prev (←)">◀</button>
+    <button class="btn" onclick="step(1)"  title="next (→)">▶</button>
+    <div class="prog-wrap" id="prog-wrap" onclick="seek(event)"><div class="prog-bar" id="prog-bar"></div></div>
+    <label class="lbl">
+      speed <input type="range" id="speed" min="1" max="10" value="4" oninput="setSpeed(this.value)">
+      <span id="speed-val">×0.8</span>
+    </label>
+    <label class="lbl">
+      fade <input type="range" id="fade" min="0" max="2" step="0.05" value="0.35" oninput="setFade(this.value)">
+      <span id="fade-val">0.35s</span>
+    </label>
+  </div>
+
+<script>
+// Each channel plays the 900px preview JPGs rebuild-elektro.sh makes (~100-300 KB)
+// rather than the 2784px PNGs (~2-5 MB each). `img` is the file a slot must
+// have for the channel to include it; `preview` maps a slot to its JPG.
+const RAW = n => s => s.imgs.find(i => new RegExp(`^L3_${n}_`).test(i));
+const CHANNELS = [
+  { key: 'natural', label: 'Natural color',            img: s => s.imgs.includes('natural_color.png') && 'natural_color.png',
+    preview: (s, borders) => borders && s.imgs.includes('natural_color_borders.png')
+               ? 'natural_color_borders.jpg' : 'natural_color.jpg', borders: true },
+  { key: 'ir4',  label: 'IR 3.8µm enhanced',  img: s => s.imgs.includes('ir_ch4_enhanced_borders.png') && 'x', preview: () => 'ir_ch4_enhanced_borders.jpg' },
+  { key: 'ir9',  label: 'IR 10.7µm enhanced', img: s => s.imgs.includes('ir_ch9_enhanced_borders.png') && 'x', preview: () => 'ir_ch9_enhanced_borders.jpg' },
+  { key: 'ch1',  label: 'Ch 1 · 0.5–0.65µm (raw)', img: RAW(1), preview: () => 'L3_1.jpg' },
+  { key: 'ch2',  label: 'Ch 2 · 0.65–0.8µm (raw)', img: RAW(2), preview: () => 'L3_2.jpg' },
+  { key: 'ch3',  label: 'Ch 3 · 0.8–0.9µm (raw)',  img: RAW(3), preview: () => 'L3_3.jpg' },
+  { key: 'ch4',  label: 'Ch 4 · 3.5–4.0µm (raw)',  img: RAW(4), preview: () => 'L3_4.jpg' },
+  { key: 'ch9',  label: 'Ch 9 · 10.2–11.2µm (raw)', img: RAW(9), preview: () => 'L3_9.jpg' },
+];
+const BASE_MS = 1000;
+const SPEED_LABELS = {1:'×0.2',2:'×0.4',3:'×0.6',4:'×0.8',5:'×1',6:'×1.5',7:'×2',8:'×3',9:'×5',10:'×10'};
+
+const params = new URLSearchParams(location.search);
+const embed  = params.has('embed');
+if (embed) document.body.classList.add('embed');
+
+let slots   = [];
+let channel = CHANNELS.find(c => c.key === params.get('ch')) || CHANNELS[0];
+let frames  = [];
+let idx     = 0;
+let timer   = null;
+let speedX  = 4;
+let activeLayer = 'a';
+let lastJSON = null;
+const $ = id => document.getElementById(id);
+$('borders').checked = params.get('borders') !== '0';
+
+function buildFrames() {
+  const prevKey = frames[idx] && frames[idx].key;
+  const borders = $('borders').checked;
+  frames = slots
+    .filter(s => s.quality !== 'poor' && channel.img(s))
+    .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
+    .map(s => ({
+      key: s.id, date: s.date, time: s.time,
+      src: `${s.folder}/preview/${channel.preview(s, borders)}${s.rev ? `?v=${s.rev}` : ''}`,
+    }));
+  // Keep the same moment in time across channel switches and live refreshes.
+  const keep = frames.findIndex(f => f.key === prevKey);
+  idx = keep >= 0 ? keep : Math.min(idx, Math.max(0, frames.length - 1));
+}
+
+function renderChannelSelect() {
+  // Only offer channels that have at least one usable frame.
+  const sel = $('channel');
+  const avail = CHANNELS.filter(c => slots.some(s => s.quality !== 'poor' && c.img(s)));
+  sel.innerHTML = avail.map(c => {
+    const n = slots.filter(s => s.quality !== 'poor' && c.img(s)).length;
+    return `<option value="${c.key}"${c === channel ? ' selected' : ''}>${c.label} (${n})</option>`;
+  }).join('');
+  if (!avail.includes(channel) && avail.length) { channel = avail[0]; sel.value = channel.key; }
+}
+
+function syncUrl() {
+  const p = new URLSearchParams();
+  if (channel.key !== CHANNELS[0].key) p.set('ch', channel.key);
+  if (channel.borders && !$('borders').checked) p.set('borders', '0');
+  const qs = p.toString();
+  $('page-link').href = 'elektro-movie.html' + (qs ? '?' + qs : '');
+  if (!embed) history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+  $('borders-lbl').classList.toggle('disabled', !channel.borders);
+  $('borders').disabled = !channel.borders;
+}
+
+function setChannel(key) {
+  channel = CHANNELS.find(c => c.key === key) || CHANNELS[0];
+  buildFrames(); syncUrl(); render();
+}
+function onBordersChange() { buildFrames(); syncUrl(); render(); }
+
+function play() {
+  if (timer) clearInterval(timer);
+  timer = setInterval(() => { if (frames.length) { idx = (idx + 1) % frames.length; render(); } },
+                      Math.round(BASE_MS / speedX));
+  $('pp').textContent = '⏸';
+}
+function pause() { clearInterval(timer); timer = null; $('pp').textContent = '▶'; }
+function toggle() { timer ? pause() : play(); }
+function step(d) {
+  if (!frames.length) return;
+  pause(); idx = (idx + d + frames.length) % frames.length; render();
+}
+function setSpeed(v) {
+  speedX = parseInt(v);
+  $('speed-val').textContent = SPEED_LABELS[speedX] || ('×' + speedX);
+  if (timer) play();
+}
+function setFade(v) {
+  const s = parseFloat(v);
+  $('viewport').style.setProperty('--fade-dur', s + 's');
+  $('fade-val').textContent = s.toFixed(2) + 's';
+}
+function seek(e) {
+  if (!frames.length) return;
+  const frac = Math.max(0, Math.min(1, e.offsetX / $('prog-wrap').clientWidth));
+  idx = Math.round(frac * (frames.length - 1)); render();
+}
+
+function fit(img) {
+  const vp = $('viewport');
+  const vpW = vp.clientWidth, vpH = vp.clientHeight;
+  const w = img.naturalWidth, h = img.naturalHeight;
+  if (!w || !h) return;
+  const k = Math.min(vpW / w, vpH / h);
+  Object.assign(img.style, {
+    width: w * k + 'px', height: h * k + 'px',
+    left: (vpW - w * k) / 2 + 'px', top: (vpH - h * k) / 2 + 'px',
+  });
+}
+
+function render() {
+  $('empty').style.display = frames.length ? 'none' : 'flex';
+  if (!frames.length) {
+    $('img-a').classList.remove('visible'); $('img-b').classList.remove('visible');
+    $('ts').textContent = '—'; $('counter').textContent = ''; return;
+  }
+  const f = frames[idx];
+  $('ts').textContent = `${f.date} · ${f.time} UTC`;
+  $('counter').textContent = `${idx + 1} / ${frames.length}`;
+  $('prog-bar').style.width = (frames.length > 1 ? idx / (frames.length - 1) * 100 : 0) + '%';
+
+  // Two-layer crossfade: load into the hidden layer, then fade it in.
+  const next = $(activeLayer === 'a' ? 'img-b' : 'img-a');
+  const prev = $(activeLayer === 'a' ? 'img-a' : 'img-b');
+  const reveal = () => {
+    fit(next);
+    void next.offsetWidth;
+    next.classList.add('visible');
+    prev.classList.remove('visible');
+    activeLayer = activeLayer === 'a' ? 'b' : 'a';
+  };
+  // The hidden layer may already hold this src (2-frame loops); `load` won't refire.
+  if (next.getAttribute('src') === f.src && next.complete) reveal();
+  else { next.onload = reveal; next.src = f.src; }
+
+  const nxt = frames[(idx + 1) % frames.length];
+  if (nxt) new Image().src = nxt.src;
+}
+
+function closeEmbed() {
+  if (embed && parent !== window && parent.closeElektroMovie) parent.closeElektroMovie();
+}
+
+function load(first) {
+  return fetch('elektro.json?t=' + Date.now()).then(r => r.json()).then(data => {
+    const txt = JSON.stringify(data);
+    if (txt === lastJSON) return;
+    lastJSON = txt;
+    slots = data;
+    renderChannelSelect();
+    buildFrames();
+    syncUrl();
+    if (first) { idx = 0; render(); play(); }
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'SELECT') return;
+  if (e.key === 'Escape') closeEmbed();
+  else if (e.key === ' ') { e.preventDefault(); toggle(); }
+  else if (e.key === 'ArrowLeft')  step(-1);
+  else if (e.key === 'ArrowRight') step(1);
+});
+window.addEventListener('resize', () => fit($(activeLayer === 'a' ? 'img-a' : 'img-b')));
+
+load(true).catch(() => { $('empty').textContent = 'could not load elektro.json'; $('empty').style.display = 'flex'; });
+// Pick up slots n8n processes while the page is open (same cadence as index.html).
+setInterval(() => { if (!document.hidden) load(false).catch(() => {}); }, 2 * 60 * 1000);
+</script>
+</body>
+</html>

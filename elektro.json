@@ -1,12 +1,351 @@
 [
   {
+    "id": "ELEKTRO-L3_2026-11-14_09-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-14_09-30-00",
+    "date": "2026-11-14",
+    "time": "09:30",
+    "quality": "poor",
+    "rev": 1794653909,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_2_20261114T093000Z.png",
+      "L3_3_20261114T093000Z.png",
+      "L3_4_20261114T093000Z.png",
+      "L3_9_20261114T093000Z.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-14_06-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-14_06-30-00",
+    "date": "2026-11-14",
+    "time": "06:30",
+    "quality": "unrated",
+    "rev": 1794653910,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261114T063000Z.png",
+      "L3_2_20261114T063000Z.png",
+      "L3_3_20261114T063000Z.png",
+      "L3_4_20261114T063000Z.png",
+      "L3_9_20261114T063000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-14_03-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-14_03-30-00",
+    "date": "2026-11-14",
+    "time": "03:30",
+    "quality": "unrated",
+    "rev": 1794653911,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261114T033000Z.png",
+      "L3_2_20261114T033000Z.png",
+      "L3_3_20261114T033000Z.png",
+      "L3_4_20261114T033000Z.png",
+      "L3_9_20261114T033000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-14_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-14_00-30-00",
+    "date": "2026-11-14",
+    "time": "00:30",
+    "quality": "poor",
+    "rev": 1794653912,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261114T003000Z.png",
+      "L3_2_20261114T003000Z.png",
+      "L3_3_20261114T003000Z.png",
+      "L3_4_20261114T003000Z.png",
+      "L3_9_20261114T003000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_21-30-00",
+    "date": "2026-11-13",
+    "time": "21:30",
+    "quality": "unrated",
+    "rev": 1794653913,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T213000Z.png",
+      "L3_2_20261113T213000Z.png",
+      "L3_3_20261113T213000Z.png",
+      "L3_4_20261113T213000Z.png",
+      "L3_9_20261113T213000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_18-30-00",
+    "date": "2026-11-13",
+    "time": "18:30",
+    "quality": "unrated",
+    "rev": 1794653913,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T183000Z.png",
+      "L3_4_20261113T183000Z.png",
+      "L3_9_20261113T183000Z.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_15-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_15-30-00",
+    "date": "2026-11-13",
+    "time": "15:30",
+    "quality": "unrated",
+    "rev": 1794653914,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T153000Z.png",
+      "L3_2_20261113T153000Z.png",
+      "L3_3_20261113T153000Z.png",
+      "L3_4_20261113T153000Z.png",
+      "L3_9_20261113T153000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_12-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_12-30-00",
+    "date": "2026-11-13",
+    "time": "12:30",
+    "quality": "poor",
+    "rev": 1794653915,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T123000Z.png",
+      "L3_2_20261113T123000Z.png",
+      "L3_3_20261113T123000Z.png",
+      "L3_4_20261113T123000Z.png",
+      "L3_9_20261113T123000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_09-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_09-30-00",
+    "date": "2026-11-13",
+    "time": "09:30",
+    "quality": "poor",
+    "rev": 1794653916,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T093000Z.png",
+      "L3_2_20261113T093000Z.png",
+      "L3_3_20261113T093000Z.png",
+      "L3_4_20261113T093000Z.png",
+      "L3_9_20261113T093000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_06-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_06-30-00",
+    "date": "2026-11-13",
+    "time": "06:30",
+    "quality": "poor",
+    "rev": 1794653917,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T063000Z.png",
+      "L3_2_20261113T063000Z.png",
+      "L3_3_20261113T063000Z.png",
+      "L3_4_20261113T063000Z.png",
+      "L3_9_20261113T063000Z.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_03-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_03-30-00",
+    "date": "2026-11-13",
+    "time": "03:30",
+    "quality": "unrated",
+    "rev": 1794653918,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T033000Z.png",
+      "L3_2_20261113T033000Z.png",
+      "L3_3_20261113T033000Z.png",
+      "L3_4_20261113T033000Z.png",
+      "L3_9_20261113T033000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-13_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-13_00-30-00",
+    "date": "2026-11-13",
+    "time": "00:30",
+    "quality": "poor",
+    "rev": 1794653919,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261113T003000Z.png",
+      "L3_2_20261113T003000Z.png",
+      "L3_3_20261113T003000Z.png",
+      "L3_4_20261113T003000Z.png",
+      "L3_9_20261113T003000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-12_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-12_21-30-00",
+    "date": "2026-11-12",
+    "time": "21:30",
+    "quality": "unrated",
+    "rev": 1794653920,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261112T213000Z.png",
+      "L3_2_20261112T213000Z.png",
+      "L3_3_20261112T213000Z.png",
+      "L3_4_20261112T213000Z.png",
+      "L3_9_20261112T213000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-12_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-12_18-30-00",
+    "date": "2026-11-12",
+    "time": "18:30",
+    "quality": "poor",
+    "rev": 1794653921,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261112T183000Z.png",
+      "L3_2_20261112T183000Z.png",
+      "L3_3_20261112T183000Z.png",
+      "L3_4_20261112T183000Z.png",
+      "L3_9_20261112T183000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-11_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-11_21-30-00",
+    "date": "2026-11-11",
+    "time": "21:30",
+    "quality": "unrated",
+    "rev": 1794653921,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261111T213000Z.png",
+      "L3_2_20261111T213000Z.png",
+      "L3_3_20261111T213000Z.png",
+      "L3_4_20261111T213000Z.png",
+      "L3_9_20261111T213000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-11_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-11_18-30-00",
+    "date": "2026-11-11",
+    "time": "18:30",
+    "quality": "poor",
+    "rev": 1794653922,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261111T183000Z.png",
+      "L3_2_20261111T183000Z.png",
+      "L3_3_20261111T183000Z.png",
+      "L3_4_20261111T183000Z.png",
+      "L3_9_20261111T183000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
+    "id": "ELEKTRO-L3_2026-11-11_00-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-11_00-30-00",
+    "date": "2026-11-11",
+    "time": "00:30",
+    "quality": "unrated",
+    "rev": 1794653923,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "L3_4_20261111T003000Z.png"
+    ]
+  },
+  {
     "id": "ELEKTRO-L3_2026-11-08_18-30-00",
     "satellite": "ELEKTRO-L3",
     "folder": "elektro/ELEKTRO-L3/2026-11-08_18-30-00",
     "date": "2026-11-08",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794167404,
+    "rev": 1794653923,
     "imgs": [
       "L3_1_20261108T183000Z.png",
       "L3_2_20261108T183000Z.png",
@@ -23,7 +362,7 @@
     "date": "2026-11-08",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794170437,
+    "rev": 1794653924,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -44,7 +383,7 @@
     "date": "2026-11-08",
     "time": "12:30",
     "quality": "poor",
-    "rev": 1794170448,
+    "rev": 1794653925,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",

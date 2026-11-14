@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-11-11",
+    "time": "10:42 CEST",
+    "satellite": "METEOR M2-3",
+    "folder": "decoded_202611111040",
+    "imgs": [],
+    "maxEl": 89.35,
+    "frequency": 137900000,
+    "gain": 20,
+    "direction": "StoN",
+    "barcelonaPx": null,
+    "citiesPx": [],
+    "exclude": false,
+    "location": "barcelona",
+    "quality": "unrated",
+    "blackRatio": null,
+    "isDaylight": true
+  },
+  {
     "date": "2026-11-10",
     "time": "14:58 CEST",
     "satellite": "METEOR M2-4",

@@ -594,6 +594,13 @@
     .tl-ctrl-label { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 5px; }
     .tl-ctrl-label input[type=range] { width: 70px; vertical-align: middle; }
     .tl-ctrl-label input[type=checkbox] { cursor: pointer; }
+    .ek-movie-btn {
+      font-family: var(--mono); font-size: 11px; margin-left: 12px;
+      background: rgba(0,229,160,0.08); border: 0.5px solid var(--accent); color: var(--accent);
+      padding: 4px 12px; border-radius: 4px; cursor: pointer; transition: background 0.15s;
+      text-transform: none; letter-spacing: normal;
+    }
+    .ek-movie-btn:hover { background: rgba(0,229,160,0.18); }
 
     /* ── How it works ──────────────────────────────────────────────────────── */
     .hiw-modal {
@@ -867,6 +874,14 @@
         <span id="tl-fade-val">0.35s</span>
       </label>
     </div>
+  </div>
+</div>
+
+<!-- ── ELEKTRO movie Modal: elektro-movie.html in an iframe (one player for
+     both the popup and the standalone page) ────────────────────────────────── -->
+<div class="tl-modal" id="ek-modal" onclick="if(event.target===this)closeElektroMovie()">
+  <div class="tl-panel">
+    <iframe id="ek-frame" title="ELEKTRO-L3 movie" style="flex:1;border:0;width:100%;height:100%;background:var(--surface)"></iframe>
   </div>
 </div>
 
@@ -1146,7 +1161,11 @@ function renderElektro(slots) {
   if (!slots.length) return;
   slots.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
 
-  elektroGallery.innerHTML = `<div class="section-title">🌍 ELEKTRO-L3 · geostationary full disk · 14.5°W · 1691 MHz LRIT<span class="wip">manual capture · auto-processed</span></div>`;
+  const movieSlots = slots.filter(s => s.quality !== 'poor').length;
+  const movieBtn = movieSlots > 1
+    ? `<button class="ek-movie-btn" onclick="openElektroMovie()">▶ movie · ${movieSlots} slots</button>`
+    : '';
+  elektroGallery.innerHTML = `<div class="section-title">🌍 ELEKTRO-L3 · geostationary full disk · 14.5°W · 1691 MHz LRIT<span class="wip">manual capture · auto-processed</span>${movieBtn}</div>`;
 
   slots.forEach((slot, si) => {
     const isPoor = slot.quality === 'poor';
@@ -1635,6 +1654,11 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeSatTracker();
     return;
   }
+  const ekModal = document.getElementById('ek-modal');
+  if (ekModal.classList.contains('open')) {
+    if (e.key === 'Escape') closeElektroMovie();
+    return;
+  }
   const modal = document.getElementById('tl-modal');
   if (!modal.classList.contains('open')) return;
   if (e.key === 'Escape')      { closeTimelapse(); }
@@ -1642,6 +1666,21 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowLeft')  tlStep(-1);
   else if (e.key === 'ArrowRight') tlStep(1);
 });
+
+// ─── ELEKTRO MOVIE ──────────────────────────────────────────────────────────
+// The player lives in elektro-movie.html; the popup just frames it. The iframe
+// is loaded on open and blanked on close, so nothing plays or polls in the background.
+function openElektroMovie() {
+  const fr = document.getElementById('ek-frame');
+  fr.src = 'elektro-movie.html?embed=1';
+  document.getElementById('ek-modal').classList.add('open');
+  fr.onload = () => fr.contentWindow.focus();  // so space/arrows/Esc reach the player
+}
+
+function closeElektroMovie() {
+  document.getElementById('ek-modal').classList.remove('open');
+  document.getElementById('ek-frame').src = 'about:blank';
+}
 
 // ─── HOW IT WORKS ────────────────────────────────────────────────────────────
 let hiwLoaded = false;

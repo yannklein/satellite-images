@@ -91,6 +91,15 @@ for slot_dir in $(ls -d "$ELEKTRO_DIR"/*/*/ 2>/dev/null | sort -r); do
             convert "$slot_dir/$png" -resize 900x900 -quality 82 "$jpg"
         fi
     done
+    # Raw channels too, as preview/L3_<n>.jpg (timestamp dropped): the
+    # per-channel frames of elektro-movie.html. Not shown as gallery thumbnails.
+    for png in $(cd "$slot_dir" && ls L3_*_*.png 2>/dev/null); do
+        ch=$(echo "$png" | cut -d_ -f2)
+        jpg="$slot_dir/preview/L3_${ch}.jpg"
+        if [ ! -f "$jpg" ] || [ "$slot_dir/$png" -nt "$jpg" ]; then
+            convert "$slot_dir/$png" -resize 900x900 -quality 82 "$jpg"
+        fi
+    done
 
     imgs_json=$(printf '%s\n' $pngs | jq -R . | jq -s .)
     # Newest mtime in the slot: appended as ?v= to image URLs so Cloudflare
