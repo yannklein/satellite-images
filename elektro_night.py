@@ -6,12 +6,14 @@ The visible channels see nothing at night (only sensor noise and, around satelli
 midnight, stray sunlight inside the telescope). Pixel by pixel, from the solar zenith
 angle at scan time:
   day      -> the natural-color pixel, unchanged
-  night    -> 10.7um IR clouds (cold = white) over NASA Black Marble 2016 city lights
+  night    -> this pass's 10.7um IR clouds, dimmed and blue-grey ("moonlit"), over
+              near-black ground
   twilight -> smooth blend of the two (solar zenith 83..93 deg)
-Applied only to night passes (21:30, 00:30, 03:30 UTC); other passes are left as is.
-The clouds are this pass's real IR data; the city lights are a STATIC map
-(VIIRS Day/Night Band composite, BlackMarble_2016_3km.jpg in ne_dir), reprojected
-once to Elektro's view and cached as ne_dir/blackmarble_elektro.png. A caption says so.
+Applied to every pass that has any night on the disk (incl. the half-lit 06:30 and
+18:30 UTC ones), so the terminator sweeps smoothly through a movie instead of the
+night style switching on and off. Everything shown is real data from this pass: no
+static map layer (the earlier Black Marble city lights were dropped as a visible
+discontinuity), and no caption burned in (elektro-movie.html / index.html say it).
 IR lost-data strips are repaired from ch4 when given (elektro_ir_enhanced.repair);
 rows lost in both IR channels stay black on the night side.
 """
@@ -19,17 +21,19 @@ import sys, os, re
 from datetime import datetime, timezone
 import warnings; warnings.simplefilter("ignore", RuntimeWarning)
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 import elektro_borders as eb
 import elektro_ir_enhanced as eir
 
 SZA_DAY, SZA_NIGHT = 83.0, 93.0         # full day below, full night above (deg)
-# Only night passes get the blend: the sun must be this far below the horizon at the
-# sub-satellite point (0N 14.5W). All year that selects the 21:30, 00:30 and 03:30 UTC
-# passes (sub-satellite solar zenith >= ~124 deg) and leaves 06:30 / 18:30 (<= ~99 deg)
-# and the daytime passes as plain natural color.
-SZA_PASS_MIN = 110.0
+# Fixed raw 10.7um count references (raw IR: warm = bright). Measured on night disks
+# Nov 2026: p90 ~242, p2 ~11, stable frame to frame. Fixed rather than per-frame
+# percentiles so night cloud brightness doesn't flicker through a movie (half-lit
+# passes' percentiles are skewed by warm sunlit ground).
+IR_WARM, IR_COLD = 243.0, 10.0
+GROUND = np.array([0.012, 0.016, 0.026], np.float32)   # night ground: near-black, cool
+MOONLIT = np.array([0.74, 0.80, 0.94], np.float32)     # night cloud tint
 
 def latlon(shape):
     """Geodetic lat/lon (deg) of every pixel, inverse of elektro_borders.project."""
@@ -70,31 +74,14 @@ def solar_zenith(lat, lon, t):
     cz = np.sin(la) * np.sin(slat) + np.cos(la) * np.cos(slat) * np.cos(ha)
     return np.degrees(np.arccos(np.clip(cz, -1, 1)))
 
-def black_marble(ne_dir, lat, lon, hit):
-    cache = os.path.join(ne_dir, "blackmarble_elektro.png")
-    if os.path.exists(cache):
-        return np.asarray(Image.open(cache).convert("RGB"), dtype=np.float32) / 255
-    src = Image.open(os.path.join(ne_dir, "BlackMarble_2016_3km.jpg")).convert("RGB")
-    src = src.filter(ImageFilter.BoxBlur(1))                 # ~Elektro's 4 km pixel, no sparkle
-    bm = np.asarray(src)
-    h, w = bm.shape[:2]
-    c = np.clip(((lon + 180) / 360 * w).astype(int), 0, w - 1)
-    r = np.clip(((90 - lat) / 180 * h).astype(int), 0, h - 1)
-    out = np.where(hit[..., None], bm[r, c], 0).astype(np.uint8)
-    Image.fromarray(out).save(cache)
-    return out.astype(np.float32) / 255
-
 def ir_clouds(ir9, ir4, disk):
     raw = np.asarray(Image.open(ir9).convert("L"))
     nodata = np.zeros(raw.shape, bool)
     if ir4:
         raw, nodata = eir.repair(raw, np.asarray(Image.open(ir4).convert("L")))
     v = raw.astype(np.float32)
-    inner = eir.inner_mask(raw.shape) & ~nodata
-    vals = v[inner & (v > 0) & (v < 255)]
-    warm, cold = np.percentile(vals, [90, 2])                # raw IR: warm = bright
     # the first ~12% above the warm reference is clear ground cooling at night, not cloud
-    a = np.clip(((warm - v) / max(warm - cold, 1) - 0.12) / 0.88, 0, 1)
+    a = np.clip(((IR_WARM - v) / (IR_WARM - IR_COLD) - 0.12) / 0.88, 0, 1)
     a[(raw == 0) & disk] = 1                                 # saturated cold tops
     return a, nodata
 
@@ -102,10 +89,6 @@ def main(nat_path, out_path, ne_dir, ir9, ir4=None):
     day = np.asarray(Image.open(nat_path).convert("RGB"), dtype=np.float32) / 255
     m = re.search(r"(\d{8}T\d{6})Z", os.path.basename(ir9))
     t = datetime.strptime(m.group(1), "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
-    sza0 = float(solar_zenith(np.array(0.0), np.array(eb.LON0), t))
-    if sza0 < SZA_PASS_MIN:                                  # not a night pass: unchanged
-        Image.fromarray((day * 255).astype(np.uint8)).save(out_path)
-        print(f"{out_path}  not a night pass (sub-satellite solar zenith {sza0:.0f} deg), unchanged"); return
     lat, lon, hit = latlon(day.shape[:2])
     disk = hit & eir.disk_mask(day.shape[:2])
     sza = np.where(hit, solar_zenith(lat, lon, t), 180)
@@ -116,23 +99,15 @@ def main(nat_path, out_path, ne_dir, ir9, ir4=None):
         Image.fromarray((day * 255).astype(np.uint8)).save(out_path)
         print(f"{out_path}  day only"); return
 
-    bg = black_marble(ne_dir, lat, lon, hit) ** 1.5          # darker ground, lights stay bright
     a, nodata = ir_clouds(ir9, ir4, disk)
-    cloud = (0.30 + 0.65 * a)[..., None]                     # colder = brighter white
-    night = bg * (1 - a[..., None]) + cloud * a[..., None]
+    a3 = a[..., None]
+    # colder tops = brighter; thin/low cloud fades into the dark ground
+    night = GROUND * (1 - a3) + MOONLIT * (0.18 + 0.52 * a3) * a3
     night[nodata] = 0
 
     out = w[..., None] * day + (1 - w[..., None]) * night
     out[~disk] = 0
     im = Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8))
-
-    d = ImageDraw.Draw(im)
-    try:
-        font = ImageFont.load_default(size=38)
-    except TypeError:
-        font = ImageFont.load_default()
-    d.text((40, 36), "Night side: this pass's 10.7 um IR clouds over", fill=(200, 200, 200), font=font)
-    d.text((40, 82), "NASA Black Marble 2016 city lights (static map)", fill=(200, 200, 200), font=font)
     im.save(out_path)
     print(f"{out_path}  night {night_frac:.0%} of disk, sub-solar {subsolar(t)[0]:.1f}N {subsolar(t)[1]:.1f}E")
 

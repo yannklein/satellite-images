@@ -211,7 +211,10 @@
        point, so letterbox instead of cropping to 16:9. */
     .thumb.geo { aspect-ratio: 1; background: #000; }
     .thumb.geo img { object-fit: contain; }
-    .pass-grid.geo-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    /* All of a slot's full disks on one row (4 at most: natural color ± borders, two IR). */
+    .pass-grid.geo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 880px) { .pass-grid.geo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 480px) { .pass-grid.geo-grid { grid-template-columns: 1fr; } }
 
     #elektro-gallery:empty { display: none; }
 
@@ -1200,7 +1203,8 @@ function renderElektro(slots) {
   if (!slots.length) return;
   slots.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
 
-  const movieSlots = slots.filter(s => s.quality !== 'poor').length;
+  // Same frames the player uses: non-poor slots from its MOVIE_START (elektro-movie.html).
+  const movieSlots = slots.filter(s => s.quality !== 'poor' && `${s.date} ${s.time}` >= '2026-11-14 18:30').length;
   const movieBtn = movieSlots > 1
     ? `<button class="ek-movie-btn" onclick="openElektroMovie()">▶ movie · ${movieSlots} slots</button>`
     : '';
@@ -1711,7 +1715,8 @@ document.addEventListener('keydown', e => {
 // is loaded on open and blanked on close, so nothing plays or polls in the background.
 function openElektroMovie() {
   const fr = document.getElementById('ek-frame');
-  fr.src = 'elektro-movie.html?embed=1';
+  // Cache-bust: the server sends no Cache-Control, so browsers may keep an old player.
+  fr.src = 'elektro-movie.html?embed=1&t=' + Date.now();
   document.getElementById('ek-modal').classList.add('open');
   fr.onload = () => fr.contentWindow.focus();  // so space/arrows/Esc reach the player
 }

@@ -1,12 +1,33 @@
 [
   {
+    "id": "ELEKTRO-L3_2026-11-22_18-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-22_18-30-00",
+    "date": "2026-11-22",
+    "time": "18:30",
+    "quality": "unrated",
+    "rev": 1795373720,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261122T183000Z.png",
+      "L3_2_20261122T183000Z.png",
+      "L3_3_20261122T183000Z.png",
+      "L3_4_20261122T183000Z.png",
+      "L3_9_20261122T183000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
     "id": "ELEKTRO-L3_2026-11-22_15-30-00",
     "satellite": "ELEKTRO-L3",
     "folder": "elektro/ELEKTRO-L3/2026-11-22_15-30-00",
     "date": "2026-11-22",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1795362915,
+    "rev": 1795365194,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -27,7 +48,7 @@
     "date": "2026-11-22",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1795352116,
+    "rev": 1795365208,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -48,7 +69,7 @@
     "date": "2026-11-22",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1795351841,
+    "rev": 1795365226,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -68,7 +89,7 @@
     "date": "2026-11-22",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1795330228,
+    "rev": 1795365243,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -89,7 +110,7 @@
     "date": "2026-11-22",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1795319436,
+    "rev": 1795365260,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -110,7 +131,7 @@
     "date": "2026-11-22",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1795308637,
+    "rev": 1795365278,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -131,7 +152,7 @@
     "date": "2026-11-21",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1795297836,
+    "rev": 1795365294,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -152,7 +173,7 @@
     "date": "2026-11-21",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1795287028,
+    "rev": 1795365312,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -173,7 +194,7 @@
     "date": "2026-11-21",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1795276515,
+    "rev": 1795365330,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -194,7 +215,7 @@
     "date": "2026-11-21",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1795275315,
+    "rev": 1795365344,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -215,7 +236,7 @@
     "date": "2026-11-21",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1795254915,
+    "rev": 1795365363,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -236,7 +257,7 @@
     "date": "2026-11-21",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1795243827,
+    "rev": 1795365380,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -257,7 +278,7 @@
     "date": "2026-11-21",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1795233036,
+    "rev": 1795365397,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -278,7 +299,7 @@
     "date": "2026-11-21",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1795222237,
+    "rev": 1795365414,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -299,7 +320,7 @@
     "date": "2026-11-20",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1795211436,
+    "rev": 1795365431,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -320,7 +341,7 @@
     "date": "2026-11-20",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1795200912,
+    "rev": 1795365448,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -341,7 +362,7 @@
     "date": "2026-11-20",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1795200630,
+    "rev": 1795365466,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -362,7 +383,7 @@
     "date": "2026-11-20",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1795188929,
+    "rev": 1795365481,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -383,7 +404,7 @@
     "date": "2026-11-20",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1795168514,
+    "rev": 1795365500,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -404,7 +425,7 @@
     "date": "2026-11-20",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1795168240,
+    "rev": 1795365517,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -425,7 +446,7 @@
     "date": "2026-11-20",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1795146635,
+    "rev": 1795365533,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -446,7 +467,7 @@
     "date": "2026-11-20",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1795135837,
+    "rev": 1795365551,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -467,7 +488,7 @@
     "date": "2026-11-19",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1795125035,
+    "rev": 1795365568,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -488,7 +509,7 @@
     "date": "2026-11-19",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1795114512,
+    "rev": 1795365585,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -509,7 +530,7 @@
     "date": "2026-11-19",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1795103714,
+    "rev": 1795365603,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -530,7 +551,7 @@
     "date": "2026-11-19",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1795102515,
+    "rev": 1795365618,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -550,7 +571,7 @@
     "date": "2026-11-19",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1795092628,
+    "rev": 1795365636,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -571,7 +592,7 @@
     "date": "2026-11-19",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1795071027,
+    "rev": 1795365654,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -607,7 +628,7 @@
     "date": "2026-11-19",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1795049437,
+    "rev": 1795365671,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -628,7 +649,7 @@
     "date": "2026-11-18",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1795038638,
+    "rev": 1795365688,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -649,7 +670,7 @@
     "date": "2026-11-18",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1795028112,
+    "rev": 1795365705,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -670,7 +691,7 @@
     "date": "2026-11-18",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1795017314,
+    "rev": 1795365724,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -691,7 +712,7 @@
     "date": "2026-11-18",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1795016115,
+    "rev": 1795365738,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -711,7 +732,7 @@
     "date": "2026-11-18",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1794995714,
+    "rev": 1795365757,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -732,7 +753,7 @@
     "date": "2026-11-18",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1794995440,
+    "rev": 1795365774,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -753,7 +774,7 @@
     "date": "2026-11-18",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794973835,
+    "rev": 1795365790,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -774,7 +795,7 @@
     "date": "2026-11-18",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1794963036,
+    "rev": 1795365808,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -795,7 +816,7 @@
     "date": "2026-11-17",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794952234,
+    "rev": 1795365824,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -816,7 +837,7 @@
     "date": "2026-11-17",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794941712,
+    "rev": 1795365841,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -837,7 +858,7 @@
     "date": "2026-11-17",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794930914,
+    "rev": 1795365860,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -858,7 +879,7 @@
     "date": "2026-11-17",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1794929715,
+    "rev": 1795365874,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -879,7 +900,7 @@
     "date": "2026-11-17",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1794909314,
+    "rev": 1795365893,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -900,7 +921,7 @@
     "date": "2026-11-17",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1794898227,
+    "rev": 1795365910,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -921,7 +942,7 @@
     "date": "2026-11-17",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794887436,
+    "rev": 1795365927,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -942,7 +963,7 @@
     "date": "2026-11-17",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1794876636,
+    "rev": 1795365944,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -963,7 +984,7 @@
     "date": "2026-11-16",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794865834,
+    "rev": 1795365960,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -984,7 +1005,7 @@
     "date": "2026-11-16",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794855311,
+    "rev": 1795365978,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1005,7 +1026,7 @@
     "date": "2026-11-16",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794844514,
+    "rev": 1795365996,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1026,7 +1047,7 @@
     "date": "2026-11-16",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1794843027,
+    "rev": 1795366011,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1047,7 +1068,7 @@
     "date": "2026-11-16",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1794822914,
+    "rev": 1795366030,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1068,7 +1089,7 @@
     "date": "2026-11-16",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1794811826,
+    "rev": 1795366047,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1089,7 +1110,7 @@
     "date": "2026-11-16",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794801035,
+    "rev": 1795366064,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1110,7 +1131,7 @@
     "date": "2026-11-16",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1794790235,
+    "rev": 1795366081,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1131,7 +1152,7 @@
     "date": "2026-11-15",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794779434,
+    "rev": 1795366098,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1152,7 +1173,7 @@
     "date": "2026-11-15",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794768911,
+    "rev": 1795366115,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1173,7 +1194,7 @@
     "date": "2026-11-15",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794762931,
+    "rev": 1795366133,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1194,7 +1215,7 @@
     "date": "2026-11-15",
     "time": "12:30",
     "quality": "unrated",
-    "rev": 1794762943,
+    "rev": 1795366148,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1215,7 +1236,7 @@
     "date": "2026-11-15",
     "time": "09:30",
     "quality": "unrated",
-    "rev": 1794762954,
+    "rev": 1795366166,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1236,7 +1257,7 @@
     "date": "2026-11-15",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1794762964,
+    "rev": 1795366184,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1257,7 +1278,7 @@
     "date": "2026-11-15",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794762098,
+    "rev": 1795366201,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1278,7 +1299,7 @@
     "date": "2026-11-15",
     "time": "00:30",
     "quality": "unrated",
-    "rev": 1794762116,
+    "rev": 1795366218,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1299,7 +1320,7 @@
     "date": "2026-11-14",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794762134,
+    "rev": 1795366234,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1320,7 +1341,7 @@
     "date": "2026-11-14",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794762974,
+    "rev": 1795366251,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1341,7 +1362,7 @@
     "date": "2026-11-14",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794762985,
+    "rev": 1795366270,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1377,7 +1398,7 @@
     "date": "2026-11-14",
     "time": "09:30",
     "quality": "poor",
-    "rev": 1794762997,
+    "rev": 1795366288,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1398,7 +1419,7 @@
     "date": "2026-11-14",
     "time": "06:30",
     "quality": "unrated",
-    "rev": 1794763006,
+    "rev": 1795366305,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1419,7 +1440,7 @@
     "date": "2026-11-14",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794762223,
+    "rev": 1795366321,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1440,7 +1461,7 @@
     "date": "2026-11-14",
     "time": "00:30",
     "quality": "poor",
-    "rev": 1794762242,
+    "rev": 1795366339,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1461,7 +1482,7 @@
     "date": "2026-11-13",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794762259,
+    "rev": 1795366355,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1498,7 +1519,7 @@
     "date": "2026-11-13",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794763018,
+    "rev": 1795366373,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1519,7 +1540,7 @@
     "date": "2026-11-13",
     "time": "12:30",
     "quality": "poor",
-    "rev": 1794763028,
+    "rev": 1795366386,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1540,7 +1561,7 @@
     "date": "2026-11-13",
     "time": "09:30",
     "quality": "poor",
-    "rev": 1794763039,
+    "rev": 1795366404,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1561,7 +1582,7 @@
     "date": "2026-11-13",
     "time": "06:30",
     "quality": "poor",
-    "rev": 1794763048,
+    "rev": 1795366420,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1581,7 +1602,7 @@
     "date": "2026-11-13",
     "time": "03:30",
     "quality": "unrated",
-    "rev": 1794762343,
+    "rev": 1795366437,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1602,7 +1623,7 @@
     "date": "2026-11-13",
     "time": "00:30",
     "quality": "poor",
-    "rev": 1794762361,
+    "rev": 1795366454,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1623,7 +1644,7 @@
     "date": "2026-11-12",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794762378,
+    "rev": 1795366469,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1644,7 +1665,7 @@
     "date": "2026-11-12",
     "time": "18:30",
     "quality": "poor",
-    "rev": 1794763058,
+    "rev": 1795366486,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1665,7 +1686,7 @@
     "date": "2026-11-11",
     "time": "21:30",
     "quality": "unrated",
-    "rev": 1794762412,
+    "rev": 1795366502,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1686,7 +1707,7 @@
     "date": "2026-11-11",
     "time": "18:30",
     "quality": "poor",
-    "rev": 1794763068,
+    "rev": 1795366520,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1720,7 +1741,7 @@
     "date": "2026-11-08",
     "time": "18:30",
     "quality": "unrated",
-    "rev": 1794763076,
+    "rev": 1795366528,
     "imgs": [
       "L3_1_20261108T183000Z.png",
       "L3_2_20261108T183000Z.png",
@@ -1737,7 +1758,7 @@
     "date": "2026-11-08",
     "time": "15:30",
     "quality": "unrated",
-    "rev": 1794763087,
+    "rev": 1795366546,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
@@ -1758,7 +1779,7 @@
     "date": "2026-11-08",
     "time": "12:30",
     "quality": "poor",
-    "rev": 1794763100,
+    "rev": 1795366561,
     "imgs": [
       "ir_ch4_enhanced_borders.png",
       "ir_ch9_enhanced_borders.png",
