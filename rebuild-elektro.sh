@@ -9,7 +9,8 @@
 # Layout: elektro/<SATELLITE>/<YYYY-MM-DD_HH-MM-SS>/*.png (+ product.cbor),
 # exactly as SatDump writes it under IMAGES/. For every slot with channels
 # 1-3, elektro_natcolor.py builds natural_color.png and elektro_borders.py
-# draws coastlines/borders on it (natural_color_borders.png) -- those two are
+# draws coastlines/borders on it (natural_color_borders.png); elektro_night.py
+# replaces its night side with IR clouds over Black Marble city lights. Those two are
 # what index.html features, along with ir_ch4/ir_ch9_enhanced_borders.png
 # (elektro_ir_enhanced.py: color-enhanced IR channels 4 and 9 + borders,
 # lost-data strips repaired from the other IR channel);
@@ -57,8 +58,13 @@ for slot_dir in $(ls -d "$ELEKTRO_DIR"/*/*/ 2>/dev/null | sort -r); do
     ch3=$(ls "$slot_dir"/L3_3_*.png 2>/dev/null | head -1)
     nat="$slot_dir/natural_color.png"
     if [ -n "$ch1" ] && [ -n "$ch2" ] && [ -n "$ch3" ]; then
-        if [ ! -f "$nat" ] || [ "$ch1" -nt "$nat" ] || [ "$ch2" -nt "$nat" ] || [ "$ch3" -nt "$nat" ]; then
+        ch4=$(ls "$slot_dir"/L3_4_*.png 2>/dev/null | head -1)
+        ch9=$(ls "$slot_dir"/L3_9_*.png 2>/dev/null | head -1)
+        if [ ! -f "$nat" ] || [ "$ch1" -nt "$nat" ] || [ "$ch2" -nt "$nat" ] || [ "$ch3" -nt "$nat" ] \
+           || { [ -n "$ch9" ] && [ "$ch9" -nt "$nat" ]; } || { [ -n "$ch4" ] && [ "$ch4" -nt "$nat" ]; }; then
             "$PY" -W ignore "$BASE_DIR/elektro_natcolor.py" "$ch1" "$ch2" "$ch3" "$nat" >/dev/null
+            # night side: IR clouds over Black Marble city lights (elektro_night.py)
+            [ -n "$ch9" ] && "$PY" -W ignore "$BASE_DIR/elektro_night.py" "$nat" "$nat" "$NE_DIR" "$ch9" $ch4 >/dev/null
         fi
         if [ ! -f "$slot_dir/natural_color_borders.png" ] || [ "$nat" -nt "$slot_dir/natural_color_borders.png" ]; then
             "$PY" "$BASE_DIR/elektro_borders.py" "$nat" "$slot_dir/natural_color_borders.png" "$NE_DIR" >/dev/null

@@ -8,12 +8,15 @@ borders are drawn on top via elektro_borders.py (style "ir").
 LUT reverse-engineered from the first hand-made 15:30 UTC ch4/ch9 images.
 
 partner.png is the other IR channel of the same slot (ch9 for ch4 and vice versa).
-With it, lost-data strips are repaired: rows that are flat, or that stop agreeing
-with the partner and break vertical continuity at their edges, are rebuilt from the
-partner through a value mapping learned on rows where both channels are good. Rows
-bad in both channels are left black (no data) rather than shown as fake cloud tops.
+With it, lost-data strips are repaired. A row is lost in a channel when it is flat,
+all zero (missing), or has data spilling into empty space beyond the Earth's limb
+(misplaced garbage); rows where the two channels stop agreeing are attributed to the
+channel that breaks vertical continuity (both, if both break). Lost rows are rebuilt from the partner
+through a value mapping learned on rows where both channels are good. Rows lost in
+both channels are left black (no data) rather than shown as fake cloud tops.
 """
 import sys, os
+import warnings; warnings.simplefilter("ignore", RuntimeWarning)
 import numpy as np
 from PIL import Image
 import elektro_borders as eb
@@ -30,11 +33,18 @@ def build_lut():
         lut[v] = round(255 * (255 - v) / 214)
     return lut
 
-def disk_mask(shape):
-    # Raw 0 inside the Earth disk is saturated cold (cloud tops, limb), not space.
+def _rr(shape):
     yy, xx = np.mgrid[:shape[0], :shape[1]]
     r_pol_px = eb.R_EQ_PX * eb.R_POL / eb.R_EQ
-    return ((xx - eb.CX) / eb.R_EQ_PX) ** 2 + ((yy - eb.CY) / r_pol_px) ** 2 <= 1
+    return ((xx - eb.CX) / eb.R_EQ_PX) ** 2 + ((yy - eb.CY) / r_pol_px) ** 2
+
+def disk_mask(shape):
+    # Raw 0 inside the Earth disk is saturated cold (cloud tops, limb), not space.
+    return _rr(shape) <= 1
+
+def space_mask(shape):
+    # Well beyond the limb: valid data is always 0 there.
+    return _rr(shape) >= 1.08
 
 def inner_mask(shape):
     # Stats only well inside the disk: the limb is noisy and saturates.
@@ -50,24 +60,45 @@ def runs(mask):
     edges = np.flatnonzero(np.diff(np.r_[0, mask.astype(int), 0]))
     return list(zip(edges[::2], edges[1::2]))              # [y0, y1)
 
+def lost_rows(x, m, space, valid):
+    """Rows of one channel that are certainly lost: flat, all zero, or garbage in space."""
+    n = np.maximum(m.sum(axis=1), 1)
+    sn = space.sum(axis=1)
+    std = np.nanstd(np.where(m, x, np.nan), axis=1)
+    zero = ((x == 0) & m).sum(axis=1) / n
+    junk = ((x > 0) & space).sum(axis=1) / np.maximum(sn, 1)
+    lost = valid & ((std < 2) | (zero > 0.8) | ((sn > 50) & (junk > 0.1)))
+    return np.convolve(lost, np.ones(7), 'same') > 0          # strip edges are damaged too
+
 def bad_rows(a, b, m):
     """Rows of a and of b holding lost/garbage data, given the two IR channels."""
     valid = m.sum(axis=1) >= 200
-    std = lambda x: np.nanstd(np.where(m, x, np.nan), axis=1)
-    flat_a, flat_b = valid & (std(a) < 2), valid & (std(b) < 2)
-    bad_a, bad_b = flat_a.copy(), flat_b.copy()
+    space = space_mask(a.shape)
+    bad_a, bad_b = lost_rows(a, m, space, valid), lost_rows(b, m, space, valid)
 
     # Rows where the two channels stop agreeing (normally r ~0.75-0.95)...
-    dis = valid & ~flat_a & ~flat_b & (rowcorr(a, b, m) < 0.5)
+    dis = valid & ~bad_a & ~bad_b & (rowcorr(a, b, m) < 0.5)
     dis = np.convolve(dis, np.ones(7), 'same') > 0          # catch ragged strip edges
+    dis &= ~bad_a & ~bad_b
     # ...belong to the channel that breaks continuity with the rows around them:
     # a garbage strip is smooth inside but jumps at both ends, the good channel doesn't.
-    cont = lambda x: np.r_[rowcorr(x[:-1], x[1:], m[:-1] & m[1:]), 0]   # row y vs y+1
-    ca, cb = cont(a), cont(b)
+    def cont(x, bad):
+        c = np.r_[rowcorr(x[:-1], x[1:], m[:-1] & m[1:]), 1.0]   # row y vs y+1
+        c[~valid | ~np.r_[valid[1:], False]] = 1.0                # outside the disk: no info
+        c[bad | np.r_[bad[1:], False]] = 1.0                      # own known-lost rows: already handled
+        return c
+    ca, cb = cont(a, bad_a), cont(b, bad_b)
+    # Lowest row-to-row continuity anywhere over the run (+-7 rows: it was widened,
+    # and the two channels' strips need not start on the same row). A garbage strip
+    # breaks at its own ends, which always fall inside that range.
+    def brk(c, y0, y1):
+        return c[max(y0 - 7, 0):min(y1 + 7, len(c))].min(initial=1.0)
     for y0, y1 in runs(dis & valid):
-        edge = lambda c: np.mean([c[y] for y in (y0 - 1, y1 - 1) if 0 <= y < len(c)])
-        ea, eb_ = edge(ca), edge(cb)
-        if ea < 0.5 and eb_ < 0.5 and abs(ea - eb_) < 0.2:
+        ea, eb_ = brk(ca, y0, y1), brk(cb, y0, y1)
+        if os.environ.get('ELK_DEBUG'): print(f'  disagree rows {y0}-{y1}: break a={ea:.2f} b={eb_:.2f}')
+        # Good channels stay >~0.85 here. If even the smoother one jumps, both hold
+        # garbage (different misplaced blocks in each): no data, never copy garbage.
+        if max(ea, eb_) < 0.7:
             bad_a[y0:y1] = bad_b[y0:y1] = True
         elif ea < eb_:
             bad_a[y0:y1] = True
@@ -122,8 +153,10 @@ if __name__ == "__main__":
     nodata = np.zeros(raw.shape, bool)
     if len(sys.argv) > 4:
         raw, nodata = repair(raw, np.asarray(Image.open(sys.argv[4]).convert("L")))
+    disk = disk_mask(raw.shape)
     rgb = build_lut()[raw]
-    rgb[(raw == 0) & disk_mask(raw.shape)] = (255, 0, 0)
+    rgb[(raw == 0) & disk] = (255, 0, 0)
     rgb[nodata] = 0
+    rgb[~disk] = 0                     # nothing outside the Earth (garbage strips spill there)
     eb.draw(Image.fromarray(rgb), ne_dir, style="ir").save(sys.argv[2])
     print(sys.argv[2])

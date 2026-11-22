@@ -1,58 +1,162 @@
 #!/usr/bin/env python3
-"""Natural-color composite for Elektro-L LRIT/HRIT visible channels.
-usage: natcolor.py ch1.png ch2.png ch3.png out.png
+"""Natural-color composite for Elektro-L3 LRIT (channels 1, 2, 3), robust to lost segments.
+usage: elektro_natcolor.py ch1.png ch2.png ch3.png out.png
+
+Lost LRIT data shows up as rows that are 0, flat (constant fill) or garbage in one channel.
+Per row and channel this script decides good/bad, then:
+  3 good channels -> normal natural color
+  1 bad channel   -> rebuilt from the other two via a (ch_j, ch_k)->ch_i lookup learned on good pixels
+  2 bad channels  -> grey from the one good channel (correct brightness, no fake color)
+  3 bad channels  -> black (no data)
 """
 import sys
+import warnings; warnings.simplefilter("ignore", RuntimeWarning)
 import numpy as np
 from PIL import Image, ImageEnhance
-from scipy.ndimage import median_filter
+from scipy.ndimage import median_filter, uniform_filter1d
 
-c = [np.asarray(Image.open(p), dtype=np.float32) for p in sys.argv[1:4]]
-# Earth = pixels where at least 2 of the 3 channels have data (lost strips are 0 or flat grey in one channel)
-disk = ((c[0] > 0).astype(int) + (c[1] > 0) + (c[2] > 0)) >= 2
+raw = [np.asarray(Image.open(p), dtype=np.float32) for p in sys.argv[1:4]]
+H, W = raw[0].shape
 
-def norm(a):
-    lo, hi = np.percentile(a[disk & (a > 0)], [0.5, 99.7])
-    return np.clip((a - lo) / (hi - lo), 0, 1)
+# Earth disk geometry of the 2784 px Elektro-L3 LRIT full disk (fitted on a clean IR image)
+CX, CY, REQ, RPOL = 1389.5, 1391.7, 1359.4, 1352.0
+s = W / 2784
+yy, xx = np.mgrid[0:H, 0:W]
+rr = ((xx - CX * s) / (REQ * s)) ** 2 + ((yy - CY * s) / (RPOL * s)) ** 2
+disk = rr <= 1.0
+inner = rr <= 0.95                 # well inside the limb
+space = rr >= 1.08                 # well outside: must be empty in valid data
 
-c = [norm(a) for a in c]
+lit = inner & (np.maximum.reduce(raw) > 15)
+lit_n = lit.sum(axis=1)
+space_n = space.sum(axis=1)
 
-# 1. lost strips: per row, a channel whose texture does not correlate with the two others
-#    (which correlate with each other) is garbage; rebuild that row from the two good channels.
+def norm(a, good):
+    v = a[good & (a > 0)]
+    lo, hi = np.percentile(v, [0.5, 99.7]) if v.size > 1000 else (0, 255)
+    return np.clip((a - lo) / max(hi - lo, 1), 0, 1)
+
+# --- 1. per-row, per-channel badness -------------------------------------------------
+def local_std(a):
+    m = uniform_filter1d(a, 31, axis=1)
+    return np.sqrt(np.maximum(uniform_filter1d(a * a, 31, axis=1) - m * m, 0))
+
+stds = [local_std(a) for a in raw]
+# pass 1: fill / garbage that is flat or spills into empty space
+flat = [((sd < 0.3) & lit).sum(1) / np.maximum(lit_n, 1) for sd in stds]
+junk = [((a > 0) & space).sum(1) / np.maximum(space_n, 1) for a in raw]   # data in empty space = garbage
+bad = np.zeros((3, H), bool)
+for i in range(3):
+    o = [j for j in range(3) if j != i]
+    rel_flat = flat[i] - np.minimum(flat[o[0]], flat[o[1]])
+    bad[i] = (lit_n > 50) & ((rel_flat > 0.3) | ((space_n > 50) & (junk[i] > 0.1)))
+# pass 2: zeros (lost data) compared only with channels that passed pass 1, on pixels they show as daylit
+for i in range(3):
+    o = [j for j in range(3) if j != i]
+    ref = np.zeros_like(raw[0])
+    for j in o:
+        ref = np.where(~bad[j][:, None], np.maximum(ref, raw[j]), ref)
+    litref = inner & (ref > 15)
+    n = litref.sum(1)
+    zfrac = ((raw[i] == 0) & litref).sum(1) / np.maximum(n, 1)
+    bad[i] |= (n > 50) & (zfrac > 0.15)
+
+# pass 3: brightness that does not match the other channels (garbage that is neither 0, flat
+# nor outside the disk, e.g. a misplaced block of another image). The ratio between two good
+# channels' row means is stable across the disk; a row far off that ratio is garbage.
+rowmean = [np.where(lit, a, np.nan) for a in raw]
+with np.errstate(invalid="ignore"):
+    rowmean = [np.nanmean(a, 1) for a in rowmean]
+ok = lit_n > 100
+for i in range(3):
+    votes, n_others = np.zeros(H, int), np.zeros(H, int)
+    for j in range(3):
+        if j == i:
+            continue
+        both = ok & ~bad[i] & ~bad[j] & (rowmean[i] > 5) & (rowmean[j] > 5)
+        if both.sum() < 50:
+            continue
+        lr = np.log(np.maximum(rowmean[i], 1) / np.maximum(rowmean[j], 1))
+        ref = np.median(lr[both])
+        usable = ok & ~bad[j] & (rowmean[j] > 5)
+        votes += usable & (np.abs(lr - ref) > np.log(1.5))
+        n_others += usable
+    bad[i] |= (n_others > 0) & (votes == n_others)
+
+# garbage that passes the tests above: texture uncorrelated with both other (good) channels
 def rowcorr(a, b, m):
-    a, b = np.where(m, a, np.nan), np.where(m, b, np.nan)
-    a = a - np.nanmean(a, axis=1, keepdims=True); b = b - np.nanmean(b, axis=1, keepdims=True)
-    return np.nansum(a*b, axis=1) / np.sqrt(np.nansum(a*a, axis=1) * np.nansum(b*b, axis=1) + 1e-9)
-lit = disk & ((c[0] + c[1] + c[2]) > 0.15)          # ignore the night side
-ok_rows = lit.sum(axis=1) > 100
-R = {(i, j): rowcorr(c[i], c[j], lit) for i in range(3) for j in range(i+1, 3)}
-r = lambda i, j: R[(min(i, j), max(i, j))]
-bad = {}
+    a = np.where(m, a, np.nan); b = np.where(m, b, np.nan)
+    with np.errstate(invalid="ignore", divide="ignore"):
+        a = a - np.nanmean(a, 1, keepdims=True); b = b - np.nanmean(b, 1, keepdims=True)
+        num = np.nansum(a * b, 1); den = np.sqrt(np.nansum(a * a, 1) * np.nansum(b * b, 1))
+    return np.where(den > 0, num / np.maximum(den, 1e-9), 1.0)
+import warnings; warnings.simplefilter("ignore", RuntimeWarning)
+r = {(i, j): rowcorr(raw[i], raw[j], lit) for i in range(3) for j in range(i + 1, 3)}
+rc = lambda i, j: r[(min(i, j), max(i, j))]
 for i in range(3):
     j, k = [x for x in range(3) if x != i]
-    bad[i] = ok_rows & (r(i, j) < 0.6) & (r(i, k) < 0.6) & (r(j, k) > 0.8)
-    bad[i] = np.convolve(bad[i], np.ones(9), 'same') > 0      # widen by a few rows
-for i in range(3):
+    bad[i] |= (lit_n > 100) & (rc(i, j) < 0.5) & (rc(i, k) < 0.5) & (rc(j, k) > 0.8) & ~bad[j] & ~bad[k]
+for i in range(3):                       # one other channel already bad: compare with the remaining good one
     j, k = [x for x in range(3) if x != i]
-    c[i][bad[i]] = ((c[j] + c[k]) / 2)[bad[i]]
-    print(f"ch{i+1}: rebuilt {bad[i].sum()} rows")
+    bad[i] |= (lit_n > 100) & ~bad[i] & ((bad[j] & ~bad[k] & (rc(i, k) < 0.5)) | (bad[k] & ~bad[j] & (rc(i, j) < 0.5)))
+# widen a little: segment edges are often damaged too
+bad = np.array([np.convolve(b, np.ones(7), "same") > 0 for b in bad])
 
-# 2. single-pixel bit-error dashes: replace outliers by a vertical median
+# --- 2. normalise on good rows only, then repair ------------------------------------
+good_px = [disk & ~bad[i][:, None] for i in range(3)]
+c = [norm(raw[i], good_px[i]) for i in range(3)]
+
+# only one channel bad: rebuild it from the other two through a 2-D lookup learned on
+# this image's fully good pixels: (ch_j, ch_k) -> mean ch_i. This keeps vegetation green
+# (near-IR ch3 cannot be guessed from one visible channel, but the ch1/ch2 pair carries the
+# red-edge signal). Bins with too few samples fall back to the spectral neighbour(s):
+# ch1<-ch2, ch2<-(ch1+ch3)/2, ch3<-ch2.
+fallback = {0: lambda r: c[1][r], 1: lambda r: (c[0][r] + c[2][r]) / 2, 2: lambda r: c[1][r]}
+Q = 64
+q = [np.clip(np.round(x * (Q - 1)).astype(np.int32), 0, Q - 1) for x in c]
+allgood = disk & ~bad.any(0)[:, None] & (raw[0] > 0) & (raw[1] > 0) & (raw[2] > 0)
+new_c = {}
+for i in range(3):
+    j, k = [x for x in range(3) if x != i]
+    rows1 = bad[i] & ~bad[j] & ~bad[k]
+    if not rows1.any():
+        continue
+    idx = q[j] * Q + q[k]
+    n = np.bincount(idx[allgood], minlength=Q * Q)
+    tot = np.bincount(idx[allgood], weights=c[i][allgood], minlength=Q * Q)
+    mean = np.where(n >= 20, tot / np.maximum(n, 1), np.nan)
+    pred = mean[idx[rows1]]
+    new_c[i] = (rows1, np.where(np.isnan(pred), fallback[i](rows1), pred))
+for i, (rows1, v) in new_c.items():
+    c[i][rows1] = v
+nbad = bad.sum(0)
+for y in np.where(nbad == 2)[0]:                      # one channel left: grey
+    g = [i for i in range(3) if not bad[i][y]][0]
+    for i in range(3):
+        c[i][y] = c[g][y]
+for y in np.where(nbad == 3)[0]:                      # nothing left: black
+    for i in range(3):
+        c[i][y] = 0
+
+# leftover pixels where only one channel has data (short bad runs, limb rows): grey from it
+has = [raw[i] > 0 for i in range(3)]
+one = disk & ((has[0].astype(int) + has[1] + has[2]) == 1) & ~(nbad[:, None] >= 2)
+for g in range(3):
+    m = one & has[g]
+    for i in range(3):
+        c[i][m] = c[g][m]
+
+# --- 3. bit-error dashes: vertical median on outliers -------------------------------
 for i in range(3):
     med = median_filter(c[i], size=(5, 1))
-    bad = np.abs(c[i] - med) > 0.15
-    c[i][bad] = med[bad]
+    sel = np.abs(c[i] - med) > 0.15
+    c[i][sel] = med[sel]
 
-# 3. channel mix: R = ch2 (red), G = blend of ch1 and ch3 (NIR, lights up vegetation), B = ch1
+# --- 4. channel mix: R = ch2, G = ch1/ch3 blend (vegetation), B = ch1 ----------------
 g = 0.7
-r = c[1] ** g
-b = c[0] ** g
-gg = (0.55 * c[0] + 0.45 * c[2]) ** g
-rgb = np.dstack([r, gg, b])
+rgb = np.dstack([c[1] ** g, (0.55 * c[0] + 0.45 * c[2]) ** g, c[0] ** g])
 rgb[~disk] = 0
-
 im = Image.fromarray((rgb * 255).astype(np.uint8))
-im = ImageEnhance.Color(im).enhance(1.35)
-im = ImageEnhance.Contrast(im).enhance(1.05)
+im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.35)).enhance(1.05)
 im.save(sys.argv[4])
-print(sys.argv[4])
+print(f"{sys.argv[4]}  repaired rows: 1-ch {int(((nbad==1)).sum())}, grey {int((nbad==2).sum())}, no-data {int((nbad==3).sum())}")
