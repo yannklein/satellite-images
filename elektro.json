@@ -1,5 +1,26 @@
 [
   {
+    "id": "ELEKTRO-L3_2026-11-22_21-30-00",
+    "satellite": "ELEKTRO-L3",
+    "folder": "elektro/ELEKTRO-L3/2026-11-22_21-30-00",
+    "date": "2026-11-22",
+    "time": "21:30",
+    "quality": "unrated",
+    "rev": 1795384236,
+    "imgs": [
+      "ir_ch4_enhanced_borders.png",
+      "ir_ch9_enhanced_borders.png",
+      "L3_1_20261122T213000Z.png",
+      "L3_2_20261122T213000Z.png",
+      "L3_3_20261122T213000Z.png",
+      "L3_4_20261122T213000Z.png",
+      "L3_9_20261122T213000Z.png",
+      "msu_gs_MSU-GS_321_False_Color.png",
+      "natural_color_borders.png",
+      "natural_color.png"
+    ]
+  },
+  {
     "id": "ELEKTRO-L3_2026-11-22_18-30-00",
     "satellite": "ELEKTRO-L3",
     "folder": "elektro/ELEKTRO-L3/2026-11-22_18-30-00",
